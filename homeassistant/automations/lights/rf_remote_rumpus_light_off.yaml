@@ -1,0 +1,15 @@
+alias: RF Remote Rumpus Light Off
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: "home/OpenMQTTGateway/433toMQTT"
+condition: 
+  condition: or
+  conditions:
+  - condition: template
+    value_template: "{{ trigger.payload_json.value == 349144514 }}"
+  - condition: template
+    value_template: "{{ trigger.payload_json.value == 2599028 }}"
+action:
+  - service: light.turn_off
+    entity_id: light.dimmer_rumpus_light_level

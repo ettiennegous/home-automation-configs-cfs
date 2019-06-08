@@ -1,0 +1,16 @@
+ettienne_home:
+  name: Ettienne Home
+  icon: mdi:human-handsdown
+kelly_home:
+  name: Kelly Home
+  icon: mdi:human-female
+kelly_home:
+  name: Kelly Home
+  icon: mdi:human-female
+house_guests:
+  name: House Guests
+  icon: mdi:airplane
+home_occupied:
+  name: Home Occupied
+  icon: mdi:human-male-female
+  

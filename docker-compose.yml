@@ -1,0 +1,125 @@
+version: "3.6"
+services:
+  homeassistant:
+    container_name: homeassistant
+    restart: unless-stopped
+    image: homeassistant/home-assistant
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+      - /dev/ttyUSB1:/dev/ttyUSB1
+      - /dev/ttyACM0:/dev/ttyACM0
+    volumes:
+      - ${USERDIR}/docker/homeassistant:/config
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERDIR}/docker/shared:/shared
+    network_mode: host
+    ports:
+      - "8123:8123"
+      - "56700:56700/udp"
+    privileged: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+  mosquitto:
+    container_name: mqtt
+    image: eclipse-mosquitto
+    restart: unless-stopped
+    volumes:
+      - ${USERDIR}/docker/mosquitto/config:/mosquitto/config
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERDIR}/docker/mosquitto/data/mosquitto-data:/mosquitto/data
+      - ${USERDIR}/docker/mosquitto/data/mosquitto-log:/mosquitto/log
+    network_mode: host
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+  influxdb:
+    container_name: influxdb
+    image: influxdb:alpine
+    ports:
+      - "8086:8086"
+      - "8083:8083"
+    restart: unless-stopped
+    volumes:
+      - ${USERDIR}/docker/influxdb:/var/lib/influxdb
+      - ${USERDIR}/docker/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+      - ${USERDIR}/docker/shared:/shared
+    environment:
+      INFLUXDB_DB: ${DBNAME}
+      INFLUXDB_USER: ${DBUSER}
+      INFLUXDB_USER_PASSWORD: ${DBPASS}
+      TZ: ${TZ}
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment: 
+      GF_SECURITY_ADMIN_PASSWORD: ${DBPASS}
+    depends_on:
+      - influxdb
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ${USERDIR}/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
+      - ${USERDIR}/docker/shared:/shared
+  unifi:
+    container_name: unifi
+    image: jacobalberty/unifi
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ${USERDIR}/docker/unifi/data/lib:/var/lib/unifi
+      - ${USERDIR}/docker/unifi/data/log:/var/log/unifi
+      - ${USERDIR}/docker/unifi/data/run:/var/run/unifi
+    ports:
+      - "3478:3478/udp"
+      - "10001:10001/udp"
+      - "6789:6789/tcp"
+      - "8080:8080/tcp"
+      - "8880:8880/tcp"
+      - "8443:8443/tcp"
+      - "8843:8843/tcp"
+    environment:
+      - TZ=${TZ}
+  pihole:
+    container_name: pihole
+    image: pihole/pihole
+    restart: unless-stopped
+    ports:
+      - "192.168.1.40:53:53/tcp"
+      - "192.168.1.40:53:53/udp"
+      - "192.168.1.40:67:67/udp"
+      - "192.168.1.40:8181:80/tcp"
+      - "192.168.1.40:8444:443/tcp"
+    environment:
+      - TZ=${TZ}
+    volumes:
+       - ${USERDIR}/docker/pihole/etc:/etc/pihole/
+       - ${USERDIR}/docker/pihole/dnsmasq:/etc/dnsmasq.d/
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+    cap_add:
+      - NET_ADMIN
+  nodered:
+    container_name: nodered
+    image: nodered/node-red-docker:v8
+    depends_on:
+      - mosquitto
+      - homeassistant
+    restart: unless-stopped
+    network_mode: host
+    ports: 
+      - "1880:1880"
+    volumes:
+      - ${USERDIR}/docker/nodered/data/etc:/data
+    environment:
+      - user=${PUID}
+volumes:
+  grafana-storage:

@@ -1,0 +1,52 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret timezone
+  # Customization file
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+api:
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Discover some devices automatically
+discovery:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include groups.yaml
+automation: !include_dir_list automations/
+script: !include scripts.yaml
+sensor: !include config/sensor.yaml
+switch: !include config/switch.yaml
+input_boolean: !include config/boolean.yaml
+
+influxdb:
+  host: !secret influxdb_host
+
+mqtt:
+  broker: !secret mqtt_broker
+  discovery: true
+  discovery_prefix: homeassistant
+
+device_tracker:
+  - platform: unifi_direct
+    host: !secret unify_host
+    username: !secret unify_username
+    password: !secret unify_password
+    new_device_defaults:
+      track_new_devices: true

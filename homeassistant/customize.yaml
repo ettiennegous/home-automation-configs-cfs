@@ -1,0 +1,132 @@
+light.sonoff_belle:
+  friendly_name: Coffee Machine
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_previous_reading_2:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_energy:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_energy_2:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_interval:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_power_2:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_power:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_power_4:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_power_3:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_previous_reading:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_previous_reading_3:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_previous_reading_4:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_interval_2:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_interval_3:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_interval_4:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_exporting:
+  hidden: true
+sensor.aeon_labs_dsc08101_smart_energy_illuminator_exporting_2:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_current_2:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_current:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_power_2:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_power:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_voltage_2:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_voltage:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_previous_reading_2:
+  hidden: true
+sensor.aeon_labs_zw096_smart_switch_6_previous_reading:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_access_control_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_appliance_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_burglar_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_sourcenodeid_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_system_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_emergency:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_clock:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_homehealth:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_level:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_level_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_type:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_type_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_sourcenodeid_3:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_access_control_3:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_burglar_3:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_power_management:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_emergency_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_clock_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_homehealth_2:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_type_3:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_level_3:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_sourcenodeid_5:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_sourcenodeid_6:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_access_control_5:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_access_control_6:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_burglar_5:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_burglar_6:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_clock_4:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_power_management_3:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_appliance_4:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_homehealth_4:
+  hidden: true
+zwave.vision_security_zd2201_multisensor_4in1_5:
+  hidden: true
+zwave.vision_security_zd2201_multisensor_4in1:
+  hidden: true
+zwave.vision_security_zd2201_multisensor_4in1_7:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_type_5:
+  hidden: true
+sensor.vision_security_zd2201_multisensor_4in1_alarm_type_7:
+  hidden: true
+binary_sensor.vision_security_zd2201_multisensor_4in1_sensor_5:
+  hidden: true
+binary_sensor.vision_security_zd2201_multisensor_4in1_sensor:
+  hidden: true
+binary_sensor.vision_security_zd2201_multisensor_4in1_sensor_7:
+  hidden: true
+sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_type_2:
+  hidden: true
+sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_level_2:
+  hidden: true

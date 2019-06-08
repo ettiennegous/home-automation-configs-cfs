@@ -1,0 +1,22 @@
+- platform: yr
+- platform: mqtt
+  name: "Wifi OpenGateway 8266"
+  state_topic: "home/OpenMQTTGateway/SYStoMQTT"
+  unit_of_measurement: 'dB'
+  value_template: "{{ value_json.rssi}}"
+  availability_topic: "home/OpenMQTTGateway/LWT"
+  payload_available: "online"
+  payload_not_available: "offline"
+  icon: "mdi:wifi"
+  json_attributes:
+    - version
+    - uptime
+    - freeMem
+    - SSID
+    - modules
+- platform: mqtt
+  name: "OpenGateway input"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  value_template: "{{ value_json.value}}"
+  json_attributes:
+    - protocol

@@ -1,0 +1,15 @@
+alias: RF Remote Discreet Light On
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: "home/OpenMQTTGateway/433toMQTT"
+condition: 
+  condition: or
+  conditions:
+  - condition: template
+    value_template: "{{ trigger.payload_json.value == 349146830 }}"
+  - condition: template
+    value_template: "{{ trigger.payload_json.value == 2599026 }}"
+action:
+  - service: light.turn_on
+    entity_id: light.sonoff

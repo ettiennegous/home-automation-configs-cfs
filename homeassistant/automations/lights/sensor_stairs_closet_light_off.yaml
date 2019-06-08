@@ -1,0 +1,10 @@
+alias: Door Trigger Stairs Closet Light Off
+hide_entity: True
+trigger:
+- platform: state
+  entity_id: 
+    - sensor.door_window_sensor_stairs_closet_open
+  to: '0'
+action:
+  - service: light.turn_off
+    entity_id: light.lifx_stairs_closet

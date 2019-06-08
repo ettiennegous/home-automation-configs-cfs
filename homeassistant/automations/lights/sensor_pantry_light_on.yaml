@@ -1,0 +1,12 @@
+alias: Door or Motion Trigger Pantry Light On
+hide_entity: True
+trigger:
+- platform: state
+  entity_id: 
+    - binary_sensor.multisensor_kitchen_motion
+    - binary_sensor.door_window_sensor_pantry_open
+  from: 'off'
+  to: 'on'
+action:
+  - service: light.turn_on
+    entity_id: light.lifx_pantry

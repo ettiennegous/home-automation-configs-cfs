@@ -1,0 +1,23 @@
+alias: Door Trigger Garage Light Off
+hide_entity: True
+trigger:
+- platform: state
+  entity_id: 
+    - sensor.door_window_sensor_garage_open
+  to: '0'
+- platform: state
+  entity_id: 
+    - binary_sensor.door_window_sensor_garagepaneldoor_open
+  to: 'off'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sensor.door_window_sensor_garage_open
+      state: '0'
+    - condition: state
+      entity_id: binary_sensor.door_window_sensor_garagepaneldoor_open
+      state: 'off'
+action:
+  - service: light.turn_off
+    entity_id: light.lifx_garage

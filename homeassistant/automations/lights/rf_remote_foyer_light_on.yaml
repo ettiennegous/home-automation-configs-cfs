@@ -1,0 +1,11 @@
+alias: RF Remote Foyer Light On
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: "home/OpenMQTTGateway/433toMQTT"
+condition: 
+  condition: template
+  value_template: "{{ trigger.payload_json.value == 349146056 }}"
+action:
+  - service: light.turn_on
+    entity_id: light.dimmer_foyer_light_level

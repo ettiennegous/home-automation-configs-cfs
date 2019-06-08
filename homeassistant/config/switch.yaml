@@ -1,0 +1,63 @@
+- platform: mqtt
+  name: "Study Remote 1"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "349147087"
+  payload_off: "349145024"
+  optimistic: false
+  retain: true
+- platform: mqtt
+  name: "Study Remote 2"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "349146056"
+  payload_off: "349144004"
+  optimistic: false
+  retain: true
+- platform: mqtt
+  name: "Study Remote 3"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "349146572"
+  payload_off: "349144514"
+  optimistic: false
+  retain: true
+- platform: mqtt
+  name: "Study Remote 4"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "349146830"
+  payload_off: "349144769"
+  optimistic: false
+  retain: true
+- platform: mqtt
+  name: "Study Remote All"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "349144259"
+  payload_off: "349145291"
+  optimistic: false
+  retain: true
+- platform: mqtt
+  name: "Rumpus Remote A B"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "2599032"
+  payload_off: "2599028"
+  optimistic: false
+  retain: true
+- platform: mqtt
+  name: "Rumpus Remote C D"
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+  value_template: "{{ value_json.value }}"
+  payload_on: "2599026"
+  payload_off: "2599025"
+  optimistic: false
+  retain: true

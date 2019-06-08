@@ -1,0 +1,11 @@
+- id: '1559733993770'
+  alias: bool_on_tracker_ettienne_home
+  trigger:
+  - entity_id: device_tracker.ettienne_galaxy_s10
+    platform: state
+    to: home
+  condition: []
+  action:
+  - data:
+      entity_id: input_boolean.ettienne_home
+    service: input_boolean.turn_on

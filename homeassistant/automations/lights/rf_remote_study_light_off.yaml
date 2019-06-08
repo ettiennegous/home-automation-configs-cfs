@@ -1,0 +1,11 @@
+alias: RF Remote Study Light Off
+hide_entity: True
+trigger:
+  platform: mqtt
+  topic: "home/OpenMQTTGateway/433toMQTT"
+condition: 
+  condition: template
+  value_template: "{{ trigger.payload_json.value == 349145024 }}"
+action:
+  - service: light.turn_off
+    entity_id: light.lifx_study
