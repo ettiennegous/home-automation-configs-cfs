@@ -224,3 +224,19 @@ ettienne_xps:
   name: Ettienne-XPS
   picture:
   track: true
+
+lifx_laundry2:
+  hide_if_away: false
+  icon:
+  mac: D0:73:D5:53:61:D1
+  name: LIFX Laundry-2
+  picture:
+  track: true
+
+nuc_nuc_nuc:
+  hide_if_away: false
+  icon:
+  mac: F8:63:3F:41:57:BC
+  name: Nuc-Nuc-Nuc
+  picture:
+  track: true
