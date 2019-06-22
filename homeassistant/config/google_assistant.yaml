@@ -1,0 +1,2 @@
+project_id: !secret google_assistant_project_id
+api_key: !secret google_assistant_api_key

@@ -13,7 +13,7 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
   packages: !include_dir_named packages
-
+  
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 api:
@@ -34,6 +34,11 @@ script: !include scripts.yaml
 sensor: !include config/sensor.yaml
 switch: !include config/switch.yaml
 input_boolean: !include config/boolean.yaml
+media_player: !include config/media_player.yaml
+camera: !include config/camera.yaml
+google_assistant: !include config/google_assistant.yaml
+weblink: !include config/weblink.yaml
+
 
 influxdb:
   host: !secret influxdb_host
@@ -50,3 +55,16 @@ device_tracker:
     password: !secret unify_password
     new_device_defaults:
       track_new_devices: true
+
+speedtestdotnet:
+
+#- person.ettienne
+#- sensor.yr_symbol
+#- sensor.opengateway_input
+#- sensor.wifi_opengateway_8266
+#- sensor.smartplug_2_energy
+#- sensor.smartplug_2_previous_reading
+#- sensor.smartplug_2_power
+#- sensor.smartplug_2_voltage
+#- sensor.smartplug_2_current
+#- sun.sun

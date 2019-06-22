@@ -1,4 +1,5 @@
 - platform: yr
+
 - platform: mqtt
   name: "Wifi OpenGateway 8266"
   state_topic: "home/OpenMQTTGateway/SYStoMQTT"
@@ -20,3 +21,24 @@
   value_template: "{{ value_json.value}}"
   json_attributes:
     - protocol
+
+- platform: systemmonitor
+  resources: 
+    - type: memory_use_percent
+    - type: disk_use_percent
+      arg: /home
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+
+- platform: google_travel_time
+  name: "Time to home"
+  api_key: !secret google_assistant_api_key
+  origin: device_tracker.ettienne_galaxy_s10
+  destination: !secret home_address
+
+- platform: google_travel_time
+  name: "Time to work"
+  api_key: !secret google_assistant_api_key
+  origin: device_tracker.ettienne_galaxy_s10
+  destination: !secret work_address
