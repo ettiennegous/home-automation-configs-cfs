@@ -240,3 +240,35 @@ nuc_nuc_nuc:
   name: Nuc-Nuc-Nuc
   picture:
   track: true
+
+raspberry:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:8A:28:18
+  name: Raspberry
+  picture:
+  track: true
+
+dcs_855l_ip_cam:
+  hide_if_away: false
+  icon:
+  mac: B2:C5:54:0F:E9:0C
+  name: DCS-855L-IP-Cam
+  picture:
+  track: true
+
+lifx_mini_w_52d7dc:
+  hide_if_away: false
+  icon:
+  mac: D0:73:D5:52:D7:DC
+  name: LIFX-Mini-W-52D7DC
+  picture:
+  track: true
+
+9f6c587042304e0ca5cab110ba9fa01c:
+  hide_if_away: false
+  icon:
+  mac:
+  name: 9f6c587042304e0ca5cab110ba9fa01c
+  picture:
+  track: true
