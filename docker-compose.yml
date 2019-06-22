@@ -19,7 +19,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     labels:
-      - "traefik.enable=true"
+      - "traefik.enable=false"
       - "traefik.backend=portainer"
       - "traefik.frontend.rule=Host:portainer.${DOMAINNAME}"
       - "traefik.port=9000"
@@ -54,9 +54,6 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-    # networks:
-    #   - traefik_proxy
-    #   - default
     labels:
       - "traefik.enable=false"
   mosquitto:
@@ -98,6 +95,8 @@ services:
     ports:
       - "3000:3000"
     restart: unless-stopped
+    networks:
+      - traefik_proxy
     environment:
       GF_SECURITY_ADMIN_PASSWORD: ${DBPASS}
     depends_on:
@@ -106,11 +105,29 @@ services:
       - grafana-storage:/var/lib/grafana
       - ${USERDIR}/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
       - ${USERDIR}/docker/shared:/shared
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=grafana"
+      - "traefik.frontend.rule=Host:grafana.${DOMAINNAME}"
+      - "traefik.port=3000"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.headers.STSSeconds=315360000"
+      - "traefik.frontend.headers.browserXSSFilter=true"
+      - "traefik.frontend.headers.contentTypeNosniff=true"
+      - "traefik.frontend.headers.forceSTSHeader=true"
+      - "traefik.frontend.headers.SSLHost=grafana.gous.duckdns.org"
+      - "traefik.frontend.headers.STSIncludeSubdomains=true"
+      - "traefik.frontend.headers.STSPreload=true"
+      - "traefik.frontend.headers.frameDeny=true"
+      #- "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
   unifi:
     container_name: unifi
     image: jacobalberty/unifi
     restart: unless-stopped
     network_mode: host
+    # networks:
+    #   - traefik_proxy
     volumes:
       - ${USERDIR}/docker/unifi/data/lib:/var/lib/unifi
       - ${USERDIR}/docker/unifi/data/log:/var/log/unifi
@@ -120,11 +137,31 @@ services:
       - "10001:10001/udp"
       - "6789:6789/tcp"
       - "8080:8080/tcp"
+      - "8081:8081/tcp"
       - "8880:8880/tcp"
       - "8443:8443/tcp"
       - "8843:8843/tcp"
     environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
       - TZ=${TZ}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.tags=frontend"
+      - "traefik.frontend.passHostHeader=true"
+      - "traefik.admin.backend=unifi"
+      - "traefik.admin.frontend.rule=Host:unifi.${DOMAINNAME}"
+      - "traefik.admin.port=8443"
+      - "traefik.admin.protocol=https"
+      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.headers.STSSeconds=315360000"
+      - "traefik.frontend.headers.browserXSSFilter=true"
+      - "traefik.frontend.headers.contentTypeNosniff=true"
+      - "traefik.frontend.headers.forceSTSHeader=true"
+      - "traefik.frontend.headers.SSLHost=unifi.gous.duckdns.org"
+      - "traefik.frontend.headers.STSIncludeSubdomains=true"
+      - "traefik.frontend.headers.STSPreload=true"
+      - "traefik.frontend.headers.frameDeny=true"
   pihole:
     container_name: pihole
     image: pihole/pihole
@@ -171,48 +208,108 @@ services:
       - mosquitto
       - homeassistant
     restart: unless-stopped
-    network_mode: host
+    # network_mode: host
+    networks:
+      - traefik_proxy
     ports:
       - "1880:1880"
     volumes:
       - ${USERDIR}/docker/nodered/data/etc:/data
     environment:
       - user=${PUID}
+      - TZ=${TZ}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=nodered"
+      - "traefik.frontend.rule=Host:nodered.${DOMAINNAME}"
+      - "traefik.port=1880"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.headers.STSSeconds=315360000"
+      - "traefik.frontend.headers.browserXSSFilter=true"
+      - "traefik.frontend.headers.contentTypeNosniff=true"
+      - "traefik.frontend.headers.forceSTSHeader=true"
+      - "traefik.frontend.headers.SSLHost=nodered.gous.duckdns.org"
+      - "traefik.frontend.headers.STSIncludeSubdomains=true"
+      - "traefik.frontend.headers.STSPreload=true"
+      - "traefik.frontend.headers.frameDeny=true"
+      - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
   traefik:
-      hostname: traefik
-      image: traefik:latest
-      container_name: traefik
-      restart: always
-      domainname: ${DOMAINNAME}
-      networks:
-        - default
-        - traefik_proxy
-      ports:
-        - "80:80"
-        - "443:443"
-        - "8282:8080"
-      environment:
-        - DUCKDNS_TOKEN=${DUCKDNS_TOKEN}
-      labels:
-        - "traefik.enable=true"
-        - "traefik.backend=traefik"
-        - "traefik.frontend.rule=Host:traefik.${DOMAINNAME}"
-        - "traefik.port=8080"
-        - "traefik.docker.network=traefik_proxy"
-        - "traefik.frontend.headers.SSLRedirect=true"
-        - "traefik.frontend.headers.STSSeconds=315360000"
-        - "traefik.frontend.headers.browserXSSFilter=true"
-        - "traefik.frontend.headers.contentTypeNosniff=true"
-        - "traefik.frontend.headers.forceSTSHeader=true"
-        - "traefik.frontend.headers.SSLHost=traefik.gous.duckdns.org"
-        - "traefik.frontend.headers.STSIncludeSubdomains=true"
-        - "traefik.frontend.headers.STSPreload=true"
-        - "traefik.frontend.headers.frameDeny=true"
-        - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock:ro
-        - ${USERDIR}/docker/traefik:/etc/traefik
-        - ${USERDIR}/docker/shared:/shared
+    hostname: traefik
+    image: traefik:latest
+    container_name: traefik
+    restart: always
+    domainname: ${DOMAINNAME}
+    networks:
+      - default
+      - traefik_proxy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8282:8080"
+    environment:
+      - DUCKDNS_TOKEN=${DUCKDNS_TOKEN}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=traefik"
+      - "traefik.frontend.rule=Host:traefik.${DOMAINNAME}"
+      - "traefik.port=8080"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.headers.STSSeconds=315360000"
+      - "traefik.frontend.headers.browserXSSFilter=true"
+      - "traefik.frontend.headers.contentTypeNosniff=true"
+      - "traefik.frontend.headers.forceSTSHeader=true"
+      - "traefik.frontend.headers.SSLHost=traefik.gous.duckdns.org"
+      - "traefik.frontend.headers.STSIncludeSubdomains=true"
+      - "traefik.frontend.headers.STSPreload=true"
+      - "traefik.frontend.headers.frameDeny=true"
+      - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ${USERDIR}/docker/traefik:/etc/traefik
+      - ${USERDIR}/docker/shared:/shared
+  watchtower:
+    container_name: watchtower
+    hostname: watchtower
+    restart: always
+    image: v2tec/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --schedule "0 0 4 * * *" --cleanup
+  backuppc:
+    container_name: backuppc
+    restart: always
+    image: adferrand/backuppc
+    ports:
+      - "8383:8080"
+    networks:
+      - traefik_proxy
+    environment:
+      - TZ=${TZ}
+      - BACKUPPC_UUID=${PUID}
+      - BACKUPPC_GUID=${PGID}
+      - BACKUPPC_WEB_USER=${HTTP_USERNAME}
+      - BACKUPPC_WEB_PASSWD=${HTTP_PASSWORD}
+    volumes:
+      - ${USERDIR}/docker/backuppc/etc:/etc/backuppc
+      - ${USERDIR}/docker/backuppc/home:/home/backuppc
+      - ${USERDIR}/docker/backuppc/data:/data/backuppc
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=backuppc"
+      - "traefik.frontend.rule=Host:backuppc.${DOMAINNAME}"
+      - "traefik.port=8080"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.frontend.headers.SSLRedirect=true"
+      - "traefik.frontend.headers.STSSeconds=315360000"
+      - "traefik.frontend.headers.browserXSSFilter=true"
+      - "traefik.frontend.headers.contentTypeNosniff=true"
+      - "traefik.frontend.headers.forceSTSHeader=true"
+      - "traefik.frontend.headers.SSLHost=backuppc.gous.duckdns.org"
+      - "traefik.frontend.headers.STSIncludeSubdomains=true"
+      - "traefik.frontend.headers.STSPreload=true"
+      - "traefik.frontend.headers.frameDeny=true"
 volumes:
   grafana-storage:
 networks:
