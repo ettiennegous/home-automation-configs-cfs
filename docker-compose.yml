@@ -38,9 +38,7 @@ services:
     restart: unless-stopped
     image: homeassistant/home-assistant
     devices:
-      - /dev/ttyUSB0:/dev/ttyUSB0
-      - /dev/ttyUSB1:/dev/ttyUSB1
-      - /dev/ttyACM0:/dev/ttyACM0
+      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave:rmw"
     volumes:
       - ${USERDIR}/docker/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
@@ -277,39 +275,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --schedule "0 0 4 * * *" --cleanup
-  backuppc:
-    container_name: backuppc
-    restart: always
-    image: adferrand/backuppc
-    ports:
-      - "8383:8080"
-    networks:
-      - traefik_proxy
-    environment:
-      - TZ=${TZ}
-      - BACKUPPC_UUID=${PUID}
-      - BACKUPPC_GUID=${PGID}
-      - BACKUPPC_WEB_USER=${HTTP_USERNAME}
-      - BACKUPPC_WEB_PASSWD=${HTTP_PASSWORD}
-    volumes:
-      - ${USERDIR}/docker/backuppc/etc:/etc/backuppc
-      - ${USERDIR}/docker/backuppc/home:/home/backuppc
-      - ${USERDIR}/docker/backuppc/data:/data/backuppc
-    labels:
-      - "traefik.enable=true"
-      - "traefik.backend=backuppc"
-      - "traefik.frontend.rule=Host:backuppc.${DOMAINNAME}"
-      - "traefik.port=8080"
-      - "traefik.docker.network=traefik_proxy"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=backuppc.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
 volumes:
   grafana-storage:
 networks:
