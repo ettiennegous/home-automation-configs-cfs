@@ -10,3 +10,6 @@ house_guests:
 home_occupied:
   name: Home Occupied
   icon: mdi:human-male-female
+bedtime_routine:
+  name: Bedtime Routine
+  icon: mdi:hotel
