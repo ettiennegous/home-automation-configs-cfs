@@ -42,3 +42,113 @@
   api_key: !secret google_assistant_api_key
   origin: device_tracker.ettienne_galaxy_s10
   destination: !secret work_address
+
+- platform: pi_hole
+  host: !secret pihole_ip
+  location: admin
+  verify_ssl: false
+  monitored_conditions:
+    - ads_blocked_today
+    - ads_percentage_today
+    - dns_queries_today
+    - domains_being_blocked
+    - queries_cached
+    - queries_forwarded
+    - unique_clients
+    - unique_domains
+
+- platform: filter
+  name: "multisensor_dining_temp_filtered"
+  entity_id: sensor.multisensor_dining_temp
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 2
+
+- platform: filter
+  name: "door_window_sensor_garage_temp_filtered"
+  entity_id: sensor.door_window_sensor_garage_temp
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 2
+
+- platform: filter
+  name: "door_window_sensor_stairs_closet_temp_filtered"
+  entity_id: sensor.door_window_sensor_stairs_closet_temp_filtered
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 2
+
+- platform: filter
+  name: "multisensor_kitchen_temp_filtered"
+  entity_id: sensor.multisensor_kitchen_temp
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 2.0
+    - filter: lowpass
+      time_constant: 10
+    - filter: time_simple_moving_average
+      window_size: 00:05
+      precision: 2
+
+- platform: filter
+  name: "multisensor_dining_humidity_filtered"
+  entity_id: sensor.multisensor_dining_humidity
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 4.0
+    - filter: lowpass
+      time_constant: 10
+      precision: 2
+
+- platform: filter
+  name: "door_window_sensor_garage_humidity_filtered"
+  entity_id: sensor.door_window_sensor_garage_humidity
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 4.0
+    - filter: lowpass
+      time_constant: 10
+      precision: 2
+
+- platform: filter
+  name: "door_window_sensor_stairs_closet_humidity_filtered"
+  entity_id: sensor.door_window_sensor_stairs_closet_humidity
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 4.0
+    - filter: lowpass
+      time_constant: 10
+      precision: 2
+
+- platform: filter
+  name: "multisensor_kitchen_humidity_filtered"
+  entity_id: sensor.multisensor_kitchen_humidity
+  filters:
+    - filter: outlier
+      window_size: 4
+      radius: 4.0
+    - filter: lowpass
+      time_constant: 10
+      precision: 2
