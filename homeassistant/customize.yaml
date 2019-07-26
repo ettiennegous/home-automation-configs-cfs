@@ -1,5 +1,3 @@
-light.sonoff_belle:
-  friendly_name: Coffee Machine
 sensor.aeon_labs_dsc08101_smart_energy_illuminator_previous_reading_2:
   hidden: true
 sensor.aeon_labs_dsc08101_smart_energy_illuminator_energy:
