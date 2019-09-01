@@ -1,0 +1,30 @@
+- platform: mqtt
+  name: Sonoff_PIR_1
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  payload_on: "15699006"
+  off_delay: 3
+  value_template: "{{ value_json.value }}"
+- platform: mqtt
+  name: Sonoff_PIR_2
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  payload_on: "15763390"
+  off_delay: 3
+  value_template: "{{ value_json.value }}"
+- platform: mqtt
+  name: GS_WDS07_1
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  payload_on: "6155530"
+  payload_off: "6155534"
+  value_template: "{{ value_json.value }}"
+- platform: mqtt
+  name: GS_WDS07_2
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  payload_on: "6148618"
+  payload_off: "6148622"
+  value_template: "{{ value_json.value }}"
+- platform: mqtt
+  name: GS_WDS07_3
+  state_topic: "home/OpenMQTTGateway/433toMQTT"
+  payload_on: "5513226"
+  payload_off: "5513230"
+  value_template: "{{ value_json.value }}"

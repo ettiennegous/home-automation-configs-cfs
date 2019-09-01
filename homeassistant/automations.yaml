@@ -1,7 +1,7 @@
 - id: '1559733993770'
   alias: bool_on_tracker_ettienne_home
   trigger:
-  - entity_id: device_tracker.ettienne_galaxy_s10
+  - entity_id: device_tracker.galaxy_s10_2
     platform: state
     to: home
   condition: []

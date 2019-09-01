@@ -64,6 +64,31 @@ panel_custom:
     sidebar_icon: mdi:access-point-network
     url_path: zwave
     
+lifx:
+  light:
+    - broadcast: 192.168.1.80
+    - broadcast: 192.168.1.81
+    - broadcast: 192.168.1.82
+    - broadcast: 192.168.1.83
+    - broadcast: 192.168.1.84
+    - broadcast: 192.168.1.85
+    - broadcast: 192.168.1.86
+
+tplink:
+  discovery: false
+  switch:
+    - host: 192.168.1.44
+    - host: 192.168.1.45
+
+notify:
+  - name: Ettienne Galaxy
+    platform: simplepush
+    device_key: !secret simplepush_device_key
+
+  - name: Push Bullet Notifications
+    platform: pushbullet
+    api_key: !secret push_bullet_api_key
+# Example configuration.yaml entry
 #- person.ettienne
 #- sensor.yr_symbol
 #- sensor.opengateway_input
