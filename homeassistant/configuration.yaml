@@ -29,16 +29,16 @@ tts:
   - platform: google_translate
 
 group: !include groups.yaml
-automation: !include_dir_list automations/
 script: !include scripts.yaml
 sensor: !include config/sensor.yaml
 switch: !include config/switch.yaml
+binary_sensor: !include config/binary_sensor.yaml
 input_boolean: !include config/boolean.yaml
 media_player: !include config/media_player.yaml
 camera: !include config/camera.yaml
 google_assistant: !include config/google_assistant.yaml
 weblink: !include config/weblink.yaml
-
+shopping_list:
 
 influxdb:
   host: !secret influxdb_host
@@ -49,10 +49,12 @@ mqtt:
   discovery_prefix: homeassistant
 
 device_tracker:
-  - platform: unifi_direct
+  - platform: unifi
     host: !secret unify_host
+    port: !secret unify_port
     username: !secret unify_username
     password: !secret unify_password
+    verify_ssl: false
     new_device_defaults:
       track_new_devices: true
 
@@ -63,7 +65,7 @@ panel_custom:
     sidebar_title: Z-Wave Graph
     sidebar_icon: mdi:access-point-network
     url_path: zwave
-    
+
 lifx:
   light:
     - broadcast: 192.168.1.80
@@ -88,14 +90,7 @@ notify:
   - name: Push Bullet Notifications
     platform: pushbullet
     api_key: !secret push_bullet_api_key
-# Example configuration.yaml entry
-#- person.ettienne
-#- sensor.yr_symbol
-#- sensor.opengateway_input
-#- sensor.wifi_opengateway_8266
-#- sensor.smartplug_2_energy
-#- sensor.smartplug_2_previous_reading
-#- sensor.smartplug_2_power
-#- sensor.smartplug_2_voltage
-#- sensor.smartplug_2_current
-#- sun.sun
+logger:
+  default: warn
+  logs:
+    homeassistant.components.mqtt.binary_sensor: critical
