@@ -34,13 +34,13 @@
 - platform: google_travel_time
   name: "Time to home"
   api_key: !secret google_assistant_api_key
-  origin: device_tracker.ettienne_galaxy_s10
+  origin: device_tracker.galaxy_s10
   destination: !secret home_address
 
 - platform: google_travel_time
   name: "Time to work"
   api_key: !secret google_assistant_api_key
-  origin: device_tracker.ettienne_galaxy_s10
+  origin: device_tracker.galaxy_s10
   destination: !secret work_address
 
 - platform: pi_hole

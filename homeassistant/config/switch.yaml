@@ -61,3 +61,13 @@
   payload_off: "2599025"
   optimistic: false
   retain: true
+- platform: broadlink
+  host: !secret broadlink_host
+  mac: !secret broadlink_mac
+  timeout: 15
+  retry: 5
+  switches:
+    tv_panasonic:
+      friendly_name: "Panasonic Tv Power"
+      command_on: 'JgAcAB0dHB44HhweGx4cHR06HB0cHhwdHB8bHhwADQUAAAAAAAAAAAAAAAA='
+      command_off: 'JgAaABweOR4bHhwdHB4dHRw6HhsdHR0dOTocAA0FAAAAAAAAAAAAAAAAAAA='
