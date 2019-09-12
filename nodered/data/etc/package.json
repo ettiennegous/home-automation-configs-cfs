@@ -4,6 +4,7 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "node-red-contrib-broadlink-control": "~1.0.6",
         "node-red-contrib-home-assistant-websocket": "~0.12.2"
     }
 }
