@@ -19,7 +19,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
     labels:
-      - "traefik.enable=false"
+      - "traefik.enable=true"
       - "traefik.backend=portainer"
       - "traefik.frontend.rule=Host:portainer.${DOMAINNAME}"
       - "traefik.port=9000"
@@ -267,6 +267,21 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ${USERDIR}/docker/traefik:/etc/traefik
       - ${USERDIR}/docker/shared:/shared
+  shinobi:
+    container_name: shinobi
+    hostname: shinobi
+    restart: always
+    image: shinobisystems/shinobi:latest-ubuntu
+    ports:
+      - "8082:8080/tcp"
+    environment:
+      - APP_BRANCH=dev
+    volumes:
+      - ${USERDIR}/docker/shinobi/streams:/dev/shm/streams
+      - ${USERDIR}/docker/shinobi/config:/config
+      - ${USERDIR}/docker/shinobi/customautoload:/customAutoLoad
+      - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
+      - ${USERDIR}/docker/shinobi/videos:/opt/shinobi/videos
   watchtower:
     container_name: watchtower
     hostname: watchtower
