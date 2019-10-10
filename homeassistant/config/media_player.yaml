@@ -1,6 +1,0 @@
-- platform: onkyo
-  host: !secret onkyo_host
-  name: Onkyo Amplifier
-  sources:
-    bd-dvd: BD-DVD
-    pc: PC
