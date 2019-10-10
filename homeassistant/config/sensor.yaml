@@ -9,18 +9,13 @@
   payload_available: "online"
   payload_not_available: "offline"
   icon: "mdi:wifi"
-  json_attributes:
-    - version
-    - uptime
-    - freeMem
-    - SSID
-    - modules
+  json_attributes_topic: "home/OpenMQTTGateway/SYStoMQTT"
+
 - platform: mqtt
   name: "OpenGateway input"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
   value_template: "{{ value_json.value}}"
-  json_attributes:
-    - protocol
+  json_attributes_topic: "home/OpenMQTTGateway/433toMQTT"
 
 - platform: systemmonitor
   resources: 
@@ -42,20 +37,6 @@
   api_key: !secret google_assistant_api_key
   origin: device_tracker.galaxy_s10
   destination: !secret work_address
-
-- platform: pi_hole
-  host: !secret pihole_ip
-  location: admin
-  verify_ssl: false
-  monitored_conditions:
-    - ads_blocked_today
-    - ads_percentage_today
-    - dns_queries_today
-    - domains_being_blocked
-    - queries_cached
-    - queries_forwarded
-    - unique_clients
-    - unique_domains
 
 - platform: filter
   name: "multisensor_dining_temp_filtered"
