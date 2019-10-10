@@ -43,6 +43,7 @@ services:
       - ${USERDIR}/docker/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
       - ${USERDIR}/docker/shared:/shared
+      - ${USERDIR}/docker/nodered/data/etc/camera-images:/config/www/camera-images
     network_mode: host
     ports:
       - "8123:8123"
@@ -130,6 +131,7 @@ services:
       - ${USERDIR}/docker/unifi/data/lib:/var/lib/unifi
       - ${USERDIR}/docker/unifi/data/log:/var/log/unifi
       - ${USERDIR}/docker/unifi/data/run:/var/run/unifi
+      - ${USERDIR}/docker/traefik_cert_extractor/certs/gous.duckdns.org:/unifi/cert
     ports:
       - "3478:3478/udp"
       - "10001:10001/udp"
@@ -144,7 +146,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     labels:
-      - "traefik.enable=true"
+      - "traefik.enable=false"
       - "traefik.tags=frontend"
       - "traefik.frontend.passHostHeader=true"
       - "traefik.admin.backend=unifi"
@@ -234,7 +236,7 @@ services:
       - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
   traefik:
     hostname: traefik
-    image: traefik:latest
+    image: traefik:v1.7-alpine
     container_name: traefik
     restart: always
     domainname: ${DOMAINNAME}
@@ -290,6 +292,12 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --schedule "0 0 4 * * *" --cleanup
+  traefik_cert_extractor:
+    container_name: traefik_cert_extractor
+    image: danielhuisman/traefik-certificate-extractor
+    volumes:
+      - ${USERDIR}/docker/traefik/acme:/app/data
+      - ${USERDIR}/docker/traefik_cert_extractor/certs:/app/certs 
 volumes:
   grafana-storage:
 networks:

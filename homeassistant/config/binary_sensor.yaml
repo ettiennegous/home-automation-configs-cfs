@@ -28,3 +28,8 @@
   payload_on: "5513226"
   payload_off: "5513230"
   value_template: "{{ value_json.value }}"
+- platform: hikvision
+  name: HikVision
+  host: !secret hikvision_host
+  username: !secret hikvision_username
+  password: !secret hikvision_password
