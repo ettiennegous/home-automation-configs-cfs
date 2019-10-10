@@ -1,5 +1,0 @@
-- platform: mjpeg
-  name: Lawn Cam
-  mjpeg_url: !secret lawn_cam_mjpeg_url
-  username: !secret lawn_cam_username
-  password: !secret lawn_cam_password
