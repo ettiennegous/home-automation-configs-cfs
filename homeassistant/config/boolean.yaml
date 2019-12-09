@@ -13,3 +13,15 @@ home_occupied:
 bedtime_routine:
   name: Bedtime Routine
   icon: mdi:hotel
+lounge_music:
+  name: Lounge Music
+  icon: mdi:music
+off_all_lights:
+  name: Off all
+  icon: mdi:flash-alert
+off_upstairs_lights:
+  name: Off upstairs
+  icon: mdi:lightbulb
+off_downstairs_lights:
+  name: Off downstairs
+  icon: mdi:lightbulb-outline
