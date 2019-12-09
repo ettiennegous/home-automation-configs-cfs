@@ -1,9 +1,9 @@
 - platform: mqtt
   name: Sonoff_PIR_1
   state_topic: "home/OpenMQTTGateway/433toMQTT"
-  payload_on: "15699006"
+  payload_on: "15699006-1-24-401"
   off_delay: 3
-  value_template: "{{ value_json.value }}"
+  value_template: "{{ value_json.value }}-{{ value_json.protocol }}-{{ value_json.length }}-{{ value_json.delay }}"
 - platform: mqtt
   name: Sonoff_PIR_2
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -28,8 +28,26 @@
   payload_on: "5513226"
   payload_off: "5513230"
   value_template: "{{ value_json.value }}"
-- platform: hikvision
-  name: HikVision
-  host: !secret hikvision_host
-  username: !secret hikvision_username
-  password: !secret hikvision_password
+- platform: bayesian
+  name: Is_Dark
+  prior: 0.5
+  probability_threshold: 0.6
+  observations:
+    - platform: numeric_state
+      entity_id: sensor.multisensor_dining_light
+      prob_given_true: 0.5
+      below: 100
+    - platform: numeric_state
+      entity_id: sensor.multisensor_kitchen_light
+      prob_given_true: 0.6
+      below: 50
+    - platform: state
+      entity_id: sun.sun
+      prob_given_true: 1
+      to_state: below_horizon
+      
+# - platform: hikvision
+#   name: HikVision
+#   host: !secret hikvision_host
+#   username: !secret hikvision_username
+#   password: !secret hikvision_password
