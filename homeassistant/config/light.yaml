@@ -1,0 +1,90 @@
+- platform: mqtt
+  name: "Shelly 1 Study Light"
+  state_topic: "shellies/shelly1-689DB5/relay/0"
+  command_topic: "shellies/shelly1-689DB5/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Powder Room Basin Light"
+  state_topic: "shellies/shellyswitch25-68E4F3/relay/0"
+  command_topic: "shellies/shellyswitch25-68E4F3/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Stairs Light"
+  state_topic: "shellies/shellyswitch25-68E4F3/relay/1"
+  command_topic: "shellies/shellyswitch25-68E4F3/relay/1/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 1 Alex Kitchen Light"
+  state_topic: "shellies/shelly1-B9D681/relay/0"
+  command_topic: "shellies/shelly1-B9D681/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Rumpus Main Light"
+  state_topic: "shellies/shellyswitch25-68688E/relay/0"
+  command_topic: "shellies/shellyswitch25-68688E/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Rumpus Side Light"
+  state_topic: "shellies/shellyswitch25-68688E/relay/1"
+  command_topic: "shellies/shellyswitch25-68688E/relay/1/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 1 Guest Room Light"
+  state_topic: "shellies/shelly1-68C70A/relay/0"
+  command_topic: "shellies/shelly1-68C70A/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Kids Bathroom Light"
+  state_topic: "shellies/shellyswitch25-69020F/relay/1"
+  command_topic: "shellies/shellyswitch25-69020F/relay/1/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Master Bathroom Light"
+  state_topic: "shellies/shellyswitch25-6912B9/relay/0"
+  command_topic: "shellies/shellyswitch25-6912B9/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 1 Master Toilet Light"
+  state_topic: "shellies/shelly1-68B50C/relay/0"
+  command_topic: "shellies/shelly1-68B50C/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
