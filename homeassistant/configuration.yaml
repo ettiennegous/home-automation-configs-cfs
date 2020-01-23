@@ -24,10 +24,13 @@ api:
 # Discover some devices automatically
 discovery:
 
+   
+
 # Text to speech
 tts:
   - platform: google_translate
 
+light: !include config/light.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 sensor: !include config/sensor.yaml
@@ -37,26 +40,10 @@ input_boolean: !include config/boolean.yaml
 media_player: !include config/media_player.yaml
 camera: !include config/camera.yaml
 google_assistant: !include config/google_assistant.yaml
-weblink: !include config/weblink.yaml
 shopping_list:
 
 influxdb:
   host: !secret influxdb_host
-
-mqtt:
-  broker: !secret mqtt_broker
-  discovery: true
-  discovery_prefix: homeassistant
-
-device_tracker:
-  - platform: unifi
-    host: !secret unify_host
-    port: !secret unify_port
-    username: !secret unify_username
-    password: !secret unify_password
-    verify_ssl: false
-    new_device_defaults:
-      track_new_devices: true
 
 speedtestdotnet:
 
@@ -65,6 +52,9 @@ panel_custom:
     sidebar_title: Z-Wave Graph
     sidebar_icon: mdi:access-point-network
     url_path: zwave
+
+pi_hole:
+  host: !secret pihole_ip
 
 lifx:
   light:
@@ -75,22 +65,32 @@ lifx:
     - broadcast: 192.168.1.84
     - broadcast: 192.168.1.85
     - broadcast: 192.168.1.86
+    - broadcast: 192.168.1.87
+    - broadcast: 192.168.1.88
 
 tplink:
   discovery: false
   switch:
     - host: 192.168.1.44
-    - host: 192.168.1.45
+    #- host: 192.168.1.45
+    - host: 192.168.1.48
+    - host: 192.168.1.50
 
 notify:
-  - name: Ettienne Galaxy
-    platform: simplepush
-    device_key: !secret simplepush_device_key
+  - platform: discord
+    name: discord notifications
+    token: !secret discord_bot_token
 
-  - name: Push Bullet Notifications
-    platform: pushbullet
-    api_key: !secret push_bullet_api_key
+hacs:
+  token: !secret github_hacs_access_token
+  theme: true
+  python_script: true
+
+frontend:
+  themes: !include themes.yaml
+  
 logger:
   default: warn
   logs:
     homeassistant.components.mqtt.binary_sensor: critical
+    homeassistant.components.unitedenergy: debug
