@@ -26,18 +26,6 @@
     - type: load_5m
     - type: load_15m
 
-- platform: google_travel_time
-  name: "Time to home"
-  api_key: !secret google_assistant_api_key
-  origin: device_tracker.galaxy_s10
-  destination: !secret home_address
-
-- platform: google_travel_time
-  name: "Time to work"
-  api_key: !secret google_assistant_api_key
-  origin: device_tracker.galaxy_s10
-  destination: !secret work_address
-
 - platform: filter
   name: "multisensor_dining_temp_filtered"
   entity_id: sensor.multisensor_dining_temp
@@ -66,7 +54,7 @@
 
 - platform: filter
   name: "door_window_sensor_stairs_closet_temp_filtered"
-  entity_id: sensor.door_window_sensor_stairs_closet_temp_filtered
+  entity_id: sensor.door_window_sensor_stairs_closet_temp
   filters:
     - filter: outlier
       window_size: 4
@@ -133,3 +121,48 @@
     - filter: lowpass
       time_constant: 10
       precision: 2
+
+- platform: unitedenergy
+  username: !secret unitedenergy_username
+  password: !secret unitedenergy_password
+
+- platform: template
+  sensors:
+    no_lights_on:
+      friendly_name: Lights On
+      value_template: "{{ states.light|selectattr('state','equalto','on')|list|length }}"
+      entity_id:
+        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level
+        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2
+        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3
+        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4
+        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_5
+        - light.aeon_labs_zw111_nano_dimmer_level
+        - light.aeon_labs_zw111_nano_dimmer_level_2
+        - light.dimmer_foyer_light_level
+        - light.dimmer_smart_energy_illum_light_level
+        - light.lifx_garage
+        - light.lifx_laundry1
+        - light.lifx_pantry
+        - light.lifx_rumpus_standing
+        - light.lifx_stairs_closet
+        - light.lifx_study
+        - light.shelly_1_alex_kitchen_light
+        - light.shelly_1_guest_room_light
+        - light.shelly_1_master_toilet_light
+        - light.shelly_1_study_light
+        - light.shelly_2_5_kids_bathroom_light
+        - light.shelly_2_5_master_bathroom_light
+        - light.shelly_2_5_powder_room_basin_light
+        - light.shelly_2_5_rumpus_main_light
+        - light.shelly_2_5_rumpus_side_light
+        - light.shelly_2_5_stairs_light
+        - light.sonoff_belle
+        - light.sonoff_lucy
+        - light.sonoff_woodstock
+
+- platform: mqtt
+  name: "ESP32_1_Lux"
+  state_topic: "ESP32-1/Lux"
+  ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 4095
+  unit_of_measurement: "LUX"
