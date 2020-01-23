@@ -71,3 +71,21 @@
       friendly_name: "Panasonic Tv Power"
       command_on: 'JgAcAB0dHB44HhweGx4cHR06HB0cHhwdHB8bHhwADQUAAAAAAAAAAAAAAAA='
       command_off: 'JgAaABweOR4bHhwdHB4dHRw6HhsdHR0dOTocAA0FAAAAAAAAAAAAAAAAAAA='
+- platform: mqtt
+  name: "Shelly 2.5 Kids Bathroom Extractor"
+  state_topic: "shellies/shellyswitch25-69020F/relay/0"
+  command_topic: "shellies/shellyswitch25-69020F/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: mqtt
+  name: "Shelly 2.5 Master Bathroom Extractor"
+  state_topic: "shellies/shellyswitch25-6912B9/relay/1"
+  command_topic: "shellies/shellyswitch25-6912B9/relay/1/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
