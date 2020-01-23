@@ -138,3 +138,5 @@ binary_sensor.sonoff_pir_1:
   friendly_name: PIR Motion
 binary_sensor.sonoff_pir_2:
   friendly_name: PIR Motion
+binary_sensor.is_dark:
+  friendly_name: Is Dark

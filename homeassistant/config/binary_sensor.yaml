@@ -45,7 +45,11 @@
       entity_id: sun.sun
       prob_given_true: 1
       to_state: below_horizon
-      
+- platform: mqtt
+  name: ESP32_1_Motion
+  state_topic: "ESP32-1/Motion"
+  payload_on: "true"
+  off_delay: 2
 # - platform: hikvision
 #   name: HikVision
 #   host: !secret hikvision_host
