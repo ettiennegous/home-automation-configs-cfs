@@ -1,2 +1,67 @@
 project_id: !secret google_assistant_project_id
 api_key: !secret google_assistant_api_key
+expose_by_default: true
+exposed_domains:
+  - switch
+  - light
+  - input_boolean
+  - sensor
+service_account: !include service_account.json
+report_state: true
+entity_config:
+  switch.study_remote_1:
+    expose: false
+  switch.study_remote_2:
+    expose: false
+  switch.study_remote_3:
+    expose: false
+  switch.study_remote_4:
+    expose: false
+  switch.study_remote_all:
+    expose: false
+  switch.rumpus_remote_c_d:
+    expose: false
+  switch.rumpus_remote_a_b:
+    expose: false
+  input_boolean.low_batteries:
+    expose: false
+  input_boolean.bedtime_routine:
+    expose: false
+  switch.camera1:
+    expose: false
+  switch.tp_link_1:
+    expose: false
+  switch.tp_link_2:
+    expose: false
+  switch.tp_link_3:
+    expose: false
+  switch.tp_link_4:
+    expose: false
+  input_boolean.ettienne_home:
+    expose: false
+  input_boolean.home_occupied:
+    expose: false
+  input_boolean.house_guests:
+    expose: false
+  input_boolean.kelly_home:
+    expose: false
+  switch.aeon_labs_zw111_nano_dimmer_switch:
+    expose: false
+  switch.aeon_labs_zw111_nano_dimmer_switch_2:
+    expose: false
+  light.lifx_study:
+    expose: false
+  light.lifx_stairs_closet:
+    expose: false
+  light.lifx_pantry:
+    expose: false
+  light.lifx_laundry1:
+    expose: false
+  light.lifx_laundry2:
+    expose: false
+  light.lifx_garage:
+    expose: false
+  light.lifx_dressing_room1:
+    expose: false
+  light.lifx_dressing_room2:
+    expose: false
