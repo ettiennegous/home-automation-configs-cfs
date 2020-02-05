@@ -10,6 +10,7 @@
   payload_not_available: "offline"
   icon: "mdi:wifi"
   json_attributes_topic: "home/OpenMQTTGateway/SYStoMQTT"
+  device_class: signal_strength
 
 - platform: mqtt
   name: "OpenGateway input"
@@ -161,8 +162,21 @@
         - light.sonoff_lucy
         - light.sonoff_woodstock
 
+- platform: template
+  sensors:
+    no_external_doors_open:
+      friendly_name: External Doors Open
+      value_template: "{{ (states.binary_sensor|selectattr('state','equalto','on')|selectattr('attributes.external_door', 'eq', true)|list|length) + (states.sensor|selectattr('state','equalto','255')|selectattr('attributes.external_door', 'eq', true)|list|length)}}"
+      entity_id:
+        - binary_sensor.gs_wds07_1
+        - binary_sensor.gs_wds07_2
+        - binary_sensor.gs_wds07_3
+        - sensor.door_window_sensor_garage_open
+        - binary_sensor.door_window_sensor_garagepaneldoor_open    
+
 - platform: mqtt
   name: "ESP32_1_Lux"
   state_topic: "ESP32-1/Lux"
   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 4095
   unit_of_measurement: "LUX"
+  device_class: illuminance
