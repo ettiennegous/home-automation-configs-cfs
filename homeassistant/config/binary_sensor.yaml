@@ -4,30 +4,35 @@
   payload_on: "15699006-1-24-401"
   off_delay: 3
   value_template: "{{ value_json.value }}-{{ value_json.protocol }}-{{ value_json.length }}-{{ value_json.delay }}"
+  device_class: motion
 - platform: mqtt
   name: Sonoff_PIR_2
   state_topic: "home/OpenMQTTGateway/433toMQTT"
   payload_on: "15763390"
   off_delay: 3
   value_template: "{{ value_json.value }}"
+  device_class: motion
 - platform: mqtt
   name: GS_WDS07_1
   state_topic: "home/OpenMQTTGateway/433toMQTT"
   payload_on: "6155530"
   payload_off: "6155534"
   value_template: "{{ value_json.value }}"
+  device_class: door
 - platform: mqtt
   name: GS_WDS07_2
   state_topic: "home/OpenMQTTGateway/433toMQTT"
   payload_on: "6148618"
   payload_off: "6148622"
   value_template: "{{ value_json.value }}"
+  device_class: door
 - platform: mqtt
   name: GS_WDS07_3
   state_topic: "home/OpenMQTTGateway/433toMQTT"
   payload_on: "5513226"
   payload_off: "5513230"
   value_template: "{{ value_json.value }}"
+  device_class: door
 - platform: bayesian
   name: Is_Dark
   prior: 0.5
@@ -50,6 +55,7 @@
   state_topic: "ESP32-1/Motion"
   payload_on: "true"
   off_delay: 2
+  device_class: motion
 # - platform: hikvision
 #   name: HikVision
 #   host: !secret hikvision_host
