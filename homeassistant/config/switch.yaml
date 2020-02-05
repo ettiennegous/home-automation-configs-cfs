@@ -7,6 +7,7 @@
   payload_off: "349145024"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: mqtt
   name: "Study Remote 2"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -16,6 +17,7 @@
   payload_off: "349144004"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: mqtt
   name: "Study Remote 3"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -25,6 +27,7 @@
   payload_off: "349144514"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: mqtt
   name: "Study Remote 4"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -34,6 +37,7 @@
   payload_off: "349144769"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: mqtt
   name: "Study Remote All"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -43,6 +47,7 @@
   payload_off: "349145291"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: mqtt
   name: "Rumpus Remote A B"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -52,6 +57,7 @@
   payload_off: "2599028"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: mqtt
   name: "Rumpus Remote C D"
   state_topic: "home/OpenMQTTGateway/433toMQTT"
@@ -61,6 +67,7 @@
   payload_off: "2599025"
   optimistic: false
   retain: true
+  icon: mdi:remote
 - platform: broadlink
   host: !secret broadlink_host
   mac: !secret broadlink_mac
@@ -80,6 +87,7 @@
   payload_off: "off"
   retain: false
   optimistic: false
+  icon: mdi:fan
 - platform: mqtt
   name: "Shelly 2.5 Master Bathroom Extractor"
   state_topic: "shellies/shellyswitch25-6912B9/relay/1"
@@ -89,3 +97,4 @@
   payload_off: "off"
   retain: false
   optimistic: false
+  icon: mdi:fan
