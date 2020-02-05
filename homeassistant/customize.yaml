@@ -130,13 +130,20 @@ sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_level_2:
   hidden: true
 binary_sensor.gs_wds07_1:
   friendly_name: Door
+  external_door: true
 binary_sensor.gs_wds07_2:
   friendly_name: Laundry Sliding Door
+  external_door: true
 binary_sensor.gs_wds07_3:
   friendly_name: Patio Sliding Door
+  external_door: true
 binary_sensor.sonoff_pir_1:
   friendly_name: PIR Motion
 binary_sensor.sonoff_pir_2:
   friendly_name: PIR Motion
 binary_sensor.is_dark:
   friendly_name: Is Dark
+sensor.door_window_sensor_garage_open:
+  external_door: true
+binary_sensor.door_window_sensor_garagepaneldoor_open:
+  external_door: true
