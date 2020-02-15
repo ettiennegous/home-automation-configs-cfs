@@ -88,3 +88,18 @@
   payload_off: "off"
   retain: false
   optimistic: false
+- platform: mqtt
+  name: "Shelly 1 Kitchen Light"
+  state_topic: "shellies/shelly1-98F4ABF32A31/relay/0"
+  command_topic: "shellies/shelly1-98F4ABF32A31/relay/0/command"
+  qos: 2
+  payload_on: "on"
+  payload_off: "off"
+  retain: false
+  optimistic: false
+- platform: switch
+  name: Discreet Light
+  entity_id: switch.aeon_labs_zw096_smart_switch_6_switch
+- platform: switch
+  name: Garage Flood Light
+  entity_id: switch.tp_link_3
