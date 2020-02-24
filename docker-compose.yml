@@ -34,9 +34,9 @@ services:
       - "traefik.frontend.headers.STSPreload=true"
       - "traefik.frontend.headers.frameDeny=true"
   homeassistant:
+    image: homeassistant/home-assistant
     container_name: homeassistant
     restart: unless-stopped
-    image: homeassistant/home-assistant
     devices:
       - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave:rmw"
     volumes:
@@ -56,8 +56,8 @@ services:
     labels:
       - "traefik.enable=false"
   mosquitto:
-    container_name: mqtt
     image: eclipse-mosquitto
+    container_name: mqtt
     restart: unless-stopped
     volumes:
       - ${USERDIR}/docker/mosquitto/config:/mosquitto/config
@@ -73,12 +73,12 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
   influxdb:
-    container_name: influxdb
     image: influxdb:alpine
+    container_name: influxdb
+    restart: unless-stopped
     ports:
       - "8086:8086"
       - "8083:8083"
-    restart: unless-stopped
     volumes:
       - ${USERDIR}/docker/influxdb:/var/lib/influxdb
       - ${USERDIR}/docker/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
@@ -91,9 +91,9 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
+    restart: unless-stopped
     ports:
       - "3000:3000"
-    restart: unless-stopped
     networks:
       - traefik_proxy
     environment:
@@ -121,9 +121,9 @@ services:
       - "traefik.frontend.headers.frameDeny=true"
       #- "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
   unifi:
-    container_name: unifi
     image: jacobalberty/unifi
-    restart: unless-stopped
+    container_name: unifi
+    restart: always
     network_mode: host
     # networks:
     #   - traefik_proxy
@@ -163,8 +163,8 @@ services:
       - "traefik.frontend.headers.STSPreload=true"
       - "traefik.frontend.headers.frameDeny=true"
   pihole:
-    container_name: pihole
     image: pihole/pihole
+    container_name: pihole
     restart: unless-stopped
     ports:
       - "192.168.1.40:53:53/tcp"
@@ -202,12 +202,12 @@ services:
       - "traefik.frontend.headers.frameDeny=true"
       - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
   nodered:
-    container_name: nodered
     image: nodered/node-red-docker:v8
+    container_name: nodered
+    restart: unless-stopped
     depends_on:
       - mosquitto
       - homeassistant
-    restart: unless-stopped
     # network_mode: host
     networks:
       - traefik_proxy
@@ -235,10 +235,10 @@ services:
       - "traefik.frontend.headers.frameDeny=true"
       - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
   traefik:
-    hostname: traefik
     image: traefik:v1.7-alpine
     container_name: traefik
     restart: always
+    hostname: traefik
     domainname: ${DOMAINNAME}
     networks:
       - default
@@ -270,10 +270,10 @@ services:
       - ${USERDIR}/docker/traefik:/etc/traefik
       - ${USERDIR}/docker/shared:/shared
   shinobi:
-    container_name: shinobi
-    hostname: shinobi
-    restart: always
     image: shinobisystems/shinobi:latest-ubuntu
+    container_name: shinobi
+    restart: always
+    hostname: shinobi
     ports:
       - "8082:8080/tcp"
     environment:
@@ -285,16 +285,17 @@ services:
       - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
       - ${USERDIR}/docker/shinobi/videos:/opt/shinobi/videos
   watchtower:
-    container_name: watchtower
-    hostname: watchtower
-    restart: always
     image: v2tec/watchtower
+    container_name: watchtower
+    restart: always
+    hostname: watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --schedule "0 0 4 * * *" --cleanup
   traefik_cert_extractor:
-    container_name: traefik_cert_extractor
     image: danielhuisman/traefik-certificate-extractor
+    container_name: traefik_cert_extractor
+    restart: always
     volumes:
       - ${USERDIR}/docker/traefik/acme:/app/data
       - ${USERDIR}/docker/traefik_cert_extractor/certs:/app/certs 
