@@ -1,0 +1,28 @@
+platform: universal
+name: Media Centre Universal
+children:
+  - media_player.onkyo_living_room
+  - media_player.living_room_kodi
+commands:
+  turn_on:
+    service: switch.turn_on
+    data:
+      entity_id: switch.tp_link_4
+  turn_off:
+    service: switch.turn_off
+    data:
+      entity_id: switch.tp_link_4
+  volume_up:
+    service: script.turn_on
+    data:
+      entity_id: script.onkyo_volume_up
+  volume_down:
+    service: script.turn_on
+    data:
+      entity_id: script.onkyo_volume_down
+  volume_mute:
+    service: script.turn_on
+    data:
+      entity_id: script.onkyo_volume_mute
+attributes:
+  state: switch.tp_link_4
