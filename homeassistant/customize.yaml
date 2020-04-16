@@ -147,3 +147,70 @@ sensor.door_window_sensor_garage_open:
   external_door: true
 binary_sensor.door_window_sensor_garagepaneldoor_open:
   external_door: true
+light.shelly_dimmer_dressing_room:
+  friendly_name: Dressing Room
+  tracked_light: true
+light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level:
+  tracked_light: true
+light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2:
+  tracked_light: true
+light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3:
+  tracked_light: true
+light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4:
+  tracked_light: true
+light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_5:
+  tracked_light: true
+light.aeon_labs_zw111_nano_dimmer_level:
+  tracked_light: true
+light.aeon_labs_zw111_nano_dimmer_level_2:
+  tracked_light: true
+light.dimmer_foyer_light_level:
+  tracked_light: true
+light.dimmer_smart_energy_illum_light_level:
+  tracked_light: true
+light.lifx_garage:
+  tracked_light: true
+light.lifx_pantry:
+  tracked_light: true
+light.lifx_rumpus_standing:
+  tracked_light: true
+light.lifx_stairs_closet:
+  tracked_light: true
+light.lifx_study:
+  tracked_light: true
+light.shelly_1_alex_kitchen_light:
+  tracked_light: true
+light.shelly_1_guest_room_light:
+  tracked_light: true
+light.shelly_1_master_toilet_light:
+  tracked_light: true
+light.shelly_1_study_light:
+  tracked_light: true
+light.shelly_2_5_kids_bathroom_light:
+  tracked_light: true
+light.shelly_2_5_master_bathroom_light:
+  tracked_light: true
+light.shelly_2_5_powder_room_basin_light:
+  tracked_light: true
+light.shelly_2_5_rumpus_main_light:
+  tracked_light: true
+light.shelly_2_5_rumpus_side_light:
+  tracked_light: true
+light.shelly_2_5_stairs_light:
+  tracked_light: true
+light.sonoff_belle:
+  tracked_light: true
+light.sonoff_lucy:
+  tracked_light: true
+light.sonoff_woodstock:
+  tracked_light: true
+light.discreet_light:
+  tracked_light: true
+light.garage_flood_light:
+  tracked_light: true
+light.shelly_1_kitchen_light:
+  tracked_light: true
+light.shelly_dimmer_dressing_room:
+  tracked_light: true
+light.shelly_1_laundry:
+  tracked_light: true

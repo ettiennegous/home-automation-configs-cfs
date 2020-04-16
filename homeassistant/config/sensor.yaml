@@ -131,7 +131,7 @@
   sensors:
     no_lights_on:
       friendly_name: Lights On
-      value_template: "{{ states.light|selectattr('state','equalto','on')|list|length }}"
+      value_template: "{{ states.light|selectattr('state','equalto','on')|selectattr('attributes.tracked_light', 'eq', true)|list|length }}"
       entity_id:
         - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level
         - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2
@@ -143,7 +143,6 @@
         - light.dimmer_foyer_light_level
         - light.dimmer_smart_energy_illum_light_level
         - light.lifx_garage
-        - light.lifx_laundry1
         - light.lifx_pantry
         - light.lifx_rumpus_standing
         - light.lifx_stairs_closet
@@ -164,6 +163,8 @@
         - light.discreet_light
         - light.garage_flood_light
         - light.shelly_1_kitchen_light
+        - light.shelly_dimmer_dressing_room
+        - light.shelly_1_laundry
 
 - platform: template
   sensors:
