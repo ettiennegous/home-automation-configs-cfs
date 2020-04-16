@@ -54,13 +54,9 @@ entity_config:
     expose: false
   light.lifx_pantry:
     expose: false
-  light.lifx_laundry1:
-    expose: false
-  light.lifx_laundry2:
-    expose: false
   light.lifx_garage:
     expose: false
-  light.lifx_dressing_room1:
+  light.shelly_dimmer_dressing_room:
     expose: false
-  light.lifx_dressing_room2:
+  light.shelly_1_laundry:
     expose: false
