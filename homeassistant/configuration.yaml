@@ -81,11 +81,6 @@ notify:
     name: discord notifications
     token: !secret discord_bot_token
 
-hacs:
-  token: !secret github_hacs_access_token
-  theme: true
-  python_script: true
-
 frontend:
   themes: !include themes.yaml
 
@@ -93,9 +88,14 @@ tuya:
   username: !secret tuya_username
   password: !secret tuya_password
   country_code: 61
+
+spotcast:
+  username: !secret spotify_username
+  password: !secret spotify_password
   
 logger:
   default: warn
   logs:
     homeassistant.components.mqtt.binary_sensor: critical
     homeassistant.components.unitedenergy: debug
+
