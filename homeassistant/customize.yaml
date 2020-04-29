@@ -210,7 +210,5 @@ light.garage_flood_light:
   tracked_light: true
 light.shelly_1_kitchen_light:
   tracked_light: true
-light.shelly_dimmer_dressing_room:
-  tracked_light: true
 light.shelly_1_laundry:
   tracked_light: true
