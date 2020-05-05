@@ -43,3 +43,4 @@ homeassistant/tts/*
 /homeassistant/.shopping_list.json
 /nodered/data/etc/.*.json.backup
 /nodered/data/etc/settings.js
+/nodered/data/etc/.config.json
