@@ -20,19 +20,11 @@ services:
       - PGID=${PGID}
     labels:
       - "traefik.enable=true"
-      - "traefik.backend=portainer"
-      - "traefik.frontend.rule=Host:portainer.${DOMAINNAME}"
-      - "traefik.port=9000"
-      - "traefik.docker.network=traefik_proxy"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=portainer.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
+      - "traefik.http.routers.portainer-router.rule=Host(`portainer.${DOMAINNAME}`)"
+      - "traefik.http.routers.portainer-router.tls=true"
+      - "traefik.http.routers.portainer-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.portainer-router.middlewares=secured-no-basic@file"
+      - "traefik.http.services.portainer-router.loadbalancer.server.port=9000"
   homeassistant:
     image: homeassistant/home-assistant
     container_name: homeassistant
@@ -106,20 +98,14 @@ services:
       - ${USERDIR}/docker/shared:/shared
     labels:
       - "traefik.enable=true"
-      - "traefik.backend=grafana"
-      - "traefik.frontend.rule=Host:grafana.${DOMAINNAME}"
-      - "traefik.port=3000"
       - "traefik.docker.network=traefik_proxy"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=grafana.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
-      #- "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
+      - "traefik.http.routers.grafana-router.rule=Host(`grafana.${DOMAINNAME}`)"
+      - "traefik.http.routers.grafana-router.tls=true"
+      - "traefik.http.routers.grafana-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.grafana-router.middlewares=secured@file"
+      - "traefik.http.services.grafana-service.loadbalancer.server.port=3000"
+      - "traefik.http.services.grafana-service.loadbalancer.server.scheme=https"
+      - "traefik.http.services.grafana-service.loadbalancer.passHostHeader=true"
   unifi:
     image: jacobalberty/unifi
     container_name: unifi
@@ -131,7 +117,8 @@ services:
       - ${USERDIR}/docker/unifi/data/lib:/var/lib/unifi
       - ${USERDIR}/docker/unifi/data/log:/var/log/unifi
       - ${USERDIR}/docker/unifi/data/run:/var/run/unifi
-      - ${USERDIR}/docker/traefik_cert_extractor/certs/gous.duckdns.org:/unifi/cert
+      - ${USERDIR}/docker/traefik_cert_extractor/certs/${DOMAINNAME}/:/unifi/cert
+      - ${USERDIR}/docker/traefik_cert_extractor/certs/${DOMAINNAME}/chain.pem:/unifi/cert/cert.pem
     ports:
       - "3478:3478/udp"
       - "10001:10001/udp"
@@ -147,21 +134,6 @@ services:
       - TZ=${TZ}
     labels:
       - "traefik.enable=false"
-      - "traefik.tags=frontend"
-      - "traefik.frontend.passHostHeader=true"
-      - "traefik.admin.backend=unifi"
-      - "traefik.admin.frontend.rule=Host:unifi.${DOMAINNAME}"
-      - "traefik.admin.port=8443"
-      - "traefik.admin.protocol=https"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=unifi.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
   pihole:
     image: pihole/pihole
     container_name: pihole
@@ -187,20 +159,13 @@ services:
       - traefik_proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.backend=pihole"
-      - "traefik.frontend.rule=Host:pihole.${DOMAINNAME}"
-      - "traefik.port=80"
       - "traefik.docker.network=traefik_proxy"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=pihole.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
-      - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
+      - "traefik.http.routers.pihole-router.rule=Host(`pihole.${DOMAINNAME}`)"
+      - "traefik.http.routers.pihole-router.tls=true"
+      - "traefik.http.routers.pihole-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.pihole-router.middlewares=secured@file"
+      - "traefik.http.services.pihole-router.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.pihole-specialheaders.headers.sslHost=pihole.${DOMAINNAME}"
   nodered:
     image: nodered/node-red-docker:v8
     container_name: nodered
@@ -220,22 +185,14 @@ services:
       - TZ=${TZ}
     labels:
       - "traefik.enable=true"
-      - "traefik.backend=nodered"
-      - "traefik.frontend.rule=Host:nodered.${DOMAINNAME}"
-      - "traefik.port=1880"
       - "traefik.docker.network=traefik_proxy"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=nodered.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
-      - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
+      - "traefik.http.routers.nodered-router.rule=Host(`nodered.${DOMAINNAME}`)"
+      - "traefik.http.routers.nodered-router.tls=true"
+      - "traefik.http.routers.nodered-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.nodered-router.middlewares=secured@file"
+      - "traefik.http.services.nodered-router.loadbalancer.server.port=1880"
   traefik:
-    image: traefik:v1.7-alpine
+    image: traefik
     container_name: traefik
     restart: always
     hostname: traefik
@@ -249,25 +206,20 @@ services:
       - "8282:8080"
     environment:
       - DUCKDNS_TOKEN=${DUCKDNS_TOKEN}
+      - DOMAINNAME=${DOMAINNAME}
+      - TRAEFIK_PROVIDERS_DOCKER_DEFAULTRULE="Host(`{{ trimPrefix `/` .Name }}.${DOMAINNAME}`)"
     labels:
       - "traefik.enable=true"
-      - "traefik.backend=traefik"
-      - "traefik.frontend.rule=Host:traefik.${DOMAINNAME}"
-      - "traefik.port=8080"
       - "traefik.docker.network=traefik_proxy"
-      - "traefik.frontend.headers.SSLRedirect=true"
-      - "traefik.frontend.headers.STSSeconds=315360000"
-      - "traefik.frontend.headers.browserXSSFilter=true"
-      - "traefik.frontend.headers.contentTypeNosniff=true"
-      - "traefik.frontend.headers.forceSTSHeader=true"
-      - "traefik.frontend.headers.SSLHost=traefik.gous.duckdns.org"
-      - "traefik.frontend.headers.STSIncludeSubdomains=true"
-      - "traefik.frontend.headers.STSPreload=true"
-      - "traefik.frontend.headers.frameDeny=true"
-      - "traefik.frontend.auth.basic.users=${HTTP_USERNAME}:${HTTP_PASSWORD}"
+      - "traefik.http.routers.traefik-router.rule=Host(`traefik.${DOMAINNAME}`)"
+      - "traefik.http.routers.traefik-router.middlewares=secured@file"
+      - "traefik.http.routers.traefik-router.tls=true"
+      - "traefik.http.routers.traefik-router.tls.certresolver=letsencrypt"
+      - "traefik.http.services.traefik-router.loadbalancer.server.port=8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${USERDIR}/docker/traefik:/etc/traefik
+      - ${USERDIR}/docker/traefik:/etc/traefik:rw
+      - ${USERDIR}/docker/traefik/configs:/etc/traefik/configs:ro
       - ${USERDIR}/docker/shared:/shared
   shinobi:
     image: shinobisystems/shinobi:latest-ubuntu
@@ -293,12 +245,14 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     command: --schedule "0 0 4 * * *" --cleanup
   traefik_cert_extractor:
-    image: danielhuisman/traefik-certificate-extractor
+
+    image: ldez/traefik-certs-dumper:latest
     container_name: traefik_cert_extractor
     restart: always
+    command: file --watch --source /traefik/acme.json --version v2 --domain-subdir --crt-name=chain --crt-ext=.pem --key-name=privkey --key-ext=.pem --dest /output
     volumes:
-      - ${USERDIR}/docker/traefik/acme:/app/data
-      - ${USERDIR}/docker/traefik_cert_extractor/certs:/app/certs 
+      - ${USERDIR}/docker/traefik/acme:/traefik:ro
+      - ${USERDIR}/docker/traefik_cert_extractor/certs:/output:rw
 volumes:
   grafana-storage:
 networks:

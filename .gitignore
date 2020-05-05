@@ -45,3 +45,5 @@ homeassistant/tts/*
 /nodered/data/etc/settings.js
 /nodered/data/etc/.config.json
 /nodered/data/etc/flows_cred.json
+/scripts/broadlink.py
+/scripts/get-energy-usage-data.py

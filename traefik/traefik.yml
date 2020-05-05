@@ -1,0 +1,40 @@
+## traefik.yml
+# Docker configuration backend
+providers:
+  docker:
+    endpoint: unix:///var/run/docker.sock
+    exposedByDefault: false
+    watch: true
+  file:
+    directory: /etc/traefik/configs
+    watch: true
+    debugLogGeneratedTemplate: true
+
+entryPoints:
+  http:
+    address: :80
+  https:
+    address: :443  
+  # API and dashboard configuration
+api:
+  insecure: true
+
+serversTransport:
+  insecureSkipVerify: true
+ 
+certificatesresolvers:
+  letsencrypt:
+    acme:
+      storage: /etc/traefik/acme/acme.json
+      dnsChallenge:
+        provider: "duckdns"
+        delayBeforeCheck: 0
+log:
+  level: WARN
+  
+  # accessLog: 
+  #   format: json
+  #   filters:    
+  #     statusCodes:
+  #       - "201-999"
+  #     retryAttempts: true

@@ -1,0 +1,90 @@
+http:   
+
+  routers:
+    hass-router:
+      entryPoints:
+        - "http"
+        - "https"
+      rule: "Host(`hass.{{env "DOMAINNAME"}}`)"
+      service: "hass-service"
+      tls:
+        certresolver: letsencrypt
+      middlewares:
+        - secured-no-basic
+
+    octopi-router:
+        entryPoints:
+            - "http"
+            - "https"
+        rule: "Host(`octopi.{{env "DOMAINNAME"}}`)"
+        service: "octopi-service"
+        tls:
+            certresolver: letsencrypt
+        middlewares:
+            - secured
+
+    unifi-router:
+        entryPoints:
+            - "http"
+            - "https"
+        rule: "Host(`unifi.{{env "DOMAINNAME"}}`)"
+        service: "unifi-service"
+        tls:
+            certresolver: letsencrypt
+        middlewares:
+            - extraheaders
+
+  services:
+    hass-service:
+      loadBalancer:
+        passHostHeader: false
+        servers:
+        - url: "http://192.168.1.40:8123/"
+        
+    octopi-service:
+        loadBalancer:
+            passHostHeader: false
+            servers:
+            - url: "http://192.168.1.26/"
+
+    unifi-service:
+        loadBalancer:
+            passHostHeader: true
+            server:
+                scheme: https
+                port: 8443
+            servers:
+            - url: "https://192.168.1.40:8443/"
+
+  middlewares:
+    httpbasicauth:
+      basicAuth:
+        usersFile: /shared/.htpasswd
+        removeHeader: true
+    https-redirect:
+      redirectScheme:
+        scheme: https
+    secureheaders:
+      headers:
+        frameDeny: true
+        sslRedirect: true
+        browserXssFilter: true
+        contentTypeNosniff: true
+        forceSTSHeader: true
+        stsIncludeSubdomains: true
+        stsPreload: true
+        stsSeconds: 315360000
+    extraheaders: 
+        headers:
+            referrerPolicy: "no-referrer"
+    secured:
+      chain:
+        middlewares:
+        - https-redirect
+        - httpbasicauth
+        - secureheaders
+    secured-no-basic:
+        chain:
+            middlewares:
+            - https-redirect
+            - secureheaders
