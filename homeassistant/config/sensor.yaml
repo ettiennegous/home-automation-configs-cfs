@@ -184,5 +184,3 @@
   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 4095
   unit_of_measurement: "LUX"
   device_class: illuminance
-
-- platform: spotcast
