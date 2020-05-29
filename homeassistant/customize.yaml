@@ -212,3 +212,6 @@ light.shelly_1_kitchen_light:
   tracked_light: true
 light.shelly_1_laundry:
   tracked_light: true
+light.shelly_dimmer_ruby_lamp:
+  tracked_light: true
+  friendly_name: Ruby Lamp

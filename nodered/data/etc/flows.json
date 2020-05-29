@@ -4502,7 +4502,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 620,
         "wires": [
             []
@@ -4521,7 +4521,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 660,
         "wires": [
             []
@@ -4540,7 +4540,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 700,
         "wires": [
             []
@@ -4559,7 +4559,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 740,
         "wires": [
             []
@@ -4578,7 +4578,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 780,
         "wires": [
             []
@@ -4597,7 +4597,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 820,
         "wires": [
             []
@@ -4616,7 +4616,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1500,
+        "x": 1860,
         "y": 860,
         "wires": [
             []
@@ -4635,7 +4635,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1470,
+        "x": 1830,
         "y": 900,
         "wires": [
             []
@@ -4654,7 +4654,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1450,
+        "x": 1810,
         "y": 940,
         "wires": [
             []
@@ -4673,7 +4673,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 1020,
         "wires": [
             []
@@ -4692,7 +4692,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1840,
         "y": 1060,
         "wires": [
             []
@@ -4711,7 +4711,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1500,
+        "x": 1860,
         "y": 1100,
         "wires": [
             []
@@ -5154,8 +5154,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 780,
-        "y": 920,
+        "x": 660,
+        "y": 1000,
         "wires": [
             [
                 "c521102e.1f3cb"
@@ -5228,7 +5228,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1840,
         "y": 1140,
         "wires": [
             []
@@ -5280,8 +5280,8 @@
         "func": "\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1080,
-        "y": 900,
+        "x": 1380,
+        "y": 960,
         "wires": [
             [
                 "db273be3.fa7008",
@@ -5543,7 +5543,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
+        "x": 1820,
         "y": 980,
         "wires": [
             []
@@ -6676,7 +6676,7 @@
         "y": 820,
         "wires": [
             [
-                "8e1d1e1a.ccadb"
+                "7b94915a.2b20b"
             ]
         ]
     },
@@ -6693,7 +6693,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1140,
+        "x": 1420,
         "y": 820,
         "wires": [
             []
@@ -6944,7 +6944,47 @@
         "y": 40,
         "wires": [
             [
-                "26c4c83b.04b018"
+                "49e9a8df.bc6b88"
+            ]
+        ]
+    },
+    {
+        "id": "49e9a8df.bc6b88",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Ruby Lamp Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.shelly_dimmer_ruby_lamp\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1010,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b94915a.2b20b",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Ruby Lamp Slow Fade Off 1 hour",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_dimmer_ruby_lamp\",\"transition\":\"3600\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1180,
+        "y": 820,
+        "wires": [
+            [
+                "8e1d1e1a.ccadb"
             ]
         ]
     }
