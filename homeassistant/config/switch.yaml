@@ -72,7 +72,6 @@
   host: !secret broadlink_host
   mac: !secret broadlink_mac
   timeout: 15
-  retry: 5
   switches:
     tv_panasonic:
       friendly_name: "Panasonic Tv Power"
