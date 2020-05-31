@@ -83,11 +83,6 @@ notify:
 
 frontend:
   themes: !include themes.yaml
-
-tuya:
-  username: !secret tuya_username
-  password: !secret tuya_password
-  country_code: 61
   
 logger:
   default: warn
