@@ -1991,7 +1991,7 @@
         "id": "6c9fe279.153e8c",
         "type": "api-call-service",
         "z": "d1ff6abb.b25cf8",
-        "name": "Turn off Coffee Machine",
+        "name": "Coffee Machine Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "switch",
         "service": "turn_off",
@@ -2000,104 +2000,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 910,
+        "x": 890,
         "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e66409e2.c9bf78",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Laundry Door Is Opened",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.door_window_sensor_laundry_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 190,
-        "y": 320,
-        "wires": [
-            [
-                "141578a2.87ba77"
-            ],
-            [
-                "3bed9d35.cb1332"
-            ]
-        ]
-    },
-    {
-        "id": "3bed9d35.cb1332",
-        "type": "change",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Reset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 360,
-        "wires": [
-            [
-                "141578a2.87ba77"
-            ]
-        ]
-    },
-    {
-        "id": "141578a2.87ba77",
-        "type": "delay",
-        "z": "d1ff6abb.b25cf8",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "15",
-        "timeoutUnits": "minutes",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 630,
-        "y": 320,
-        "wires": [
-            [
-                "bf9ac0e.6d0b94"
-            ]
-        ]
-    },
-    {
-        "id": "bf9ac0e.6d0b94",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Turn off Laundry Lights",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 900,
-        "y": 320,
         "wires": [
             []
         ]
@@ -2231,10 +2135,13 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 810,
-        "y": 1452,
+        "x": 1310,
+        "y": 1300,
         "wires": [
-            [],
+            [
+                "dcb53b6d.23dc48",
+                "609765f4.28c1fc"
+            ],
             []
         ]
     },
@@ -2340,12 +2247,12 @@
         "func": "var d = new Date();\nvar hour = d.getHours();\n\nif(hour >= 21 || hour <= 7) {\n    msg.payload = 30;\n}\nelse {\n    msg.payload = 100;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1090,
-        "y": 1229,
+        "x": 1070,
+        "y": 1280,
         "wires": [
             [
-                "dcb53b6d.23dc48",
-                "609765f4.28c1fc"
+                "d3d1a423.e17d28",
+                "a3957e3c.be42c"
             ]
         ]
     },
@@ -2353,17 +2260,17 @@
         "id": "dcb53b6d.23dc48",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "name": "Stairs Landing Light On",
+        "name": "Stairs Light On",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"light.shelly_2_5_powder_room_basin_light,light.shelly_2_5_stairs_light\"}",
+        "data": "{\"entity_id\":\"light.shelly_2_5_stairs_light\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1370,
-        "y": 1229,
+        "x": 1522,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -2381,8 +2288,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1340,
-        "y": 1289,
+        "x": 1522,
+        "y": 1320,
         "wires": [
             []
         ]
@@ -6985,6 +6892,161 @@
         "wires": [
             [
                 "8e1d1e1a.ccadb"
+            ]
+        ]
+    },
+    {
+        "id": "d3d1a423.e17d28",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Powder Room Basin Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.shelly_2_5_powder_room_basin_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1410,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "94a2ecff.98f79",
+        "type": "server-state-changed",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Laundry Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.shelly_1_laundry",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "9b7c2741.1fceb8"
+            ],
+            [
+                "9b7c2741.1fceb8"
+            ]
+        ]
+    },
+    {
+        "id": "af837373.9e13a",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Laundry Lights Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b7c2741.1fceb8",
+        "type": "trigger",
+        "z": "d1ff6abb.b25cf8",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "15",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "15 Minutes",
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "af837373.9e13a"
+            ]
+        ]
+    },
+    {
+        "id": "c34754d7.5b8318",
+        "type": "server-state-changed",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Pantry Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.lifx_pantry",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "949b4611.a8bbd8"
+            ],
+            [
+                "949b4611.a8bbd8"
+            ]
+        ]
+    },
+    {
+        "id": "5f42f741.419ec8",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Pantry Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_pantry\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 880,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "949b4611.a8bbd8",
+        "type": "trigger",
+        "z": "d1ff6abb.b25cf8",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "30",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "30 Minutes",
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "5f42f741.419ec8"
             ]
         ]
     }
