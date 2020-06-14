@@ -72,7 +72,7 @@ tplink:
   discovery: false
   switch:
     - host: 192.168.1.44
-    #- host: 192.168.1.45
+    - host: 192.168.1.45
     - host: 192.168.1.48
     - host: 192.168.1.50
 
