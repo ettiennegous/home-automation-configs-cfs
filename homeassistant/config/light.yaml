@@ -126,7 +126,7 @@
   brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
 - platform: switch
   name: Discreet Light
-  entity_id: switch.aeon_labs_zw096_smart_switch_6_switch
+  entity_id: switch.tp_link_2
 - platform: switch
   name: Garage Flood Light
   entity_id: switch.tp_link_3
