@@ -7049,5 +7049,306 @@
                 "5f42f741.419ec8"
             ]
         ]
+    },
+    {
+        "id": "5189a580.57236c",
+        "type": "server-events",
+        "z": "e594dd4a.60761",
+        "name": "IOS Action Fired",
+        "server": "5a39eab2.9f6814",
+        "event_type": "ios.action_fired",
+        "x": 480,
+        "y": 1740,
+        "wires": [
+            [
+                "2f17f9d2.58f5c6"
+            ]
+        ]
+    },
+    {
+        "id": "2f17f9d2.58f5c6",
+        "type": "switch",
+        "z": "e594dd4a.60761",
+        "name": "IOS Action Switch",
+        "property": "payload.event.actionName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Alex Light",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Upstairs Lights",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "All Lights",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Downstairs Lights",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Fix TV",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 770,
+        "y": 1620,
+        "wires": [
+            [
+                "adafe54c.17ab38"
+            ],
+            [
+                "c521102e.1f3cb"
+            ],
+            [
+                "1fe80b7f.5742e5",
+                "c521102e.1f3cb"
+            ],
+            [
+                "1fe80b7f.5742e5"
+            ],
+            [
+                "f3b56127.ecb5a"
+            ]
+        ]
+    },
+    {
+        "id": "adafe54c.17ab38",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Alex Room Light Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1090,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3b56127.ecb5a",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "AV Plug On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 950,
+        "y": 1980,
+        "wires": [
+            [
+                "e5f0bc5e.8f944"
+            ]
+        ]
+    },
+    {
+        "id": "e5f0bc5e.8f944",
+        "type": "function",
+        "z": "e594dd4a.60761",
+        "name": "Delay for 1 seconds",
+        "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 1000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1160,
+        "y": 1980,
+        "wires": [
+            [
+                "326b8beb.468964"
+            ]
+        ]
+    },
+    {
+        "id": "22a72e6a.a348e2",
+        "type": "template",
+        "z": "e594dd4a.60761",
+        "name": "Amp On",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
+        "output": "str",
+        "x": 1700,
+        "y": 1980,
+        "wires": [
+            [
+                "c5dce174.0e037"
+            ]
+        ]
+    },
+    {
+        "id": "326b8beb.468964",
+        "type": "template",
+        "z": "e594dd4a.60761",
+        "name": "TV On",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F",
+        "output": "str",
+        "x": 1350,
+        "y": 1980,
+        "wires": [
+            [
+                "4e5ea4bd.d5b3fc"
+            ]
+        ]
+    },
+    {
+        "id": "4e5ea4bd.d5b3fc",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Broadlink Send",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "broadlink",
+        "service": "send",
+        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1520,
+        "y": 1980,
+        "wires": [
+            [
+                "22a72e6a.a348e2"
+            ]
+        ]
+    },
+    {
+        "id": "c5dce174.0e037",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Broadlink Send",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "broadlink",
+        "service": "send",
+        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1880,
+        "y": 1980,
+        "wires": [
+            [
+                "1cf27b95.d42734"
+            ]
+        ]
+    },
+    {
+        "id": "ef076ac9.1bce78",
+        "type": "template",
+        "z": "e594dd4a.60761",
+        "name": "BD/DVD Input",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA",
+        "output": "str",
+        "x": 960,
+        "y": 2269,
+        "wires": [
+            [
+                "4ba39f42.e27b3"
+            ]
+        ]
+    },
+    {
+        "id": "4ba39f42.e27b3",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Broadlink Send",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "broadlink",
+        "service": "send",
+        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1200,
+        "y": 2269,
+        "wires": [
+            [
+                "403ee6b4.ebca18"
+            ]
+        ]
+    },
+    {
+        "id": "403ee6b4.ebca18",
+        "type": "function",
+        "z": "e594dd4a.60761",
+        "name": "Delay for 2 seconds",
+        "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 2000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1420,
+        "y": 2269,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cf27b95.d42734",
+        "type": "template",
+        "z": "e594dd4a.60761",
+        "name": "BD/DVD Input",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA",
+        "output": "str",
+        "x": 2080,
+        "y": 1980,
+        "wires": [
+            [
+                "69eb447b.fdd82c"
+            ]
+        ]
+    },
+    {
+        "id": "69eb447b.fdd82c",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Broadlink Send",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "broadlink",
+        "service": "send",
+        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 2280,
+        "y": 1980,
+        "wires": [
+            []
+        ]
     }
 ]
