@@ -253,6 +253,40 @@ services:
     volumes:
       - ${USERDIR}/docker/traefik/acme:/traefik:ro
       - ${USERDIR}/docker/traefik_cert_extractor/certs:/output:rw
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    restart: always
+    hostname: db
+    networks:
+      - default
+      - traefik_proxy
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DBPASS}
+    labels:
+      - "traefik.enable=false"
+  adminer:
+    image: adminer
+    container_name: adminer    
+    restart: always
+    hostname: adminer
+    networks:
+      - default
+      - traefik_proxy
+    ports:
+      - 8383:8080
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.http.routers.adminer-router.rule=Host(`adminer.${DOMAINNAME}`)"
+      - "traefik.http.routers.adminer-router.tls=true"
+      - "traefik.http.routers.adminer-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.adminer-router.middlewares=secured@file"
+      - "traefik.http.services.adminer-service.loadbalancer.server.port=8080"
+      - "traefik.http.services.adminer-service.loadbalancer.server.scheme=https"
+      - "traefik.http.services.adminer-service.loadbalancer.passHostHeader=true"
 volumes:
   grafana-storage:
 networks:
