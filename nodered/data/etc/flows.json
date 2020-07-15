@@ -606,13 +606,13 @@
         "id": "b7d0ae54.64a9b",
         "type": "mqtt in",
         "z": "e594dd4a.60761",
-        "name": "",
+        "name": "OpenMQTTGateway",
         "topic": "home/OpenMQTTGateway/433toMQTT",
         "qos": "2",
         "datatype": "json",
         "broker": "32add66e.5cfcaa",
-        "x": 400,
-        "y": 400,
+        "x": 130,
+        "y": 380,
         "wires": [
             [
                 "b6d0bb9c.36b058",
@@ -975,12 +975,10 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 752,
-        "y": 170,
+        "x": 540,
+        "y": 320,
         "wires": [
-            [
-                "9411307d.55462"
-            ]
+            []
         ]
     },
     {
@@ -1000,12 +998,10 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 754,
-        "y": 99,
+        "x": 540,
+        "y": 280,
         "wires": [
-            [
-                "26c4c83b.04b018"
-            ]
+            []
         ]
     },
     {
@@ -2801,19 +2797,15 @@
         "x": 490,
         "y": 1332,
         "wires": [
-            [
-                "b20f1f38.5708f"
-            ],
-            [
-                "8995910d.b840e"
-            ]
+            [],
+            []
         ]
     },
     {
         "id": "b20f1f38.5708f",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "name": "Ruby Night Light On",
+        "name": "Alex Night Light On",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
@@ -2822,7 +2814,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 780,
+        "x": 770,
         "y": 1312,
         "wires": [
             []
@@ -2832,7 +2824,7 @@
         "id": "8995910d.b840e",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "name": "Ruby Night Light Off",
+        "name": "Alex Night Light Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
@@ -2841,7 +2833,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 780,
+        "x": 770,
         "y": 1352,
         "wires": [
             []
@@ -5952,9 +5944,7 @@
         "x": 1000,
         "y": 1049,
         "wires": [
-            [
-                "10312652.cfecca"
-            ]
+            []
         ]
     },
     {
@@ -6583,7 +6573,7 @@
         "y": 820,
         "wires": [
             [
-                "7b94915a.2b20b"
+                "8e1d1e1a.ccadb"
             ]
         ]
     },
@@ -6600,7 +6590,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1420,
+        "x": 1140,
         "y": 820,
         "wires": [
             []
@@ -6872,27 +6862,6 @@
         "y": 40,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "7b94915a.2b20b",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Ruby Lamp Slow Fade Off 1 hour",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_dimmer_ruby_lamp\",\"transition\":\"3600\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1180,
-        "y": 820,
-        "wires": [
-            [
-                "8e1d1e1a.ccadb"
-            ]
         ]
     },
     {
@@ -7349,6 +7318,88 @@
         "y": 1980,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "81b0e6ac.176b68",
+        "type": "mqtt in",
+        "z": "e594dd4a.60761",
+        "name": "RTL2MQTT",
+        "topic": "rtl_433/events",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "32add66e.5cfcaa",
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "b58d20d.40ccde",
+                "eb47eba1.d27118"
+            ]
+        ]
+    },
+    {
+        "id": "b58d20d.40ccde",
+        "type": "switch",
+        "z": "e594dd4a.60761",
+        "name": "DRC 2 A",
+        "property": "payload.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1c8d86",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 749,
+        "y": 100,
+        "wires": [
+            [
+                "26c4c83b.04b018"
+            ]
+        ]
+    },
+    {
+        "id": "42a6d198.1b16a",
+        "type": "debug",
+        "z": "e594dd4a.60761",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 490,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "eb47eba1.d27118",
+        "type": "switch",
+        "z": "e594dd4a.60761",
+        "name": "DRC 2 C",
+        "property": "payload.code",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "4c8d86",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 750,
+        "y": 170,
+        "wires": [
+            [
+                "9411307d.55462"
+            ]
         ]
     }
 ]

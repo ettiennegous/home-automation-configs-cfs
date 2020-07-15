@@ -56,7 +56,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${USERDIR}/docker/mosquitto/data/mosquitto-data:/mosquitto/data
       - ${USERDIR}/docker/mosquitto/data/mosquitto-log:/mosquitto/log
-    network_mode: host
+    networks:
+      - default
+      - traefik_proxy
     ports:
       - "1883:1883"
       - "9001:9001"
@@ -287,6 +289,13 @@ services:
       - "traefik.http.services.adminer-service.loadbalancer.server.port=8080"
       - "traefik.http.services.adminer-service.loadbalancer.server.scheme=https"
       - "traefik.http.services.adminer-service.loadbalancer.passHostHeader=true"
+  rtl2hass:
+    container_name: rtl2hass
+    image: jochocki/rtl2hass
+    devices:
+      - "/dev/bus/usb/002/004"
+    environment:
+      - MQTT_HOST=mqtt
 volumes:
   grafana-storage:
 networks:
