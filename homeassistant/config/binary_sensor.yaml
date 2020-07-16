@@ -7,10 +7,10 @@
   device_class: motion
 - platform: mqtt
   name: Sonoff_PIR_2
-  state_topic: "home/OpenMQTTGateway/433toMQTT"
-  payload_on: "15763390"
-  off_delay: 3
-  value_template: "{{ value_json.value }}"
+  state_topic: "rtl_433/events"
+  payload_on: "61575-1100X0Z1X11X"
+  off_delay: 7
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
   device_class: motion
 - platform: mqtt
   name: GS_WDS07_1
