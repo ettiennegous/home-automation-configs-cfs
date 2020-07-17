@@ -14,24 +14,24 @@
   device_class: motion
 - platform: mqtt
   name: GS_WDS07_1
-  state_topic: "home/OpenMQTTGateway/433toMQTT"
-  payload_on: "6155530"
-  payload_off: "6155534"
-  value_template: "{{ value_json.value }}"
+  state_topic: "rtl_433/events"
+  payload_on: "24045-ZZ1Z1X1Z00XX"
+  payload_off: "24045-ZZ1Z1X1Z001X"
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
   device_class: door
 - platform: mqtt
   name: GS_WDS07_2
-  state_topic: "home/OpenMQTTGateway/433toMQTT"
-  payload_on: "6148618"
-  payload_off: "6148622"
-  value_template: "{{ value_json.value }}"
+  state_topic: "rtl_433/events"
+  payload_on: "24018-ZZ1Z1Z0X00XX"
+  payload_off: "24018-ZZ1Z1Z0X001X"
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
   device_class: door
 - platform: mqtt
   name: GS_WDS07_3
-  state_topic: "home/OpenMQTTGateway/433toMQTT"
-  payload_on: "5513226"
-  payload_off: "5513230"
-  value_template: "{{ value_json.value }}"
+  state_topic: "rtl_433/events"
+  payload_on: "21536-ZZZ00X0000XX"
+  payload_off: "21536-ZZZ00X00001X"
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
   device_class: door
 - platform: bayesian
   name: Is_Dark
