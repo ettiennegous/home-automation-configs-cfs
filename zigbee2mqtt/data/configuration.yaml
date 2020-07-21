@@ -1,0 +1,14 @@
+homeassistant: true
+permit_join: false
+mqtt:
+  base_topic: zigbee2mqtt
+  server: 'mqtt://mqtt'
+serial:
+  port: /dev/ttyACM0
+devices:
+  '0x680ae2fffe373be9':
+    friendly_name: 'Tradfri PIR 1'
+  '0xec1bbdfffebaf388':
+    friendly_name: 'Tradfri Button 1'
+  '0x588e81fffe2cd4d9':
+    friendly_name: 'Tradfri Button 2'
