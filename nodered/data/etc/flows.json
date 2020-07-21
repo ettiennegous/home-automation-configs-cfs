@@ -35,6 +35,13 @@
         "info": ""
     },
     {
+        "id": "3434d199.8ed28e",
+        "type": "tab",
+        "label": "Zigbee Remotes",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "823d3fb7.65d29",
         "type": "tab",
         "label": "Routines",
@@ -256,7 +263,7 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 170,
+        "x": 150,
         "y": 300,
         "wires": [
             [
@@ -322,7 +329,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 170,
-        "y": 780,
+        "y": 980,
         "wires": [
             [
                 "c136fd73.7bfcb",
@@ -347,7 +354,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 770,
-        "y": 720,
+        "y": 920,
         "wires": [
             []
         ]
@@ -366,7 +373,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1780,
-        "y": 780,
+        "y": 980,
         "wires": [
             []
         ]
@@ -388,7 +395,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 190,
-        "y": 848,
+        "y": 1048,
         "wires": [
             [
                 "c136fd73.7bfcb",
@@ -415,8 +422,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 190,
-        "y": 440,
+        "x": 170,
+        "y": 640,
         "wires": [
             [
                 "34c203d3.d5c28c"
@@ -440,7 +447,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 770,
-        "y": 440,
+        "y": 640,
         "wires": [
             []
         ]
@@ -459,7 +466,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 770,
-        "y": 380,
+        "y": 580,
         "wires": [
             []
         ]
@@ -473,7 +480,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1060,
-        "y": 820,
+        "y": 1020,
         "wires": [
             [
                 "3076db1c.367fb4"
@@ -618,8 +625,8 @@
         "qos": "2",
         "datatype": "json",
         "broker": "32add66e.5cfcaa",
-        "x": 90,
-        "y": 440,
+        "x": 210,
+        "y": 2700,
         "wires": [
             [
                 "b6d0bb9c.36b058",
@@ -659,8 +666,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 740,
-        "y": 280,
+        "x": 860,
+        "y": 2540,
         "wires": [
             [
                 "fbd63ab.09202c8"
@@ -684,8 +691,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 730,
-        "y": 318,
+        "x": 850,
+        "y": 2578,
         "wires": [
             [
                 "b42d48a9.e72f28"
@@ -709,8 +716,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 730,
-        "y": 419,
+        "x": 850,
+        "y": 2679,
         "wires": [
             [
                 "e5193b28.90c048"
@@ -734,8 +741,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 740,
-        "y": 380,
+        "x": 860,
+        "y": 2640,
         "wires": [
             [
                 "7d89072d.38d008"
@@ -759,8 +766,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 730,
-        "y": 524,
+        "x": 850,
+        "y": 2784,
         "wires": [
             [
                 "629bdf7e.7477a"
@@ -784,8 +791,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 740,
-        "y": 480,
+        "x": 860,
+        "y": 2740,
         "wires": [
             [
                 "2c890915.2a7056"
@@ -809,8 +816,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 730,
-        "y": 620,
+        "x": 850,
+        "y": 2880,
         "wires": [
             [
                 "eeabc7f7.2b9b88"
@@ -834,8 +841,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 740,
-        "y": 580,
+        "x": 860,
+        "y": 2840,
         "wires": [
             [
                 "91d77af.66ad288"
@@ -859,8 +866,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 100,
-        "y": 1000,
+        "x": 480,
+        "y": 3100,
         "wires": [
             []
         ]
@@ -882,8 +889,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 100,
-        "y": 960,
+        "x": 480,
+        "y": 3060,
         "wires": [
             []
         ]
@@ -905,8 +912,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 100,
-        "y": 1080,
+        "x": 480,
+        "y": 3180,
         "wires": [
             []
         ]
@@ -928,8 +935,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 100,
-        "y": 1040,
+        "x": 480,
+        "y": 3140,
         "wires": [
             []
         ]
@@ -951,8 +958,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 160,
-        "y": 920,
+        "x": 480,
+        "y": 3020,
         "wires": [
             []
         ]
@@ -974,8 +981,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 160,
-        "y": 880,
+        "x": 480,
+        "y": 2980,
         "wires": [
             []
         ]
@@ -997,8 +1004,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 160,
-        "y": 840,
+        "x": 480,
+        "y": 2940,
         "wires": [
             []
         ]
@@ -1016,8 +1023,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 948,
-        "y": 170,
+        "x": 898,
+        "y": 240,
         "wires": [
             []
         ]
@@ -1035,8 +1042,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 950,
-        "y": 100,
+        "x": 900,
+        "y": 170,
         "wires": [
             []
         ]
@@ -1054,8 +1061,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 860,
-        "y": 740,
+        "x": 1010,
+        "y": 330,
         "wires": [
             []
         ]
@@ -1073,8 +1080,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 860,
-        "y": 780,
+        "x": 1010,
+        "y": 370,
         "wires": [
             []
         ]
@@ -1099,7 +1106,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 780,
-        "y": 848,
+        "y": 1048,
         "wires": [
             [
                 "5a24c417.69153c"
@@ -1127,7 +1134,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 800,
-        "y": 780,
+        "y": 980,
         "wires": [
             [
                 "5a24c417.69153c"
@@ -1396,7 +1403,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 1320,
-        "y": 820,
+        "y": 1020,
         "wires": [
             [
                 "d4367342.3e3"
@@ -1424,7 +1431,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 1560,
-        "y": 820,
+        "y": 1020,
         "wires": [
             [
                 "cce65336.ef488",
@@ -1440,7 +1447,7 @@
         "name": "Need to check again after the 60 seconds",
         "info": "Someone may have closed themselves in the garage \nthen opened a door when the countdown has started.",
         "x": 1460,
-        "y": 780,
+        "y": 980,
         "wires": []
     },
     {
@@ -1699,7 +1706,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 190,
-        "y": 1440,
+        "y": 1640,
         "wires": [
             [],
             []
@@ -1718,8 +1725,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1437,
-        "y": 119,
+        "x": 1820,
+        "y": 160,
         "wires": [
             [
                 "addba5d6.e398e8"
@@ -1745,8 +1752,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1437,
-        "y": 40,
+        "x": 1820,
+        "y": 81,
         "wires": [
             [],
             []
@@ -1765,8 +1772,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1437,
-        "y": 79,
+        "x": 1820,
+        "y": 120,
         "wires": [
             [
                 "57a0d299.4f09dc"
@@ -1786,8 +1793,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1467,
-        "y": 170,
+        "x": 1850,
+        "y": 211,
         "wires": [
             []
         ]
@@ -1805,8 +1812,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1467,
-        "y": 215,
+        "x": 1850,
+        "y": 256,
         "wires": [
             []
         ]
@@ -1824,8 +1831,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1607,
-        "y": 80,
+        "x": 1990,
+        "y": 121,
         "wires": [
             []
         ]
@@ -1843,8 +1850,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1607,
-        "y": 120,
+        "x": 1990,
+        "y": 161,
         "wires": [
             []
         ]
@@ -2087,7 +2094,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 480,
-        "y": 1440,
+        "y": 1640,
         "wires": [
             []
         ]
@@ -2112,7 +2119,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 1190,
-        "y": 1140,
+        "y": 1340,
         "wires": [
             [
                 "dcb53b6d.23dc48",
@@ -2165,7 +2172,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 220,
-        "y": 1050,
+        "y": 1250,
         "wires": [
             [
                 "8d145814.0a7528",
@@ -2183,7 +2190,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 950,
-        "y": 1100,
+        "y": 1300,
         "wires": [
             [
                 "d3d1a423.e17d28",
@@ -2205,7 +2212,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1460,
-        "y": 1100,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -2224,7 +2231,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1460,
-        "y": 1140,
+        "y": 1340,
         "wires": [
             []
         ]
@@ -2709,7 +2716,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 150,
-        "y": 1320,
+        "y": 1520,
         "wires": [
             [],
             []
@@ -2729,7 +2736,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 470,
-        "y": 1320,
+        "y": 1520,
         "wires": [
             []
         ]
@@ -2748,7 +2755,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 470,
-        "y": 1360,
+        "y": 1560,
         "wires": [
             []
         ]
@@ -3014,8 +3021,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1380,
-        "y": 480,
+        "x": 1500,
+        "y": 2740,
         "wires": [
             []
         ]
@@ -3031,8 +3038,8 @@
         "syntax": "plain",
         "template": "JgBQAAABJ5EUERQ2FBAUERQ1FBEUNhM2FBETERQ2FDUUERQ1FDYUEBQ2FDUUERQ1FBEUERQ1FDYTERQRFDUUERQ1FDYUERMRFAAFFwABKEgUAA0FAAAAAAAAAAA=",
         "output": "str",
-        "x": 990,
-        "y": 480,
+        "x": 1110,
+        "y": 2740,
         "wires": [
             [
                 "844ebed5.da937"
@@ -3050,8 +3057,8 @@
         "syntax": "plain",
         "template": "JgAyAXQ4EA0QKRANEA0QDQ8NEA0QDRANEA0PDRANEA0QKRANEA0QDQ8NEA0QDRANEA0PDRAqEA0PDRANEA0QDQ8NEA0QDRAqDw0QKhApECoQKRANEA0QKg8NECoQKRAqECkQDRAqEAAJk3M4EA0QKg8NEA0QDRANEA0PDRANEA0QDQ8NEA0QKhAMEA0QDRANEA0PDRANEA0QDQ8qEA0QDQ8NEA0QDRANEA0PDRAqEA0PKhAqDyoQKhANDw0QKhANDyoQKg8qECoQDQ8qEAAJk3Q4Dw0QKhANEA0PDRANEA0QDQ8NEA0QDRANDw0QKhANEA0PDRANEA0QDQ8NEA0QDRApEA0QDRANEA0PDRANEA0QDQ8qEA0QKRAqECoPKhANEA0PKhANECkQKhApECoQDRApEAANBQAAAAAAAA==",
         "output": "str",
-        "x": 990,
-        "y": 580,
+        "x": 1110,
+        "y": 2840,
         "wires": [
             [
                 "844ebed5.da937"
@@ -3069,8 +3076,8 @@
         "syntax": "plain",
         "template": "JgCQAAABJZQSEhI4EhISExI3ExISOBI3EjcSExI4EjcSExI3EjcTEhITEjcSExITEhISExITEhISOBITEjcSNxI4EjcSOBI3EgAE9QABJZMSExI3EhMSExI3EhMSNxI4EjcSExI3EjgSEhI4EjcSExITEjcSExISEhMSExISEhMSNxMSEjgSNxI3EjgSNxI4EgANBQAAAAAAAAAA",
         "output": "str",
-        "x": 960,
-        "y": 523,
+        "x": 1080,
+        "y": 2783,
         "wires": [
             [
                 "844ebed5.da937"
@@ -3088,8 +3095,8 @@
         "syntax": "plain",
         "template": "JgCMABQRFDUUERQRFDUUERQ1FDUVNRQRFDUUNhQQFTUUNRQRFDUUNhQQFBEUERQQFRAUERQQFRAUNRU1FDUVNRQ1FDYUAATyAAEnkhQQFTUUERQQFDYUEBQ2FDUUNhQQFDYUNRQRFDUUNhQQFDYUNRQRFBEUEBQRFBEUEBUQFBEUNRQ2FDUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA",
         "output": "str",
-        "x": 960,
-        "y": 620,
+        "x": 1080,
+        "y": 2880,
         "wires": [
             [
                 "844ebed5.da937"
@@ -3788,7 +3795,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
-        "y": 680,
+        "y": 880,
         "wires": [
             []
         ]
@@ -3807,7 +3814,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1800,
-        "y": 840,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -4068,8 +4075,8 @@
         "syntax": "plain",
         "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F",
         "output": "str",
-        "x": 1217,
-        "y": 120,
+        "x": 1600,
+        "y": 161,
         "wires": [
             []
         ]
@@ -4085,8 +4092,8 @@
         "syntax": "plain",
         "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4qDioOKg4qDioOKg4ODg4OKg4qDioOKg4qDioODg4qDgAJlQ0F",
         "output": "str",
-        "x": 1217,
-        "y": 40,
+        "x": 1600,
+        "y": 81,
         "wires": [
             []
         ]
@@ -4102,8 +4109,8 @@
         "syntax": "plain",
         "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
         "output": "str",
-        "x": 1227,
-        "y": 80,
+        "x": 1610,
+        "y": 121,
         "wires": [
             []
         ]
@@ -4432,8 +4439,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1130,
-        "y": 420,
+        "x": 1250,
+        "y": 2680,
         "wires": [
             []
         ]
@@ -4451,8 +4458,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1130,
-        "y": 380,
+        "x": 1250,
+        "y": 2640,
         "wires": [
             []
         ]
@@ -4720,8 +4727,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 660,
-        "y": 1000,
+        "x": 160,
+        "y": 560,
         "wires": [
             [
                 "dac60e5f.a75de"
@@ -4745,8 +4752,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 650,
-        "y": 1260,
+        "x": 170,
+        "y": 820,
         "wires": [
             [
                 "7f9a2e57.51d76"
@@ -4770,8 +4777,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 680,
-        "y": 1140,
+        "x": 140,
+        "y": 700,
         "wires": [
             [
                 "f4a95c2f.07974",
@@ -4795,7 +4802,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 610,
-        "y": 2400,
+        "y": 2440,
         "wires": [
             []
         ]
@@ -4813,8 +4820,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1080,
-        "y": 1140,
+        "x": 580,
+        "y": 700,
         "wires": [
             []
         ]
@@ -4833,7 +4840,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 460,
-        "y": 1520,
+        "y": 1720,
         "wires": [
             []
         ]
@@ -4851,7 +4858,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 260,
-        "y": 1520,
+        "y": 1720,
         "wires": [
             [
                 "93cb2f56.48b6e"
@@ -4874,8 +4881,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 1090,
-        "y": 340,
+        "x": 150,
+        "y": 400,
         "wires": [
             [
                 "36239f1b.8033d"
@@ -4898,8 +4905,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1540,
-        "y": 340,
+        "x": 780,
+        "y": 400,
         "wires": [
             []
         ]
@@ -4912,8 +4919,8 @@
         "func": "msg.service = msg.payload == \"on\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1320,
-        "y": 340,
+        "x": 460,
+        "y": 400,
         "wires": [
             [
                 "e6cd9114.a71b7",
@@ -4934,8 +4941,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1520,
-        "y": 400,
+        "x": 760,
+        "y": 460,
         "wires": [
             [
                 "563206c3.760e28"
@@ -4955,8 +4962,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 990,
-        "y": 280,
+        "x": 1110,
+        "y": 2540,
         "wires": [
             []
         ]
@@ -4974,8 +4981,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 990,
-        "y": 319,
+        "x": 1110,
+        "y": 2579,
         "wires": [
             []
         ]
@@ -5031,8 +5038,8 @@
         "syntax": "plain",
         "template": "JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA",
         "output": "str",
-        "x": 1740,
-        "y": 400,
+        "x": 980,
+        "y": 460,
         "wires": [
             [
                 "3c7f4352.525e1c"
@@ -5052,8 +5059,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1960,
-        "y": 400,
+        "x": 1200,
+        "y": 460,
         "wires": [
             []
         ]
@@ -5069,8 +5076,8 @@
         "syntax": "plain",
         "template": "sgCWAQkXCRcaBwkYGQcKFwkXGQgZBwoXChcZBxkIGQcaBxkHChcJFwoXGQcKFxkIGAgZCBkHCRgJFxkICRcKFwkYCQABCQkXChcJFxoHCRcaBwkYCRcZCBkHChcJFxoHGQgYCBkIGAgJGAkXChcZCAkXGQcaBxkIGQcKFwkXGgcJGAkXCRcKAAEJCRcJGAkXGQgJFxoHCRgJFxkIGQcKFwkXGgcZBxoHGQgZBwkYCRcKFxkHChcZCBgIGQcaBwkYCRcZCAkXChcJFwkAAQoJFwkYCRcZCAkXGQgJGAkXGQgYCAkYCRcaBxkIGAgZBxoHChcJFwoXGQcKFxkHGQgZCBgICRcKFxkICRcJGAkXCgABCAoXCRcKFxkICRcZCAkXChcZCBkHCRgJFxkHGgcZCBkHGQgJFwoXCRgYCAkYGAgZBxoHGQgJFwkYGQgJFwkYCRcJAAEJChcJGAkXGgcJFxkICRgIGBkHGgcKFwkXGQgZCBgIGQcaBwkYCRcJFxoHChcZBxkIGQcaBwkYCRcZBwoXChcJFwkABdwAAA==",
         "output": "str",
-        "x": 1190,
-        "y": 160,
+        "x": 1573,
+        "y": 201,
         "wires": [
             []
         ]
@@ -5086,8 +5093,8 @@
         "syntax": "plain",
         "template": "sgCWAQoXCRcaBwkYGAgJFwoXGQgZBwoXCRcZCBkHGgcZCBkHCRgJFwkXChgJFxkHGQgZCBgICRgJFwoXGQcJGAkXCQABCQoXChYKFxkICRcZCAkXChcZCBkHCRgJFxkIGQcZCBkHGgcJGAkXChYKFwoWGgcZCBkHGQgJFwoXCRcZCAkXChcJAAEJChcJFwkYGQcKFxkHChcJGBgIGQgJFwkYGQcaBxkIGAgZCAkXCRgJFwkYCRcZCBkHGQgZCAkXCRcKFxkICRcJFwkAAQoJFwoXCRcaBwoXGQcKFwkXGQgZBwoXCRgZBxkIGAgZBxoHChcJFwoXCRgJFxkHGgcZCBkHCRgJFwkYGQcKFwkXCQABCgkXChcJFxkICRcaBwkYCRcZBxoHChcJFxkIGQcaBxkIGAgJGAkXCRcKFwkYGQcaBxkHGQgJFwoXCRgYCAkXChcJAAEJChcJGAkXGgcJFxkICRcKFxkIGQcJFwoXGQgZBxkIGQcZCAkXChcJGAkXCRcaBxkIGQcZCAkXChcJFxkICRgJFwkABdwAAA==",
         "output": "str",
-        "x": 1190,
-        "y": 200,
+        "x": 1573,
+        "y": 241,
         "wires": [
             []
         ]
@@ -5109,7 +5116,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 220,
-        "y": 1220,
+        "y": 1420,
         "wires": [
             [
                 "80384bc9.733eb8"
@@ -5137,7 +5144,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 520,
-        "y": 1220,
+        "y": 1420,
         "wires": [
             [
                 "b6d2df30.4a3d9"
@@ -5159,7 +5166,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 720,
-        "y": 1220,
+        "y": 1420,
         "wires": [
             []
         ]
@@ -5432,8 +5439,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 170,
-        "y": 540,
+        "x": 150,
+        "y": 740,
         "wires": [
             [
                 "70554dd5.f44484"
@@ -5457,7 +5464,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
-        "y": 520,
+        "y": 720,
         "wires": [
             []
         ]
@@ -5476,7 +5483,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
-        "y": 580,
+        "y": 780,
         "wires": [
             []
         ]
@@ -5495,7 +5502,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 560,
-        "y": 2440,
+        "y": 2400,
         "wires": [
             []
         ]
@@ -5671,7 +5678,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 660,
-        "y": 1100,
+        "y": 1300,
         "wires": [
             [
                 "4e7c2b77.4112d4"
@@ -5942,8 +5949,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 890,
-        "y": 820,
+        "x": 1040,
+        "y": 410,
         "wires": [
             [
                 "8e1d1e1a.ccadb"
@@ -5963,8 +5970,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1140,
-        "y": 820,
+        "x": 1290,
+        "y": 410,
         "wires": [
             []
         ]
@@ -5986,29 +5993,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 660,
-        "y": 680,
-        "wires": [
-            [
-                "3056192.d0a94e6"
-            ]
-        ]
-    },
-    {
-        "id": "3056192.d0a94e6",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Master Dressing Room Lights Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "toggle",
-        "data": "{\"entity_id\":\"light.shelly_dimmer_dressing_room\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 910,
-        "y": 680,
+        "x": 500,
+        "y": 2860,
         "wires": [
             []
         ]
@@ -6027,7 +6013,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1130,
-        "y": 980,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -6052,7 +6038,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 900,
-        "y": 980,
+        "y": 1180,
         "wires": [
             [
                 "fcd251cc.9ec8f"
@@ -6080,7 +6066,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 690,
-        "y": 980,
+        "y": 1180,
         "wires": [
             [
                 "3df7c826.175758"
@@ -6126,11 +6112,9 @@
         "repair": false,
         "outputs": 1,
         "x": 500,
-        "y": 260,
+        "y": 2900,
         "wires": [
-            [
-                "49e9a8df.bc6b88"
-            ]
+            []
         ]
     },
     {
@@ -6146,7 +6130,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 970,
+        "x": 1090,
         "y": 40,
         "wires": [
             []
@@ -6166,7 +6150,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1230,
-        "y": 1060,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -6567,14 +6551,7 @@
         "y": 200,
         "wires": [
             [
-                "b58d20d.40ccde",
-                "eb47eba1.d27118",
-                "a11843a6.88452",
-                "b5bedeff.1ff03",
-                "38261683.6962aa",
-                "daf39aae.c621c8",
-                "99498fe5.b1944",
-                "cf24d26d.efd03"
+                "3e0c75cc.9b404a"
             ]
         ]
     },
@@ -6595,8 +6572,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 749,
-        "y": 100,
+        "x": 699,
+        "y": 170,
         "wires": [
             [
                 "26c4c83b.04b018"
@@ -6620,8 +6597,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 750,
-        "y": 170,
+        "x": 700,
+        "y": 240,
         "wires": [
             [
                 "9411307d.55462"
@@ -6645,8 +6622,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 750,
-        "y": 220,
+        "x": 700,
+        "y": 290,
         "wires": [
             []
         ]
@@ -6655,7 +6632,7 @@
         "id": "b5bedeff.1ff03",
         "type": "switch",
         "z": "e594dd4a.60761",
-        "name": "Push Button 2",
+        "name": "Push Button 1",
         "property": "payload.id",
         "propertyType": "msg",
         "rules": [
@@ -6671,7 +6648,9 @@
         "x": 720,
         "y": 40,
         "wires": [
-            []
+            [
+                "43551a9f.1a2844"
+            ]
         ]
     },
     {
@@ -6691,8 +6670,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 540,
-        "y": 760,
+        "x": 690,
+        "y": 350,
         "wires": [
             [
                 "d872b8f.0239348"
@@ -6716,8 +6695,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 540,
-        "y": 800,
+        "x": 690,
+        "y": 390,
         "wires": [
             [
                 "47588451.003c9c"
@@ -6741,8 +6720,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 540,
-        "y": 840,
+        "x": 690,
+        "y": 430,
         "wires": [
             [
                 "35979dc0.132282"
@@ -6766,11 +6745,11 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 540,
-        "y": 880,
+        "x": 690,
+        "y": 470,
         "wires": [
             [
-                "dac60e5f.a75de"
+                "46f63076.639ff"
             ]
         ]
     },
@@ -6814,8 +6793,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1090,
-        "y": 1260,
+        "x": 590,
+        "y": 820,
         "wires": []
     },
     {
@@ -7136,8 +7115,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1100,
-        "y": 1000,
+        "x": 600,
+        "y": 560,
         "wires": []
     },
     {
@@ -7536,6 +7515,382 @@
         "mustacheAltTags": false,
         "x": 1780,
         "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e0c75cc.9b404a",
+        "type": "change",
+        "z": "e594dd4a.60761",
+        "name": "Clear Data Attribute",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload.data",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "b5bedeff.1ff03",
+                "b58d20d.40ccde",
+                "eb47eba1.d27118",
+                "a11843a6.88452",
+                "38261683.6962aa",
+                "daf39aae.c621c8",
+                "99498fe5.b1944",
+                "cf24d26d.efd03",
+                "e0b9114e.417bd"
+            ]
+        ]
+    },
+    {
+        "id": "46f63076.639ff",
+        "type": "mqtt out",
+        "z": "e594dd4a.60761",
+        "name": "Pub MQTT Turn Off Upstairs",
+        "topic": "nodered-custom/lights/turn-off-upstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1030,
+        "y": 470,
+        "wires": []
+    },
+    {
+        "id": "5591826a.cfad8c",
+        "type": "mqtt in",
+        "z": "e594dd4a.60761",
+        "name": "",
+        "topic": "rtl_433/events",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "x": 160,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0b9114e.417bd",
+        "type": "switch",
+        "z": "e594dd4a.60761",
+        "name": "Push Button 2",
+        "property": "payload.id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "163493",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 720,
+        "y": 80,
+        "wires": [
+            [
+                "e5052fba.a2705"
+            ]
+        ]
+    },
+    {
+        "id": "67140cff.069504",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Master Dressing Room Lights Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.shelly_dimmer_dressing_room\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1150,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e5052fba.a2705",
+        "type": "debounce",
+        "z": "e594dd4a.60761",
+        "time": "1000",
+        "name": "",
+        "x": 900,
+        "y": 80,
+        "wires": [
+            [
+                "67140cff.069504"
+            ]
+        ]
+    },
+    {
+        "id": "43551a9f.1a2844",
+        "type": "debounce",
+        "z": "e594dd4a.60761",
+        "time": "1000",
+        "name": "",
+        "x": 900,
+        "y": 40,
+        "wires": [
+            [
+                "49e9a8df.bc6b88"
+            ]
+        ]
+    },
+    {
+        "id": "758addcd.80efe4",
+        "type": "debug",
+        "z": "e594dd4a.60761",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 320,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a155ef5b.689b2",
+        "type": "mqtt in",
+        "z": "3434d199.8ed28e",
+        "name": "Zigbee2MQTT",
+        "topic": "zigbee2mqtt/#",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "32add66e.5cfcaa",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "6afea8f1.71fd88"
+            ]
+        ]
+    },
+    {
+        "id": "6f0a76e0.adb988",
+        "type": "switch",
+        "z": "3434d199.8ed28e",
+        "name": "Switch",
+        "property": "payload.mqtt_action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "brightness_up",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "brightness_down",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "brightness_stop",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 590,
+        "y": 240,
+        "wires": [
+            [
+                "77671717.68a198"
+            ],
+            [
+                "272b6c02.ffb5e4"
+            ],
+            [
+                "c3204859.6dc628"
+            ],
+            [
+                "c3204859.6dc628"
+            ],
+            [
+                "eea65ef.9079aa"
+            ]
+        ]
+    },
+    {
+        "id": "77671717.68a198",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"Ettienne\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 880,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "272b6c02.ffb5e4",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 880,
+        "y": 225,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b1e6eaa.66a872",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Study Lamp Adjust Brightness",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"Ettienne\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1190,
+        "y": 280,
+        "wires": [
+            [
+                "79ec80a7.590fd"
+            ]
+        ]
+    },
+    {
+        "id": "c3204859.6dc628",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Setup Ramping",
+        "func": "switch(msg.payload.mqtt_action) {\n    case \"brightness_up\":\n        msg.payload.data.brightness_step = 25;\n        break;\n    case \"brightness_down\":\n        msg.payload.data.brightness_step = -25;\n        break;\n}\nmsg.payload.data.transition = 0.5;\nflow.set(\"keepRamping\", true);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 280,
+        "wires": [
+            [
+                "3b1e6eaa.66a872"
+            ]
+        ]
+    },
+    {
+        "id": "79ec80a7.590fd",
+        "type": "switch",
+        "z": "3434d199.8ed28e",
+        "name": "Check Keep Ramping",
+        "property": "keepRamping",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1480,
+        "y": 280,
+        "wires": [
+            [
+                "e8f21668.b98378"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e8f21668.b98378",
+        "type": "delay",
+        "z": "3434d199.8ed28e",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "500",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1690,
+        "y": 280,
+        "wires": [
+            [
+                "3b1e6eaa.66a872"
+            ]
+        ]
+    },
+    {
+        "id": "6afea8f1.71fd88",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Switch Topic to Entity ID",
+        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        \n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.lifx_study\";\n        break;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "6f0a76e0.adb988"
+            ]
+        ]
+    },
+    {
+        "id": "eea65ef.9079aa",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Stop Ramping",
+        "func": "flow.set(\"keepRamping\", false);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 320,
         "wires": [
             []
         ]
