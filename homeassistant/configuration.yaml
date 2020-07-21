@@ -84,6 +84,10 @@ notify:
 frontend:
   themes: !include themes.yaml
   
+recorder:
+  db_url: !secret database_connectionstring
+  
+
 logger:
   default: warn
   logs:
