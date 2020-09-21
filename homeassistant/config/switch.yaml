@@ -69,24 +69,19 @@
   retain: true
   icon: mdi:remote
 - platform: broadlink
-  host: !secret broadlink_host
   mac: !secret broadlink_mac
-  timeout: 15
+  #timeout: 15
   switches:
-    tv_panasonic:
-      friendly_name: "Panasonic Tv Power"
+    - name: tv_panasonic
       command_on: 'JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F'
       command_off: 'JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4qDioOKg4qDioOKg4ODg4OKg4qDioOKg4qDioODg4qDgAJlQ0F'
-    amp_onkyo:
-      friendly_name: "Onkyo Amp Power"
+    - name: amp_onkyo
       command_on: 'JgBQAAABJJMSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAE9QABJEgSAAxJDQUAAAAAAAA='
       command_off: 'JgBQAAABJJMSEhI2EhISEhI2EhISNhI2EhISEhI2EjYSEhI2EjYSEhI2EjYSNhISEhISEhI2EhISEhISEhISNhI2EjYSEhI2EgAE9QABJEgSAAxJDQUAAAAAAAA='
-    amp_tv:
-      friendly_name: "Onkyo Source TV"
+    - name: amp_tv
       command_on: 'JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA='
       command_off: 'JgBYAAABJpMSExI3EhMSExI3EhMSNxI3EzcSExI3EjgSEhI4EjcSExUPEjgSNxI4EhISExITFg4SOBISExISExI3EjgSNxI4EgAE9AABJUsSAAxDAAElSxIADQU='
-    amp_music:
-      friendly_name: "Onkyo Source Music"
+    - name: amp_music
       command_on: 'JgBYAAABJpMSExI3EhMSExI3EhMSNxI3EzcSExI3EjgSEhI4EjcSExUPEjgSNxI4EhISExITFg4SOBISExISExI3EjgSNxI4EgAE9AABJUsSAAxDAAElSxIADQU='
       command_off: 'JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA'
 - platform: mqtt

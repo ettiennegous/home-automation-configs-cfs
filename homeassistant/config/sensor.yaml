@@ -1,5 +1,3 @@
-- platform: yr
-
 - platform: mqtt
   name: "Wifi OpenGateway 8266"
   state_topic: "home/OpenMQTTGateway/SYStoMQTT"
