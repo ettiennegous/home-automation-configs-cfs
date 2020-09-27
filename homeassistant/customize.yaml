@@ -141,6 +141,8 @@ binary_sensor.sonoff_pir_1:
   friendly_name: PIR Motion
 binary_sensor.sonoff_pir_2:
   friendly_name: PIR Motion
+binary_sensor.Tradfri_PIR_1:
+  friendly_name: Dining Motion
 binary_sensor.is_dark:
   friendly_name: Is Dark
 sensor.door_window_sensor_garage_open:
@@ -215,3 +217,11 @@ light.shelly_1_laundry:
 light.shelly_dimmer_ruby_lamp:
   tracked_light: true
   friendly_name: Ruby Lamp
+switch.tv_panasonic:
+  friendly_name: Panasonic Tv Power
+switch.amp_onkyo:
+  friendly_name: Onkyo Amp Power
+switch.amp_tv:
+  friendly_name: Onkyo Source TV
+switch.amp_music:
+  friendly_name: Onkyo Source Music
