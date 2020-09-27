@@ -12,10 +12,13 @@ home_occupied:
   icon: mdi:human-male-female
 bedtime_routine:
   name: Bedtime Routine
-  icon: mdi:hotel
+  icon: mdi:bed
 lounge_music:
   name: Lounge Music
   icon: mdi:music
+lounge_tv_time:
+  name: Lounge TV Time
+  icon: mdi:tv-classic
 off_all_lights:
   name: Off all
   icon: mdi:flash-alert

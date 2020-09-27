@@ -49,13 +49,6 @@
         "info": ""
     },
     {
-        "id": "d1ff6abb.b25cf8",
-        "type": "tab",
-        "label": "Auto Off Timers",
-        "disabled": false,
-        "info": ""
-    },
-    {
         "id": "ff5661ef.cd5bf",
         "type": "tab",
         "label": "Alarm",
@@ -73,6 +66,20 @@
         "id": "6e7a064f.40b368",
         "type": "tab",
         "label": "Cameras",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d1ff6abb.b25cf8",
+        "type": "tab",
+        "label": "Auto Off Timers US",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "191e949e.9f212b",
+        "type": "tab",
+        "label": "Auto Off Timers DS",
         "disabled": false,
         "info": ""
     },
@@ -1062,7 +1069,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1010,
-        "y": 330,
+        "y": 349,
         "wires": [
             []
         ]
@@ -1081,7 +1088,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1010,
-        "y": 370,
+        "y": 389,
         "wires": [
             []
         ]
@@ -1466,8 +1473,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 330,
-        "y": 440,
+        "x": 150,
+        "y": 320,
         "wires": [
             [
                 "8dafb27f.9a5ad"
@@ -1483,8 +1490,8 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 7000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
-        "x": 360,
-        "y": 540,
+        "x": 400,
+        "y": 400,
         "wires": [
             [
                 "93336d4d.51ae"
@@ -1504,8 +1511,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 560,
-        "y": 440,
+        "x": 400,
+        "y": 320,
         "wires": [
             [
                 "be1f3d34.c33ea"
@@ -1525,8 +1532,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 800,
-        "y": 440,
+        "x": 640,
+        "y": 320,
         "wires": [
             [
                 "bb2d5d27.d3def"
@@ -1546,8 +1553,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 580,
-        "y": 540,
+        "x": 640,
+        "y": 400,
         "wires": [
             [
                 "20b6d11f.65169e"
@@ -1567,8 +1574,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1030,
-        "y": 440,
+        "x": 870,
+        "y": 320,
         "wires": [
             [
                 "490d7d63.a018a4"
@@ -1583,8 +1590,8 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 30000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
-        "x": 800,
-        "y": 540,
+        "x": 880,
+        "y": 400,
         "wires": [
             [
                 "e4bdb125.3177b"
@@ -1604,8 +1611,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1250,
-        "y": 440,
+        "x": 150,
+        "y": 400,
         "wires": [
             [
                 "189d208.b2775e"
@@ -1625,8 +1632,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1020,
-        "y": 540,
+        "x": 140,
+        "y": 460,
         "wires": [
             [
                 "2a15af20.7e3b1"
@@ -1641,8 +1648,8 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 420000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
-        "x": 1240,
-        "y": 540,
+        "x": 400,
+        "y": 460,
         "wires": [
             [
                 "4121cd0e.eea244"
@@ -1662,8 +1669,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 350,
-        "y": 620,
+        "x": 650,
+        "y": 460,
         "wires": [
             [
                 "12b3e483.24a72b"
@@ -1683,8 +1690,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 790,
-        "y": 620,
+        "x": 150,
+        "y": 520,
         "wires": [
             []
         ]
@@ -1725,8 +1732,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1820,
-        "y": 160,
+        "x": 120,
+        "y": 1120,
         "wires": [
             [
                 "addba5d6.e398e8"
@@ -1752,8 +1759,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1820,
-        "y": 81,
+        "x": 120,
+        "y": 1041,
         "wires": [
             [],
             []
@@ -1772,8 +1779,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1820,
-        "y": 120,
+        "x": 120,
+        "y": 1080,
         "wires": [
             [
                 "57a0d299.4f09dc"
@@ -1793,8 +1800,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1850,
-        "y": 211,
+        "x": 150,
+        "y": 1171,
         "wires": [
             []
         ]
@@ -1812,8 +1819,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1850,
-        "y": 256,
+        "x": 150,
+        "y": 1216,
         "wires": [
             []
         ]
@@ -1831,8 +1838,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1990,
-        "y": 121,
+        "x": 290,
+        "y": 1081,
         "wires": [
             []
         ]
@@ -1850,87 +1857,10 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1990,
-        "y": 161,
+        "x": 290,
+        "y": 1121,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "3cb5afe9.edf3e",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Coffee Machine Goes On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "switch.tp_link_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 190,
-        "y": 160,
-        "wires": [
-            [
-                "b0a16e86.4cd0b"
-            ],
-            [
-                "ceea0162.48265"
-            ]
-        ]
-    },
-    {
-        "id": "ceea0162.48265",
-        "type": "change",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Reset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 430,
-        "y": 200,
-        "wires": [
-            [
-                "b0a16e86.4cd0b"
-            ]
-        ]
-    },
-    {
-        "id": "b0a16e86.4cd0b",
-        "type": "delay",
-        "z": "d1ff6abb.b25cf8",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "hours",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "x": 620,
-        "y": 160,
-        "wires": [
-            [
-                "6c9fe279.153e8c"
-            ]
         ]
     },
     {
@@ -1971,75 +1901,6 @@
         ]
     },
     {
-        "id": "6c9fe279.153e8c",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Coffee Machine Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 890,
-        "y": 160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cae8ddf9.bcbcf",
-        "type": "poll-state",
-        "z": "d1ff6abb.b25cf8",
-        "name": "No movement for x seconds",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "updateinterval": "360",
-        "updateIntervalUnits": "seconds",
-        "outputinitially": false,
-        "outputonchanged": false,
-        "entity_id": "binary_sensor.multisensor_kitchen_motion",
-        "state_type": "str",
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "x": 200,
-        "y": 480,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "b3054701.457a88",
-        "type": "api-current-state",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Sun Below Horizon",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "below_horizon",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "sun.sun",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 490,
-        "y": 480,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
         "id": "f7046b1d.dc9608",
         "type": "api-call-service",
         "z": "d1ff6abb.b25cf8",
@@ -2053,31 +1914,9 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 890,
-        "y": 600,
+        "y": 140,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "f3a11cc5.ab7ba",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "3",
-        "extend": false,
-        "units": "min",
-        "reset": "on",
-        "bytopic": "all",
-        "name": "3 Minutes No Movement",
-        "x": 590,
-        "y": 600,
-        "wires": [
-            [
-                "f7046b1d.dc9608"
-            ]
         ]
     },
     {
@@ -2145,7 +1984,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 250,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "47da4960.9cb9e8"
@@ -2237,95 +2076,6 @@
         ]
     },
     {
-        "id": "f7389c87.a45ba",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Stairs Landing Motion Detected Sonoff PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 240,
-        "y": 680,
-        "wires": [
-            [
-                "b2f58fd4.b167b"
-            ],
-            [
-                "b2f58fd4.b167b"
-            ]
-        ]
-    },
-    {
-        "id": "b2f58fd4.b167b",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "3",
-        "extend": false,
-        "units": "min",
-        "reset": "on",
-        "bytopic": "all",
-        "name": "3 Minutes No Movement",
-        "x": 590,
-        "y": 680,
-        "wires": [
-            [
-                "d874291.875ecd8",
-                "6efaad7.f78a754",
-                "acd316e3.f113d8"
-            ]
-        ]
-    },
-    {
-        "id": "d874291.875ecd8",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Stairs Landing Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_powder_room_basin_light,light.shelly_2_5_stairs_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 910,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6efaad7.f78a754",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Front Door Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.dimmer_foyer_light_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 890,
-        "y": 740,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "a83b522e.8ac79",
         "type": "server-state-changed",
         "z": "d1ff6abb.b25cf8",
@@ -2342,13 +2092,13 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 230,
-        "y": 600,
+        "y": 140,
         "wires": [
             [
-                "f3a11cc5.ab7ba"
+                "9bc6106a.d6826"
             ],
             [
-                "f3a11cc5.ab7ba"
+                "9bc6106a.d6826"
             ]
         ]
     },
@@ -2771,8 +2521,8 @@
         "button": "",
         "fix": 1,
         "RFSweep": "true",
-        "x": 550,
-        "y": 400,
+        "x": 350,
+        "y": 280,
         "wires": [
             [
                 "a7d06b7e.526488"
@@ -2791,8 +2541,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 340,
-        "y": 400,
+        "x": 140,
+        "y": 280,
         "wires": [
             [
                 "3356ab2d.ab3934"
@@ -2810,8 +2560,8 @@
         "syntax": "mustache",
         "template": "{{payload.data}}",
         "output": "str",
-        "x": 760,
-        "y": 400,
+        "x": 560,
+        "y": 280,
         "wires": [
             [
                 "ddc088f1.473c28"
@@ -2829,8 +2579,8 @@
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 950,
-        "y": 400,
+        "x": 750,
+        "y": 280,
         "wires": []
     },
     {
@@ -2846,7 +2596,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1050,
+        "x": 610,
         "y": 120,
         "wires": [
             []
@@ -2864,7 +2614,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 580,
+        "x": 140,
         "y": 40,
         "wires": [
             [
@@ -2883,7 +2633,7 @@
         "syntax": "plain",
         "template": "sgGwBBkIGQgYCBkIGQgIGAkYCRcZCBkIGQcZCBkIGAgKFwkYGQcZCBkIGAgJAAERCRgJGAgYGQgJFxkICRgIGBkIGQgJFwkYGAkYCBkIGQgYCAkYCRgIGBkIGAkYCBkIGAgZCAkYCRcZCBkIGAgZCAkAAREJGAkXCRgZBwkYGQgJFwkYGQgYCAkYCRcZCBkIGQgYCBkICRcJGAkYGQcZCBkIGQcZCBkHChcJGBkIGAgZCBkHCQABEQkYCRgJFxkICRgYCAkYCRgZBxkICRgIGBkIGQgYCBkIGQgJFwkYCRcZCBkIGAgZCBkIGAkIGAkYGAgZCBkIGAgJAAERCRgJGAgYGAkIGBkICRgIGBkIGQcJGAkYGAgZCBkIGAkYCAkYCBgJGBkIGQcZCBgJGAgZCAgZCRcZCBgIGQgZBwkAAREJGAkYCRgYCAkYGAgJGAkYGAgZCAkYCBgZCBkIGAgZCBkHCRgJGAkXGQgZCBgIGQgZCBkHCRgJGBgIGQgZCBgICQABEQkYCBgJGBkICRcZCAkYCBgZCBkHCRgJGBgIGQgZCBgJGAgJGAgYCRgZCBgIGQgYCBkIGQgJFwkYGQgYCRgIGQcJAAERCRgJGAkXGQgJGBgJCBgJGBgIGQgJGAkYGAgYCRgIGQgYCAkYCRgJFxkIGQgZBxkIGQgYCAkYCRgYCBkIGQcZCAgAARIJGAgYCRgZCAgYGQgJFwkYGQgYCQgYCRgYCBkIGQgYCBkICRgJFwkYGQcZCBkIGQcZCBkICRgIGBkIGAgZCBgICQABEQkYCRgJFxkICRgYCQgYCRgYCRgICRgJFxkIGQgYCBkIGQcJGAkYCRcZCBkIGAgZCBkIGAgJGAkYGAgZCBkIGAgJAAERCRgJFwkYGQgIGBkICRgIGBkIGAkJFwkYGAgZCBkIGAgZCAkYCBgJGBgJGAgZCBkIGAgZCAkXCRgZCBgJGAgZBwkAARIJFwkYCRcZCAkYGAgJGAkYGAkYCAkYCRcZCBkHGQgZCBkHCRgJGAkYGAgZCBgIGQgZCBgICRgJGBkHGQgZBxkICQABEQkYCRcJGBkICRcZCAkYCBgZCBkICBgJGBgIGQgZCBkHGQgJFwkYCRgYCRgIGQgYCRgIGQgJFwkYGQgYCBkIGQcJAAERCRgJGAkXGQgJGBgICRgJFxkIGQgJGAkXGQgZBxkIGQgYCAkYCRgJFxkIGAkYCBkIGQgYCAkYCBkYCBkIGAgZBwoAAREJFwkYCRgYCAkYGQgIGAkYGQgYCAkYCBkYCBkIGAkYCBkICRcJGAkYGAgZCBkHGQgZCBgJCRcJGBkHGQgZCBgICQABEQkYCRgIGBkICRgYCAkYCRcZCBgJCBgJGBgJGAgZCBgIGQgJGAkYCBgYCRgIGQgZCBgIGQgJGAgYGQgZCBgIGQgJAAERCRcJGAgZGAgJGBkHCRgJGBkHGQgJGAkXGQgZBxkIGQgZCAgYCRgJGBgIGQgZBxkIGQgZBwkYCRgYCBkIGQgZBwkAAREJGAkXCRgZCAkXGQgJGAkXGQgZBwkYCRgZCBgIGQgYCBkICRgJGAgYGAkYCBkIGQgYCBkICRgIGBkIGQgYCBkHCQAF3AAAAAAAAAAA",
         "output": "str",
-        "x": 760,
+        "x": 320,
         "y": 40,
         "wires": [
             [
@@ -2902,7 +2652,7 @@
         "syntax": "plain",
         "template": "sgAeAgkYCBgYCQgZFwkIGQgZGAgZCAgZCBgYCRgJGAgYCRgJCBgIGQgYCRgYCRcKFwkYCRgJCBgIGQgYCRgIGAkYCAABCwkYCBgIGRgJCBgYCQgZCBgYCRgJCBgJGBgJGAgYCRgJFwkIGAkYCRgIGRgIGAkYCRgIGAkIGAgZCBkIGAgZCBkHAAEMCBgIGQgZGAgIGRgICBkIGRgIGAkIGAkYGAkYCBgJGAkYCAgZCRcJGAgZGAkYCBgJGAgYCQgZCBkIGAgZCBgJGAgAAQsIGAkYCBkXCggYGAkIGAgZGAgZCAkYCBkXCRgJGAkXChcJCBgJGAgZCBgYCRgJFwkYCRgJCBgIGQgYCRgJFwkYCAABCwkYCBkIGBgJCBkYCAgZCBgYCRgICRgJGBgJGAgYCRgIGAkIGQgYCRgIGRgIGAkYCRcJGAkIGAgZCRgIGAgZCBgIAAELCRgJGAgZGAgIGRgICBkIGRgIGQgIGAkYGAkYCRgIGAkYCAgZCBgJGAkYGAgYCRgJGAkXCQgZCBgIGQkXCRgIGAkAAREJGAgZCBgYCQgZGAgIGQgYGAkYCQgYCBkYCBgJGAkYCRcJCBgJGAkYCBkXCRgJFwkYCRgJCBgIGQgZCBgJGAgYCAABEgkYCBgIGRgICBkYCQgYCBkYCRgICBkIGBgJGAkXChcJGAkIGAkYCBgJGBgJGAkXCRgJGAgIGQgZCBgJGAgZCBgIAAXcAAAAAAAAAAAAAA==",
         "output": "str",
-        "x": 750,
+        "x": 310,
         "y": 100,
         "wires": [
             [
@@ -2922,7 +2672,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 580,
+        "x": 140,
         "y": 100,
         "wires": [
             [
@@ -2941,7 +2691,7 @@
         "syntax": "plain",
         "template": "sgCWAQkYCBgZCAkXGQgJGAkXGQgZBwkYCRgYCBkIGQgYCBkICRgIGAkYCRcJGBkHGQgZCBkHCRgJFwkYGQgJGAgYCQABCggYCRgJFxkICRcZCAkYCRcZCBkICRcJGBkHGQgZCBgIGQgJGAkXCRgJFwkYGQgZBxkIGQgIGAkYCBgZCAkYCBgJAAEKCRcJGAkYGAgJGBkHCRgJGBgIGQgJGAgYGQgYCBkIGQgYCAkYCRcJGAkYCRcZCBgIGQgZCAgYCRgJFxkICRgIGAkAAQoJFwkYCRgYCAkYGAkIGAkYGQcZCAkXCRgYCRgIGQgZBxkICRgIGAkYCRgIGBkIGAgZCBkICBgJGAkXGQgJGAgYCQABCgkXCRgJGBgICRgZBwkYCRcZCBkICRcJGBkIGAgZCBgJGAgJGAkXCRgJGAgYGQgYCBkIGQgJFwkYCRcZCAkXCRgJAAEKCRgJFwkYGAkIGBkICRcJGBkHGQgJGAgYGQgYCBkIGQgYCAkYCRgIGAkYCBgZCBgIGQgZCAkXCRgIGRgICRgIGAkABdwAAA==",
         "output": "str",
-        "x": 750,
+        "x": 310,
         "y": 220,
         "wires": [
             [
@@ -2960,7 +2710,7 @@
         "syntax": "plain",
         "template": "sgD6AwkXCRgYCAkYGAkIGAkYGQcZCAkYCRcZCBkIGAgZCBkHCRgJGAkYGAgJFxkIGQgZBxkICRgJFxkICRgIGAkYCQABCQkYCRgIGRgICRgYCAkYCRgYCBkICRcJGBgJGAgZCBkIGAgJGAkXCRgYCQkXGQgZBxkIGQgJFwkYGAkIGAkYCRcJAAEKCRgJGAgYGQcJGBkICRgIGBkIGQcJGAkXGQgZCBgIGQgZBwkYCRgJFxkICRcZCBkIGQgYCAkYCRcZCAkYCBgJGAkAAQkJGAkYCRcZCAkYGAgJGAkXGQgZCAkXCRgZBxkIGQgYCBkICRgIGAkYGQcJGBkIGAgZCBkICBgJGBkHCRgJGAgYCQABCggYCRgJGBgICRgZBwkYCRgYCBkICRgIGBkIGQcZCBkIGAkIGAkYCRcZCAkXGQgZCBgIGQgJFwkYGQgIGAkYCRcJAAEKCRgJFwkYGQgIGBkICRcJGBkIGAgJGAkYGAgZCBgIGQgZCAkXCRgJFxkICRgZBxkIGQgYCAkYCRcZCAkYCBgJGAgAAREJGAkXCRgZCAkXGQgJGAgYGQgYCAkYCRcZCBkIGAkYCBkICRcJGAkYGAgJFxkIGQgZCBgICRgJFxkICRgIGAkYCAABEQkYCRcJGBkICBgZCAkXCRgZBxkICRgJFxkIGAkYCBkIGQgJFwkYCBgZCAkYGAgZCBkIGAgJGAkXGQgJGAkXCRcJAAERCRgJFwkYGAkIGBkICRcJGBkIGAgJGAkXGQgYCRgIGQgYCAkYCRcJGBkICBkYCBkIGAgZCAkXCRgZCAgYCRgJFwkAAREIGAkYCBkYCAkYGQcJGAkYGAgZCAkXCRgZCBgIGQgYCRgICRgJFwkYGAkIGBkIGAgZCBkICBgJGBkHCRgJGAgYCQABEAkYCRgIGBkICRgYCAkYCBgZCBkHCRgJFxkIGQgZCBgIGQgJGAgYCRgYCAkYGQcZCBkIGAgJGAkXGQgJGAkXCRgJAAEQCRgIGAkYGQgIGBkICRcJGBkHGQgJGAkYGAgZCBgIGQgYCQgYCRgJFxkICRcZCBkIGQcZCAkXChcZCAkYCBgJFwkAAREJFwkYCRgYCAkYGAkIGAkXGQgZCAkYCBgYCRgIGQgZCBgICRgJFwkYGQgIGBkIGAgZCBkICRcJGBgIChcJGAgYCQABEAkYCRgIGBkICBkYCAkYCBgZCBkHCRgJGBgJGAgZCBgIGQgJFwkYCRgYCAkYGQcZCBkHGQgJGAkXGQgJGAkXCRgJAAEQCRgIGAkYGAkIGBkICBgJGBkHGQgJGAkXGQgZCBgIGQgYCAkYCRcJGBkICRcZCBkIGAgZCAkXCRgZCAgYCRgJFwkABdwAAAAAAAAAAAAAAAAAAA==",
         "output": "str",
-        "x": 760,
+        "x": 320,
         "y": 160,
         "wires": [
             [
@@ -2980,7 +2730,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 580,
+        "x": 140,
         "y": 160,
         "wires": [
             [
@@ -3000,7 +2750,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 580,
+        "x": 140,
         "y": 220,
         "wires": [
             [
@@ -3519,8 +3269,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 390,
-        "y": 320,
+        "x": 170,
+        "y": 140,
         "wires": [
             [
                 "139f41ee.abf39e",
@@ -3539,8 +3289,8 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
-        "x": 1310,
-        "y": 260,
+        "x": 1110,
+        "y": 180,
         "wires": []
     },
     {
@@ -3552,8 +3302,8 @@
         "headers": {
             "action": "node-red-flow-invoked"
         },
-        "x": 920,
-        "y": 320,
+        "x": 480,
+        "y": 120,
         "wires": []
     },
     {
@@ -3567,8 +3317,8 @@
         "syntax": "mustache",
         "template": "{\n    \"monitor_id\": \"{{req.params.monitor_id}}\",\n    \"group_key\": \"{{req.params.group_key}}\",\n    \"confidence\": \"{{payload.confidence}}\", \n    \"shinobi_host\": \"{{{global.shinobiHost}}}\",\n    \"shinobi_url\": \"{{{global.shinobiHost}}}/jpeg/{{req.params.group_key}}/{{req.params.monitor_id}}/s.jpg?timestamp={{_msgid}}\",\n    \"filename\": \"/data/camera-images/{{_msgid}}.jpg\", \n    \"hass_filename\": \"/config/www/camera-images/{{_msgid}}.jpg\",\n    \"target\": \"624934647675224084\"\n    \n}",
         "output": "json",
-        "x": 910,
-        "y": 260,
+        "x": 670,
+        "y": 180,
         "wires": [
             [
                 "b7e28a5d.d74a48"
@@ -3588,8 +3338,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1850,
-        "y": 220,
+        "x": 910,
+        "y": 240,
         "wires": [
             []
         ]
@@ -3606,8 +3356,8 @@
         "tls": "",
         "proxy": "",
         "authType": "",
-        "x": 1180,
-        "y": 320,
+        "x": 900,
+        "y": 180,
         "wires": [
             [
                 "d2e89fd1.06891",
@@ -3625,8 +3375,8 @@
         "createDir": true,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 1520,
-        "y": 320,
+        "x": 640,
+        "y": 240,
         "wires": [
             [
                 "4ea0a155.4acad"
@@ -3645,8 +3395,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 980,
-        "y": 520,
+        "x": 120,
+        "y": 400,
         "wires": [
             [
                 "93aceebe.d33a7"
@@ -3664,8 +3414,8 @@
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
-        "x": 1260,
-        "y": 540,
+        "x": 530,
+        "y": 400,
         "wires": []
     },
     {
@@ -3679,8 +3429,8 @@
         "syntax": "mustache",
         "template": "This is the payload: {{global.shinobiHost}} !",
         "output": "str",
-        "x": 1180,
-        "y": 480,
+        "x": 320,
+        "y": 400,
         "wires": [
             [
                 "c6abf74.bc42008"
@@ -3706,8 +3456,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1310,
-        "y": 400,
+        "x": 470,
+        "y": 240,
         "wires": [
             [
                 "abfde8b5.c97ab8"
@@ -3733,8 +3483,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 700,
-        "y": 260,
+        "x": 460,
+        "y": 180,
         "wires": [
             [],
             [
@@ -3754,8 +3504,8 @@
         "crontab": "00 19 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 380,
-        "y": 180,
+        "x": 160,
+        "y": 100,
         "wires": [
             [
                 "bc582b00.03f548"
@@ -3775,8 +3525,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 660,
-        "y": 180,
+        "x": 440,
+        "y": 100,
         "wires": [
             []
         ]
@@ -3834,7 +3584,7 @@
         "bytopic": "all",
         "name": "2 Minutes No Movement",
         "x": 590,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "d479eebc.741a9"
@@ -3855,26 +3605,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 910,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "acd316e3.f113d8",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Asakuki Diffuser Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "fan",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"fan.diffuser\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 890,
-        "y": 800,
+        "y": 520,
         "wires": [
             []
         ]
@@ -3899,29 +3630,10 @@
         "y": 1040,
         "wires": [
             [
-                "926ec2a4.bc2a4"
+                "b130b76b.95bab8"
             ],
             [
                 "193b6411.343e6c"
-            ]
-        ]
-    },
-    {
-        "id": "8defe89a.9b5548",
-        "type": "template",
-        "z": "823d3fb7.65d29",
-        "name": "TV Off",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4qDioOKg4qDioOKg4ODg4OKg4qDioOKg4qDioODg4qDgAJlQ0F",
-        "output": "str",
-        "x": 510,
-        "y": 820,
-        "wires": [
-            [
-                "a1d1263e.2edaa8"
             ]
         ]
     },
@@ -3955,32 +3667,11 @@
         "syntax": "plain",
         "template": "JgBYAAABJpMSExI3EhMSExI3EhMSNxI3EzcSExI3EjgSEhI4EjcSExUPEjgSNxI4EhISExITFg4SOBISExISExI3EjgSNxI4EgAE9AABJUsSAAxDAAElSxIADQU=",
         "output": "str",
-        "x": 540,
-        "y": 940,
+        "x": 940,
+        "y": 880,
         "wires": [
             [
                 "5098e75c.796f98"
-            ]
-        ]
-    },
-    {
-        "id": "a1d1263e.2edaa8",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 780,
-        "y": 820,
-        "wires": [
-            [
-                "b130b76b.95bab8"
             ]
         ]
     },
@@ -3997,7 +3688,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 780,
+        "x": 720,
         "y": 880,
         "wires": [
             [
@@ -4018,8 +3709,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 780,
-        "y": 940,
+        "x": 1160,
+        "y": 880,
         "wires": [
             []
         ]
@@ -4059,9 +3750,7 @@
         "x": 780,
         "y": 1049,
         "wires": [
-            [
-                "eca8f505.84ecd8"
-            ]
+            []
         ]
     },
     {
@@ -4075,8 +3764,8 @@
         "syntax": "plain",
         "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F",
         "output": "str",
-        "x": 1600,
-        "y": 161,
+        "x": 160,
+        "y": 1360,
         "wires": [
             []
         ]
@@ -4092,8 +3781,8 @@
         "syntax": "plain",
         "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4qDioOKg4qDioOKg4ODg4OKg4qDioOKg4qDioODg4qDgAJlQ0F",
         "output": "str",
-        "x": 1600,
-        "y": 81,
+        "x": 160,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -4109,26 +3798,10 @@
         "syntax": "plain",
         "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
         "output": "str",
-        "x": 1610,
-        "y": 121,
+        "x": 170,
+        "y": 1320,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "a4f13f87.2aa2",
-        "type": "function",
-        "z": "823d3fb7.65d29",
-        "name": "Delay for 1 seconds",
-        "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 1000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 1020,
-        "y": 760,
-        "wires": [
-            [
-                "8defe89a.9b5548"
-            ]
         ]
     },
     {
@@ -4148,10 +3821,10 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 200,
-        "y": 920,
+        "y": 880,
         "wires": [
             [
-                "926ec2a4.bc2a4"
+                "b130b76b.95bab8"
             ],
             [
                 "33d5b269.74328e"
@@ -4175,7 +3848,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 220,
-        "y": 902,
+        "y": 242,
         "wires": [
             [
                 "bb8290ff.7ae97"
@@ -4198,7 +3871,7 @@
         "bytopic": "all",
         "name": "Wait for 5 minutes",
         "x": 570,
-        "y": 902,
+        "y": 242,
         "wires": [
             [
                 "8cf3895e.ec7548"
@@ -4219,7 +3892,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 870,
-        "y": 902,
+        "y": 242,
         "wires": [
             []
         ]
@@ -4241,7 +3914,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 210,
-        "y": 962,
+        "y": 302,
         "wires": [
             [
                 "25c076d3.d6444a"
@@ -4264,7 +3937,7 @@
         "bytopic": "all",
         "name": "Wait for 5 minutes",
         "x": 570,
-        "y": 962,
+        "y": 302,
         "wires": [
             [
                 "55c1e0c2.3e88d"
@@ -4285,7 +3958,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 870,
-        "y": 962,
+        "y": 302,
         "wires": [
             []
         ]
@@ -4307,7 +3980,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 180,
-        "y": 1142,
+        "y": 389,
         "wires": [
             [
                 "53b5f2a.e5a580c"
@@ -4331,7 +4004,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 900,
-        "y": 1142,
+        "y": 389,
         "wires": [
             []
         ]
@@ -4351,7 +4024,7 @@
         "bytopic": "all",
         "name": "30 Minutes",
         "x": 550,
-        "y": 1142,
+        "y": 389,
         "wires": [
             [
                 "da09d68f.b33588"
@@ -4359,82 +4032,14 @@
         ]
     },
     {
-        "id": "2f9e8f1.6e5b17",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Downstairs Toilet Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 190,
-        "y": 1202,
-        "wires": [
-            [
-                "fa01fa8a.013588"
-            ],
-            [
-                "fa01fa8a.013588"
-            ]
-        ]
-    },
-    {
-        "id": "bc05d6e9.5fad38",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Turn off Toilet Lights",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 900,
-        "y": 1202,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "fa01fa8a.013588",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "5",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "name": "5 Minutes",
-        "x": 540,
-        "y": 1202,
-        "wires": [
-            [
-                "bc05d6e9.5fad38"
-            ]
-        ]
-    },
-    {
         "id": "e5193b28.90c048",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "AV Plug Off",
+        "name": "Sony TV Off",
         "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
+        "service_domain": "media_player",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -4449,11 +4054,11 @@
         "id": "7d89072d.38d008",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "AV Plug On",
+        "name": "Sony TV On",
         "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
+        "service_domain": "media_player",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -4821,7 +4426,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 580,
-        "y": 700,
+        "y": 695,
         "wires": [
             []
         ]
@@ -4866,90 +4471,6 @@
         ]
     },
     {
-        "id": "705a80bc.b4bc9",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "Lounge Dimmer Nano On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 150,
-        "y": 400,
-        "wires": [
-            [
-                "36239f1b.8033d"
-            ],
-            [
-                "36239f1b.8033d"
-            ]
-        ]
-    },
-    {
-        "id": "e6cd9114.a71b7",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Standing Lamp Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "{{service}}",
-        "data": "{\"entity_id\":\"light.dimmer_smart_energy_illum_light_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 780,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "36239f1b.8033d",
-        "type": "function",
-        "z": "27f4a783.3a8dc8",
-        "name": "Toggle Service",
-        "func": "msg.service = msg.payload == \"on\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 460,
-        "y": 400,
-        "wires": [
-            [
-                "e6cd9114.a71b7",
-                "94f33eae.f241d"
-            ]
-        ]
-    },
-    {
-        "id": "94f33eae.f241d",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "AV Plug Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "{{service}}",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 760,
-        "y": 460,
-        "wires": [
-            [
-                "563206c3.760e28"
-            ]
-        ]
-    },
-    {
         "id": "fbd63ab.09202c8",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
@@ -4988,84 +4509,6 @@
         ]
     },
     {
-        "id": "926ec2a4.bc2a4",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "AV Plug On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 530,
-        "y": 760,
-        "wires": [
-            [
-                "a4f13f87.2aa2"
-            ]
-        ]
-    },
-    {
-        "id": "10312652.cfecca",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "AV Plug Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1216,
-        "y": 1049,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "563206c3.760e28",
-        "type": "template",
-        "z": "27f4a783.3a8dc8",
-        "name": "BD/DVD Input",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA",
-        "output": "str",
-        "x": 980,
-        "y": 460,
-        "wires": [
-            [
-                "3c7f4352.525e1c"
-            ]
-        ]
-    },
-    {
-        "id": "3c7f4352.525e1c",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1200,
-        "y": 460,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "7264e89.5aed918",
         "type": "template",
         "z": "e594dd4a.60761",
@@ -5076,8 +4519,8 @@
         "syntax": "plain",
         "template": "sgCWAQkXCRcaBwkYGQcKFwkXGQgZBwoXChcZBxkIGQcaBxkHChcJFwoXGQcKFxkIGAgZCBkHCRgJFxkICRcKFwkYCQABCQkXChcJFxoHCRcaBwkYCRcZCBkHChcJFxoHGQgYCBkIGAgJGAkXChcZCAkXGQcaBxkIGQcKFwkXGgcJGAkXCRcKAAEJCRcJGAkXGQgJFxoHCRgJFxkIGQcKFwkXGgcZBxoHGQgZBwkYCRcKFxkHChcZCBgIGQcaBwkYCRcZCAkXChcJFwkAAQoJFwkYCRcZCAkXGQgJGAkXGQgYCAkYCRcaBxkIGAgZBxoHChcJFwoXGQcKFxkHGQgZCBgICRcKFxkICRcJGAkXCgABCAoXCRcKFxkICRcZCAkXChcZCBkHCRgJFxkHGgcZCBkHGQgJFwoXCRgYCAkYGAgZBxoHGQgJFwkYGQgJFwkYCRcJAAEJChcJGAkXGgcJFxkICRgIGBkHGgcKFwkXGQgZCBgIGQcaBwkYCRcJFxoHChcZBxkIGQcaBwkYCRcZBwoXChcJFwkABdwAAA==",
         "output": "str",
-        "x": 1573,
-        "y": 201,
+        "x": 133,
+        "y": 1400,
         "wires": [
             []
         ]
@@ -5093,8 +4536,8 @@
         "syntax": "plain",
         "template": "sgCWAQoXCRcaBwkYGAgJFwoXGQgZBwoXCRcZCBkHGgcZCBkHCRgJFwkXChgJFxkHGQgZCBgICRgJFwoXGQcJGAkXCQABCQoXChYKFxkICRcZCAkXChcZCBkHCRgJFxkIGQcZCBkHGgcJGAkXChYKFwoWGgcZCBkHGQgJFwoXCRcZCAkXChcJAAEJChcJFwkYGQcKFxkHChcJGBgIGQgJFwkYGQcaBxkIGAgZCAkXCRgJFwkYCRcZCBkHGQgZCAkXCRcKFxkICRcJFwkAAQoJFwoXCRcaBwoXGQcKFwkXGQgZBwoXCRgZBxkIGAgZBxoHChcJFwoXCRgJFxkHGgcZCBkHCRgJFwkYGQcKFwkXCQABCgkXChcJFxkICRcaBwkYCRcZBxoHChcJFxkIGQcaBxkIGAgJGAkXCRcKFwkYGQcaBxkHGQgJFwoXCRgYCAkXChcJAAEJChcJGAkXGgcJFxkICRcKFxkIGQcJFwoXGQgZBxkIGQcZCAkXChcJGAkXCRcaBxkIGQcZCAkXChcJFxkICRgJFwkABdwAAA==",
         "output": "str",
-        "x": 1573,
-        "y": 241,
+        "x": 133,
+        "y": 1440,
         "wires": [
             []
         ]
@@ -5188,7 +4631,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 240,
-        "y": 1302,
+        "y": 580,
         "wires": [
             [],
             []
@@ -5208,7 +4651,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 880,
-        "y": 1302,
+        "y": 580,
         "wires": [
             []
         ]
@@ -5228,7 +4671,7 @@
         "bytopic": "all",
         "name": "30 Seconds No Movement",
         "x": 600,
-        "y": 1302,
+        "y": 580,
         "wires": [
             []
         ]
@@ -5246,8 +4689,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1120,
-        "y": 320,
+        "x": 960,
+        "y": 200,
         "wires": [
             []
         ]
@@ -5260,8 +4703,8 @@
         "func": "var now = new Date();\nvar start = new Date(now.getFullYear(), 0, 0);\nvar diff = now - start;\nvar oneDay = 1000 * 60 * 60 * 24;\nvar dayofYear = Math.floor(diff / oneDay);\nvar accouncementCommon = \"Dont forget to put out the bins, \"\n\nif(dayofYear % 2 === 0) {\n    msg.announce = accouncementCommon + \"its Yellow bin day today, take out the recycling\";\n}\nelse {\n    msg.announce = accouncementCommon + \"its Green bin day today, take out the green waste\";\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 890,
-        "y": 320,
+        "x": 770,
+        "y": 200,
         "wires": [
             [
                 "7ec8eea6.58062"
@@ -5280,8 +4723,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 390,
-        "y": 280,
+        "x": 150,
+        "y": 180,
         "wires": [
             [
                 "34825c1d.721ca4"
@@ -5299,8 +4742,8 @@
         "syntax": "mustache",
         "template": "media_player.everywhere",
         "output": "str",
-        "x": 630,
-        "y": 320,
+        "x": 490,
+        "y": 220,
         "wires": [
             [
                 "e00dc012.6a07d"
@@ -5318,8 +4761,8 @@
         "syntax": "mustache",
         "template": "media_player.kitchen_speaker",
         "output": "str",
-        "x": 650,
-        "y": 280,
+        "x": 510,
+        "y": 180,
         "wires": [
             [
                 "e00dc012.6a07d"
@@ -5371,20 +4814,6 @@
         ]
     },
     {
-        "id": "eca8f505.84ecd8",
-        "type": "function",
-        "z": "823d3fb7.65d29",
-        "name": "Delay for 2 seconds",
-        "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 2000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 1000,
-        "y": 1049,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "58705ad5.2c3b34",
         "type": "api-call-service",
         "z": "823d3fb7.65d29",
@@ -5397,8 +4826,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 650,
-        "y": 120,
+        "x": 430,
+        "y": 40,
         "wires": [
             []
         ]
@@ -5415,8 +4844,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 370,
-        "y": 120,
+        "x": 150,
+        "y": 40,
         "wires": [
             [
                 "58705ad5.2c3b34"
@@ -5524,7 +4953,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 150,
-        "y": 1160,
+        "y": 600,
         "wires": [
             [
                 "42bc43e0.39980c"
@@ -5548,7 +4977,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 440,
-        "y": 1140,
+        "y": 580,
         "wires": [
             []
         ]
@@ -5567,7 +4996,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 430,
-        "y": 1220,
+        "y": 660,
         "wires": [
             []
         ]
@@ -5589,7 +5018,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 160,
-        "y": 1240,
+        "y": 680,
         "wires": [
             [
                 "951c7c8.d80b38"
@@ -5613,7 +5042,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 440,
-        "y": 1180,
+        "y": 620,
         "wires": [
             []
         ]
@@ -5632,7 +5061,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 430,
-        "y": 1260,
+        "y": 700,
         "wires": [
             []
         ]
@@ -5650,8 +5079,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 580,
-        "y": 620,
+        "x": 860,
+        "y": 460,
         "wires": [
             [
                 "fb2454a3.a9a9f8"
@@ -5687,142 +5116,6 @@
         ]
     },
     {
-        "id": "5d2ac8e7.865ca8",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Garage Flood Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "light.garage_flood_light",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 180,
-        "y": 1402,
-        "wires": [
-            [
-                "bc1e4cf1.89205"
-            ],
-            [
-                "bc1e4cf1.89205"
-            ]
-        ]
-    },
-    {
-        "id": "9996793a.f25f28",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Turn off Garage Flood Light",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.garage_flood_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 920,
-        "y": 1402,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "bc1e4cf1.89205",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "1",
-        "extend": false,
-        "units": "hr",
-        "reset": "off",
-        "bytopic": "all",
-        "name": "1 Hour",
-        "x": 530,
-        "y": 1402,
-        "wires": [
-            [
-                "9996793a.f25f28"
-            ]
-        ]
-    },
-    {
-        "id": "12e92109.d98c4f",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Garage Lifx Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "light.lifx_garage",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 170,
-        "y": 1462,
-        "wires": [
-            [
-                "5dac3a42.6ef234"
-            ],
-            [
-                "5dac3a42.6ef234"
-            ]
-        ]
-    },
-    {
-        "id": "6fa36acb.376c84",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Turn off Garage Lifx Light",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_garage\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 910,
-        "y": 1462,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5dac3a42.6ef234",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "1",
-        "extend": false,
-        "units": "hr",
-        "reset": "off",
-        "bytopic": "all",
-        "name": "1 Hour",
-        "x": 530,
-        "y": 1462,
-        "wires": [
-            [
-                "6fa36acb.376c84"
-            ]
-        ]
-    },
-    {
         "id": "37ca2198.42581e",
         "type": "server-state-changed",
         "z": "823d3fb7.65d29",
@@ -5839,7 +5132,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 160,
-        "y": 1420,
+        "y": 1200,
         "wires": [
             [
                 "48ae38b9.be3558"
@@ -5855,8 +5148,8 @@
         "func": "var d = new Date();\nvar hour = d.getHours();\nmsg.continue = false;\n\nif(hour >= 6 && hour <= 8) {\n    msg.continue = true;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 430,
-        "y": 1420,
+        "x": 490,
+        "y": 1200,
         "wires": [
             [
                 "c0d87ff7.1651a"
@@ -5881,8 +5174,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 690,
-        "y": 1420,
+        "x": 770,
+        "y": 1200,
         "wires": [
             [
                 "501641d2.3c769"
@@ -5903,8 +5196,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 950,
-        "y": 1420,
+        "x": 1050,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -5944,13 +5237,13 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\",\"transition\":\"1800\"}",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\",\"transition\":\"900\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1040,
-        "y": 410,
+        "x": 1039,
+        "y": 431,
         "wires": [
             [
                 "8e1d1e1a.ccadb"
@@ -6086,8 +5379,8 @@
         "crontab": "50 18 * * 3",
         "once": false,
         "onceDelay": 0.1,
-        "x": 340,
-        "y": 320,
+        "x": 200,
+        "y": 220,
         "wires": [
             [
                 "8382d4ea.df9258"
@@ -6118,25 +5411,6 @@
         ]
     },
     {
-        "id": "49e9a8df.bc6b88",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Ruby Lamp Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "toggle",
-        "data": "{\"entity_id\":\"light.shelly_dimmer_ruby_lamp\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1090,
-        "y": 40,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d3d1a423.e17d28",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
@@ -6153,142 +5427,6 @@
         "y": 1260,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "94a2ecff.98f79",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Laundry Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "light.shelly_1_laundry",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 160,
-        "y": 420,
-        "wires": [
-            [
-                "9b7c2741.1fceb8"
-            ],
-            [
-                "9b7c2741.1fceb8"
-            ]
-        ]
-    },
-    {
-        "id": "af837373.9e13a",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Laundry Lights Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 890,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9b7c2741.1fceb8",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "15",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "name": "15 Minutes",
-        "x": 550,
-        "y": 420,
-        "wires": [
-            [
-                "af837373.9e13a"
-            ]
-        ]
-    },
-    {
-        "id": "c34754d7.5b8318",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Pantry Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "light.lifx_pantry",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 160,
-        "y": 360,
-        "wires": [
-            [
-                "949b4611.a8bbd8"
-            ],
-            [
-                "949b4611.a8bbd8"
-            ]
-        ]
-    },
-    {
-        "id": "5f42f741.419ec8",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Pantry Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_pantry\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 880,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "949b4611.a8bbd8",
-        "type": "trigger",
-        "z": "d1ff6abb.b25cf8",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "30",
-        "extend": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "name": "30 Minutes",
-        "x": 550,
-        "y": 360,
-        "wires": [
-            [
-                "5f42f741.419ec8"
-            ]
         ]
     },
     {
@@ -6387,11 +5525,11 @@
         "id": "f3b56127.ecb5a",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "AV Plug On",
+        "name": "Sony TV On",
         "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
+        "service_domain": "media_player",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -6547,7 +5685,7 @@
         "qos": "2",
         "datatype": "json",
         "broker": "32add66e.5cfcaa",
-        "x": 70,
+        "x": 150,
         "y": 200,
         "wires": [
             [
@@ -6794,7 +5932,7 @@
         "retain": "",
         "broker": "32add66e.5cfcaa",
         "x": 590,
-        "y": 820,
+        "y": 814,
         "wires": []
     },
     {
@@ -7116,7 +6254,7 @@
         "retain": "",
         "broker": "32add66e.5cfcaa",
         "x": 600,
-        "y": 560,
+        "y": 555,
         "wires": []
     },
     {
@@ -7298,9 +6436,7 @@
         "x": 800,
         "y": 220,
         "wires": [
-            [
-                "54389ad.6ddd764"
-            ],
+            [],
             []
         ]
     },
@@ -7386,8 +6522,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 920,
-        "y": 300,
+        "x": 900,
+        "y": 420,
         "wires": [
             [
                 "33f643f5.9e421c"
@@ -7536,7 +6672,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 270,
+        "x": 350,
         "y": 200,
         "wires": [
             [
@@ -7574,8 +6710,8 @@
         "qos": "2",
         "datatype": "auto",
         "broker": "32add66e.5cfcaa",
-        "x": 160,
-        "y": 420,
+        "x": 130,
+        "y": 980,
         "wires": [
             []
         ]
@@ -7637,34 +6773,6 @@
                 "67140cff.069504"
             ]
         ]
-    },
-    {
-        "id": "43551a9f.1a2844",
-        "type": "debounce",
-        "z": "e594dd4a.60761",
-        "time": "1000",
-        "name": "",
-        "x": 900,
-        "y": 40,
-        "wires": [
-            [
-                "49e9a8df.bc6b88"
-            ]
-        ]
-    },
-    {
-        "id": "758addcd.80efe4",
-        "type": "debug",
-        "z": "e594dd4a.60761",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "x": 320,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "a155ef5b.689b2",
@@ -7891,6 +6999,1284 @@
         "noerr": 0,
         "x": 900,
         "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "158a1e9b.07eac1",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Dining Motion PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.tradfri_pir_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 150,
+        "y": 1820,
+        "wires": [
+            [
+                "8628cbaa.6e0518"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8628cbaa.6e0518",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Dark",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.is_dark",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 400,
+        "y": 1820,
+        "wires": [
+            [
+                "60c3600d.1f3f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "60c3600d.1f3f",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Dining Lights On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 1820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2080582f.f25708",
+        "type": "trigger",
+        "z": "d1ff6abb.b25cf8",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "10",
+        "extend": false,
+        "units": "min",
+        "reset": "on",
+        "bytopic": "all",
+        "name": "10 Minutes",
+        "x": 730,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c12cc665.101d48",
+        "type": "inject",
+        "z": "e594dd4a.60761",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 900,
+        "wires": [
+            [
+                "801bdce2.f1044"
+            ]
+        ]
+    },
+    {
+        "id": "801bdce2.f1044",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Study Lamp Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.lifx_study\",\"transition\":\"5\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 390,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43551a9f.1a2844",
+        "type": "debounce",
+        "z": "e594dd4a.60761",
+        "time": "1000",
+        "name": "",
+        "x": 900,
+        "y": 40,
+        "wires": [
+            [
+                "d2023620.5170c8"
+            ]
+        ]
+    },
+    {
+        "id": "b3001fe9.49254",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Stop Music Downstairs",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_stop",
+        "data": "{\"entity_id\":\"media_player.downstairs\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1460,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "220a198d.f6db36",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Start Music Downstairs",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "spotcast",
+        "service": "start",
+        "data": "{\"entity_id\":\"media_player.downstairs\",\"uri\":\"{{randomPlaylist.uri}}\",\"random_song\":true,\"force_playback\":true}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1717,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2023620.5170c8",
+        "type": "api-current-state",
+        "z": "e594dd4a.60761",
+        "name": "Downstairs Is Playing",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "media_player.downstairs",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1100,
+        "y": 40,
+        "wires": [
+            [
+                "b3001fe9.49254"
+            ],
+            [
+                "17315006.19269"
+            ]
+        ]
+    },
+    {
+        "id": "17315006.19269",
+        "type": "function",
+        "z": "e594dd4a.60761",
+        "name": "Choose Random Playlist",
+        "func": "let playlistsArray = [\n    {\n        uri : \"spotify:playlist:37i9dQZF1E4EFyuVOygvQ7\", \n        desc : \"Air Radio\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E39OdKMfKM663\", \n        desc : \"Tame Impala, Two Door Cinema, Gang of Youths\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E35sNS8MhSVoM\", \n        desc : \"Nightmares on Wax, Zero 7 etc\",\n    },\n    \n]\n\nvar randomPlaylist = playlistsArray[Math.floor(Math.random()*playlistsArray.length)];\nmsg.randomPlaylist = randomPlaylist;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1470,
+        "y": 60,
+        "wires": [
+            [
+                "220a198d.f6db36"
+            ]
+        ]
+    },
+    {
+        "id": "ee43f1f5.173e6",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "TTS Announce",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "tts",
+        "service": "google_translate_say",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\",\"message\":\"{{randomPlaylist.desc}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 140,
+        "y": 1487,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bc6106a.d6826",
+        "type": "stoptimer3",
+        "z": "d1ff6abb.b25cf8",
+        "duration": "3",
+        "durationType": "num",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "3 Minute Stop Timer",
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "f7046b1d.dc9608"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "74e177f.a451188",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Coffee Machine Goes On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "switch.tp_link_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "9dccf6.934c4308"
+            ],
+            [
+                "7d1a13b7.25754c"
+            ]
+        ]
+    },
+    {
+        "id": "7d1a13b7.25754c",
+        "type": "change",
+        "z": "191e949e.9f212b",
+        "name": "Reset",
+        "rules": [
+            {
+                "t": "set",
+                "p": "reset",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "9dccf6.934c4308"
+            ]
+        ]
+    },
+    {
+        "id": "9dccf6.934c4308",
+        "type": "delay",
+        "z": "191e949e.9f212b",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "hours",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 700,
+        "y": 140,
+        "wires": [
+            [
+                "30460a9c.539026"
+            ]
+        ]
+    },
+    {
+        "id": "30460a9c.539026",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Coffee Machine Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a9142b5.2aa82c",
+        "type": "poll-state",
+        "z": "191e949e.9f212b",
+        "name": "No movement for x seconds",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "updateinterval": "360",
+        "updateIntervalUnits": "seconds",
+        "outputinitially": false,
+        "outputonchanged": false,
+        "entity_id": "binary_sensor.multisensor_kitchen_motion",
+        "state_type": "str",
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "x": 280,
+        "y": 40,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ce936d28.b97d7",
+        "type": "api-current-state",
+        "z": "191e949e.9f212b",
+        "name": "Sun Below Horizon",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "below_horizon",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sun.sun",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 570,
+        "y": 40,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "17d42f68.94d161",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Laundry Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.shelly_1_laundry",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "35fb861e.3d82ea"
+            ],
+            [
+                "35fb861e.3d82ea"
+            ]
+        ]
+    },
+    {
+        "id": "2c960bec.75b3f4",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Laundry Lights Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "35fb861e.3d82ea",
+        "type": "trigger",
+        "z": "191e949e.9f212b",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "15",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "15 Minutes",
+        "x": 710,
+        "y": 320,
+        "wires": [
+            [
+                "2c960bec.75b3f4"
+            ]
+        ]
+    },
+    {
+        "id": "6f3378ed.4ebfc8",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Pantry Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.lifx_pantry",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 240,
+        "y": 260,
+        "wires": [
+            [
+                "a22296bc.9b7158"
+            ],
+            [
+                "a22296bc.9b7158"
+            ]
+        ]
+    },
+    {
+        "id": "930f5993.fc04d8",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Pantry Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_pantry\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 960,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a22296bc.9b7158",
+        "type": "trigger",
+        "z": "191e949e.9f212b",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "30",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "30 Minutes",
+        "x": 710,
+        "y": 260,
+        "wires": [
+            [
+                "930f5993.fc04d8"
+            ]
+        ]
+    },
+    {
+        "id": "5a3862d6.d1321c",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Stairs Landing Motion Detected Sonoff PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.sonoff_pir_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 320,
+        "y": 640,
+        "wires": [
+            [
+                "b5a89aa9.7d4c68"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8901a4e2.ad5778",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Stairs Landing Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_powder_room_basin_light,light.shelly_2_5_stairs_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 990,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3046060.989b7",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Front Door Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.dimmer_foyer_light_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "235f0d1.5dccdf2",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Asakuki Diffuser Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "fan",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"fan.diffuser\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5a89aa9.7d4c68",
+        "type": "stoptimer3",
+        "z": "191e949e.9f212b",
+        "duration": "3",
+        "durationType": "num",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "3 Minute Stop Timer",
+        "x": 680,
+        "y": 640,
+        "wires": [
+            [
+                "8901a4e2.ad5778",
+                "e3046060.989b7",
+                "235f0d1.5dccdf2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3ac262b3.6ef06e",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Dining Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 320,
+        "y": 1120,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ffebc35f.8713f",
+        "type": "stoptimer3",
+        "z": "191e949e.9f212b",
+        "duration": "15",
+        "durationType": "num",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "15 Minute Stop Timer",
+        "x": 680,
+        "y": 844,
+        "wires": [
+            [
+                "cd654c10.cbb95"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cd654c10.cbb95",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Dining Lights",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 950,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c990c1f6.731ed",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Downstairs Toilet Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "8256f215.2d5"
+            ],
+            [
+                "8256f215.2d5"
+            ]
+        ]
+    },
+    {
+        "id": "4191a48b.86c49c",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Turn off Toilet Lights",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 980,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8256f215.2d5",
+        "type": "trigger",
+        "z": "191e949e.9f212b",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "5",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "5 Minutes",
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "4191a48b.86c49c"
+            ]
+        ]
+    },
+    {
+        "id": "cf35861a.162cf8",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Garage Flood Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.garage_flood_light",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 260,
+        "y": 480,
+        "wires": [
+            [
+                "90a7a3bb.f93ac"
+            ],
+            [
+                "90a7a3bb.f93ac"
+            ]
+        ]
+    },
+    {
+        "id": "90a7a3bb.f93ac",
+        "type": "trigger",
+        "z": "191e949e.9f212b",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "units": "hr",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "1 Hour",
+        "x": 690,
+        "y": 480,
+        "wires": [
+            [
+                "9396ad98.75b8f"
+            ]
+        ]
+    },
+    {
+        "id": "9396ad98.75b8f",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Turn off Garage Flood Light",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.garage_flood_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1000,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98eeeb38.26da68",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Turn off Garage Lifx Light",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_garage\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 990,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28cb1048.3ddbd",
+        "type": "trigger",
+        "z": "191e949e.9f212b",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "1",
+        "extend": false,
+        "units": "hr",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "1 Hour",
+        "x": 690,
+        "y": 540,
+        "wires": [
+            [
+                "98eeeb38.26da68"
+            ]
+        ]
+    },
+    {
+        "id": "ea46acb4.dbd9",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Garage Lifx Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.lifx_garage",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 250,
+        "y": 540,
+        "wires": [
+            [
+                "28cb1048.3ddbd"
+            ],
+            [
+                "28cb1048.3ddbd"
+            ]
+        ]
+    },
+    {
+        "id": "cdd56890.2a3088",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Stairs Landing Motion Detected Sonoff PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.sonoff_pir_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 220,
+        "y": 1940,
+        "wires": [
+            [
+                "e936ad6b.c043c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e936ad6b.c043c",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Study Lamp Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.lifx_study\",\"flash\":\"long\",\"effect\":\"random\",\"transition\":3}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6466b14.4851e8",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Dining Motion PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.tradfri_pir_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 389,
+        "y": 840,
+        "wires": [
+            [
+                "ffebc35f.8713f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1b5a8da8.0c0562",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Lounge TV Time Routine On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "input_boolean.lounge_tv_time",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 180,
+        "y": 1300,
+        "wires": [
+            [
+                "ee38a39d.c6126"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a969f804.c79ad8",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Lounge TV Time Routine Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"input_boolean.lounge_tv_time\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1300,
+        "y": 1300,
+        "wires": [
+            [
+                "29b41ec2.233962"
+            ]
+        ]
+    },
+    {
+        "id": "ee38a39d.c6126",
+        "type": "function",
+        "z": "823d3fb7.65d29",
+        "name": "Set Routine Running Global",
+        "func": "flow.set(\"tv_time_routine_running\", true);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 1300,
+        "wires": [
+            [
+                "da196831.9bc778"
+            ]
+        ]
+    },
+    {
+        "id": "82bdf713.501298",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Lounge Dimmer Nano On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 170,
+        "y": 1380,
+        "wires": [
+            [
+                "5529ce2.f07b03"
+            ],
+            [
+                "5529ce2.f07b03"
+            ]
+        ]
+    },
+    {
+        "id": "d012898c.f0ca08",
+        "type": "function",
+        "z": "823d3fb7.65d29",
+        "name": "Toggle Service",
+        "func": "msg.service = msg.payload == \"on\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 760,
+        "y": 1380,
+        "wires": [
+            [
+                "58c85c38.d30fe4"
+            ]
+        ]
+    },
+    {
+        "id": "58c85c38.d30fe4",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Sony TV Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "{{service}}",
+        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1020,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5529ce2.f07b03",
+        "type": "switch",
+        "z": "823d3fb7.65d29",
+        "name": "Check TV Time Routine Global",
+        "property": "tv_time_routine_running",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 1380,
+        "wires": [
+            [],
+            [
+                "d012898c.f0ca08"
+            ]
+        ]
+    },
+    {
+        "id": "da196831.9bc778",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Loung Nano Dimmer Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_zw111_nano_dimmer_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 790,
+        "y": 1300,
+        "wires": [
+            [
+                "c983049.bac5bf8"
+            ]
+        ]
+    },
+    {
+        "id": "c983049.bac5bf8",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Alex Kitchen Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_alex_kitchen_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1040,
+        "y": 1300,
+        "wires": [
+            [
+                "a969f804.c79ad8"
+            ]
+        ]
+    },
+    {
+        "id": "4e8257c5.49a228",
+        "type": "function",
+        "z": "823d3fb7.65d29",
+        "name": "Set Routine Running Global",
+        "func": "flow.set(\"tv_time_routine_running\", false);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1760,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29b41ec2.233962",
+        "type": "delay",
+        "z": "823d3fb7.65d29",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1540,
+        "y": 1300,
+        "wires": [
+            [
+                "4e8257c5.49a228"
+            ]
+        ]
+    },
+    {
+        "id": "6d97ee91.b1d6a",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Sony TV On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "media_player.sony_bravia_tv",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 130,
+        "y": 1460,
+        "wires": [
+            [
+                "a6a21e9a.085ba"
+            ],
+            [
+                "a6a21e9a.085ba"
+            ]
+        ]
+    },
+    {
+        "id": "a6a21e9a.085ba",
+        "type": "function",
+        "z": "823d3fb7.65d29",
+        "name": "Toggle Service",
+        "func": "msg.service = msg.payload == \"on\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 440,
+        "y": 1460,
+        "wires": [
+            [
+                "574b1f51.b8691"
+            ]
+        ]
+    },
+    {
+        "id": "574b1f51.b8691",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Standing Lamp Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "{{service}}",
+        "data": "{\"entity_id\":\"light.dimmer_smart_energy_illum_light_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 780,
+        "y": 1460,
         "wires": [
             []
         ]
