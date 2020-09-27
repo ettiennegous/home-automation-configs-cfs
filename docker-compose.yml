@@ -293,7 +293,7 @@ services:
     container_name: rtl2hass
     image: jochocki/rtl2hass
     devices:
-      - "/dev/bus/usb/002/004"
+      - "/dev/bus/usb/002/003"
     environment:
       - MQTT_HOST=mqtt
 volumes:
