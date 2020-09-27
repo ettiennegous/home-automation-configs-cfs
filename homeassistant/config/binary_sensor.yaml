@@ -1,9 +1,9 @@
 - platform: mqtt
   name: Sonoff_PIR_1
-  state_topic: "home/OpenMQTTGateway/433toMQTT"
-  payload_on: "15699006-1-24-401"
-  off_delay: 3
-  value_template: "{{ value_json.value }}-{{ value_json.protocol }}-{{ value_json.length }}-{{ value_json.delay }}"
+  state_topic: "rtl_433/events"
+  payload_on: "61324-1X11X010011X"
+  off_delay: 7
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
   device_class: motion
 - platform: mqtt
   name: Sonoff_PIR_2
@@ -11,6 +11,13 @@
   payload_on: "61575-1100X0Z1X11X"
   off_delay: 7
   value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
+  device_class: motion
+- platform: mqtt
+  name: Tradfri_PIR_1
+  state_topic: "zigbee2mqtt/Tradfri PIR 1"
+  payload_on: true
+  off_delay: 60
+  value_template: "{{ value_json.occupancy }}"
   device_class: motion
 - platform: mqtt
   name: GS_WDS07_1
