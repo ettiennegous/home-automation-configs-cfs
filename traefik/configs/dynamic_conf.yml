@@ -50,7 +50,7 @@ http:
     unifi-service:
         loadBalancer:
             passHostHeader: true
-            server:
+            healthCheck:
                 scheme: https
                 port: 8443
             servers:
