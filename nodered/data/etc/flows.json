@@ -1673,7 +1673,9 @@
         "y": 460,
         "wires": [
             [
-                "12b3e483.24a72b"
+                "fb2454a3.a9a9f8",
+                "ab093810.0a8fd8",
+                "27aa3de3.f57a62"
             ]
         ]
     },
@@ -1690,8 +1692,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 150,
-        "y": 520,
+        "x": 950,
+        "y": 460,
         "wires": [
             []
         ]
@@ -1717,74 +1719,6 @@
         "wires": [
             [],
             []
-        ]
-    },
-    {
-        "id": "eeca311a.74d49",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Onkyo On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"media_player.onkyo_amplifier\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 120,
-        "y": 1120,
-        "wires": [
-            [
-                "addba5d6.e398e8"
-            ]
-        ]
-    },
-    {
-        "id": "9536708a.0229",
-        "type": "api-current-state",
-        "z": "e594dd4a.60761",
-        "name": "AV On?",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "light.sonoff_belle",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 120,
-        "y": 1041,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "c4f0ad26.56a2d",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Onkyo Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"media_player.onkyo_amplifier\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 120,
-        "y": 1080,
-        "wires": [
-            [
-                "57a0d299.4f09dc"
-            ]
         ]
     },
     {
@@ -1821,44 +1755,6 @@
         "mustacheAltTags": false,
         "x": 150,
         "y": 1216,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "57a0d299.4f09dc",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "AV Equipement Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 290,
-        "y": 1081,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "addba5d6.e398e8",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "AV Equipement On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 290,
-        "y": 1121,
         "wires": [
             []
         ]
@@ -4388,7 +4284,8 @@
             [
                 "f4a95c2f.07974",
                 "7f9a2e57.51d76",
-                "dac60e5f.a75de"
+                "dac60e5f.a75de",
+                "924ef799.d4d6e8"
             ],
             []
         ]
@@ -5067,27 +4964,6 @@
         ]
     },
     {
-        "id": "12b3e483.24a72b",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "Turn off all lights",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "input_boolean",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"input_boolean.off_all_lights\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 860,
-        "y": 460,
-        "wires": [
-            [
-                "fb2454a3.a9a9f8"
-            ]
-        ]
-    },
-    {
         "id": "8d145814.0a7528",
         "type": "api-current-state",
         "z": "27f4a783.3a8dc8",
@@ -5488,11 +5364,13 @@
                 "adafe54c.17ab38"
             ],
             [
-                "2132fc29.10fb94"
+                "2132fc29.10fb94",
+                "74007b3e.bf1d44"
             ],
             [
                 "2132fc29.10fb94",
-                "cc7b53ee.56ba8"
+                "cc7b53ee.56ba8",
+                "74007b3e.bf1d44"
             ],
             [
                 "cc7b53ee.56ba8"
@@ -5887,7 +5765,8 @@
         "y": 470,
         "wires": [
             [
-                "46f63076.639ff"
+                "46f63076.639ff",
+                "cd71ec63.c5f6f"
             ]
         ]
     },
@@ -5944,7 +5823,7 @@
         "qos": "1",
         "datatype": "auto",
         "broker": "32add66e.5cfcaa",
-        "x": 1020,
+        "x": 960,
         "y": 2180,
         "wires": [
             [
@@ -5957,7 +5836,6 @@
                 "66aa4e78.ed2db",
                 "69ca3e64.f9dca",
                 "46a06294.3989dc",
-                "7c61dfc.52a8c2",
                 "e852558e.87eb58",
                 "ff9936a2.d714b8",
                 "c886bbbe.d31fd8",
@@ -5978,7 +5856,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 1900,
         "wires": [
             []
@@ -5997,7 +5875,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 1940,
         "wires": [
             []
@@ -6016,7 +5894,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 1980,
         "wires": [
             []
@@ -6035,7 +5913,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 2020,
         "wires": [
             []
@@ -6054,7 +5932,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 2060,
         "wires": [
             []
@@ -6073,7 +5951,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 2100,
         "wires": [
             []
@@ -6092,7 +5970,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1520,
+        "x": 1420,
         "y": 2140,
         "wires": [
             []
@@ -6111,7 +5989,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1490,
+        "x": 1390,
         "y": 2180,
         "wires": [
             []
@@ -6130,7 +6008,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1470,
+        "x": 1370,
         "y": 2220,
         "wires": [
             []
@@ -6149,7 +6027,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
+        "x": 1380,
         "y": 2300,
         "wires": [
             []
@@ -6168,7 +6046,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1500,
+        "x": 1400,
         "y": 2340,
         "wires": [
             []
@@ -6187,7 +6065,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1520,
+        "x": 1420,
         "y": 2380,
         "wires": [
             []
@@ -6206,7 +6084,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1500,
+        "x": 1400,
         "y": 2420,
         "wires": [
             []
@@ -6216,7 +6094,7 @@
         "id": "7c61dfc.52a8c2",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "Ruby Night Light Off",
+        "name": "Alex Night Light Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
@@ -6225,8 +6103,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1480,
-        "y": 2260,
+        "x": 2010,
+        "y": 2180,
         "wires": [
             []
         ]
@@ -8280,5 +8158,100 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "525089c2.aa08f8",
+        "type": "mqtt in",
+        "z": "e594dd4a.60761",
+        "name": "Sub MQTT Turn Off Upstairs ALL",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "x": 1770,
+        "y": 2180,
+        "wires": [
+            [
+                "7c61dfc.52a8c2"
+            ]
+        ]
+    },
+    {
+        "id": "cd71ec63.c5f6f",
+        "type": "mqtt out",
+        "z": "e594dd4a.60761",
+        "name": "Pub MQTT Turn Off Upstairs ALL",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1049,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ab093810.0a8fd8",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Turn Off Downstairs",
+        "topic": "nodered-custom/lights/turn-off-downstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 990,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "27aa3de3.f57a62",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Turn Off Upstairs",
+        "topic": "nodered-custom/lights/turn-off-upstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 980,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "795777ec.6f1138",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Turn Off Downstairs",
+        "topic": "nodered-custom/lights/turn-off-downstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 990,
+        "y": 859,
+        "wires": []
+    },
+    {
+        "id": "924ef799.d4d6e8",
+        "type": "mqtt out",
+        "z": "e594dd4a.60761",
+        "name": "Pub MQTT Turn Off Upstairs ALL",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 620,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "74007b3e.bf1d44",
+        "type": "mqtt out",
+        "z": "e594dd4a.60761",
+        "name": "Pub MQTT Turn Off Upstairs ALL",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1380,
+        "y": 1660,
+        "wires": []
     }
 ]
