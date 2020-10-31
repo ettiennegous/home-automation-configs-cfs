@@ -42,8 +42,8 @@ camera: !include config/camera.yaml
 google_assistant: !include config/google_assistant.yaml
 shopping_list:
 
-influxdb:
-  host: !secret influxdb_host
+# influxdb:
+#   host: !secret influxdb_host
 
 speedtestdotnet:
 

@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   portainer:
-    image: portainer/portainer
+    image: portainer/portainer-ce:latest
     container_name: portainer
     restart: always
     command: -H unix:///var/run/docker.sock
@@ -66,48 +66,6 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-  influxdb:
-    image: influxdb:alpine
-    container_name: influxdb
-    restart: unless-stopped
-    ports:
-      - "8086:8086"
-      - "8083:8083"
-    volumes:
-      - ${USERDIR}/docker/influxdb:/var/lib/influxdb
-      - ${USERDIR}/docker/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
-      - ${USERDIR}/docker/shared:/shared
-    environment:
-      INFLUXDB_DB: ${DBNAME}
-      INFLUXDB_USER: ${DBUSER}
-      INFLUXDB_USER_PASSWORD: ${DBPASS}
-      TZ: ${TZ}
-  grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
-    networks:
-      - traefik_proxy
-    environment:
-      GF_SECURITY_ADMIN_PASSWORD: ${DBPASS}
-    depends_on:
-      - influxdb
-    volumes:
-      - grafana-storage:/var/lib/grafana
-      - ${USERDIR}/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
-      - ${USERDIR}/docker/shared:/shared
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=traefik_proxy"
-      - "traefik.http.routers.grafana-router.rule=Host(`grafana.${DOMAINNAME}`)"
-      - "traefik.http.routers.grafana-router.tls=true"
-      - "traefik.http.routers.grafana-router.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.grafana-router.middlewares=secured@file"
-      - "traefik.http.services.grafana-service.loadbalancer.server.port=3000"
-      - "traefik.http.services.grafana-service.loadbalancer.server.scheme=https"
-      - "traefik.http.services.grafana-service.loadbalancer.passHostHeader=true"
   unifi:
     image: jacobalberty/unifi
     container_name: unifi
@@ -223,21 +181,6 @@ services:
       - ${USERDIR}/docker/traefik:/etc/traefik:rw
       - ${USERDIR}/docker/traefik/configs:/etc/traefik/configs:ro
       - ${USERDIR}/docker/shared:/shared
-  shinobi:
-    image: shinobisystems/shinobi:latest-ubuntu
-    container_name: shinobi
-    restart: always
-    hostname: shinobi
-    ports:
-      - "8082:8080/tcp"
-    environment:
-      - APP_BRANCH=dev
-    volumes:
-      - ${USERDIR}/docker/shinobi/streams:/dev/shm/streams
-      - ${USERDIR}/docker/shinobi/config:/config
-      - ${USERDIR}/docker/shinobi/customautoload:/customAutoLoad
-      - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
-      - ${USERDIR}/docker/shinobi/videos:/opt/shinobi/videos
   watchtower:
     image: v2tec/watchtower
     container_name: watchtower
@@ -296,8 +239,88 @@ services:
       - "/dev/bus/usb/002/003"
     environment:
       - MQTT_HOST=mqtt
-volumes:
-  grafana-storage:
+  # shinobi:
+  #   image: shinobisystems/shinobi:latest-ubuntu
+  #   container_name: shinobi
+  #   restart: always
+  #   hostname: shinobi
+  #   ports:
+  #     - "8082:8080/tcp"
+  #   environment:
+  #     - APP_BRANCH=dev
+  #   volumes:
+  #     - ${USERDIR}/docker/shinobi/streams:/dev/shm/streams
+  #     - ${USERDIR}/docker/shinobi/config:/config
+  #     - ${USERDIR}/docker/shinobi/customautoload:/customAutoLoad
+  #     - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
+  #     - ${USERDIR}/docker/shinobi/videos:/opt/shinobi/videos
+    
+  # zigbee2mqtt:
+  #   container_name: zigbee2mqtt
+  #   image: koenkk/zigbee2mqtt
+  #   restart: always
+  #   volumes:
+  #     - ${USERDIR}/docker/zigbee2mqtt/data:/app/data
+  #     - ${USERDIR}/docker/zigbee2mqtt/run/udev:/run/udev:ro
+  #   devices:
+  #     - "/dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0019384464-if00:/dev/ttyACM0"
+  #   restart: always
+  #   privileged: true
+  #   environment:
+  #     - TZ=${TZ}
+
+  # influxdb:
+  #   image: influxdb:alpine
+  #   container_name: influxdb
+  #   restart: "no"
+  #   ports:
+  #     - "8086:8086"
+  #     - "8083:8083"
+  #   volumes:
+  #     - ${USERDIR}/docker/influxdb:/var/lib/influxdb
+  #     - ${USERDIR}/docker/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf:ro
+  #     - ${USERDIR}/docker/shared:/shared
+  #   environment:
+  #     INFLUXDB_DB: ${DBNAME}
+  #     INFLUXDB_USER: ${DBUSER}
+  #     INFLUXDB_USER_PASSWORD: ${DBPASS}
+  #     TZ: ${TZ}
+
+  # grafana:
+  #   image: grafana/grafana:latest
+  #   container_name: grafana
+  #   restart: "no"
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - traefik_proxy
+  #   environment:
+  #     GF_SECURITY_ADMIN_PASSWORD: ${DBPASS}
+  #   depends_on:
+  #     - influxdb
+  #   volumes:
+  #     - grafana-storage:/var/lib/grafana
+  #     - ${USERDIR}/docker/grafana/grafana.ini:/etc/grafana/grafana.ini:ro
+  #     - ${USERDIR}/docker/shared:/shared
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.docker.network=traefik_proxy"
+  #     - "traefik.http.routers.grafana-router.rule=Host(`grafana.${DOMAINNAME}`)"
+  #     - "traefik.http.routers.grafana-router.tls=true"
+  #     - "traefik.http.routers.grafana-router.tls.certresolver=letsencrypt"
+  #     - "traefik.http.routers.grafana-router.middlewares=secured@file"
+  #     - "traefik.http.services.grafana-service.loadbalancer.server.port=3000"
+  #     - "traefik.http.services.grafana-service.loadbalancer.server.scheme=https"
+  #     - "traefik.http.services.grafana-service.loadbalancer.passHostHeader=true"
+
+  # sonarqube:
+  #   container_name: sonarqube
+  #   image: sonarqube:8.4.1-community
+  #   restart: "no"
+  #   ports:
+  #     - 9002:9000
+# volumes:
+#   grafana-storage:
 networks:
   traefik_proxy:
     external:

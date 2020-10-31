@@ -163,6 +163,7 @@
         - light.shelly_1_kitchen_light
         - light.shelly_dimmer_dressing_room
         - light.shelly_1_laundry
+        - light.alex_bedside_lamp
 
 - platform: template
   sensors:
