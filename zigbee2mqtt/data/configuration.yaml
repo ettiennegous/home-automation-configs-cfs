@@ -2,13 +2,21 @@ homeassistant: true
 permit_join: false
 mqtt:
   base_topic: zigbee2mqtt
-  server: 'mqtt://mqtt'
+  server: 'mqtt://192.168.1.40'
 serial:
   port: /dev/ttyACM0
 devices:
   '0x680ae2fffe373be9':
-    friendly_name: 'Tradfri PIR 1'
+    friendly_name: Tradfri PIR 1
+  '0xec1bbdfffe6fb3fa':
+    friendly_name: Tradfri PIR 2
   '0xec1bbdfffebaf388':
-    friendly_name: 'Tradfri Button 1'
+    friendly_name: Tradfri Button 1
   '0x588e81fffe2cd4d9':
-    friendly_name: 'Tradfri Button 2'
+    friendly_name: Tradfri Button 2
+  '0x842e14fffe154730':
+    friendly_name: Tradfri Button 3
+  '0xec1bbdfffea0e6e2':
+    friendly_name: Tradfri Volume 1
+  '0x842e14fffe8e3238':
+    friendly_name: Tradfri Bulb 1

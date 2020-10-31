@@ -5113,7 +5113,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\",\"transition\":\"900\"}",
+        "data": "{\"entity_id\":\"light.alex_bedside_lamp\",\"transition\":\"900\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -5839,7 +5839,8 @@
                 "e852558e.87eb58",
                 "ff9936a2.d714b8",
                 "c886bbbe.d31fd8",
-                "32edec0c.b20764"
+                "32edec0c.b20764",
+                "9cae572f.8da578"
             ]
         ]
     },
@@ -6701,11 +6702,36 @@
                 "t": "eq",
                 "v": "brightness_stop",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "rotate_right",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "rotate_left",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "play_pause",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "skip_forward",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "skip_backward",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 5,
+        "outputs": 10,
         "x": 590,
         "y": 240,
         "wires": [
@@ -6723,6 +6749,21 @@
             ],
             [
                 "eea65ef.9079aa"
+            ],
+            [
+                "51d5d337.a9755c"
+            ],
+            [
+                "14357121.10182f"
+            ],
+            [
+                "26670465.49450c"
+            ],
+            [
+                "461d3fbe.e55c4"
+            ],
+            [
+                "ec795c72.5cd9"
             ]
         ]
     },
@@ -6740,7 +6781,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 880,
-        "y": 180,
+        "y": 140,
         "wires": [
             []
         ]
@@ -6753,13 +6794,13 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "",
+        "data": "{\"entity_id\":\"Ettienne\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 880,
-        "y": 225,
+        "y": 180,
         "wires": [
             []
         ]
@@ -6778,7 +6819,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1190,
-        "y": 280,
+        "y": 220,
         "wires": [
             [
                 "79ec80a7.590fd"
@@ -6794,7 +6835,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 900,
-        "y": 280,
+        "y": 220,
         "wires": [
             [
                 "3b1e6eaa.66a872"
@@ -6820,7 +6861,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1480,
-        "y": 280,
+        "y": 220,
         "wires": [
             [
                 "e8f21668.b98378"
@@ -6844,7 +6885,7 @@
         "randomUnits": "seconds",
         "drop": false,
         "x": 1690,
-        "y": 280,
+        "y": 220,
         "wires": [
             [
                 "3b1e6eaa.66a872"
@@ -6856,7 +6897,7 @@
         "type": "function",
         "z": "3434d199.8ed28e",
         "name": "Switch Topic to Entity ID",
-        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        \n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.lifx_study\";\n        break;\n}\nreturn msg;",
+        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        \n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.lifx_study\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3/click\":\n        msg.payload.data.entity_id = \"light.alex_bedside_lamp\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume 1/action\":\n        msg.payload.data.entity_id = \"media_player.kitchen_speaker\";\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 390,
@@ -6876,7 +6917,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 900,
-        "y": 320,
+        "y": 260,
         "wires": [
             []
         ]
@@ -8225,7 +8266,7 @@
         "retain": "",
         "broker": "32add66e.5cfcaa",
         "x": 990,
-        "y": 859,
+        "y": 800,
         "wires": []
     },
     {
@@ -8253,5 +8294,203 @@
         "x": 1380,
         "y": 1660,
         "wires": []
+    },
+    {
+        "id": "51d5d337.a9755c",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Volume Up",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "volume_up",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14357121.10182f",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Volume Down",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "volume_down",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 900,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2184b5c7.89f18a",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Stop Music Downstairs",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_stop",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1220,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7bc1d1ad.a5ea1",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Start Music Downstairs",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "spotcast",
+        "service": "start",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\",\"uri\":\"{{randomPlaylist.uri}}\",\"random_song\":true,\"force_playback\":true}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1460,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78fc8845.fa8598",
+        "type": "api-current-state",
+        "z": "3434d199.8ed28e",
+        "name": "Downstairs Is Playing",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "media_player.kitchen_speaker",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 980,
+        "y": 700,
+        "wires": [
+            [
+                "2184b5c7.89f18a"
+            ],
+            [
+                "d84ac7b7.16f4e8"
+            ]
+        ]
+    },
+    {
+        "id": "d84ac7b7.16f4e8",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Choose Random Playlist",
+        "func": "let playlistsArray = [\n    {\n        uri : \"spotify:playlist:37i9dQZF1E4EFyuVOygvQ7\", \n        desc : \"Air Radio\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E39OdKMfKM663\", \n        desc : \"Tame Impala, Two Door Cinema, Gang of Youths\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E35sNS8MhSVoM\", \n        desc : \"Nightmares on Wax, Zero 7 etc\",\n    },\n    \n]\n\nvar randomPlaylist = playlistsArray[Math.floor(Math.random()*playlistsArray.length)];\nmsg.randomPlaylist = randomPlaylist;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1230,
+        "y": 720,
+        "wires": [
+            [
+                "7bc1d1ad.a5ea1"
+            ]
+        ]
+    },
+    {
+        "id": "9cae572f.8da578",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Alex Bedside Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.alex_bedside_lamp\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1380,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "461d3fbe.e55c4",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Skip Forward",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_next_track",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec795c72.5cd9",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Skip Backward",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_previous_track",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 900,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26670465.49450c",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Play/Pause",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_play_pause",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 400,
+        "wires": [
+            []
+        ]
     }
 ]

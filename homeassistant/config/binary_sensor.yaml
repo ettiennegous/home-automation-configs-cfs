@@ -20,6 +20,13 @@
   value_template: "{{ value_json.occupancy }}"
   device_class: motion
 - platform: mqtt
+  name: Tradfri_PIR_2
+  state_topic: "zigbee2mqtt/Tradfri PIR 2"
+  payload_on: true
+  off_delay: 60
+  value_template: "{{ value_json.occupancy }}"
+  device_class: motion
+- platform: mqtt
   name: GS_WDS07_1
   state_topic: "rtl_433/events"
   payload_on: "24045-ZZ1Z1X1Z00XX"
