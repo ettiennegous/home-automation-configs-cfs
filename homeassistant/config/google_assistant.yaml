@@ -48,7 +48,7 @@ entity_config:
     expose: false
   switch.aeon_labs_zw111_nano_dimmer_switch_2:
     expose: false
-  light.lifx_study:
+  light.lifx_bulb_1:
     expose: false
   light.lifx_stairs_closet:
     expose: false

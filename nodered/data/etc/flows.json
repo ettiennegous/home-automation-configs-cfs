@@ -1044,7 +1044,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "toggle",
-        "data": "{\"entity_id\":\"light.lifx_study\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -1548,7 +1548,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_study\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -1882,12 +1882,8 @@
         "x": 250,
         "y": 520,
         "wires": [
-            [
-                "47da4960.9cb9e8"
-            ],
-            [
-                "47da4960.9cb9e8"
-            ]
+            [],
+            []
         ]
     },
     {
@@ -3482,9 +3478,7 @@
         "x": 590,
         "y": 520,
         "wires": [
-            [
-                "d479eebc.741a9"
-            ]
+            []
         ]
     },
     {
@@ -4068,7 +4062,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_study\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -4336,7 +4330,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "lifx",
         "service": "effect_pulse",
-        "data": "{\"entity_id\":\"light.lifx_study\",\"cycles\":\"3\",\"color_name\":\"tomato\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\",\"cycles\":\"3\",\"color_name\":\"tomato\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -4500,7 +4494,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"light.lifx_study\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -4542,7 +4536,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_study\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -5113,7 +5107,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.alex_bedside_lamp\",\"transition\":\"900\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\",\"transition\":\"900\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -6751,19 +6745,19 @@
                 "eea65ef.9079aa"
             ],
             [
-                "51d5d337.a9755c"
+                "852dd0e6.cdbfa"
             ],
             [
-                "14357121.10182f"
+                "ffa23a63.7b7048"
             ],
             [
-                "26670465.49450c"
+                "4247f0d8.ed32e"
             ],
             [
-                "461d3fbe.e55c4"
+                "bdb1a8ec.783d68"
             ],
             [
-                "ec795c72.5cd9"
+                "34ce4184.0f3dae"
             ]
         ]
     },
@@ -6897,7 +6891,7 @@
         "type": "function",
         "z": "3434d199.8ed28e",
         "name": "Switch Topic to Entity ID",
-        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        \n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.lifx_study\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3/click\":\n        msg.payload.data.entity_id = \"light.alex_bedside_lamp\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume 1/action\":\n        msg.payload.data.entity_id = \"media_player.kitchen_speaker\";\n}\nreturn msg;",
+        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        \n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.tradfri_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3/click\":\n        msg.payload.data.entity_id = \"light.lifx_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume 1/action\":\n        msg.custom = {};\n        msg.custom.entity_id = \"media_player.kitchen_speaker\";\n        break;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 390,
@@ -7042,7 +7036,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "toggle",
-        "data": "{\"entity_id\":\"light.lifx_study\",\"transition\":\"5\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\",\"transition\":\"5\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -7872,7 +7866,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"light.lifx_study\",\"flash\":\"long\",\"effect\":\"random\",\"transition\":3}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\",\"flash\":\"long\",\"effect\":\"random\",\"transition\":3}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -8303,13 +8297,13 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "media_player",
         "service": "volume_up",
-        "data": "",
+        "data": "{\"entity_id\":\"Ettienne\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 890,
-        "y": 300,
+        "x": 370,
+        "y": 580,
         "wires": [
             []
         ]
@@ -8327,8 +8321,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 900,
-        "y": 340,
+        "x": 380,
+        "y": 620,
         "wires": [
             []
         ]
@@ -8425,7 +8419,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.alex_bedside_lamp\"}",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -8449,8 +8443,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 890,
-        "y": 440,
+        "x": 370,
+        "y": 720,
         "wires": [
             []
         ]
@@ -8468,8 +8462,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 900,
-        "y": 480,
+        "x": 380,
+        "y": 760,
         "wires": [
             []
         ]
@@ -8487,8 +8481,218 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
+        "x": 370,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "852dd0e6.cdbfa",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Volume Up",
+        "func": "msg.custom.service = \"volume_up\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 300,
+        "wires": [
+            [
+                "c0d920bf.8be99"
+            ]
+        ]
+    },
+    {
+        "id": "ffa23a63.7b7048",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Volume Down",
+        "func": "msg.custom.service = \"volume_down\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 340,
+        "wires": [
+            [
+                "c0d920bf.8be99"
+            ]
+        ]
+    },
+    {
+        "id": "4247f0d8.ed32e",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Play/Pause",
+        "func": "msg.custom.service = \"media_play_pause\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
         "x": 890,
         "y": 400,
+        "wires": [
+            [
+                "c0d920bf.8be99"
+            ]
+        ]
+    },
+    {
+        "id": "bdb1a8ec.783d68",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Skip Forward",
+        "func": "msg.custom.service = \"media_next_track\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 440,
+        "wires": [
+            [
+                "c0d920bf.8be99"
+            ]
+        ]
+    },
+    {
+        "id": "34ce4184.0f3dae",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Skip Backward",
+        "func": "msg.custom.service = \"media_previous_track\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 480,
+        "wires": [
+            [
+                "c0d920bf.8be99"
+            ]
+        ]
+    },
+    {
+        "id": "9eee98d.373ea68",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Call Media Player Service",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "{{custom.service}}",
+        "data": "{\"entity_id\":\"{{custom.entity_id}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1690,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0d920bf.8be99",
+        "type": "api-current-state",
+        "z": "3434d199.8ed28e",
+        "name": "Downstairs Playing",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "media_player.downstairs",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1170,
+        "y": 360,
+        "wires": [
+            [
+                "6eed1c68.95c104"
+            ],
+            [
+                "9eee98d.373ea68"
+            ]
+        ]
+    },
+    {
+        "id": "6eed1c68.95c104",
+        "type": "function",
+        "z": "3434d199.8ed28e",
+        "name": "Switch Topic to Entity ID",
+        "func": "msg.custom.entity_id = \"media_player.downstairs\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1430,
+        "y": 320,
+        "wires": [
+            [
+                "9eee98d.373ea68",
+                "833b5a5a.165848"
+            ]
+        ]
+    },
+    {
+        "id": "e461c325.4ebbf",
+        "type": "comment",
+        "z": "3434d199.8ed28e",
+        "name": "Target Override",
+        "info": "If downstairs is playing override the target device of kitchen speaker",
+        "x": 1400,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "833b5a5a.165848",
+        "type": "debug",
+        "z": "3434d199.8ed28e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1360,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5f0987c.f454578",
+        "type": "inject",
+        "z": "d1ff6abb.b25cf8",
+        "name": "7AM Turn off Nightlight",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "00 07 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 660,
+        "wires": [
+            [
+                "c6b0e4bc.64c4d8"
+            ]
+        ]
+    },
+    {
+        "id": "c6b0e4bc.64c4d8",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Alex Night Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 660,
         "wires": [
             []
         ]

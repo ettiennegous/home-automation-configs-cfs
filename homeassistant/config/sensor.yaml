@@ -144,7 +144,7 @@
         - light.lifx_pantry
         - light.lifx_rumpus_standing
         - light.lifx_stairs_closet
-        - light.lifx_study
+        - light.lifx_bulb_1
         - light.shelly_1_alex_kitchen_light
         - light.shelly_1_guest_room_light
         - light.shelly_1_master_toilet_light
@@ -163,7 +163,7 @@
         - light.shelly_1_kitchen_light
         - light.shelly_dimmer_dressing_room
         - light.shelly_1_laundry
-        - light.alex_bedside_lamp
+        - light.tradfri_bulb_1
 
 - platform: template
   sensors:

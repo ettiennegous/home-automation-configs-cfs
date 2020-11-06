@@ -178,7 +178,8 @@ light.lifx_rumpus_standing:
   tracked_light: true
 light.lifx_stairs_closet:
   tracked_light: true
-light.lifx_study:
+light.lifx_bulb_1:
+  friendly_name: Alex Lamp
   tracked_light: true
 light.shelly_1_alex_kitchen_light:
   tracked_light: true
@@ -225,3 +226,6 @@ switch.amp_tv:
   friendly_name: Onkyo Source TV
 switch.amp_music:
   friendly_name: Onkyo Source Music
+light.tradfri_bulb_1:
+  friendly_name: Study Desk Lamp
+  tracked_light: true

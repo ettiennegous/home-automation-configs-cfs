@@ -1,6 +1,6 @@
 light:
     - platform: "mqtt"
-      name: "Alex Bedside Lamp"
+      name: "Tradfri Bulb 1"
       state_topic: "zigbee2mqtt/Tradfri Bulb 1"
       availability_topic: "zigbee2mqtt/bridge/state"
       brightness: true
