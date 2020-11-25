@@ -203,8 +203,6 @@ light.shelly_2_5_stairs_light:
   tracked_light: true
 light.sonoff_belle:
   tracked_light: true
-light.sonoff_lucy:
-  tracked_light: true
 light.sonoff_woodstock:
   tracked_light: true
 light.discreet_light:

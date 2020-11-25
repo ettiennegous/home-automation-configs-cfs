@@ -156,8 +156,6 @@
         - light.shelly_2_5_rumpus_side_light
         - light.shelly_2_5_stairs_light
         - light.sonoff_belle
-        - light.sonoff_lucy
-        - light.sonoff_woodstock
         - light.discreet_light
         - light.garage_flood_light
         - light.shelly_1_kitchen_light
