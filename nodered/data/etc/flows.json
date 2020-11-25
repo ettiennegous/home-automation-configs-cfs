@@ -1715,7 +1715,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 190,
-        "y": 1640,
+        "y": 1506,
         "wires": [
             [],
             []
@@ -1829,7 +1829,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 480,
-        "y": 1640,
+        "y": 1506,
         "wires": [
             []
         ]
@@ -2339,67 +2339,6 @@
             [
                 "7fbaf3fb.fa0dbc"
             ]
-        ]
-    },
-    {
-        "id": "701f909.ff8a47",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "Sun Below Horizon",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "sun.sun",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "below_horizon",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 150,
-        "y": 1520,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "b20f1f38.5708f",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Alex Night Light On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 470,
-        "y": 1520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8995910d.b840e",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Alex Night Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 470,
-        "y": 1560,
-        "wires": [
-            []
         ]
     },
     {
@@ -4336,7 +4275,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 460,
-        "y": 1720,
+        "y": 1586,
         "wires": [
             []
         ]
@@ -4354,7 +4293,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 260,
-        "y": 1720,
+        "y": 1586,
         "wires": [
             [
                 "93cb2f56.48b6e"
@@ -5107,7 +5046,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\",\"transition\":\"900\"}",
+        "data": "{\"entity_id\":\"light.lifx_bulb_1\",\"transition\":\"900\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -5791,7 +5730,8 @@
                 "4109e42.497951c",
                 "3ec87a06.4ff786",
                 "7693dfac.811d3",
-                "822602a.5c051"
+                "822602a.5c051",
+                "9cae572f.8da578"
             ]
         ]
     },
@@ -5834,7 +5774,7 @@
                 "ff9936a2.d714b8",
                 "c886bbbe.d31fd8",
                 "32edec0c.b20764",
-                "9cae572f.8da578"
+                "3b7bd263.8f4d5e"
             ]
         ]
     },
@@ -6933,7 +6873,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 150,
-        "y": 1820,
+        "y": 1686,
         "wires": [
             [
                 "8628cbaa.6e0518"
@@ -6961,7 +6901,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 400,
-        "y": 1820,
+        "y": 1686,
         "wires": [
             [
                 "60c3600d.1f3f"
@@ -6983,7 +6923,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 590,
-        "y": 1820,
+        "y": 1686,
         "wires": [
             []
         ]
@@ -7850,11 +7790,9 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 220,
-        "y": 1940,
+        "y": 1806,
         "wires": [
-            [
-                "e936ad6b.c043c"
-            ],
+            [],
             []
         ]
     },
@@ -7872,7 +7810,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 590,
-        "y": 1940,
+        "y": 1806,
         "wires": [
             []
         ]
@@ -8415,7 +8353,7 @@
         "id": "9cae572f.8da578",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "Alex Bedside Lamp Off",
+        "name": "Study Lamp Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
@@ -8424,8 +8362,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1380,
-        "y": 2260,
+        "x": 560,
+        "y": 2480,
         "wires": [
             []
         ]
@@ -8659,9 +8597,28 @@
         "wires": []
     },
     {
-        "id": "5f0987c.f454578",
+        "id": "3b7bd263.8f4d5e",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Alex Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 2260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "28e911af.0fbade",
         "type": "inject",
-        "z": "d1ff6abb.b25cf8",
+        "z": "a76c0410.5bd8c8",
         "name": "7AM Turn off Nightlight",
         "topic": "",
         "payload": "",
@@ -8670,18 +8627,18 @@
         "crontab": "00 07 * * *",
         "once": false,
         "onceDelay": 0.1,
-        "x": 210,
-        "y": 660,
+        "x": 170,
+        "y": 480,
         "wires": [
             [
-                "c6b0e4bc.64c4d8"
+                "9a80de7e.89217"
             ]
         ]
     },
     {
-        "id": "c6b0e4bc.64c4d8",
+        "id": "9a80de7e.89217",
         "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
+        "z": "a76c0410.5bd8c8",
         "name": "Alex Night Light Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
@@ -8691,8 +8648,47 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 890,
-        "y": 660,
+        "x": 850,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "110c7d47.baca83",
+        "type": "inject",
+        "z": "a76c0410.5bd8c8",
+        "name": "7:20PM Turn on Nightlight",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "20 19 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 180,
+        "y": 540,
+        "wires": [
+            [
+                "2ebc6d4b.325af2"
+            ]
+        ]
+    },
+    {
+        "id": "2ebc6d4b.325af2",
+        "type": "api-call-service",
+        "z": "a76c0410.5bd8c8",
+        "name": "Alex Night Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 850,
+        "y": 540,
         "wires": [
             []
         ]
