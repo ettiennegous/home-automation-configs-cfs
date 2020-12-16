@@ -130,3 +130,6 @@
 - platform: switch
   name: Garage Flood Light
   entity_id: switch.tp_link_3
+- platform: switch
+  name: Front Door Light
+  entity_id: switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch_2
