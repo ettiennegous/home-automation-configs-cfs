@@ -335,8 +335,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 170,
-        "y": 980,
+        "x": 150,
+        "y": 740,
         "wires": [
             [
                 "c136fd73.7bfcb",
@@ -361,7 +361,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 770,
-        "y": 920,
+        "y": 720,
         "wires": [
             []
         ]
@@ -380,7 +380,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1780,
-        "y": 980,
+        "y": 780,
         "wires": [
             []
         ]
@@ -401,8 +401,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 190,
-        "y": 1048,
+        "x": 170,
+        "y": 840,
         "wires": [
             [
                 "c136fd73.7bfcb",
@@ -430,7 +430,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 170,
-        "y": 640,
+        "y": 440,
         "wires": [
             [
                 "34c203d3.d5c28c"
@@ -454,7 +454,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 770,
-        "y": 640,
+        "y": 440,
         "wires": [
             []
         ]
@@ -473,7 +473,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 770,
-        "y": 580,
+        "y": 380,
         "wires": [
             []
         ]
@@ -487,7 +487,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 1060,
-        "y": 1020,
+        "y": 820,
         "wires": [
             [
                 "3076db1c.367fb4"
@@ -1113,7 +1113,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 780,
-        "y": 1048,
+        "y": 848,
         "wires": [
             [
                 "5a24c417.69153c"
@@ -1141,7 +1141,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 800,
-        "y": 980,
+        "y": 780,
         "wires": [
             [
                 "5a24c417.69153c"
@@ -1410,7 +1410,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 1320,
-        "y": 1020,
+        "y": 820,
         "wires": [
             [
                 "d4367342.3e3"
@@ -1438,7 +1438,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 1560,
-        "y": 1020,
+        "y": 820,
         "wires": [
             [
                 "cce65336.ef488",
@@ -1454,7 +1454,7 @@
         "name": "Need to check again after the 60 seconds",
         "info": "Someone may have closed themselves in the garage \nthen opened a door when the countdown has started.",
         "x": 1460,
-        "y": 980,
+        "y": 780,
         "wires": []
     },
     {
@@ -1715,7 +1715,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 190,
-        "y": 1506,
+        "y": 1340,
         "wires": [
             [],
             []
@@ -1829,7 +1829,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 480,
-        "y": 1506,
+        "y": 1340,
         "wires": [
             []
         ]
@@ -1853,36 +1853,13 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1190,
-        "y": 1340,
+        "x": 1270,
+        "y": 1120,
         "wires": [
             [
                 "dcb53b6d.23dc48",
                 "609765f4.28c1fc"
             ],
-            []
-        ]
-    },
-    {
-        "id": "ba14fd7e.fceb5",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Dressing Room Motion Detected Sonoff PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 250,
-        "y": 520,
-        "wires": [
-            [],
             []
         ]
     },
@@ -1893,7 +1870,7 @@
         "name": "Stairs Landing Motion Detected Sonoff PIR",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_2",
+        "entityidfilter": "binary_sensor.tradfri_pir_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -1903,11 +1880,12 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 220,
-        "y": 1250,
+        "y": 1030,
         "wires": [
             [
                 "8d145814.0a7528",
-                "246c2d33.fcdda2"
+                "246c2d33.fcdda2",
+                "169d704e.b0793"
             ],
             []
         ]
@@ -1920,8 +1898,8 @@
         "func": "var d = new Date();\nvar hour = d.getHours();\n\nif(hour >= 21 || hour <= 7) {\n    msg.payload = 30;\n}\nelse {\n    msg.payload = 100;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 950,
-        "y": 1300,
+        "x": 1030,
+        "y": 1080,
         "wires": [
             [
                 "d3d1a423.e17d28",
@@ -1942,8 +1920,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
-        "y": 1300,
+        "x": 1540,
+        "y": 1080,
         "wires": [
             []
         ]
@@ -1961,8 +1939,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
-        "y": 1340,
+        "x": 1540,
+        "y": 1120,
         "wires": [
             []
         ]
@@ -2001,7 +1979,7 @@
         "name": "Front Door Open",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "binary_sensor.gs_wds07_1",
+        "entityidfilter": "binary_sensor.st_contact_sensor_1",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -2239,38 +2217,13 @@
         ]
     },
     {
-        "id": "83b69a90.494358",
-        "type": "server-state-changed",
-        "z": "ff5661ef.cd5bf",
-        "name": "Rumpus Motion Detected Sonoff PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 540,
-        "y": 780,
-        "wires": [
-            [
-                "28efc270.8f399e"
-            ],
-            []
-        ]
-    },
-    {
         "id": "3b82aae3.8fe1f6",
         "type": "server-state-changed",
         "z": "ff5661ef.cd5bf",
         "name": "Stairs Landing Motion Detected Sonoff PIR",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_2",
+        "entityidfilter": "binary_sensor.tradfri_pir_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -2849,33 +2802,6 @@
         ]
     },
     {
-        "id": "28efc270.8f399e",
-        "type": "change",
-        "z": "ff5661ef.cd5bf",
-        "name": "rumpus sonoff motion",
-        "rules": [
-            {
-                "t": "set",
-                "p": "source",
-                "pt": "msg",
-                "to": "rumpus sonoff motion triggered",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 900,
-        "y": 780,
-        "wires": [
-            [
-                "2fd880fd.a32c1"
-            ]
-        ]
-    },
-    {
         "id": "d976fe61.62e4",
         "type": "change",
         "z": "ff5661ef.cd5bf",
@@ -3376,7 +3302,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
-        "y": 880,
+        "y": 680,
         "wires": [
             []
         ]
@@ -3395,7 +3321,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1800,
-        "y": 1040,
+        "y": 840,
         "wires": [
             []
         ]
@@ -4274,8 +4200,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 460,
-        "y": 1586,
+        "x": 340,
+        "y": 1440,
         "wires": [
             []
         ]
@@ -4292,8 +4218,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 260,
-        "y": 1586,
+        "x": 140,
+        "y": 1440,
         "wires": [
             [
                 "93cb2f56.48b6e"
@@ -4389,7 +4315,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 220,
-        "y": 1420,
+        "y": 1220,
         "wires": [
             [
                 "80384bc9.733eb8"
@@ -4417,7 +4343,7 @@
         "override_data": "msg",
         "blockInputOverrides": false,
         "x": 520,
-        "y": 1420,
+        "y": 1220,
         "wires": [
             [
                 "b6d2df30.4a3d9"
@@ -4439,7 +4365,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 720,
-        "y": 1420,
+        "y": 1220,
         "wires": [
             []
         ]
@@ -4699,7 +4625,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 150,
-        "y": 740,
+        "y": 540,
         "wires": [
             [
                 "70554dd5.f44484"
@@ -4723,7 +4649,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
-        "y": 720,
+        "y": 520,
         "wires": [
             []
         ]
@@ -4742,7 +4668,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
-        "y": 780,
+        "y": 580,
         "wires": [
             []
         ]
@@ -4915,8 +4841,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 660,
-        "y": 1300,
+        "x": 740,
+        "y": 1080,
         "wires": [
             [
                 "4e7c2b77.4112d4"
@@ -5114,8 +5040,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1130,
-        "y": 1180,
+        "x": 1210,
+        "y": 960,
         "wires": [
             []
         ]
@@ -5139,8 +5065,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 900,
-        "y": 1180,
+        "x": 980,
+        "y": 960,
         "wires": [
             [
                 "fcd251cc.9ec8f"
@@ -5167,8 +5093,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 690,
-        "y": 1180,
+        "x": 770,
+        "y": 960,
         "wires": [
             [
                 "3df7c826.175758"
@@ -5232,8 +5158,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1230,
-        "y": 1260,
+        "x": 1310,
+        "y": 1040,
         "wires": [
             []
         ]
@@ -6169,91 +6095,6 @@
         ]
     },
     {
-        "id": "efe57d60.feef4",
-        "type": "server-state-changed",
-        "z": "a76c0410.5bd8c8",
-        "name": "Dressing Room Motion Detected Sonoff PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 210,
-        "y": 220,
-        "wires": [
-            [
-                "1d596df0.e27f72"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "54389ad.6ddd764",
-        "type": "api-call-service",
-        "z": "a76c0410.5bd8c8",
-        "name": "Dressing Room Lights On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"light.shelly_dimmer_dressing_room\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1070,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1d596df0.e27f72",
-        "type": "function",
-        "z": "a76c0410.5bd8c8",
-        "name": "Not 9:30pm and 6am",
-        "func": "var d = new Date();\nvar hour = d.getHours();\n\nif(hour >= 21 || hour < 6) {\n    msg.shouldActivate = false;\n}\nelse {\n    msg.shouldActivate = true;\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 520,
-        "y": 220,
-        "wires": [
-            [
-                "ac826b69.8483d8"
-            ]
-        ]
-    },
-    {
-        "id": "ac826b69.8483d8",
-        "type": "switch",
-        "z": "a76c0410.5bd8c8",
-        "name": "Filter Time Should Activate",
-        "property": "shouldActivate",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 800,
-        "y": 220,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
         "id": "87b2ac6d.4c31a",
         "type": "server-state-changed",
         "z": "a76c0410.5bd8c8",
@@ -6347,7 +6188,7 @@
         "id": "391813eb.8f75ec",
         "type": "api-current-state",
         "z": "a76c0410.5bd8c8",
-        "name": "",
+        "name": "Max Temp",
         "server": "5a39eab2.9f6814",
         "version": 1,
         "outputs": 1,
@@ -6355,18 +6196,18 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "sensor.bom_forecast_0",
+        "entity_id": "sensor.bom_forecast_temp_max_0",
         "state_type": "str",
-        "state_location": "payload",
+        "state_location": "maxCelcius",
         "override_payload": "msg",
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1210,
+        "x": 1130,
         "y": 340,
         "wires": [
             [
-                "6adc2dfc.e299d4"
+                "888beca9.76b15"
             ]
         ]
     },
@@ -6419,10 +6260,10 @@
         "type": "function",
         "z": "a76c0410.5bd8c8",
         "name": "Extract Weather Data",
-        "func": "var weatherData = msg.payload.match(/(\\d+)/g) || [\"\"];\nmsg.maxCelcius = weatherData[0];\nmsg.minCelcius = weatherData[1];\nmsg.rainPercent = weatherData[2];\n\nmsg.cycles = 36\nmsg.period = 5\n\nif([6, 7, 8].includes(msg.hour)) {\n    msg.color_name = returnColourNameDayTime(msg.maxCelcius);\n}\nelse if([16, 17].includes(msg.hour)) {\n    msg.color_name = returnColourNameNightTime(msg.minCelcius)\n}\nelse {\n    msg.color_name = returnColourNameDayTime(msg.minCelcius)\n}\n\n\nmsg.mode = msg.rainPercent > 50 ? \"strobe\" : \"breathe\";\n\nfunction returnColourNameDayTime(tempCelcius) {\n    if(tempCelcius >= 25) return \"red\";\n    else if(tempCelcius < 25 && tempCelcius >= 19) return \"green\";\n    else if(tempCelcius < 18) return \"teal\"\n    else return \"gold\";\n}\n\nfunction returnColourNameNightTime(tempCelcius) {\n    if(tempCelcius >= 22) return \"red\";\n    else if(tempCelcius < 22 && tempCelcius >= 17) return \"green\";\n    else if(tempCelcius < 17) return \"teal\"\n    else return \"gold\";\n}\n\nreturn msg;",
+        "func": "msg.cycles = 36\nmsg.period = 8\n\nif([6, 7, 8].includes(msg.hour)) {\n    msg.color_name = returnColourNameDayTime(msg.maxCelcius);\n}\nelse if([16, 17].includes(msg.hour)) {\n    msg.color_name = returnColourNameNightTime(msg.minCelcius)\n}\nelse {\n    msg.color_name = returnColourNameDayTime(msg.minCelcius)\n}\n\n\nmsg.mode = msg.rainPercent > 50 ? \"strobe\" : \"breathe\";\n\nfunction returnColourNameDayTime(tempCelcius) {\n    if(tempCelcius >= 25) return \"red\";\n    else if(tempCelcius < 25 && tempCelcius >= 19) return \"green\";\n    else if(tempCelcius < 18) return \"teal\"\n    else return \"gold\";\n}\n\nfunction returnColourNameNightTime(tempCelcius) {\n    if(tempCelcius >= 22) return \"red\";\n    else if(tempCelcius < 22 && tempCelcius >= 17) return \"green\";\n    else if(tempCelcius < 17) return \"teal\"\n    else return \"gold\";\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1520,
+        "x": 1660,
         "y": 340,
         "wires": [
             [
@@ -6462,10 +6303,12 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1780,
+        "x": 1900,
         "y": 340,
         "wires": [
-            []
+            [
+                "67d51aa0.3ee464"
+            ]
         ]
     },
     {
@@ -7412,7 +7255,7 @@
         "name": "Stairs Landing Motion Detected Sonoff PIR",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_2",
+        "entityidfilter": "binary_sensor.tradfri_pir_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -7503,7 +7346,8 @@
             [
                 "8901a4e2.ad5778",
                 "e3046060.989b7",
-                "235f0d1.5dccdf2"
+                "235f0d1.5dccdf2",
+                "7d7e1667.19fd88"
             ],
             []
         ]
@@ -7774,48 +7618,6 @@
         ]
     },
     {
-        "id": "cdd56890.2a3088",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "Stairs Landing Motion Detected Sonoff PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.sonoff_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 220,
-        "y": 1806,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "e936ad6b.c043c",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Study Lamp Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\",\"flash\":\"long\",\"effect\":\"random\",\"transition\":3}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 590,
-        "y": 1806,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c6466b14.4851e8",
         "type": "server-state-changed",
         "z": "191e949e.9f212b",
@@ -7831,7 +7633,7 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 389,
+        "x": 250,
         "y": 840,
         "wires": [
             [
@@ -8691,6 +8493,314 @@
         "y": 540,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e1882e38.240ee",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Front Door Open",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.st_contact_sensor_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 1780,
+        "wires": [
+            [
+                "e94e560a.804908"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e94e560a.804908",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Dark",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "binary_sensor.is_dark",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 340,
+        "y": 1780,
+        "wires": [
+            [
+                "c314f95a.10d298"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c314f95a.10d298",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Front Door Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.front_door_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 580,
+        "y": 1780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb35eb0a.b86e18",
+        "type": "server-state-changed",
+        "z": "191e949e.9f212b",
+        "name": "Front Door Close",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.st_contact_sensor_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 260,
+        "y": 980,
+        "wires": [
+            [
+                "b37fb8d9.e28718"
+            ],
+            [
+                "b37fb8d9.e28718"
+            ]
+        ]
+    },
+    {
+        "id": "2ab945a4.45e03a",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Front Door Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.front_door_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 970,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b37fb8d9.e28718",
+        "type": "trigger",
+        "z": "191e949e.9f212b",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "3",
+        "extend": true,
+        "units": "min",
+        "reset": "on",
+        "bytopic": "all",
+        "name": "3 Minutes",
+        "x": 620,
+        "y": 980,
+        "wires": [
+            [
+                "2ab945a4.45e03a"
+            ]
+        ]
+    },
+    {
+        "id": "169d704e.b0793",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Wled On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.wled\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 740,
+        "y": 1136,
+        "wires": [
+            [
+                "62e04525.92d89c"
+            ]
+        ]
+    },
+    {
+        "id": "7d7e1667.19fd88",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "Wled Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.wled\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 940,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "888beca9.76b15",
+        "type": "api-current-state",
+        "z": "a76c0410.5bd8c8",
+        "name": "Min Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.bom_forecast_temp_min_0",
+        "state_type": "str",
+        "state_location": "minCelcius",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1300,
+        "y": 340,
+        "wires": [
+            [
+                "f004f152.4c7d6"
+            ]
+        ]
+    },
+    {
+        "id": "f004f152.4c7d6",
+        "type": "api-current-state",
+        "z": "a76c0410.5bd8c8",
+        "name": "Rain %",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.bom_forecast_rain_chance_0",
+        "state_type": "str",
+        "state_location": "rainPercent",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1460,
+        "y": 340,
+        "wires": [
+            [
+                "6adc2dfc.e299d4"
+            ]
+        ]
+    },
+    {
+        "id": "67d51aa0.3ee464",
+        "type": "debug",
+        "z": "a76c0410.5bd8c8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 2090,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "4d01c8ab.f938c8",
+        "type": "inject",
+        "z": "a76c0410.5bd8c8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 920,
+        "y": 260,
+        "wires": [
+            [
+                "391813eb.8f75ec"
+            ]
+        ]
+    },
+    {
+        "id": "8209399b.724c48",
+        "type": "wled2",
+        "z": "27f4a783.3a8dc8",
+        "address": "192.168.20.53",
+        "brightness": "14",
+        "delay": 0,
+        "color1": "#ffffff",
+        "color2": "#ffffff",
+        "color3": "#ffffff",
+        "effect": "44",
+        "effectIntensity": 128,
+        "effectSpeed": 128,
+        "name": "Xmas Tree On",
+        "palette": "1",
+        "preset": 0,
+        "state": "on",
+        "x": 1140,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "62e04525.92d89c",
+        "type": "function",
+        "z": "27f4a783.3a8dc8",
+        "name": "Random Effect",
+        "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 940,
+        "y": 1180,
+        "wires": [
+            [
+                "8209399b.724c48"
+            ]
         ]
     }
 ]
