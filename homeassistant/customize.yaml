@@ -128,7 +128,7 @@ sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_type_2:
   hidden: true
 sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_level_2:
   hidden: true
-binary_sensor.gs_wds07_1:
+binary_sensor.st_contact_sensor_1:
   friendly_name: Door
   external_door: true
 binary_sensor.gs_wds07_2:
@@ -138,8 +138,6 @@ binary_sensor.gs_wds07_3:
   friendly_name: Patio Sliding Door
   external_door: true
 binary_sensor.sonoff_pir_1:
-  friendly_name: PIR Motion
-binary_sensor.sonoff_pir_2:
   friendly_name: PIR Motion
 binary_sensor.Tradfri_PIR_1:
   friendly_name: Dining Motion
@@ -203,11 +201,11 @@ light.shelly_2_5_stairs_light:
   tracked_light: true
 light.sonoff_belle:
   tracked_light: true
-light.sonoff_woodstock:
-  tracked_light: true
 light.discreet_light:
   tracked_light: true
 light.garage_flood_light:
+  tracked_light: true
+light.front_door_light:
   tracked_light: true
 light.shelly_1_kitchen_light:
   tracked_light: true
