@@ -81,8 +81,8 @@ tplink:
   switch:
     - host: 192.168.1.44
     - host: 192.168.1.45
-    - host: 192.168.1.48
-    - host: 192.168.1.50
+    - host: 192.168.1.46
+    - host: 192.168.1.47
 
 notify:
   - platform: discord
