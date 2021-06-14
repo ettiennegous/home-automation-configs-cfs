@@ -50,3 +50,5 @@ homeassistant/tts/*
 /nginx/images
 /zwavejs2mqtt/.config-db/
 *.DS_Store
+zwavejs2mqtt/settings.json
+zwavejs2mqtt/users.json
