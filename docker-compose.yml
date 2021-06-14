@@ -29,17 +29,15 @@ services:
     image: homeassistant/home-assistant
     container_name: homeassistant
     restart: unless-stopped
-    devices:
-      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/zwave:rmw"
     volumes:
       - ${USERDIR}/docker/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
       - ${USERDIR}/docker/shared:/shared
       - ${USERDIR}/docker/nodered/data/etc/camera-images:/config/www/camera-images
     network_mode: host
-    ports:
-      - "8123:8123"
-      - "56700:56700/udp"
+    # ports:
+    #   - "8123:8123"
+    #   - "56700:56700/udp"
     privileged: true
     environment:
       - PUID=${PUID}
@@ -48,14 +46,15 @@ services:
     labels:
       - "traefik.enable=false"
   mosquitto:
-    image: eclipse-mosquitto
+    image: eclipse-mosquitto:1.6.13
     container_name: mqtt
     restart: unless-stopped
+    user: 1883:1883
     volumes:
       - ${USERDIR}/docker/mosquitto/config:/mosquitto/config
-      - /etc/localtime:/etc/localtime:ro
       - ${USERDIR}/docker/mosquitto/data/mosquitto-data:/mosquitto/data
       - ${USERDIR}/docker/mosquitto/data/mosquitto-log:/mosquitto/log
+      - /etc/localtime:/etc/localtime:ro
     networks:
       - default
       - traefik_proxy
@@ -67,7 +66,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
   unifi:
-    image: jacobalberty/unifi
+    image: jacobalberty/unifi:6.2.23
     container_name: unifi
     restart: always
     network_mode: host
@@ -79,15 +78,15 @@ services:
       - ${USERDIR}/docker/unifi/data/run:/var/run/unifi
       - ${USERDIR}/docker/traefik_cert_extractor/certs/${DOMAINNAME}/:/unifi/cert
       - ${USERDIR}/docker/traefik_cert_extractor/certs/${DOMAINNAME}/chain.pem:/unifi/cert/cert.pem
-    ports:
-      - "3478:3478/udp"
-      - "10001:10001/udp"
-      - "6789:6789/tcp"
-      - "8080:8080/tcp"
-      - "8081:8081/tcp"
-      - "8880:8880/tcp"
-      - "8443:8443/tcp"
-      - "8843:8843/tcp"
+    # ports:
+    #   - "3478:3478/udp"
+    #   - "10001:10001/udp"
+    #   - "6789:6789/tcp"
+    #   - "8080:8080/tcp"
+    #   - "8081:8081/tcp"
+    #   - "8880:8880/tcp"
+    #   - "8443:8443/tcp"
+    #   - "8843:8843/tcp"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -239,6 +238,49 @@ services:
       - "/dev/bus/usb/002/003"
     environment:
       - MQTT_HOST=mqtt
+  zwavejs2mqtt:
+    container_name: zwavejs2mqtt
+    image: zwavejs/zwavejs2mqtt
+    restart: always
+    tty: true
+    stop_signal: SIGINT
+    networks:
+      - default
+    ports:
+      - 8091:8091
+      - 3001:3001
+    devices:
+      - "/dev/bus/usb/002/003"
+    devices:
+      - "/dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM1:rmw"
+    volumes:
+      - ${USERDIR}/docker/zwavejs2mqtt:/usr/src/app/store
+    environment:
+      - MQTT_HOST=mqtt
+  ettgram:
+    image: nginx
+    container_name: ettgram    
+    restart: always
+    hostname: ettgram
+    networks:
+      - default
+      - traefik_proxy
+    ports:
+      - 8484:80
+    volumes: 
+      - ${USERDIR}/docker/nginx:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.http.routers.nginx-router.rule=Host(`ett-the-gram.${DOMAINNAME}`)"
+      - "traefik.http.routers.nginx-router.tls=true"
+      - "traefik.http.routers.nginx-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.nginx-router.middlewares=secured-no-basic@file"
+      - "traefik.http.services.nginx-service.loadbalancer.server.port=80"
+      - "traefik.http.services.nginx-service.loadbalancer.server.scheme=http"
+      - "traefik.http.services.nginx-service.loadbalancer.passHostHeader=true"
+      
+
   # shinobi:
   #   image: shinobisystems/shinobi:latest-ubuntu
   #   container_name: shinobi
@@ -313,12 +355,12 @@ services:
   #     - "traefik.http.services.grafana-service.loadbalancer.server.scheme=https"
   #     - "traefik.http.services.grafana-service.loadbalancer.passHostHeader=true"
 
-  # sonarqube:
-  #   container_name: sonarqube
-  #   image: sonarqube:8.4.1-community
-  #   restart: "no"
-  #   ports:
-  #     - 9002:9000
+  sonarqube:
+    container_name: sonarqube
+    image: sonarqube:8.4.1-community
+    restart: "no"
+    ports:
+      - 9002:9000
 # volumes:
 #   grafana-storage:
 networks:
