@@ -1,6 +1,22 @@
 http:   
 
   routers:
+    traefik-local-router:
+      entryPoints:
+        - "http"
+      rule: "Host(`traefik.`)"
+      service: intentional-empty-service
+      middlewares:
+        - traefik-local-redirect
+
+    printer-local-router:
+      entryPoints:
+        - "http"
+      rule: "Host(`printer.`)"
+      service: intentional-empty-service
+      middlewares:
+        - printer-local-redirect
+
     hass-router:
       entryPoints:
         - "http"
@@ -35,6 +51,10 @@ http:
             - extraheaders
 
   services:
+    intentional-empty-service:
+      loadBalancer:
+        passHostHeader: false
+
     hass-service:
       loadBalancer:
         passHostHeader: false
@@ -57,6 +77,14 @@ http:
             - url: "https://192.168.1.40:8443/"
 
   middlewares:
+    traefik-local-redirect: 
+      redirectRegex:
+        regex: "^http://(.*)/(.*)"
+        replacement: "http://192.168.1.40:8282/${2}"
+    printer-local-redirect: 
+      redirectRegex:
+        regex: "^http://(.*)/(.*)"
+        replacement: "http://192.168.1.8/${2}"
     httpbasicauth:
       basicAuth:
         usersFile: /shared/.htpasswd
