@@ -36,6 +36,12 @@ entity_config:
     expose: false
   switch.tp_link_4:
     expose: false
+  switch.tp_link_strip1_1:
+    expose: false
+  switch.tp_link_strip1_2:
+    expose: false
+  switch.tp_link_strip1_3:
+    expose: false
   input_boolean.ettienne_home:
     expose: false
   input_boolean.home_occupied:
