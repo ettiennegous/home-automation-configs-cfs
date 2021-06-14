@@ -42,6 +42,20 @@
   payload_on: "true"
   off_delay: 2
   device_class: motion
+- platform: mqtt
+  name: Sonoff_PIR_1
+  state_topic: "rtl_433/events"
+  payload_on: "61324-1X11X010011X"
+  off_delay: 7
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
+  device_class: motion
+- platform: mqtt
+  name: Sonoff_PIR_2
+  state_topic: "rtl_433/events"
+  payload_on: "61575-1100X0Z1X11X"
+  off_delay: 7
+  value_template: "{{ value_json.id }}-{{ value_json.tristate }}"
+  device_class: motion
 # - platform: hikvision
 #   name: HikVision
 #   host: !secret hikvision_host
