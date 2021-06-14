@@ -214,6 +214,10 @@ light.shelly_1_laundry:
 light.shelly_dimmer_ruby_lamp:
   tracked_light: true
   friendly_name: Ruby Lamp
+light.study_bias:
+  tracked_light: true
+light.wled:
+  tracked_light: true
 switch.tv_panasonic:
   friendly_name: Panasonic Tv Power
 switch.amp_onkyo:
@@ -224,4 +228,10 @@ switch.amp_music:
   friendly_name: Onkyo Source Music
 light.tradfri_bulb_1:
   friendly_name: Study Desk Lamp
+  tracked_light: true
+light.garden_lights:
+  friendly_name: Garden Lights
+  tracked_light: true
+light.wled_2:
+  friendly_name: Ambient QuinLED
   tracked_light: true
