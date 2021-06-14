@@ -47,3 +47,6 @@ homeassistant/tts/*
 /nodered/data/etc/flows_cred.json
 /scripts/broadlink.py
 /scripts/get-energy-usage-data.py
+/nginx/images
+/zwavejs2mqtt/.config-db/
+*.DS_Store
