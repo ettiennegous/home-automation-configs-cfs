@@ -130,51 +130,12 @@
     no_lights_on:
       friendly_name: Lights On
       value_template: "{{ states.light|selectattr('state','equalto','on')|selectattr('attributes.tracked_light', 'eq', true)|list|length }}"
-      entity_id:
-        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level
-        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2
-        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3
-        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4
-        - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_5
-        - light.aeon_labs_zw111_nano_dimmer_level
-        - light.aeon_labs_zw111_nano_dimmer_level_2
-        - light.dimmer_foyer_light_level
-        - light.dimmer_smart_energy_illum_light_level
-        - light.lifx_garage
-        - light.lifx_pantry
-        - light.lifx_rumpus_standing
-        - light.lifx_stairs_closet
-        - light.lifx_bulb_1
-        - light.shelly_1_alex_kitchen_light
-        - light.shelly_1_guest_room_light
-        - light.shelly_1_master_toilet_light
-        - light.shelly_1_study_light
-        - light.shelly_2_5_kids_bathroom_light
-        - light.shelly_2_5_master_bathroom_light
-        - light.shelly_2_5_powder_room_basin_light
-        - light.shelly_2_5_rumpus_main_light
-        - light.shelly_2_5_rumpus_side_light
-        - light.shelly_2_5_stairs_light
-        - light.sonoff_belle
-        - light.discreet_light
-        - light.garage_flood_light
-        - light.front_door_light
-        - light.shelly_1_kitchen_light
-        - light.shelly_dimmer_dressing_room
-        - light.shelly_1_laundry
-        - light.tradfri_bulb_1
 
 - platform: template
   sensors:
     no_external_doors_open:
       friendly_name: External Doors Open
       value_template: "{{ (states.binary_sensor|selectattr('state','equalto','on')|selectattr('attributes.external_door', 'eq', true)|list|length) + (states.sensor|selectattr('state','equalto','255')|selectattr('attributes.external_door', 'eq', true)|list|length)}}"
-      entity_id:
-        - binary_sensor.st_contact_sensor_1
-        - binary_sensor.gs_wds07_2
-        - binary_sensor.gs_wds07_3
-        - sensor.door_window_sensor_garage_open
-        - binary_sensor.door_window_sensor_garagepaneldoor_open    
 
 - platform: mqtt
   name: "ESP32_1_Lux"
