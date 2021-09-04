@@ -2584,90 +2584,10 @@
         "x": 170,
         "y": 1040,
         "wires": [
-            [
-                "b130b76b.95bab8"
-            ],
+            [],
             [
                 "193b6411.343e6c"
             ]
-        ]
-    },
-    {
-        "id": "b130b76b.95bab8",
-        "type": "template",
-        "z": "823d3fb7.65d29",
-        "name": "Amp On",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
-        "output": "str",
-        "x": 520,
-        "y": 880,
-        "wires": [
-            [
-                "5cacbb8a.1a5644"
-            ]
-        ]
-    },
-    {
-        "id": "aac7daa4.34e608",
-        "type": "template",
-        "z": "823d3fb7.65d29",
-        "name": "CBL/SAT Input",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBYAAABJpMSExI3EhMSExI3EhMSNxI3EzcSExI3EjgSEhI4EjcSExUPEjgSNxI4EhISExITFg4SOBISExISExI3EjgSNxI4EgAE9AABJUsSAAxDAAElSxIADQU=",
-        "output": "str",
-        "x": 940,
-        "y": 880,
-        "wires": [
-            [
-                "5098e75c.796f98"
-            ]
-        ]
-    },
-    {
-        "id": "5cacbb8a.1a5644",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 720,
-        "y": 880,
-        "wires": [
-            [
-                "aac7daa4.34e608"
-            ]
-        ]
-    },
-    {
-        "id": "5098e75c.796f98",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1160,
-        "y": 880,
-        "wires": [
-            []
         ]
     },
     {
@@ -2682,27 +2602,6 @@
         "template": "JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA",
         "output": "str",
         "x": 540,
-        "y": 1049,
-        "wires": [
-            [
-                "37b3dd3e.5b87a2"
-            ]
-        ]
-    },
-    {
-        "id": "37b3dd3e.5b87a2",
-        "type": "api-call-service",
-        "z": "823d3fb7.65d29",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 780,
         "y": 1049,
         "wires": [
             []
@@ -2727,9 +2626,7 @@
         "x": 200,
         "y": 880,
         "wires": [
-            [
-                "b130b76b.95bab8"
-            ],
+            [],
             [
                 "33d5b269.74328e"
             ]
@@ -4216,161 +4113,6 @@
             [
                 "c00cd6d2.6686b8"
             ]
-        ]
-    },
-    {
-        "id": "f3b56127.ecb5a",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Sony TV On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1070,
-        "y": 1780,
-        "wires": [
-            [
-                "e5f0bc5e.8f944"
-            ]
-        ]
-    },
-    {
-        "id": "e5f0bc5e.8f944",
-        "type": "function",
-        "z": "e594dd4a.60761",
-        "name": "Delay for 1 seconds",
-        "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 1000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 1260,
-        "y": 1780,
-        "wires": [
-            [
-                "326b8beb.468964"
-            ]
-        ]
-    },
-    {
-        "id": "22a72e6a.a348e2",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "Amp On",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
-        "output": "str",
-        "x": 1740,
-        "y": 1780,
-        "wires": [
-            [
-                "c5dce174.0e037"
-            ]
-        ]
-    },
-    {
-        "id": "326b8beb.468964",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "TV On",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F",
-        "output": "str",
-        "x": 1430,
-        "y": 1780,
-        "wires": [
-            [
-                "4e5ea4bd.d5b3fc"
-            ]
-        ]
-    },
-    {
-        "id": "4e5ea4bd.d5b3fc",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1580,
-        "y": 1780,
-        "wires": [
-            [
-                "22a72e6a.a348e2"
-            ]
-        ]
-    },
-    {
-        "id": "c5dce174.0e037",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1920,
-        "y": 1780,
-        "wires": [
-            [
-                "1cf27b95.d42734"
-            ]
-        ]
-    },
-    {
-        "id": "1cf27b95.d42734",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "BD/DVD Input",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBgAAABJZQSEhI4EhMSEhI4EhISOBI3EhMSExI3EjcSExI4EjcSExISEhMSNxI4EhMSEhITEjcSOBI3EhMSExI3EjcSOBITEgAFGQABJUoTAAxDAAElSxIADEMAASpGEgANBQAAAAAAAAAA",
-        "output": "str",
-        "x": 2120,
-        "y": 1780,
-        "wires": [
-            [
-                "69eb447b.fdd82c"
-            ]
-        ]
-    },
-    {
-        "id": "69eb447b.fdd82c",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 2300,
-        "y": 1780,
-        "wires": [
-            []
         ]
     },
     {
