@@ -24,7 +24,7 @@
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedScales\",\"propertyKey\":1}","v":[0,1]}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":22}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedScales\",\"propertyKey\":3}","v":[1]}
-{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":800}
+{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":931}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedScales\",\"propertyKey\":5}","v":[0]}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
@@ -899,8 +899,8 @@
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":509}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":28}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":201}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":27}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":20.6}
 {"k":"{\"nodeId\":3,\"commandClass\":132,\"endpoint\":0,\"property\":\"wakeUpInterval\"}","v":0}
 {"k":"{\"nodeId\":3,\"commandClass\":132,\"endpoint\":0,\"property\":\"controllerNodeId\"}","v":1}
@@ -1159,16 +1159,11 @@
 {"k":"{\"nodeId\":27,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":590849}","v":0.038}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":1000}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":200}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":28}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":20.5}
-{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"currentValue\"}","v":0}
-{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"targetValue\"}","v":0}
-{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"currentValue\"}","v":0}
-{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"targetValue\"}","v":0}
-{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"currentValue\"}","v":0}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":20.7}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":259}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":28}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":199}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":27}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":20.6}
