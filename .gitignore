@@ -52,3 +52,4 @@ homeassistant/tts/*
 *.DS_Store
 zwavejs2mqtt/settings.json
 zwavejs2mqtt/users.json
+/nginx/*
