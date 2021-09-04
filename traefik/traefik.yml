@@ -31,10 +31,9 @@ certificatesresolvers:
         delayBeforeCheck: 0
 log:
   level: WARN
-  
-  # accessLog: 
-  #   format: json
-  #   filters:    
-  #     statusCodes:
-  #       - "201-999"
-  #     retryAttempts: true
+# accessLog: 
+#   format: json
+#   filters:    
+#     statusCodes:
+#       - "201-999"
+#     retryAttempts: true
