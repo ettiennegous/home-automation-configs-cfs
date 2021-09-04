@@ -1162,3 +1162,13 @@
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":1000}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":28}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":20.5}
+{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"currentValue\"}","v":0}
+{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"targetValue\"}","v":0}
+{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"currentValue\"}","v":0}
+{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"targetValue\"}","v":0}
+{"k":"{\"nodeId\":2,\"commandClass\":38,\"endpoint\":0,\"property\":\"currentValue\"}","v":0}
+{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100}
+{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":259}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":28}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":20.6}
