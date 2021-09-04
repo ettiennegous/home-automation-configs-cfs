@@ -279,8 +279,21 @@ services:
       - "traefik.http.services.nginx-service.loadbalancer.server.port=80"
       - "traefik.http.services.nginx-service.loadbalancer.server.scheme=http"
       - "traefik.http.services.nginx-service.loadbalancer.passHostHeader=true"
-      
+  vscode:
+    container_name: vscode
+    image: codercom/code-server
+    volumes:
+      - ${USERDIR}/docker:/home/coder/project
 
+      - ${USERDIR}/vscode:/home/coder/.local/share/code-server
+    ports:
+      - "8445:8443"
+    command: code-server --auth password --port 8443 --disable-telemetry /home/coder/project
+    environment:
+      PASSWORD: "${DBPASS}"
+    networks:
+      - default
+    restart: unless-stopped
   # shinobi:
   #   image: shinobisystems/shinobi:latest-ubuntu
   #   container_name: shinobi
@@ -354,7 +367,6 @@ services:
   #     - "traefik.http.services.grafana-service.loadbalancer.server.port=3000"
   #     - "traefik.http.services.grafana-service.loadbalancer.server.scheme=https"
   #     - "traefik.http.services.grafana-service.loadbalancer.passHostHeader=true"
-
   sonarqube:
     container_name: sonarqube
     image: sonarqube:8.4.1-community
