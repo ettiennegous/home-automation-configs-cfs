@@ -63,16 +63,16 @@
         "info": ""
     },
     {
-        "id": "b0dd0c0f.47706",
+        "id": "6e7a064f.40b368",
         "type": "tab",
-        "label": "Broadlink RM Pro",
+        "label": "Cameras",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "6e7a064f.40b368",
+        "id": "e3459f93.04f31",
         "type": "tab",
-        "label": "Cameras",
+        "label": "Parking Lot",
         "disabled": false,
         "info": ""
     },
@@ -319,12 +319,12 @@
         "name": "Garage Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "sensor.door_window_sensor_garage_open",
+        "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
         "entityidfiltertype": "exact",
         "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "255",
-        "halt_if_type": "num",
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
@@ -413,12 +413,12 @@
         "name": "Stairs Closet Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "sensor.door_window_sensor_stairs_closet_open",
+        "entityidfilter": "binary_sensor.door_window_sensor_stairs_closet_open",
         "entityidfiltertype": "exact",
         "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "255",
-        "halt_if_type": "num",
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
@@ -500,13 +500,6 @@
         "y": 2700,
         "wires": [
             [
-                "b6d0bb9c.36b058",
-                "316bd61.4edd52a",
-                "6ff0af5a.4036a",
-                "93ae2105.cb04b",
-                "1bfd3825.1395b8",
-                "c98b1fb2.2ddd5",
-                "82de8215.98dff",
                 "dac700f1.84a69",
                 "5d6242a8.bd6e0c",
                 "c4997e2b.e67ca",
@@ -515,208 +508,7 @@
                 "79e20253.d1af0c",
                 "4cd028b4.97df38",
                 "74c842ef.781fcc",
-                "a30e1a2f.ab8ad8",
-                "2d996532.f7217a"
-            ]
-        ]
-    },
-    {
-        "id": "b6d0bb9c.36b058",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 1 Green",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349147087",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 860,
-        "y": 2540,
-        "wires": [
-            [
-                "fbd63ab.09202c8"
-            ]
-        ]
-    },
-    {
-        "id": "2d996532.f7217a",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 1 Red",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349145024",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 850,
-        "y": 2578,
-        "wires": [
-            [
-                "b42d48a9.e72f28"
-            ]
-        ]
-    },
-    {
-        "id": "6ff0af5a.4036a",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 2 Red",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349144004",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 850,
-        "y": 2679,
-        "wires": [
-            [
-                "e5193b28.90c048"
-            ]
-        ]
-    },
-    {
-        "id": "316bd61.4edd52a",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 2 Green",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349146056",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 860,
-        "y": 2640,
-        "wires": [
-            [
-                "7d89072d.38d008"
-            ]
-        ]
-    },
-    {
-        "id": "1bfd3825.1395b8",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 3 Red",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349144514",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 850,
-        "y": 2784,
-        "wires": [
-            [
-                "629bdf7e.7477a"
-            ]
-        ]
-    },
-    {
-        "id": "93ae2105.cb04b",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 3 Green",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349146572",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 860,
-        "y": 2740,
-        "wires": [
-            [
-                "2c890915.2a7056"
-            ]
-        ]
-    },
-    {
-        "id": "82de8215.98dff",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 4 Red",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349144769",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 850,
-        "y": 2880,
-        "wires": [
-            [
-                "eeabc7f7.2b9b88"
-            ]
-        ]
-    },
-    {
-        "id": "c98b1fb2.2ddd5",
-        "type": "switch",
-        "z": "e594dd4a.60761",
-        "name": "Bauhn 4 Green",
-        "property": "payload.value",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "349146830",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 860,
-        "y": 2840,
-        "wires": [
-            [
-                "91d77af.66ad288"
+                "a30e1a2f.ab8ad8"
             ]
         ]
     },
@@ -737,8 +529,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 3100,
+        "x": 440,
+        "y": 2820,
         "wires": [
             []
         ]
@@ -760,8 +552,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 3060,
+        "x": 440,
+        "y": 2780,
         "wires": [
             []
         ]
@@ -783,8 +575,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 3180,
+        "x": 440,
+        "y": 2900,
         "wires": [
             []
         ]
@@ -806,8 +598,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 3140,
+        "x": 440,
+        "y": 2860,
         "wires": [
             []
         ]
@@ -829,8 +621,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 3020,
+        "x": 440,
+        "y": 2740,
         "wires": [
             []
         ]
@@ -852,8 +644,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 2980,
+        "x": 440,
+        "y": 2700,
         "wires": [
             []
         ]
@@ -875,46 +667,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 480,
-        "y": 2940,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9411307d.55462",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Study Light Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "toggle",
-        "data": "{\"entity_id\":\"light.shelly_1_study_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 898,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "26c4c83b.04b018",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Study Lamp Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "toggle",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 910,
-        "y": 140,
+        "x": 440,
+        "y": 2660,
         "wires": [
             []
         ]
@@ -927,12 +681,12 @@
         "server": "5a39eab2.9f6814",
         "version": 1,
         "outputs": 2,
-        "halt_if": "0",
+        "halt_if": "off",
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "sensor.door_window_sensor_garage_open",
-        "state_type": "num",
+        "entity_id": "binary_sensor.door_window_sensor_garage_open",
+        "state_type": "str",
         "state_location": "payload",
         "override_payload": "msg",
         "entity_location": "data",
@@ -1252,12 +1006,12 @@
         "server": "5a39eab2.9f6814",
         "version": 1,
         "outputs": 2,
-        "halt_if": "0",
-        "halt_if_type": "num",
+        "halt_if": "off",
+        "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "sensor.door_window_sensor_garage_open",
-        "state_type": "num",
+        "entity_id": "binary_sensor.door_window_sensor_garage_open",
+        "state_type": "str",
         "state_location": "payload",
         "override_payload": "msg",
         "entity_location": "data",
@@ -1549,44 +1303,6 @@
         ]
     },
     {
-        "id": "c1cd7c91.a193e",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Onkyo Volume Up",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "volume_up",
-        "data": "{\"entity_id\":\"media_player.onkyo_amplifier\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 150,
-        "y": 1171,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6865f91d.7b7c98",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Onkyo Volume Up",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "volume_down",
-        "data": "{\"entity_id\":\"media_player.onkyo_amplifier\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 150,
-        "y": 1216,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "b1bd37a0.3b11a8",
         "type": "inject",
         "z": "d1ff6abb.b25cf8",
@@ -1831,7 +1547,7 @@
         "name": "Laundry Sliding Door Open",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "binary_sensor.gs_wds07_2",
+        "entityidfilter": "binary_sensor.st_contact_sensor_3",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -1853,10 +1569,10 @@
         "id": "cb10c5f.a40c238",
         "type": "server-state-changed",
         "z": "ff5661ef.cd5bf",
-        "name": "Patio Sliding Door Open",
+        "name": "Kitchen Sliding Door Open",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "binary_sensor.gs_wds07_3",
+        "entityidfilter": "binary_sensor.st_contact_sensor_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -1975,12 +1691,12 @@
         "name": "Garage Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "sensor.door_window_sensor_garage_open",
+        "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
         "entityidfiltertype": "exact",
         "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "255",
-        "halt_if_type": "num",
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
@@ -2025,12 +1741,12 @@
         "name": "Stairs Closet Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 1,
-        "entityidfilter": "sensor.door_window_sensor_stairs_closet_open",
+        "entityidfilter": "binary_sensor.door_window_sensor_stairs_closet_open",
         "entityidfiltertype": "exact",
         "outputinitially": false,
-        "state_type": "num",
-        "haltifstate": "255",
-        "halt_if_type": "num",
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
@@ -2118,349 +1834,6 @@
             [],
             [
                 "7fbaf3fb.fa0dbc"
-            ]
-        ]
-    },
-    {
-        "id": "3356ab2d.ab3934",
-        "type": "RM",
-        "z": "b0dd0c0f.47706",
-        "name": "Broadlink RM Pro+",
-        "device": "911cc32f.93c4a",
-        "action": "learn",
-        "remote": "",
-        "button": "",
-        "fix": 1,
-        "RFSweep": "true",
-        "x": 350,
-        "y": 280,
-        "wires": [
-            [
-                "a7d06b7e.526488"
-            ]
-        ]
-    },
-    {
-        "id": "b99f8f85.d4e6",
-        "type": "inject",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 140,
-        "y": 280,
-        "wires": [
-            [
-                "3356ab2d.ab3934"
-            ]
-        ]
-    },
-    {
-        "id": "a7d06b7e.526488",
-        "type": "template",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "mustache",
-        "template": "{{payload.data}}",
-        "output": "str",
-        "x": 560,
-        "y": 280,
-        "wires": [
-            [
-                "ddc088f1.473c28"
-            ]
-        ]
-    },
-    {
-        "id": "ddc088f1.473c28",
-        "type": "debug",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 750,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "c9f907f.ba726f8",
-        "type": "api-call-service",
-        "z": "b0dd0c0f.47706",
-        "name": "Broadlink send command",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 610,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a15d8c44.05f64",
-        "type": "inject",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 140,
-        "y": 40,
-        "wires": [
-            [
-                "ae341130.87231"
-            ]
-        ]
-    },
-    {
-        "id": "ae341130.87231",
-        "type": "template",
-        "z": "b0dd0c0f.47706",
-        "name": "Bauhn Green 1",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "sgGwBBkIGQgYCBkIGQgIGAkYCRcZCBkIGQcZCBkIGAgKFwkYGQcZCBkIGAgJAAERCRgJGAgYGQgJFxkICRgIGBkIGQgJFwkYGAkYCBkIGQgYCAkYCRgIGBkIGAkYCBkIGAgZCAkYCRcZCBkIGAgZCAkAAREJGAkXCRgZBwkYGQgJFwkYGQgYCAkYCRcZCBkIGQgYCBkICRcJGAkYGQcZCBkIGQcZCBkHChcJGBkIGAgZCBkHCQABEQkYCRgJFxkICRgYCAkYCRgZBxkICRgIGBkIGQgYCBkIGQgJFwkYCRcZCBkIGAgZCBkIGAkIGAkYGAgZCBkIGAgJAAERCRgJGAgYGAkIGBkICRgIGBkIGQcJGAkYGAgZCBkIGAkYCAkYCBgJGBkIGQcZCBgJGAgZCAgZCRcZCBgIGQgZBwkAAREJGAkYCRgYCAkYGAgJGAkYGAgZCAkYCBgZCBkIGAgZCBkHCRgJGAkXGQgZCBgIGQgZCBkHCRgJGBgIGQgZCBgICQABEQkYCBgJGBkICRcZCAkYCBgZCBkHCRgJGBgIGQgZCBgJGAgJGAgYCRgZCBgIGQgYCBkIGQgJFwkYGQgYCRgIGQcJAAERCRgJGAkXGQgJGBgJCBgJGBgIGQgJGAkYGAgYCRgIGQgYCAkYCRgJFxkIGQgZBxkIGQgYCAkYCRgYCBkIGQcZCAgAARIJGAgYCRgZCAgYGQgJFwkYGQgYCQgYCRgYCBkIGQgYCBkICRgJFwkYGQcZCBkIGQcZCBkICRgIGBkIGAgZCBgICQABEQkYCRgJFxkICRgYCQgYCRgYCRgICRgJFxkIGQgYCBkIGQcJGAkYCRcZCBkIGAgZCBkIGAgJGAkYGAgZCBkIGAgJAAERCRgJFwkYGQgIGBkICRgIGBkIGAkJFwkYGAgZCBkIGAgZCAkYCBgJGBgJGAgZCBkIGAgZCAkXCRgZCBgJGAgZBwkAARIJFwkYCRcZCAkYGAgJGAkYGAkYCAkYCRcZCBkHGQgZCBkHCRgJGAkYGAgZCBgIGQgZCBgICRgJGBkHGQgZBxkICQABEQkYCRcJGBkICRcZCAkYCBgZCBkICBgJGBgIGQgZCBkHGQgJFwkYCRgYCRgIGQgYCRgIGQgJFwkYGQgYCBkIGQcJAAERCRgJGAkXGQgJGBgICRgJFxkIGQgJGAkXGQgZBxkIGQgYCAkYCRgJFxkIGAkYCBkIGQgYCAkYCBkYCBkIGAgZBwoAAREJFwkYCRgYCAkYGQgIGAkYGQgYCAkYCBkYCBkIGAkYCBkICRcJGAkYGAgZCBkHGQgZCBgJCRcJGBkHGQgZCBgICQABEQkYCRgIGBkICRgYCAkYCRcZCBgJCBgJGBgJGAgZCBgIGQgJGAkYCBgYCRgIGQgZCBgIGQgJGAgYGQgZCBgIGQgJAAERCRcJGAgZGAgJGBkHCRgJGBkHGQgJGAkXGQgZBxkIGQgZCAgYCRgJGBgIGQgZBxkIGQgZBwkYCRgYCBkIGQgZBwkAAREJGAkXCRgZCAkXGQgJGAkXGQgZBwkYCRgZCBgIGQgYCBkICRgJGAgYGAkYCBkIGQgYCBkICRgIGBkIGQgYCBkHCQAF3AAAAAAAAAAA",
-        "output": "str",
-        "x": 320,
-        "y": 40,
-        "wires": [
-            [
-                "c9f907f.ba726f8"
-            ]
-        ]
-    },
-    {
-        "id": "999889a.f29a978",
-        "type": "template",
-        "z": "b0dd0c0f.47706",
-        "name": "Bauhn Red 1",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "sgAeAgkYCBgYCQgZFwkIGQgZGAgZCAgZCBgYCRgJGAgYCRgJCBgIGQgYCRgYCRcKFwkYCRgJCBgIGQgYCRgIGAkYCAABCwkYCBgIGRgJCBgYCQgZCBgYCRgJCBgJGBgJGAgYCRgJFwkIGAkYCRgIGRgIGAkYCRgIGAkIGAgZCBkIGAgZCBkHAAEMCBgIGQgZGAgIGRgICBkIGRgIGAkIGAkYGAkYCBgJGAkYCAgZCRcJGAgZGAkYCBgJGAgYCQgZCBkIGAgZCBgJGAgAAQsIGAkYCBkXCggYGAkIGAgZGAgZCAkYCBkXCRgJGAkXChcJCBgJGAgZCBgYCRgJFwkYCRgJCBgIGQgYCRgJFwkYCAABCwkYCBkIGBgJCBkYCAgZCBgYCRgICRgJGBgJGAgYCRgIGAkIGQgYCRgIGRgIGAkYCRcJGAkIGAgZCRgIGAgZCBgIAAELCRgJGAgZGAgIGRgICBkIGRgIGQgIGAkYGAkYCRgIGAkYCAgZCBgJGAkYGAgYCRgJGAkXCQgZCBgIGQkXCRgIGAkAAREJGAgZCBgYCQgZGAgIGQgYGAkYCQgYCBkYCBgJGAkYCRcJCBgJGAkYCBkXCRgJFwkYCRgJCBgIGQgZCBgJGAgYCAABEgkYCBgIGRgICBkYCQgYCBkYCRgICBkIGBgJGAkXChcJGAkIGAkYCBgJGBgJGAkXCRgJGAgIGQgZCBgJGAgZCBgIAAXcAAAAAAAAAAAAAA==",
-        "output": "str",
-        "x": 310,
-        "y": 100,
-        "wires": [
-            [
-                "c9f907f.ba726f8"
-            ]
-        ]
-    },
-    {
-        "id": "11bd0440.92a6cc",
-        "type": "inject",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 140,
-        "y": 100,
-        "wires": [
-            [
-                "999889a.f29a978"
-            ]
-        ]
-    },
-    {
-        "id": "5e66da3b.21e104",
-        "type": "template",
-        "z": "b0dd0c0f.47706",
-        "name": "Bauhn Red 2",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "sgCWAQkYCBgZCAkXGQgJGAkXGQgZBwkYCRgYCBkIGQgYCBkICRgIGAkYCRcJGBkHGQgZCBkHCRgJFwkYGQgJGAgYCQABCggYCRgJFxkICRcZCAkYCRcZCBkICRcJGBkHGQgZCBgIGQgJGAkXCRgJFwkYGQgZBxkIGQgIGAkYCBgZCAkYCBgJAAEKCRcJGAkYGAgJGBkHCRgJGBgIGQgJGAgYGQgYCBkIGQgYCAkYCRcJGAkYCRcZCBgIGQgZCAgYCRgJFxkICRgIGAkAAQoJFwkYCRgYCAkYGAkIGAkYGQcZCAkXCRgYCRgIGQgZBxkICRgIGAkYCRgIGBkIGAgZCBkICBgJGAkXGQgJGAgYCQABCgkXCRgJGBgICRgZBwkYCRcZCBkICRcJGBkIGAgZCBgJGAgJGAkXCRgJGAgYGQgYCBkIGQgJFwkYCRcZCAkXCRgJAAEKCRgJFwkYGAkIGBkICRcJGBkHGQgJGAgYGQgYCBkIGQgYCAkYCRgIGAkYCBgZCBgIGQgZCAkXCRgIGRgICRgIGAkABdwAAA==",
-        "output": "str",
-        "x": 310,
-        "y": 220,
-        "wires": [
-            [
-                "c9f907f.ba726f8"
-            ]
-        ]
-    },
-    {
-        "id": "e1415ca.ce908a",
-        "type": "template",
-        "z": "b0dd0c0f.47706",
-        "name": "Bauhn Green 2",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "sgD6AwkXCRgYCAkYGAkIGAkYGQcZCAkYCRcZCBkIGAgZCBkHCRgJGAkYGAgJFxkIGQgZBxkICRgJFxkICRgIGAkYCQABCQkYCRgIGRgICRgYCAkYCRgYCBkICRcJGBgJGAgZCBkIGAgJGAkXCRgYCQkXGQgZBxkIGQgJFwkYGAkIGAkYCRcJAAEKCRgJGAgYGQcJGBkICRgIGBkIGQcJGAkXGQgZCBgIGQgZBwkYCRgJFxkICRcZCBkIGQgYCAkYCRcZCAkYCBgJGAkAAQkJGAkYCRcZCAkYGAgJGAkXGQgZCAkXCRgZBxkIGQgYCBkICRgIGAkYGQcJGBkIGAgZCBkICBgJGBkHCRgJGAgYCQABCggYCRgJGBgICRgZBwkYCRgYCBkICRgIGBkIGQcZCBkIGAkIGAkYCRcZCAkXGQgZCBgIGQgJFwkYGQgIGAkYCRcJAAEKCRgJFwkYGQgIGBkICRcJGBkIGAgJGAkYGAgZCBgIGQgZCAkXCRgJFxkICRgZBxkIGQgYCAkYCRcZCAkYCBgJGAgAAREJGAkXCRgZCAkXGQgJGAgYGQgYCAkYCRcZCBkIGAkYCBkICRcJGAkYGAgJFxkIGQgZCBgICRgJFxkICRgIGAkYCAABEQkYCRcJGBkICBgZCAkXCRgZBxkICRgJFxkIGAkYCBkIGQgJFwkYCBgZCAkYGAgZCBkIGAgJGAkXGQgJGAkXCRcJAAERCRgJFwkYGAkIGBkICRcJGBkIGAgJGAkXGQgYCRgIGQgYCAkYCRcJGBkICBkYCBkIGAgZCAkXCRgZCAgYCRgJFwkAAREIGAkYCBkYCAkYGQcJGAkYGAgZCAkXCRgZCBgIGQgYCRgICRgJFwkYGAkIGBkIGAgZCBkICBgJGBkHCRgJGAgYCQABEAkYCRgIGBkICRgYCAkYCBgZCBkHCRgJFxkIGQgZCBgIGQgJGAgYCRgYCAkYGQcZCBkIGAgJGAkXGQgJGAkXCRgJAAEQCRgIGAkYGQgIGBkICRcJGBkHGQgJGAkYGAgZCBgIGQgYCQgYCRgJFxkICRcZCBkIGQcZCAkXChcZCAkYCBgJFwkAAREJFwkYCRgYCAkYGAkIGAkXGQgZCAkYCBgYCRgIGQgZCBgICRgJFwkYGQgIGBkIGAgZCBkICRcJGBgIChcJGAgYCQABEAkYCRgIGBkICBkYCAkYCBgZCBkHCRgJGBgJGAgZCBgIGQgJFwkYCRgYCAkYGQcZCBkHGQgJGAkXGQgJGAkXCRgJAAEQCRgIGAkYGAkIGBkICBgJGBkHGQgJGAkXGQgZCBgIGQgYCAkYCRcJGBkICRcZCBkIGAgZCAkXCRgZCAgYCRgJFwkABdwAAAAAAAAAAAAAAAAAAA==",
-        "output": "str",
-        "x": 320,
-        "y": 160,
-        "wires": [
-            [
-                "c9f907f.ba726f8"
-            ]
-        ]
-    },
-    {
-        "id": "593dfd6d.4534a4",
-        "type": "inject",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 140,
-        "y": 160,
-        "wires": [
-            [
-                "e1415ca.ce908a"
-            ]
-        ]
-    },
-    {
-        "id": "527f1c6f.46d3d4",
-        "type": "inject",
-        "z": "b0dd0c0f.47706",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "x": 140,
-        "y": 220,
-        "wires": [
-            [
-                "5e66da3b.21e104"
-            ]
-        ]
-    },
-    {
-        "id": "844ebed5.da937",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Broadlink Send",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "broadlink",
-        "service": "send",
-        "data": "{\"entity_id\":\"Ettienne\",\"host\":\"192.168.1.16\",\"packet\":\"{{payload}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1500,
-        "y": 2740,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2c890915.2a7056",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "Amp Power Toggle",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBQAAABJ5EUERQ2FBAUERQ1FBEUNhM2FBETERQ2FDUUERQ1FDYUEBQ2FDUUERQ1FBEUERQ1FDYTERQRFDUUERQ1FDYUERMRFAAFFwABKEgUAA0FAAAAAAAAAAA=",
-        "output": "str",
-        "x": 1110,
-        "y": 2740,
-        "wires": [
-            [
-                "844ebed5.da937"
-            ]
-        ]
-    },
-    {
-        "id": "91d77af.66ad288",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "TV Power Toggle",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgAyAXQ4EA0QKRANEA0QDQ8NEA0QDRANEA0PDRANEA0QKRANEA0QDQ8NEA0QDRANEA0PDRAqEA0PDRANEA0QDQ8NEA0QDRAqDw0QKhApECoQKRANEA0QKg8NECoQKRAqECkQDRAqEAAJk3M4EA0QKg8NEA0QDRANEA0PDRANEA0QDQ8NEA0QKhAMEA0QDRANEA0PDRANEA0QDQ8qEA0QDQ8NEA0QDRANEA0PDRAqEA0PKhAqDyoQKhANDw0QKhANDyoQKg8qECoQDQ8qEAAJk3Q4Dw0QKhANEA0PDRANEA0QDQ8NEA0QDRANDw0QKhANEA0PDRANEA0QDQ8NEA0QDRApEA0QDRANEA0PDRANEA0QDQ8qEA0QKRAqECoPKhANEA0PKhANECkQKhApECoQDRApEAANBQAAAAAAAA==",
-        "output": "str",
-        "x": 1110,
-        "y": 2840,
-        "wires": [
-            [
-                "844ebed5.da937"
-            ]
-        ]
-    },
-    {
-        "id": "629bdf7e.7477a",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "Amp Vol+",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgCQAAABJZQSEhI4EhISExI3ExISOBI3EjcSExI4EjcSExI3EjcTEhITEjcSExITEhISExITEhISOBITEjcSNxI4EjcSOBI3EgAE9QABJZMSExI3EhMSExI3EhMSNxI4EjcSExI3EjgSEhI4EjcSExITEjcSExISEhMSExISEhMSNxMSEjgSNxI3EjgSNxI4EgANBQAAAAAAAAAA",
-        "output": "str",
-        "x": 1080,
-        "y": 2783,
-        "wires": [
-            [
-                "844ebed5.da937"
-            ]
-        ]
-    },
-    {
-        "id": "eeabc7f7.2b9b88",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "Amp Vol-",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgCMABQRFDUUERQRFDUUERQ1FDUVNRQRFDUUNhQQFTUUNRQRFDUUNhQQFBEUERQQFRAUERQQFRAUNRU1FDUVNRQ1FDYUAATyAAEnkhQQFTUUERQQFDYUEBQ2FDUUNhQQFDYUNRQRFDUUNhQQFDYUNRQRFBEUEBQRFBEUEBUQFBEUNRQ2FDUUNRU1FDUUAA0FAAAAAAAAAAAAAAAA",
-        "output": "str",
-        "x": 1080,
-        "y": 2880,
-        "wires": [
-            [
-                "844ebed5.da937"
             ]
         ]
     },
@@ -3336,57 +2709,6 @@
         ]
     },
     {
-        "id": "55e5dea6.fa0f7",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "TV Power On Discrete",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F",
-        "output": "str",
-        "x": 160,
-        "y": 1360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "eb06df45.c0196",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "TV Power Off Discrete",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4qDioOKg4qDioOKg4ODg4OKg4qDioOKg4qDioODg4qDgAJlQ0F",
-        "output": "str",
-        "x": 160,
-        "y": 1280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e896fd64.5f104",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "AMP Power On Discrete",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
-        "output": "str",
-        "x": 170,
-        "y": 1320,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "e246310c.85587",
         "type": "server-state-changed",
         "z": "823d3fb7.65d29",
@@ -3611,44 +2933,6 @@
             [
                 "da09d68f.b33588"
             ]
-        ]
-    },
-    {
-        "id": "e5193b28.90c048",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Sony TV Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1250,
-        "y": 2680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7d89072d.38d008",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Sony TV On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"media_player.sony_bravia_tv\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1250,
-        "y": 2640,
-        "wires": [
-            []
         ]
     },
     {
@@ -4052,78 +3336,6 @@
         ]
     },
     {
-        "id": "fbd63ab.09202c8",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Standing Lamp On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"light.dimmer_smart_energy_illum_light_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1110,
-        "y": 2540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b42d48a9.e72f28",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Standing Lamp Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.dimmer_smart_energy_illum_light_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1110,
-        "y": 2579,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7264e89.5aed918",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "Plug #2 on",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "sgCWAQkXCRcaBwkYGQcKFwkXGQgZBwoXChcZBxkIGQcaBxkHChcJFwoXGQcKFxkIGAgZCBkHCRgJFxkICRcKFwkYCQABCQkXChcJFxoHCRcaBwkYCRcZCBkHChcJFxoHGQgYCBkIGAgJGAkXChcZCAkXGQcaBxkIGQcKFwkXGgcJGAkXCRcKAAEJCRcJGAkXGQgJFxoHCRgJFxkIGQcKFwkXGgcZBxoHGQgZBwkYCRcKFxkHChcZCBgIGQcaBwkYCRcZCAkXChcJFwkAAQoJFwkYCRcZCAkXGQgJGAkXGQgYCAkYCRcaBxkIGAgZBxoHChcJFwoXGQcKFxkHGQgZCBgICRcKFxkICRcJGAkXCgABCAoXCRcKFxkICRcZCAkXChcZCBkHCRgJFxkHGgcZCBkHGQgJFwoXCRgYCAkYGAgZBxoHGQgJFwkYGQgJFwkYCRcJAAEJChcJGAkXGgcJFxkICRgIGBkHGgcKFwkXGQgZCBgIGQcaBwkYCRcJFxoHChcZBxkIGQcaBwkYCRcZBwoXChcJFwkABdwAAA==",
-        "output": "str",
-        "x": 133,
-        "y": 1400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "470a05b1.ea4cec",
-        "type": "template",
-        "z": "e594dd4a.60761",
-        "name": "Plug #2 off",
-        "field": "payload",
-        "fieldType": "msg",
-        "format": "handlebars",
-        "syntax": "plain",
-        "template": "sgCWAQoXCRcaBwkYGAgJFwoXGQgZBwoXCRcZCBkHGgcZCBkHCRgJFwkXChgJFxkHGQgZCBgICRgJFwoXGQcJGAkXCQABCQoXChYKFxkICRcZCAkXChcZCBkHCRgJFxkIGQcZCBkHGgcJGAkXChYKFwoWGgcZCBkHGQgJFwoXCRcZCAkXChcJAAEJChcJFwkYGQcKFxkHChcJGBgIGQgJFwkYGQcaBxkIGAgZCAkXCRgJFwkYCRcZCBkHGQgZCAkXCRcKFxkICRcJFwkAAQoJFwoXCRcaBwoXGQcKFwkXGQgZBwoXCRgZBxkIGAgZBxoHChcJFwoXCRgJFxkHGgcZCBkHCRgJFwkYGQcKFwkXCQABCgkXChcJFxkICRcaBwkYCRcZBxoHChcJFxkIGQcaBxkIGAgJGAkXCRcKFwkYGQcaBxkHGQgJFwoXCRgYCAkXChcJAAEJChcJGAkXGgcJFxkICRcKFxkIGQcJFwoXGQgZBxkIGQcZCAkXChcJGAkXCRcaBxkIGQcZCAkXChcJFxkICRgJFwkABdwAAA==",
-        "output": "str",
-        "x": 133,
-        "y": 1440,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3fac9b26.9c1194",
         "type": "server-state-changed",
         "z": "27f4a783.3a8dc8",
@@ -4270,7 +3482,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 960,
+        "x": 1000,
         "y": 200,
         "wires": [
             []
@@ -4281,7 +3493,7 @@
         "type": "function",
         "z": "823d3fb7.65d29",
         "name": "Calc Day of Year",
-        "func": "var now = new Date();\nvar start = new Date(now.getFullYear(), 0, 0);\nvar diff = now - start;\nvar oneDay = 1000 * 60 * 60 * 24;\nvar dayofYear = Math.floor(diff / oneDay);\nvar accouncementCommon = \"Dont forget to put out the bins, \"\n\nif(dayofYear % 2 === 0) {\n    msg.announce = accouncementCommon + \"its Yellow bin day today, take out the recycling\";\n}\nelse {\n    msg.announce = accouncementCommon + \"its Green bin day today, take out the green waste\";\n}\nreturn msg;",
+        "func": "var now = new Date();\nvar start = new Date(now.getFullYear(), 0, 0);\nvar diff = now - start;\nvar oneDay = 1000 * 60 * 60 * 24;\nvar dayofYear = Math.floor(diff / oneDay);\nvar accouncementCommon = \"Dont forget to put out the bins, \"\n\nif(dayofYear % 2 === 0) {\n    msg.announce = accouncementCommon + \"its Yellow bin day today, take out the recycling\";\n}\nelse {\n    msg.announce = accouncementCommon + \"its Red bin day today, take out the general waste\";\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 770,
@@ -4807,8 +4019,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 500,
-        "y": 2860,
+        "x": 460,
+        "y": 2580,
         "wires": [
             []
         ]
@@ -4925,8 +4137,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 500,
-        "y": 2900,
+        "x": 460,
+        "y": 2620,
         "wires": [
             []
         ]
@@ -5198,9 +4410,7 @@
         "x": 699,
         "y": 170,
         "wires": [
-            [
-                "5909a2bd.1c466c"
-            ]
+            []
         ]
     },
     {
@@ -5223,9 +4433,7 @@
         "x": 700,
         "y": 240,
         "wires": [
-            [
-                "9411307d.55462"
-            ]
+            []
         ]
     },
     {
@@ -5296,9 +4504,7 @@
         "x": 690,
         "y": 350,
         "wires": [
-            [
-                "46f63076.639ff"
-            ]
+            []
         ]
     },
     {
@@ -5321,9 +4527,7 @@
         "x": 690,
         "y": 390,
         "wires": [
-            [
-                "64c94249.9746dc"
-            ]
+            []
         ]
     },
     {
@@ -5346,9 +4550,7 @@
         "x": 690,
         "y": 430,
         "wires": [
-            [
-                "3e7dc3de.38c0ac"
-            ]
+            []
         ]
     },
     {
@@ -6070,34 +5272,6 @@
         ]
     },
     {
-        "id": "46f63076.639ff",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off Upstairs All",
-        "topic": "nodered-custom/lights/turn-off-upstairs-all",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 1010,
-        "y": 340,
-        "wires": []
-    },
-    {
-        "id": "5591826a.cfad8c",
-        "type": "mqtt in",
-        "z": "e594dd4a.60761",
-        "name": "",
-        "topic": "rtl_433/events",
-        "qos": "2",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "x": 130,
-        "y": 980,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "e0b9114e.417bd",
         "type": "switch",
         "z": "e594dd4a.60761",
@@ -6399,7 +5573,7 @@
         "type": "function",
         "z": "3434d199.8ed28e",
         "name": "Switch Topic to Entity ID",
-        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        \n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.tradfri_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3/click\":\n        msg.payload.data.entity_id = \"light.lifx_bulb_1\";\n        //msg.payload.data.entity_id = \"light.study_bias\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume 1/action\":\n        msg.custom = {};\n        msg.custom.entity_id = \"media_player.kitchen_speaker\";\n        break;\n}\nreturn msg;",
+        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        //msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        msg.payload.data.entity_id = \"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.tradfri_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3/click\":\n        msg.payload.data.entity_id = \"light.lifx_bulb_1\";\n        //msg.payload.data.entity_id = \"light.study_bias\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume 1/action\":\n        msg.custom = {};\n        msg.custom.entity_id = \"media_player.kitchen_speaker\";\n        break;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 390,
@@ -6473,7 +5647,7 @@
         "wires": [
             [
                 "60c3600d.1f3f",
-                "dd13f82c.0d7b88"
+                "9740729.349569"
             ],
             []
         ]
@@ -6491,7 +5665,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 810,
+        "x": 930,
         "y": 1660,
         "wires": [
             []
@@ -6655,35 +5829,16 @@
         ]
     },
     {
-        "id": "ee43f1f5.173e6",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "TTS Announce",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "tts",
-        "service": "google_translate_say",
-        "data": "{\"entity_id\":\"media_player.kitchen_speaker\",\"message\":\"{{randomPlaylist.desc}}\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 140,
-        "y": 1487,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "9bc6106a.d6826",
         "type": "stoptimer3",
         "z": "d1ff6abb.b25cf8",
-        "duration": "3",
+        "duration": "30",
         "durationType": "num",
         "units": "Minute",
         "payloadtype": "num",
         "payloadval": "0",
-        "name": "3 Minute Stop Timer",
-        "x": 580,
+        "name": "30 Minute Stop Timer",
+        "x": 520,
         "y": 140,
         "wires": [
             [
@@ -7614,7 +6769,7 @@
         "type": "function",
         "z": "823d3fb7.65d29",
         "name": "Toggle Service",
-        "func": "msg.service = msg.payload == \"on\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
+        "func": "msg.service = msg.payload == \"playing\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 440,
@@ -7727,44 +6882,6 @@
         "wires": []
     },
     {
-        "id": "51d5d337.a9755c",
-        "type": "api-call-service",
-        "z": "3434d199.8ed28e",
-        "name": "Volume Up",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "volume_up",
-        "data": "{\"entity_id\":\"Ettienne\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 370,
-        "y": 580,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "14357121.10182f",
-        "type": "api-call-service",
-        "z": "3434d199.8ed28e",
-        "name": "Volume Down",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "volume_down",
-        "data": "",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 620,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "2184b5c7.89f18a",
         "type": "api-call-service",
         "z": "3434d199.8ed28e",
@@ -7777,8 +6894,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1220,
-        "y": 680,
+        "x": 440,
+        "y": 960,
         "wires": [
             []
         ]
@@ -7796,8 +6913,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
-        "y": 720,
+        "x": 680,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -7821,8 +6938,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 980,
-        "y": 700,
+        "x": 200,
+        "y": 980,
         "wires": [
             [
                 "2184b5c7.89f18a"
@@ -7840,8 +6957,8 @@
         "func": "let playlistsArray = [\n    {\n        uri : \"spotify:playlist:37i9dQZF1E4EFyuVOygvQ7\", \n        desc : \"Air Radio\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E39OdKMfKM663\", \n        desc : \"Tame Impala, Two Door Cinema, Gang of Youths\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E35sNS8MhSVoM\", \n        desc : \"Nightmares on Wax, Zero 7 etc\",\n    },\n    \n]\n\nvar randomPlaylist = playlistsArray[Math.floor(Math.random()*playlistsArray.length)];\nmsg.randomPlaylist = randomPlaylist;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 1230,
-        "y": 720,
+        "x": 450,
+        "y": 1000,
         "wires": [
             [
                 "7bc1d1ad.a5ea1"
@@ -7863,63 +6980,6 @@
         "mustacheAltTags": false,
         "x": 460,
         "y": 2280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "461d3fbe.e55c4",
-        "type": "api-call-service",
-        "z": "3434d199.8ed28e",
-        "name": "Skip Forward",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "media_next_track",
-        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 370,
-        "y": 720,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ec795c72.5cd9",
-        "type": "api-call-service",
-        "z": "3434d199.8ed28e",
-        "name": "Skip Backward",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "media_previous_track",
-        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 380,
-        "y": 760,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "26670465.49450c",
-        "type": "api-call-service",
-        "z": "3434d199.8ed28e",
-        "name": "Play/Pause",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "media_player",
-        "service": "media_play_pause",
-        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 370,
-        "y": 680,
         "wires": [
             []
         ]
@@ -8614,7 +7674,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 810,
+        "x": 1050,
         "y": 1700,
         "wires": [
             []
@@ -8792,7 +7852,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 820,
+        "x": 940,
         "y": 1620,
         "wires": [
             []
@@ -9135,25 +8195,6 @@
         "wires": []
     },
     {
-        "id": "5909a2bd.1c466c",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Study Bias Toggle",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "toggle",
-        "data": "{\"entity_id\":\"light.study_bias\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 910,
-        "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "f3933c6e.eef0b",
         "type": "api-current-state",
         "z": "a76c0410.5bd8c8",
@@ -9218,8 +8259,8 @@
         "qos": "1",
         "datatype": "auto",
         "broker": "32add66e.5cfcaa",
-        "x": 1550,
-        "y": 2660,
+        "x": 930,
+        "y": 2680,
         "wires": [
             [
                 "d797339b.f8a93",
@@ -9236,8 +8277,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1860,
-        "y": 2640,
+        "x": 1240,
+        "y": 2660,
         "wires": []
     },
     {
@@ -9249,8 +8290,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1880,
-        "y": 2685,
+        "x": 1260,
+        "y": 2705,
         "wires": []
     },
     {
@@ -9262,8 +8303,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1870,
-        "y": 2580,
+        "x": 1250,
+        "y": 2600,
         "wires": []
     },
     {
@@ -9275,8 +8316,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1880,
-        "y": 2540,
+        "x": 1260,
+        "y": 2560,
         "wires": []
     },
     {
@@ -9288,8 +8329,8 @@
         "qos": "1",
         "datatype": "auto",
         "broker": "32add66e.5cfcaa",
-        "x": 1580,
-        "y": 2560,
+        "x": 960,
+        "y": 2580,
         "wires": [
             [
                 "3cf6e7fc.090e68",
@@ -9321,32 +8362,6 @@
         "broker": "32add66e.5cfcaa",
         "x": 1100,
         "y": 1660,
-        "wires": []
-    },
-    {
-        "id": "64c94249.9746dc",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off Downstairs",
-        "topic": "nodered-custom/lights/turn-off-downstairs",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 1010,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "3e7dc3de.38c0ac",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off All",
-        "topic": "nodered-custom/lights/turn-off-all",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 980,
-        "y": 420,
         "wires": []
     },
     {
@@ -9401,5 +8416,610 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "9740729.349569",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Sun Below Horizon",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "below_horizon",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sun.sun",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 800,
+        "y": 1700,
+        "wires": [
+            [
+                "dd13f82c.0d7b88"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d3f8b026.739dc",
+        "type": "mqtt in",
+        "z": "3434d199.8ed28e",
+        "name": "Tuya Remote 1",
+        "topic": "zigbee2mqtt/Tuya Remote 1",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "32add66e.5cfcaa",
+        "x": 180,
+        "y": 620,
+        "wires": [
+            [
+                "624d398.b1b5dc8",
+                "c3636f65.c6256"
+            ]
+        ]
+    },
+    {
+        "id": "d6ec70e0.857cd",
+        "type": "mqtt in",
+        "z": "3434d199.8ed28e",
+        "name": "Tuya Remote 2",
+        "topic": "zigbee2mqtt/Tuya Remote 2",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "32add66e.5cfcaa",
+        "x": 180,
+        "y": 800,
+        "wires": [
+            [
+                "150ebbb8.b66324"
+            ]
+        ]
+    },
+    {
+        "id": "624d398.b1b5dc8",
+        "type": "switch",
+        "z": "3434d199.8ed28e",
+        "name": "Switch",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1_single",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1_double",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2_single",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2_double",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3_single",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3_double",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [
+                "3dac140b.1973cc"
+            ],
+            [
+                "fe33d356.53a4f",
+                "c3636f65.c6256"
+            ],
+            [
+                "1c9419a9.91fb66"
+            ],
+            [],
+            [],
+            [
+                "27ada683.44da6a"
+            ]
+        ]
+    },
+    {
+        "id": "3dac140b.1973cc",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Study Bias Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.study_bias\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 910,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c9419a9.91fb66",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Study Light Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.shelly_1_study_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1130,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe33d356.53a4f",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Study Bias On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.study_bias\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 900,
+        "y": 620,
+        "wires": [
+            [
+                "3840639e.677e0c"
+            ]
+        ]
+    },
+    {
+        "id": "3840639e.677e0c",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Study Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_study_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1120,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "27ada683.44da6a",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Bedtime Routine On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"input_boolean.bedtime_routine\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1140,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "150ebbb8.b66324",
+        "type": "switch",
+        "z": "3434d199.8ed28e",
+        "name": "Switch",
+        "property": "payload.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1_single",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1_double",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2_single",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2_double",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3_single",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3_double",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 610,
+        "y": 800,
+        "wires": [
+            [
+                "8947af2.e520b5"
+            ],
+            [],
+            [
+                "4fff6dd9.9537b4"
+            ],
+            [],
+            [
+                "b61ebbe3.350018"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3bfe5224.ebea1e",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Volume Up",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "volume_up",
+        "data": "{\"entity_id\":\"Ettienne\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 210,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5de612e6.72ed1c",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Volume Down",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "volume_down",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 220,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "20c55a8e.998d46",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Skip Forward",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_next_track",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 210,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f580e111.51aee",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Skip Backward",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_previous_track",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 220,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7086b34c.163ddc",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Play/Pause",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "media_play_pause",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 210,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba64827f.0ac0f",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Study Lamp Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 230,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff87ee6a.cbec1",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Onkyo Volume Up",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "volume_up",
+        "data": "{\"entity_id\":\"media_player.onkyo_amplifier\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 230,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "daf82d3e.5bcf9",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Onkyo Volume Up",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "volume_down",
+        "data": "{\"entity_id\":\"media_player.onkyo_amplifier\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 230,
+        "y": 525,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5f013af5.9ed514",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "TV Power On Discrete",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4ODioOKg4qDioOKg4ODg4ODg4qDioOKg4qDioODg4qDgAJlQ0F",
+        "output": "str",
+        "x": 240,
+        "y": 669,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e8cbf2da.7c84",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "TV Power Off Discrete",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgVmAHE4Dg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4OKg4ODg4ODg4ODg4ODg4ODg4ODg4qDg4ODg4ODg4ODg4ODg4ODg4qDioOKg4qDioOKg4ODg4OKg4qDioOKg4qDioODg4qDgAJlQ0F",
+        "output": "str",
+        "x": 240,
+        "y": 589,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "37a79d01.a27642",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "AMP Power On Discrete",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "JgBQAAABJ5MSEhI2EhISEhI2EhISNhI2EjYSEhI2EjYSEhI2EjYSEhISEhISNhISEhISEhISEhISNhI2EhISNhI2EjYSNhI2EgAFAQABJ0kSAAxTDQUAAAAAAAA=",
+        "output": "str",
+        "x": 250,
+        "y": 629,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9064c29e.81213",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Plug #2 on",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "sgCWAQkXCRcaBwkYGQcKFwkXGQgZBwoXChcZBxkIGQcaBxkHChcJFwoXGQcKFxkIGAgZCBkHCRgJFxkICRcKFwkYCQABCQkXChcJFxoHCRcaBwkYCRcZCBkHChcJFxoHGQgYCBkIGAgJGAkXChcZCAkXGQcaBxkIGQcKFwkXGgcJGAkXCRcKAAEJCRcJGAkXGQgJFxoHCRgJFxkIGQcKFwkXGgcZBxoHGQgZBwkYCRcKFxkHChcZCBgIGQcaBwkYCRcZCAkXChcJFwkAAQoJFwkYCRcZCAkXGQgJGAkXGQgYCAkYCRcaBxkIGAgZBxoHChcJFwoXGQcKFxkHGQgZCBgICRcKFxkICRcJGAkXCgABCAoXCRcKFxkICRcZCAkXChcZCBkHCRgJFxkHGgcZCBkHGQgJFwoXCRgYCAkYGAgZBxoHGQgJFwkYGQgJFwkYCRcJAAEJChcJGAkXGgcJFxkICRgIGBkHGgcKFwkXGQgZCBgIGQcaBwkYCRcJFxoHChcZBxkIGQcaBwkYCRcZBwoXChcJFwkABdwAAA==",
+        "output": "str",
+        "x": 213,
+        "y": 709,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce278ed3.fadd8",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Plug #2 off",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "plain",
+        "template": "sgCWAQoXCRcaBwkYGAgJFwoXGQgZBwoXCRcZCBkHGgcZCBkHCRgJFwkXChgJFxkHGQgZCBgICRgJFwoXGQcJGAkXCQABCQoXChYKFxkICRcZCAkXChcZCBkHCRgJFxkIGQcZCBkHGgcJGAkXChYKFwoWGgcZCBkHGQgJFwoXCRcZCAkXChcJAAEJChcJFwkYGQcKFxkHChcJGBgIGQgJFwkYGQcaBxkIGAgZCAkXCRgJFwkYCRcZCBkHGQgZCAkXCRcKFxkICRcJFwkAAQoJFwoXCRcaBwoXGQcKFwkXGQgZBwoXCRgZBxkIGAgZBxoHChcJFwoXCRgJFxkHGgcZCBkHCRgJFwkYGQcKFwkXCQABCgkXChcJFxkICRcaBwkYCRcZBxoHChcJFxkIGQcaBxkIGAgJGAkXCRcKFwkYGQcaBxkHGQgJFwoXCRgYCAkXChcJAAEJChcJGAkXGgcJFxkICRcKFxkIGQcJFwoXGQgZBxkIGQcZCAkXChcJGAkXCRcaBxkIGQcZCAkXChcJFxkICRgJFwkABdwAAA==",
+        "output": "str",
+        "x": 213,
+        "y": 749,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db7b450a.94d158",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "TTS Announce",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "tts",
+        "service": "google_translate_say",
+        "data": "{\"entity_id\":\"media_player.kitchen_speaker\",\"message\":\"{{randomPlaylist.desc}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 220,
+        "y": 796,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab19dd7c.df1e9",
+        "type": "mqtt in",
+        "z": "e3459f93.04f31",
+        "name": "",
+        "topic": "rtl_433/events",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8947af2.e520b5",
+        "type": "mqtt out",
+        "z": "3434d199.8ed28e",
+        "name": "Pub MQTT Turn Off Upstairs All",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 930,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "4fff6dd9.9537b4",
+        "type": "mqtt out",
+        "z": "3434d199.8ed28e",
+        "name": "Pub MQTT Turn Off Downstairs",
+        "topic": "nodered-custom/lights/turn-off-downstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 930,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "b61ebbe3.350018",
+        "type": "mqtt out",
+        "z": "3434d199.8ed28e",
+        "name": "Pub MQTT Turn Off All",
+        "topic": "nodered-custom/lights/turn-off-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 900,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "c3636f65.c6256",
+        "type": "debug",
+        "z": "3434d199.8ed28e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1230,
+        "y": 740,
+        "wires": []
     }
 ]
