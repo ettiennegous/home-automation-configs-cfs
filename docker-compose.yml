@@ -43,7 +43,7 @@ services:
     labels:
       - "traefik.enable=false"
   mosquitto:
-    image: eclipse-mosquitto:1.6.13
+    image: eclipse-mosquitto
     container_name: mqtt
     restart: unless-stopped
     user: 1883:1883
@@ -63,7 +63,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
   unifi:
-    image: jacobalberty/unifi:6.2.23
+    image: jacobalberty/unifi:stable-6
     container_name: unifi
     restart: always
     network_mode: host
@@ -196,6 +196,8 @@ services:
       - MYSQL_ROOT_PASSWORD=${DBPASS}
     labels:
       - "traefik.enable=false"
+    volumes:
+      - ${USERDIR}/docker/mariadb:/var/lib/mysql
   adminer:
     image: adminer
     container_name: adminer    
@@ -220,9 +222,12 @@ services:
     container_name: rtl2hass
     image: jochocki/rtl2hass
     devices:
-      - "/dev/bus/usb/002/003"
+      - "/dev/bus/usb/003/007"
     environment:
       - MQTT_HOST=mqtt
+    depends_on:
+      - mosquitto
+      - homeassistant
   zwavejs2mqtt:
     container_name: zwavejs2mqtt
     image: zwavejs/zwavejs2mqtt
@@ -234,8 +239,6 @@ services:
     ports:
       - 8091:8091
       - 3001:3001
-    devices:
-      - "/dev/bus/usb/002/003"
     devices:
       - "/dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM1:rmw"
     volumes:
@@ -279,6 +282,20 @@ services:
     networks:
       - default
     restart: unless-stopped
+  plex:
+      image: lscr.io/linuxserver/plex
+      container_name: plex
+      network_mode: host
+      environment:
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - VERSION=docker
+        - PLEX_CLAIM= #optional
+      volumes:
+        - ${USERDIR}/docker/plex/library:/config
+        - ${USERDIR}/docker/plex/tvseries:/tv
+        - ${USERDIR}/docker/plex/movies:/movies
+      restart: unless-stopped
   # Will re-introducted when cameras are wired 
   # shinobi: 
   #   image: shinobisystems/shinobi:latest-ubuntu
@@ -311,12 +328,12 @@ services:
   #   environment:
   #     - TZ=${TZ}
 
-  sonarqube:
-    container_name: sonarqube
-    image: sonarqube:8.4.1-community
-    restart: "no"
-    ports:
-      - 9002:9000
+  #sonarqube:
+  #  container_name: sonarqube
+  #  image: sonarqube:8.4.1-community
+  #  restart: "no"
+  #  ports:
+  #    - 9002:9000
 networks:
   traefik_proxy:
     external:
