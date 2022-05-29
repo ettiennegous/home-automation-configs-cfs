@@ -739,7 +739,7 @@
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":145}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":140}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":26}
 {"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":21.1}
 {"k":"{\"nodeId\":3,\"commandClass\":132,\"endpoint\":0,\"property\":\"wakeUpInterval\"}","v":0}
@@ -1173,9 +1173,3 @@
 {"k":"{\"nodeId\":38,\"commandClass\":113,\"endpoint\":0,\"property\":\"alarmLevel\"}","v":0}
 {"k":"{\"nodeId\":34,\"commandClass\":37,\"endpoint\":0,\"property\":\"targetValue\"}"}
 {"k":"{\"nodeId\":33,\"commandClass\":37,\"endpoint\":0,\"property\":\"targetValue\"}"}
-{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100}
-{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":146}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":26}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":21.2}
-{"k":"{\"nodeId\":32,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":2.683}
