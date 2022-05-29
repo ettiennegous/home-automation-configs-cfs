@@ -9,3 +9,68 @@
   - data:
       entity_id: input_boolean.ettienne_home
     service: input_boolean.turn_on
+- id: '1646706406846'
+  alias: Tag Test is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
+  condition: []
+  action:
+  - type: toggle
+    device_id: 092281fea4f767f33e3cccd9257d3c2d
+    entity_id: light.lifx_strip_1
+    domain: light
+  mode: single
+- id: '1646706696851'
+  alias: Tag Turn off all the things is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
+  condition: []
+  action:
+  - type: toggle
+    device_id: 092281fea4f767f33e3cccd9257d3c2d
+    entity_id: light.lifx_strip_1
+    domain: light
+  mode: single
+- id: '1646706759433'
+  alias: Tag Turn off all the things is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 092281fea4f767f33e3cccd9257d3c2d
+    entity_id: light.lifx_strip_1
+    domain: light
+  mode: single
+- id: '1646706882792'
+  alias: Tag Turn off all the things is scanned
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 092281fea4f767f33e3cccd9257d3c2d
+    entity_id: light.lifx_strip_1
+    domain: light
+  mode: single
+- id: '1646706949846'
+  alias: New Automation 1
+  description: ''
+  trigger:
+  - platform: tag
+    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 092281fea4f767f33e3cccd9257d3c2d
+    entity_id: light.lifx_strip_1
+    domain: light
+  mode: single
