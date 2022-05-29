@@ -1129,7 +1129,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
+        "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -1401,8 +1401,7 @@
         "wires": [
             [
                 "dcb53b6d.23dc48",
-                "609765f4.28c1fc",
-                "2eec71d9.9eb04e"
+                "609765f4.28c1fc"
             ],
             []
         ]
@@ -2477,7 +2476,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "tts",
         "service": "google_translate_say",
-        "data": "{\"entity_id\":\"media_player.everywhere\",\"message\":\"Its bedtime for the babies, lets go to bed\"}",
+        "data": "{\"entity_id\":\"media_player.living_area\",\"message\":\"Its bedtime for the babies, lets go to bed\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -2931,7 +2930,7 @@
         "id": "1fdc477.487ceb9",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "Study Table Lamp Light Off",
+        "name": "Guest Room Table Lamp Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
@@ -2940,8 +2939,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 500,
-        "y": 2480,
+        "x": 1400,
+        "y": 2460,
         "wires": [
             []
         ]
@@ -2960,7 +2959,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 460,
-        "y": 2520,
+        "y": 2480,
         "wires": [
             []
         ]
@@ -3197,7 +3196,7 @@
         "id": "93cb2f56.48b6e",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "name": "Study Light On",
+        "name": "Guest Room Light On",
         "server": "5a39eab2.9f6814",
         "service_domain": "lifx",
         "service": "effect_pulse",
@@ -3206,7 +3205,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 340,
+        "x": 360,
         "y": 1440,
         "wires": [
             []
@@ -3230,120 +3229,6 @@
             [
                 "93cb2f56.48b6e"
             ]
-        ]
-    },
-    {
-        "id": "3fac9b26.9c1194",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "RCWL-0516-Microwave-Study Movement",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.rcwl_0516_motion_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 220,
-        "y": 1220,
-        "wires": [
-            [
-                "80384bc9.733eb8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "80384bc9.733eb8",
-        "type": "api-current-state",
-        "z": "27f4a783.3a8dc8",
-        "name": "Is Dark",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "binary_sensor.is_dark",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 520,
-        "y": 1220,
-        "wires": [
-            [
-                "b6d2df30.4a3d9"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "b6d2df30.4a3d9",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Study Light On",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_on",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 720,
-        "y": 1220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3e5df0e0.b4455",
-        "type": "server-state-changed",
-        "z": "d1ff6abb.b25cf8",
-        "name": "RCWL-0516-Microwave-Study Movement",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.rcwl_0516_motion_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 240,
-        "y": 580,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "fb008c26.f2097",
-        "type": "api-call-service",
-        "z": "d1ff6abb.b25cf8",
-        "name": "Study Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 880,
-        "y": 580,
-        "wires": [
-            []
         ]
     },
     {
@@ -3430,7 +3315,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "media_player.everywhere",
+        "template": "media_player.living_area",
         "output": "str",
         "x": 490,
         "y": 220,
@@ -3449,7 +3334,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "media_player.kitchen_speaker",
+        "template": "media_player.living_area",
         "output": "str",
         "x": 510,
         "y": 180,
@@ -4056,7 +3941,9 @@
         "x": 810,
         "y": 1020,
         "wires": [
-            []
+            [
+                "169d704e.b0793"
+            ]
         ]
     },
     {
@@ -4243,10 +4130,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 690,
-        "y": 350,
+        "x": 680,
+        "y": 360,
         "wires": [
-            []
+            [
+                "40cfba2e.341dc4"
+            ]
         ]
     },
     {
@@ -4266,10 +4155,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 690,
-        "y": 390,
+        "x": 680,
+        "y": 420,
         "wires": [
-            []
+            [
+                "3e4aef50.938c1"
+            ]
         ]
     },
     {
@@ -4289,10 +4180,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 690,
-        "y": 430,
+        "x": 680,
+        "y": 480,
         "wires": [
-            []
+            [
+                "c64ca96.3c9ac58"
+            ]
         ]
     },
     {
@@ -4312,10 +4205,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 690,
-        "y": 470,
+        "x": 680,
+        "y": 540,
         "wires": [
-            []
+            [
+                "fe206ad0.541208"
+            ]
         ]
     },
     {
@@ -4341,7 +4236,6 @@
                 "6974e2dd.6038fc",
                 "cc63de0e.0ec94",
                 "cb73e99d.71eec8",
-                "1fdc477.487ceb9",
                 "4109e42.497951c",
                 "3ec87a06.4ff786",
                 "7693dfac.811d3",
@@ -4394,7 +4288,8 @@
                 "ff9936a2.d714b8",
                 "c886bbbe.d31fd8",
                 "32edec0c.b20764",
-                "3b7bd263.8f4d5e"
+                "3b7bd263.8f4d5e",
+                "1fdc477.487ceb9"
             ]
         ]
     },
@@ -4653,7 +4548,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
+        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -5108,6 +5003,11 @@
             },
             {
                 "t": "eq",
+                "v": "toggle",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
                 "v": "brightness_up",
                 "vt": "str"
             },
@@ -5145,11 +5045,26 @@
                 "t": "eq",
                 "v": "skip_backward",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "brightness_move_up",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "brightness_move_down",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "change_brightness",
+                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 10,
+        "outputs": 14,
         "x": 590,
         "y": 240,
         "wires": [
@@ -5158,6 +5073,9 @@
             ],
             [
                 "272b6c02.ffb5e4"
+            ],
+            [
+                "db0369b0.e48658"
             ],
             [
                 "c3204859.6dc628"
@@ -5182,6 +5100,15 @@
             ],
             [
                 "34ce4184.0f3dae"
+            ],
+            [
+                "da259b1c.a15328"
+            ],
+            [
+                "da259b1c.a15328"
+            ],
+            [
+                "da259b1c.a15328"
             ]
         ]
     },
@@ -5193,13 +5120,13 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"Ettienne\"}",
+        "data": "{\"entity_id\":\"{{payload.data.entity_id}}\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 880,
-        "y": 140,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5212,13 +5139,13 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"Ettienne\"}",
+        "data": "{\"entity_id\":\"{{payload.data.entity_id}}\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 880,
-        "y": 180,
+        "y": 120,
         "wires": [
             []
         ]
@@ -5315,7 +5242,7 @@
         "type": "function",
         "z": "3434d199.8ed28e",
         "name": "Switch Topic to Entity ID",
-        "func": "var mqtt_action = msg.payload;\nmsg.payload = { data: { entity_id: null }};\nmsg.payload.mqtt_action = mqtt_action;\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1/click\":\n        //msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        msg.payload.data.entity_id = \"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 2/click\":\n        msg.payload.data.entity_id = \"light.tradfri_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3/click\":\n        msg.payload.data.entity_id = \"light.lifx_bulb_1\";\n        //msg.payload.data.entity_id = \"light.study_bias\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume 1/action\":\n        msg.custom = {};\n        msg.custom.entity_id = \"media_player.kitchen_speaker\";\n        break;\n}\nreturn msg;",
+        "func": "if(!msg.payload) return;\n\nif(msg.payload.startsWith(\"{\")) {\n    msg.payload = JSON.parse(msg.payload);    \n    msg.payload.data = {};\n}\n\nif(msg.payload.brightness && msg.payload.action == \"brightness_stop\") {\n    msg.payload.mqtt_action = \"change_brightness\";\n    msg.payload.data.brightness = msg.payload.brightness;\n}\n\nif(msg.payload.action == \"off\" || msg.payload.action == \"on\" || msg.payload.action == \"toggle\") {\n    msg.payload.mqtt_action = msg.payload.action;\n}\n\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 2\":\n        msg.payload.data.entity_id = \"light.tradfri_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3\":\n        msg.payload.data.entity_id = \"light.lifx_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume Knob 1\":\n        msg.payload.data.entity_id = \"light.lifx_strip_1\";\n        break;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 390,
@@ -5360,7 +5287,7 @@
         "y": 1560,
         "wires": [
             [
-                "59767a2b.468824"
+                "12a0caa9.6bab85"
             ],
             []
         ]
@@ -5384,11 +5311,10 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 600,
-        "y": 1680,
+        "x": 620,
+        "y": 1620,
         "wires": [
             [
-                "60c3600d.1f3f",
                 "9740729.349569"
             ],
             []
@@ -5407,8 +5333,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 930,
-        "y": 1660,
+        "x": 1330,
+        "y": 1580,
         "wires": [
             []
         ]
@@ -5457,7 +5383,7 @@
         "id": "801bdce2.f1044",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "Study Lamp Toggle",
+        "name": "Guest Room Lamp Toggle",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "toggle",
@@ -5466,7 +5392,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 390,
+        "x": 410,
         "y": 900,
         "wires": [
             []
@@ -5889,7 +5815,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 300,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "b5a89aa9.7d4c68"
@@ -5911,7 +5837,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 990,
-        "y": 620,
+        "y": 660,
         "wires": [
             []
         ]
@@ -5930,7 +5856,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 970,
-        "y": 660,
+        "y": 700,
         "wires": [
             []
         ]
@@ -5949,7 +5875,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 970,
-        "y": 700,
+        "y": 740,
         "wires": [
             []
         ]
@@ -5965,13 +5891,14 @@
         "payloadval": "0",
         "name": "3 Minute Stop Timer",
         "x": 680,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "8901a4e2.ad5778",
                 "e3046060.989b7",
                 "235f0d1.5dccdf2",
-                "43bf00ea.87ba8"
+                "43bf00ea.87ba8",
+                "a4939c4d.cd26c"
             ],
             []
         ]
@@ -5993,7 +5920,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 320,
-        "y": 1120,
+        "y": 1200,
         "wires": [
             [],
             []
@@ -6013,7 +5940,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 960,
-        "y": 840,
+        "y": 920,
         "wires": [
             []
         ]
@@ -6239,7 +6166,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 270,
-        "y": 860,
+        "y": 940,
         "wires": [
             [
                 "c9f08ee.c78007"
@@ -6350,7 +6277,8 @@
         "y": 1380,
         "wires": [
             [
-                "58c85c38.d30fe4"
+                "58c85c38.d30fe4",
+                "574b1f51.b8691"
             ]
         ]
     },
@@ -6517,9 +6445,7 @@
         "x": 440,
         "y": 1460,
         "wires": [
-            [
-                "574b1f51.b8691"
-            ]
+            []
         ]
     },
     {
@@ -6535,7 +6461,7 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 780,
+        "x": 1040,
         "y": 1460,
         "wires": [
             []
@@ -6867,8 +6793,7 @@
         "y": 320,
         "wires": [
             [
-                "9eee98d.373ea68",
-                "833b5a5a.165848"
+                "9eee98d.373ea68"
             ]
         ]
     },
@@ -6880,21 +6805,6 @@
         "info": "If downstairs is playing override the target device of kitchen speaker",
         "x": 1400,
         "y": 280,
-        "wires": []
-    },
-    {
-        "id": "833b5a5a.165848",
-        "type": "debug",
-        "z": "3434d199.8ed28e",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 1360,
-        "y": 440,
         "wires": []
     },
     {
@@ -6942,9 +6852,9 @@
         "z": "a76c0410.5bd8c8",
         "name": "Alex Night Light Off",
         "server": "5a39eab2.9f6814",
-        "service_domain": "light",
+        "service_domain": "switch",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
+        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -6981,9 +6891,9 @@
         "z": "a76c0410.5bd8c8",
         "name": "Alex Night Light On",
         "server": "5a39eab2.9f6814",
-        "service_domain": "light",
+        "service_domain": "switch",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"light.sonoff_belle\"}",
+        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -7083,7 +6993,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 260,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             [
                 "b37fb8d9.e28718"
@@ -7107,7 +7017,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 970,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             []
         ]
@@ -7127,7 +7037,7 @@
         "bytopic": "all",
         "name": "3 Minutes",
         "x": 620,
-        "y": 1040,
+        "y": 1120,
         "wires": [
             [
                 "2ab945a4.45e03a"
@@ -7138,17 +7048,17 @@
         "id": "169d704e.b0793",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "name": "Wled On",
+        "name": "Xmas Tree On",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"light.wled\"}",
+        "data": "{\"entity_id\":\"light.xmas_tree\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 120,
-        "y": 1900,
+        "x": 1060,
+        "y": 1020,
         "wires": [
             [
                 "62e04525.92d89c"
@@ -7251,7 +7161,7 @@
         "id": "8209399b.724c48",
         "type": "wled2",
         "z": "27f4a783.3a8dc8",
-        "address": "192.168.20.81",
+        "address": "192.168.20.84",
         "brightness": "255",
         "delay": 0,
         "color1": "#ffffff",
@@ -7260,12 +7170,12 @@
         "effect": "44",
         "effectIntensity": 128,
         "effectSpeed": 128,
-        "name": "LED Strip On",
+        "name": "Active Tree!",
         "palette": "1",
         "preset": 0,
         "state": "on",
-        "x": 490,
-        "y": 1900,
+        "x": 1550,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -7274,12 +7184,12 @@
         "id": "62e04525.92d89c",
         "type": "function",
         "z": "27f4a783.3a8dc8",
-        "name": "Random Effect",
+        "name": "Xmas Tree Random Effect",
         "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 300,
-        "y": 1900,
+        "x": 1320,
+        "y": 1020,
         "wires": [
             [
                 "8209399b.724c48"
@@ -7304,7 +7214,7 @@
         "preset": 0,
         "state": "off",
         "x": 950,
-        "y": 880,
+        "y": 960,
         "wires": [
             []
         ]
@@ -7324,7 +7234,7 @@
         "bytopic": "all",
         "name": "15 Minutes",
         "x": 690,
-        "y": 840,
+        "y": 920,
         "wires": [
             [
                 "cd654c10.cbb95",
@@ -7398,7 +7308,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 970,
-        "y": 920,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -7416,8 +7326,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1050,
-        "y": 1700,
+        "x": 1330,
+        "y": 1640,
         "wires": [
             []
         ]
@@ -7477,7 +7387,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 270,
-        "y": 1260,
+        "y": 1340,
         "wires": [
             [],
             []
@@ -7497,7 +7407,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 480,
-        "y": 1220,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -7515,7 +7425,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 270,
-        "y": 1420,
+        "y": 1500,
         "wires": [
             []
         ]
@@ -7534,7 +7444,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 440,
-        "y": 1440,
+        "y": 1520,
         "wires": [
             []
         ]
@@ -7552,7 +7462,7 @@
         "once": false,
         "onceDelay": 0.1,
         "x": 290,
-        "y": 1200,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -7575,7 +7485,7 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "x": 210,
-        "y": 1480,
+        "y": 1560,
         "wires": [
             [],
             []
@@ -7594,8 +7504,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 940,
-        "y": 1620,
+        "x": 660,
+        "y": 1560,
         "wires": [
             []
         ]
@@ -7620,8 +7530,7 @@
         "y": 1640,
         "wires": [
             [
-                "12a0caa9.6bab85",
-                "59767a2b.468824"
+                "12a0caa9.6bab85"
             ],
             []
         ]
@@ -7634,12 +7543,13 @@
         "func": "\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 410,
-        "y": 1660,
+        "x": 430,
+        "y": 1600,
         "wires": [
             [
                 "931d08c1.28dcf8",
-                "8628cbaa.6e0518"
+                "8628cbaa.6e0518",
+                "59767a2b.468824"
             ]
         ]
     },
@@ -7660,7 +7570,7 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 270,
-        "y": 800,
+        "y": 880,
         "wires": [
             [
                 "c9f08ee.c78007"
@@ -7684,7 +7594,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 980,
-        "y": 800,
+        "y": 880,
         "wires": [
             []
         ]
@@ -7795,35 +7705,9 @@
         "palette": "2",
         "preset": 0,
         "state": "on",
-        "x": 840,
-        "y": 1580,
+        "x": 1040,
+        "y": 1540,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "321ef863.b520f8",
-        "type": "api-current-state",
-        "z": "27f4a783.3a8dc8",
-        "name": "Is WLED On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "light.wled",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 390,
-        "y": 1500,
-        "wires": [
-            [],
             []
         ]
     },
@@ -7846,8 +7730,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 460,
-        "y": 1580,
+        "x": 660,
+        "y": 1520,
         "wires": [
             [
                 "3356022e.3cf77e"
@@ -7874,8 +7758,8 @@
         "palette": "2",
         "preset": 0,
         "state": "on",
-        "x": 1190,
-        "y": 1540,
+        "x": 1570,
+        "y": 1480,
         "wires": [
             []
         ]
@@ -7888,8 +7772,8 @@
         "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 980,
-        "y": 1540,
+        "x": 1320,
+        "y": 1480,
         "wires": [
             [
                 "f453f1a7.31a0c"
@@ -7913,8 +7797,8 @@
         "palette": "2",
         "preset": 0,
         "state": "off",
-        "x": 790,
-        "y": 1540,
+        "x": 990,
+        "y": 1480,
         "wires": [
             [
                 "946dae34.cee7a"
@@ -8110,35 +7994,20 @@
         "id": "660803de.1305ec",
         "type": "api-call-service",
         "z": "e594dd4a.60761",
-        "name": "Study Bias Toggle",
+        "name": "Study Bias Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.study_bias\"}",
+        "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 470,
+        "x": 460,
         "y": 2440,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "2eec71d9.9eb04e",
-        "type": "debug",
-        "z": "27f4a783.3a8dc8",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "x": 1520,
-        "y": 1180,
-        "wires": []
     },
     {
         "id": "43bf00ea.87ba8",
@@ -8154,7 +8023,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 960,
-        "y": 740,
+        "y": 780,
         "wires": [
             []
         ]
@@ -8178,11 +8047,12 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 800,
-        "y": 1700,
+        "x": 1020,
+        "y": 1640,
         "wires": [
             [
-                "dd13f82c.0d7b88"
+                "dd13f82c.0d7b88",
+                "60c3600d.1f3f"
             ],
             []
         ]
@@ -8292,7 +8162,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "toggle",
-        "data": "{\"entity_id\":\"light.study_bias\"}",
+        "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -8330,7 +8200,7 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"light.study_bias\"}",
+        "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
         "mergecontext": "",
         "output_location": "",
         "output_location_type": "none",
@@ -8434,10 +8304,10 @@
                 "4fff6dd9.9537b4"
             ],
             [],
+            [],
             [
                 "b61ebbe3.350018"
-            ],
-            []
+            ]
         ]
     },
     {
@@ -8763,5 +8633,621 @@
         "x": 1230,
         "y": 740,
         "wires": []
+    },
+    {
+        "id": "a4939c4d.cd26c",
+        "type": "api-call-service",
+        "z": "191e949e.9f212b",
+        "name": "XMAS Tree Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.xmas_tree\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 960,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c64ca96.3c9ac58",
+        "type": "function",
+        "z": "e594dd4a.60761",
+        "name": "Random Colour",
+        "func": "let colourR = Math.floor(Math.random() * 256);\nlet colourG = Math.floor(Math.random() * 256);\nlet colourB = Math.floor(Math.random() * 256);\n\nmsg.payload.data = {}\nmsg.payload.data.rgb_color = [colourR, colourG, colourB];\nmsg.payload.data.entity_id = \"light.wled_2\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 480,
+        "wires": [
+            [
+                "b231c980.6cd8e8"
+            ]
+        ]
+    },
+    {
+        "id": "fe206ad0.541208",
+        "type": "function",
+        "z": "e594dd4a.60761",
+        "name": "Cycle Brightness",
+        "func": "\n\nbrightness_pct = global.get(\"Wled82BrightnessPct\");\nif(brightness_pct) brightness_pct += 20;\nelse brightness_pct = 100;\n\n\nbrightness_pct = brightness_pct > 100 ? 20 : brightness_pct;\n\n\nglobal.set(\"Wled82BrightnessPct\",brightness_pct);\n\nmsg.payload.data = {}\nmsg.payload.data.brightness_pct = brightness_pct;\nmsg.payload.data.entity_id = \"light.wled_2\";\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 930,
+        "y": 540,
+        "wires": [
+            [
+                "151bd4e7.7612db"
+            ]
+        ]
+    },
+    {
+        "id": "40cfba2e.341dc4",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Toggle Light",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.wled_2\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1130,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5648d108.0d1b",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Set Effect",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1120,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3e4aef50.938c1",
+        "type": "function",
+        "z": "e594dd4a.60761",
+        "name": "Random Effect",
+        "func": "var effects = [\"Android\",\"Blends\",\"Blink\",\"Blink Rainbow\",\"Bouncing Balls\",\"Bpm\",\"Breathe\",\"Candle\",\"Candle Multi\",\"Candy Cane\",\"Chase\",\"Chase Flash\",\"Chase Flash Rnd\",\"Chase Rainbow\",\"Chase Random\",\"Chunchun\",\"Circus\",\"Colorful\",\"Colorloop\",\"Colortwinkles\",\"Colorwaves\",\"Dancing Shadows\",\"Dissolve\",\"Dissolve Rnd\",\"Drip\",\"Dynamic\",\"Fade\",\"Fill Noise\",\"Fire 2012\",\"Fire Flicker\",\"Fireworks\",\"Fireworks 1D\",\"Fireworks Starburst\",\"Flow\",\"Glitter\",\"Gradient\",\"Halloween\",\"Halloween Eyes\",\"Heartbeat\",\"ICU\",\"Juggle\",\"Lake\",\"Lighthouse\",\"Lightning\",\"Loading\",\"Merry Christmas\",\"Meteor\",\"Meteor Smooth\",\"Multi Comet\",\"Noise 1\",\"Noise 2\",\"Noise 3\",\"Noise 4\",\"Noise Pal\",\"Oscillate\",\"Pacifica\",\"Palette\",\"Percent\",\"Phased\",\"Phased Noise\",\"Plasma\",\"Police\",\"Police All\",\"Popcorn\",\"Pride 2015\",\"Railway\",\"Rain\",\"Rainbow\",\"Rainbow Runner\",\"Random Colors\",\"Red & Blue\",\"Ripple\",\"Ripple Rainbow\",\"Running\",\"Running 2\",\"Saw\",\"Scan\",\"Scan Dual\",\"Scanner\",\"Scanner Dual\",\"Sine\",\"Sinelon\",\"Sinelon Dual\",\"Sinelon Rainbow\",\"Solid\",\"Solid Glitter\",\"Solid Pattern\",\"Solid Pattern Tri\",\"Sparkle\",\"Sparkle Dark\",\"Sparkle+\",\"Spots\",\"Spots Fade\",\"Stream\",\"Stream 2\",\"Strobe\",\"Strobe Mega\",\"Strobe Rainbow\",\"Sunrise\",\"Sweep\",\"Sweep Random\",\"Theater\",\"Theater Rainbow\",\"Traffic Light\",\"Tri Chase\",\"Tri Fade\",\"Tri Wipe\",\"Twinkle\",\"Twinklecat\",\"Twinklefox\",\"Twinkleup\",\"Two Areas\",\"Two Dots\",\"Washing Machine\",\"Wipe\",\"Wipe Random\"];\nvar effect = effects[Math.floor(Math.random()*effects.length)];\n\nmsg.payload.data = {}\nmsg.payload.data.effect = effect;\nmsg.payload.data.entity_id = \"light.wled_2\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 920,
+        "y": 420,
+        "wires": [
+            [
+                "5648d108.0d1b"
+            ]
+        ]
+    },
+    {
+        "id": "151bd4e7.7612db",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Set Brightness",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1140,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b231c980.6cd8e8",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Set Random Colour",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"Ettienne\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1150,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da259b1c.a15328",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Adjust Lamp Brightness",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"{{payload.data.entity_id}}\",\"brightness\":\"{{payload.data.brightness}}\",\"transition\":0.2}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 930,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db0369b0.e48658",
+        "type": "api-call-service",
+        "z": "3434d199.8ed28e",
+        "name": "Light Toggle",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"{{payload.data.entity_id}}\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4e20018d.57cfa",
+        "type": "server-events",
+        "z": "823d3fb7.65d29",
+        "name": "",
+        "server": "5a39eab2.9f6814",
+        "event_type": "tag_scanned",
+        "x": 190,
+        "y": 1680,
+        "wires": [
+            [
+                "9a5a396.b39e5c8"
+            ]
+        ]
+    },
+    {
+        "id": "9a5a396.b39e5c8",
+        "type": "switch",
+        "z": "823d3fb7.65d29",
+        "name": "Switch",
+        "property": "payload.event.tag_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "de64cce7-4d62-4b44-96a7-7deeb99781ab",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "aa09d9b6-39ed-4e52-add6-8c015b94161f",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "c6d96b95-fb72-4ab9-b53e-4dd7691ce40d",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 390,
+        "y": 1640,
+        "wires": [
+            [
+                "1b337990.ec2a26"
+            ],
+            [
+                "53b16d8c.950284"
+            ],
+            [
+                "730bbb51.4a2b84"
+            ]
+        ]
+    },
+    {
+        "id": "9bc0add9.589ee",
+        "type": "mqtt in",
+        "z": "823d3fb7.65d29",
+        "name": "Sub MQTT Bedtime",
+        "topic": "nodered-custom/routines/bedtime",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "x": 190,
+        "y": 2000,
+        "wires": [
+            [
+                "cff556fe.193ef8",
+                "cfbacd37.4e7da",
+                "a1a8e411.d71628",
+                "7132f2f2.d47a0c",
+                "572a8ecc.43619",
+                "1a2edba1.735454",
+                "44ee5f05.13f9d",
+                "ac8df0c1.49522"
+            ]
+        ]
+    },
+    {
+        "id": "cff556fe.193ef8",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Alex Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 480,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cfbacd37.4e7da",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Ruby Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 480,
+        "y": 1900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1a8e411.d71628",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Alex Lamp On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.lifx_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 460,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7132f2f2.d47a0c",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Ruby Lamp On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.shelly_dimmer_ruby_lamp\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 460,
+        "y": 1980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "572a8ecc.43619",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Kids Bathroom Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.shelly_2_5_kids_bathroom_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 490,
+        "y": 2020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1a2edba1.735454",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Kids Toilet Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 470,
+        "y": 2060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "44ee5f05.13f9d",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Rumpus Main Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_rumpus_main_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 480,
+        "y": 2100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac8df0c1.49522",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Rumpus Side Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_rumpus_side_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 480,
+        "y": 2140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b337990.ec2a26",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Bedtime",
+        "topic": "nodered-custom/routines/bedtime",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 710,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "92a0261b.100c08",
+        "type": "debug",
+        "z": "823d3fb7.65d29",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 460,
+        "y": 1760,
+        "wires": []
+    },
+    {
+        "id": "53b16d8c.950284",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Leave Home",
+        "topic": "nodered-custom/routines/leave-home",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 730,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "f5d4772a.8ff708",
+        "type": "mqtt in",
+        "z": "823d3fb7.65d29",
+        "name": "Sub MQTT Leave Home",
+        "topic": "nodered-custom/routines/leave-home",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "x": 210,
+        "y": 2260,
+        "wires": [
+            [
+                "6dbdca5b.220734"
+            ]
+        ]
+    },
+    {
+        "id": "6dbdca5b.220734",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Turn Off All",
+        "topic": "nodered-custom/lights/turn-off-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 480,
+        "y": 2260,
+        "wires": []
+    },
+    {
+        "id": "83fe54c0.218af8",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Bedtime Routine On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"input_boolean.bedtime_routine\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 480,
+        "y": 2320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "730bbb51.4a2b84",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Leave Home",
+        "topic": "nodered-custom/routines/ett-bedtime",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 730,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "7baaf498.bc473c",
+        "type": "mqtt in",
+        "z": "823d3fb7.65d29",
+        "name": "Sub MQTT Ett Bedtime",
+        "topic": "nodered-custom/routines/ett-bedtime",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "x": 200,
+        "y": 2320,
+        "wires": [
+            [
+                "83fe54c0.218af8"
+            ]
+        ]
+    },
+    {
+        "id": "3c5ece96.998ea2",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "TTS Announce",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "",
+        "service": "",
+        "data": "{\"entity_id\":\"media_player.living_area\",\"message\":\"Its bedtime for the babies, lets go to bed\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1380,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d810bfb6.99ca1",
+        "type": "api-call-service",
+        "z": "ff5661ef.cd5bf",
+        "name": "Beep TTS",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "media_player",
+        "service": "play_media",
+        "data": "{\"entity_id\":\"media_player.study_speaker\",\"media_content_id\":\"https://www.myinstants.com/media/sounds/short-beep.mp3\",\"media_content_type\":\"music\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 990,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fbb8fa3.71c6a",
+        "type": "inject",
+        "z": "ff5661ef.cd5bf",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 580,
+        "y": 1040,
+        "wires": [
+            [
+                "d810bfb6.99ca1"
+            ]
+        ]
+    },
+    {
+        "id": "a790c303.aa286",
+        "type": "server-state-changed",
+        "z": "ff5661ef.cd5bf",
+        "name": "Driveway Sensor Movement",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.driveway_sensor_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 520,
+        "y": 1100,
+        "wires": [
+            [
+                "d810bfb6.99ca1"
+            ],
+            []
+        ]
     }
 ]
