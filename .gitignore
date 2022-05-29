@@ -53,3 +53,4 @@ zwavejs2mqtt/settings.json
 zwavejs2mqtt/users.json
 /nginx/*
 plex/library/Library/**
+homeassistant/home-assistant.log.*
