@@ -112,7 +112,7 @@ services:
       - "traefik.http.services.pihole-router.loadbalancer.server.port=80"
       - "traefik.http.middlewares.pihole-specialheaders.headers.sslHost=pihole.${DOMAINNAME}"
   nodered:
-    image: nodered/node-red-docker:v8
+    image: nodered/node-red
     container_name: nodered
     restart: unless-stopped
     depends_on:

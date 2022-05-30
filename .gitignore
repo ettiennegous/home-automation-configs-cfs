@@ -54,3 +54,6 @@ zwavejs2mqtt/users.json
 /nginx/*
 plex/library/Library/**
 homeassistant/home-assistant.log.*
+nodered/data/etc/.config.runtime.json
+nodered/data/etc/.npm/anonymous-cli-metrics.json
+nodered/data/etc/.npm/_cacache/**

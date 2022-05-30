@@ -4,10 +4,10 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "node-red-contrib-broadlink-control": "~1.0.6",
+        "node-red-contrib-broadlink-control": "~2.1.4",
         "node-red-contrib-debounce": "0.0.2",
         "node-red-contrib-home-assistant-websocket": "~0.12.2",
         "node-red-contrib-stoptimer3": "~0.1.2",
-        "node-red-contrib-wled2": "~2.4.1"
+        "node-red-contrib-wled2": "~2.4.4"
     }
 }
