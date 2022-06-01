@@ -577,8 +577,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 150,
-        "y": 260,
+        "x": 170,
+        "y": 2100,
         "wires": [
             [
                 "ab73236a82b08730"
@@ -601,8 +601,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 760,
-        "y": 280,
+        "x": 780,
+        "y": 2120,
         "wires": [
             []
         ]
@@ -620,8 +620,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 760,
-        "y": 340,
+        "x": 780,
+        "y": 2180,
         "wires": [
             []
         ]
@@ -1370,31 +1370,6 @@
         ]
     },
     {
-        "id": "158a1e9b.07eac1",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "Tradfri Dining Motion PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.tradfri_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 170,
-        "y": 1560,
-        "wires": [
-            [
-                "12a0caa9.6bab85"
-            ],
-            []
-        ]
-    },
-    {
         "id": "8628cbaa.6e0518",
         "type": "api-current-state",
         "z": "27f4a783.3a8dc8",
@@ -1408,13 +1383,13 @@
         "override_topic": false,
         "entity_id": "binary_sensor.is_dark",
         "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
         "blockInputOverrides": false,
-        "x": 620,
-        "y": 1620,
+        "x": 1000,
+        "y": 2600,
         "wires": [
             [
                 "9740729.349569"
@@ -1426,17 +1401,17 @@
         "id": "60c3600d.1f3f",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "name": "Dining Lights On",
+        "name": "Living Lights On",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_on",
         "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1330,
-        "y": 1580,
+        "x": 1460,
+        "y": 2560,
         "wires": [
             []
         ]
@@ -1589,11 +1564,11 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 100,
-        "y": 200,
+        "x": 120,
+        "y": 2040,
         "wires": [
             [
-                "ab73236a82b08730"
+                "230687b46451439c"
             ],
             []
         ]
@@ -1611,8 +1586,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1330,
-        "y": 1640,
+        "x": 1470,
+        "y": 2640,
         "wires": [
             []
         ]
@@ -1630,53 +1605,10 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 660,
-        "y": 1560,
+        "x": 1040,
+        "y": 2540,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "1320db4e.4f1955",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "Aeotec Dining Motion PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.multisensor_dining_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 170,
-        "y": 1640,
-        "wires": [
-            [
-                "12a0caa9.6bab85"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "12a0caa9.6bab85",
-        "type": "function",
-        "z": "27f4a783.3a8dc8",
-        "name": "",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 430,
-        "y": 1600,
-        "wires": [
-            [
-                "931d08c1.28dcf8",
-                "8628cbaa.6e0518",
-                "59767a2b.468824"
-            ]
         ]
     },
     {
@@ -1684,7 +1616,7 @@
         "type": "wled2",
         "z": "27f4a783.3a8dc8",
         "address": "192.168.20.80",
-        "brightness": "80",
+        "brightness": "255",
         "delay": "20",
         "color1": "#ffffff",
         "color2": "#ffffff",
@@ -1696,8 +1628,8 @@
         "palette": "2",
         "preset": 0,
         "state": "on",
-        "x": 1040,
-        "y": 1540,
+        "x": 1060,
+        "y": 2500,
         "wires": [
             []
         ]
@@ -1721,15 +1653,13 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 660,
-        "y": 1520,
+        "x": 1180,
+        "y": 2460,
         "wires": [
             [
                 "3356022e.3cf77e"
             ],
-            [
-                "f8ee8ebc.20b36"
-            ]
+            []
         ]
     },
     {
@@ -1749,8 +1679,8 @@
         "palette": "2",
         "preset": 0,
         "state": "on",
-        "x": 1570,
-        "y": 1480,
+        "x": 1790,
+        "y": 2460,
         "wires": [
             []
         ]
@@ -1766,8 +1696,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1320,
-        "y": 1480,
+        "x": 1580,
+        "y": 2460,
         "wires": [
             [
                 "f453f1a7.31a0c"
@@ -1791,8 +1721,8 @@
         "palette": "2",
         "preset": 0,
         "state": "off",
-        "x": 990,
-        "y": 1480,
+        "x": 1370,
+        "y": 2460,
         "wires": [
             [
                 "946dae34.cee7a"
@@ -1813,13 +1743,13 @@
         "override_topic": false,
         "entity_id": "sun.sun",
         "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
+        "state_location": "",
+        "override_payload": "none",
+        "entity_location": "",
+        "override_data": "none",
         "blockInputOverrides": false,
-        "x": 1020,
-        "y": 1640,
+        "x": 1220,
+        "y": 2600,
         "wires": [
             [
                 "dd13f82c.0d7b88",
@@ -1841,8 +1771,8 @@
         "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 790,
-        "y": 180,
+        "x": 810,
+        "y": 2020,
         "wires": [
             []
         ]
@@ -1854,8 +1784,8 @@
         "name": "Pantry Timer",
         "server": "5a39eab2.9f6814",
         "event_type": "",
-        "x": 110,
-        "y": 320,
+        "x": 130,
+        "y": 2160,
         "wires": [
             [
                 "b9aba507af5ae72c"
@@ -1884,8 +1814,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 290,
-        "y": 320,
+        "x": 310,
+        "y": 2160,
         "wires": [
             [
                 "9f44afbc72db8e86"
@@ -1930,8 +1860,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 5,
-        "x": 510,
-        "y": 320,
+        "x": 530,
+        "y": 2160,
         "wires": [
             [
                 "1f2d5974.8e5757"
@@ -1957,8 +1887,8 @@
         "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 790,
-        "y": 240,
+        "x": 810,
+        "y": 2080,
         "wires": [
             []
         ]
@@ -1979,14 +1909,527 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 120,
-        "y": 160,
+        "x": 140,
+        "y": 2000,
+        "wires": [
+            [
+                "230687b46451439c"
+            ],
+            [
+                "4d878b731f7538f9"
+            ]
+        ]
+    },
+    {
+        "id": "230687b46451439c",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Pantry Timer NOT Paused",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "paused",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "override_topic": false,
+        "entity_id": "timer.pantry_light_timer",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 460,
+        "y": 2000,
         "wires": [
             [
                 "ab73236a82b08730"
             ],
+            []
+        ]
+    },
+    {
+        "id": "21b320a6f37d8e53",
+        "type": "comment",
+        "z": "27f4a783.3a8dc8",
+        "name": "Pantry Light Automation",
+        "info": "# Pantry Light Automation",
+        "x": 460,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "75f28deffcdcce91",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Lights Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 780,
+        "y": 2680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fcbefd667e37b814",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Tradfri Dining Motion PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.tradfri_pir_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 170,
+        "y": 2440,
+        "wires": [
             [
-                "4d878b731f7538f9"
+                "481352f8c7382559"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1e95e04c1030b69c",
+        "type": "wled2",
+        "z": "27f4a783.3a8dc8",
+        "address": "192.168.20.80",
+        "brightness": "255",
+        "delay": 0,
+        "color1": "#ffffff",
+        "color2": "#ffffff",
+        "color3": "#ffffff",
+        "effect": "44",
+        "effectIntensity": 128,
+        "effectSpeed": 128,
+        "name": "LED Strip Off",
+        "palette": "1",
+        "preset": 0,
+        "state": "off",
+        "x": 770,
+        "y": 2760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "084ac3dba0f0e4b5",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Garden Lights Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.garden_lights\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 790,
+        "y": 2800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b01e0fc67648897",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Aeotec Dining Motion PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.multisensor_dining_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 170,
+        "y": 2400,
+        "wires": [
+            [
+                "481352f8c7382559"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ece843a63b435f41",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Kitchen TV Screen Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 800,
+        "y": 2720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "481352f8c7382559",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Timer NOT Paused",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "paused",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "override_topic": false,
+        "entity_id": "timer.living_light_timer",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 550,
+        "y": 2360,
+        "wires": [
+            [
+                "4a64e59721b5ad5d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6645890597476558",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Lights On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 140,
+        "y": 2360,
+        "wires": [
+            [
+                "481352f8c7382559"
+            ],
+            [
+                "13695fee7d74a46f"
+            ]
+        ]
+    },
+    {
+        "id": "4a64e59721b5ad5d",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Start Living Light Timer",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "timer",
+        "service": "start",
+        "data": "{\"entity_id\":\"timer.living_light_timer\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 880,
+        "y": 2360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13695fee7d74a46f",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Finish Living Light Timer",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "timer",
+        "service": "finish",
+        "data": "{\"entity_id\":\"timer.living_light_timer\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 890,
+        "y": 2400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7fda45cdffa03de",
+        "type": "server-events",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Timer",
+        "server": "5a39eab2.9f6814",
+        "event_type": "",
+        "x": 130,
+        "y": 2520,
+        "wires": [
+            [
+                "bb454e1ad8f2af0d"
+            ]
+        ]
+    },
+    {
+        "id": "bb454e1ad8f2af0d",
+        "type": "switch",
+        "z": "27f4a783.3a8dc8",
+        "name": "Filter Entity",
+        "property": "payload.entity_id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "timer.living_light_timer",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 2520,
+        "wires": [
+            [
+                "e0188544567a42fe"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e0188544567a42fe",
+        "type": "switch",
+        "z": "27f4a783.3a8dc8",
+        "name": "Switch Timer Event",
+        "property": "event_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "timer.started",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "timer.restarted",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "timer.paused",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "timer.finished",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "timer.cancelled",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 530,
+        "y": 2520,
+        "wires": [
+            [
+                "454b7bc3d4eae4d8"
+            ],
+            [],
+            [],
+            [
+                "75f28deffcdcce91",
+                "ece843a63b435f41",
+                "1e95e04c1030b69c",
+                "084ac3dba0f0e4b5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fd171c2a0e10edf9",
+        "type": "comment",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Lights Automation",
+        "info": "",
+        "x": 450,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "da273ee9a758ed7f",
+        "type": "comment",
+        "z": "27f4a783.3a8dc8",
+        "name": "Revisit Later",
+        "info": "Todo only add effects that do not involve colour",
+        "x": 1310,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "49826c644a7597ea",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Start Laundry Light Timer",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "timer",
+        "service": "start",
+        "data": "{\"entity_id\":\"timer.laundry_light_timer\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 230,
+        "y": 3120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19665a993cac735b",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Start DS Toilet Light Timer",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "timer",
+        "service": "start",
+        "data": "{\"entity_id\":\"timer.downstairs_toilet_timer\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 230,
+        "y": 3180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74a8b9cf217167b8",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Start Garage Light Timer",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "timer",
+        "service": "start",
+        "data": "{\"entity_id\":\"timer.garage_lights_timer\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 230,
+        "y": 3240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e401d0903b4dd364",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Start Front Door Light Timer",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "timer",
+        "service": "start",
+        "data": "{\"entity_id\":\"timer.frontdoor_light_timer\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 240,
+        "y": 3300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "518b73136f6793bd",
+        "type": "inject",
+        "z": "27f4a783.3a8dc8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 780,
+        "y": 2620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "454b7bc3d4eae4d8",
+        "type": "change",
+        "z": "27f4a783.3a8dc8",
+        "name": "Clear Msg Content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 2500,
+        "wires": [
+            [
+                "f8ee8ebc.20b36",
+                "931d08c1.28dcf8",
+                "8628cbaa.6e0518"
             ]
         ]
     },
@@ -3244,48 +3687,6 @@
         ]
     },
     {
-        "id": "3ac262b3.6ef06e",
-        "type": "server-state-changed",
-        "z": "191e949e.9f212b",
-        "name": "Dining Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 320,
-        "y": 1200,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "cd654c10.cbb95",
-        "type": "api-call-service",
-        "z": "191e949e.9f212b",
-        "name": "Dining Lights Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 960,
-        "y": 920,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c990c1f6.731ed",
         "type": "server-state-changed",
         "z": "191e949e.9f212b",
@@ -3493,33 +3894,6 @@
         ]
     },
     {
-        "id": "c6466b14.4851e8",
-        "type": "server-state-changed",
-        "z": "191e949e.9f212b",
-        "name": "Tradfri Dining Motion PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.tradfri_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 270,
-        "y": 940,
-        "wires": [
-            [
-                "c9f08ee.c78007"
-            ],
-            [
-                "c9f08ee.c78007"
-            ]
-        ]
-    },
-    {
         "id": "eb35eb0a.b86e18",
         "type": "server-state-changed",
         "z": "191e949e.9f212b",
@@ -3586,241 +3960,6 @@
             [
                 "2ab945a4.45e03a"
             ]
-        ]
-    },
-    {
-        "id": "fa3d12dd.5177",
-        "type": "wled2",
-        "z": "191e949e.9f212b",
-        "address": "192.168.20.80",
-        "brightness": "255",
-        "delay": 0,
-        "color1": "#ffffff",
-        "color2": "#ffffff",
-        "color3": "#ffffff",
-        "effect": "44",
-        "effectIntensity": 128,
-        "effectSpeed": 128,
-        "name": "LED Strip Off",
-        "palette": "1",
-        "preset": 0,
-        "state": "off",
-        "x": 950,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c9f08ee.c78007",
-        "type": "trigger",
-        "z": "191e949e.9f212b",
-        "name": "15 Minutes",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "15",
-        "extend": true,
-        "units": "min",
-        "reset": "on",
-        "bytopic": "all",
-        "outputs": 1,
-        "x": 690,
-        "y": 920,
-        "wires": [
-            [
-                "cd654c10.cbb95",
-                "fa3d12dd.5177",
-                "1416a9c7.5abb46",
-                "a71f648a.a5a028"
-            ]
-        ]
-    },
-    {
-        "id": "1416a9c7.5abb46",
-        "type": "api-call-service",
-        "z": "191e949e.9f212b",
-        "name": "Garden Lights Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.garden_lights\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 970,
-        "y": 1000,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4841bc9f.5f5b54",
-        "type": "server-state-changed",
-        "z": "191e949e.9f212b",
-        "name": "Movement Detected",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.multisensor_dining_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 270,
-        "y": 1340,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "1475e60d.d4d1ca",
-        "type": "api-call-service",
-        "z": "191e949e.9f212b",
-        "name": "Turn screen on",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "mqtt",
-        "service": "publish",
-        "data": "{\"entity_id\":\"Ettienne\",\"topic\":\"photo_frame/screen_on\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 480,
-        "y": 1300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "531593c0.6b1adc",
-        "type": "inject",
-        "z": "191e949e.9f212b",
-        "name": "Manual Off",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 270,
-        "y": 1500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e9eaf13a.6fc66",
-        "type": "api-call-service",
-        "z": "191e949e.9f212b",
-        "name": "Turn screen off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "mqtt",
-        "service": "publish",
-        "data": "{\"topic\": \"photo_frame/screen_off\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 440,
-        "y": 1520,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2de5171.3fff0e8",
-        "type": "inject",
-        "z": "191e949e.9f212b",
-        "name": "Manual On",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 290,
-        "y": 1280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1ce5dd6.f341a23",
-        "type": "poll-state",
-        "z": "191e949e.9f212b",
-        "name": "No movement for x seconds",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "updateinterval": "60",
-        "updateIntervalUnits": "seconds",
-        "outputinitially": false,
-        "outputonchanged": false,
-        "entity_id": "binary_sensor.multisensor_dining_motion",
-        "state_type": "str",
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "x": 210,
-        "y": 1560,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "5130f3bc.5ff4ac",
-        "type": "server-state-changed",
-        "z": "191e949e.9f212b",
-        "name": "Aeotec Dining Motion PIR",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "entityidfilter": "binary_sensor.multisensor_dining_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "output_only_on_state_change": true,
-        "x": 270,
-        "y": 880,
-        "wires": [
-            [
-                "c9f08ee.c78007"
-            ],
-            [
-                "c9f08ee.c78007"
-            ]
-        ]
-    },
-    {
-        "id": "a71f648a.a5a028",
-        "type": "api-call-service",
-        "z": "191e949e.9f212b",
-        "name": "Kitchen TV Screen Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 980,
-        "y": 880,
-        "wires": [
-            []
         ]
     },
     {
@@ -4839,7 +4978,9 @@
                 "c886bbbe.d31fd8",
                 "32edec0c.b20764",
                 "3b7bd263.8f4d5e",
-                "1fdc477.487ceb9"
+                "1fdc477.487ceb9",
+                "e39fd5c3615e9149",
+                "18f78f69ed88f852"
             ]
         ]
     },
@@ -4857,7 +4998,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1380,
-        "y": 1900,
+        "y": 1820,
         "wires": [
             []
         ]
@@ -4876,7 +5017,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1380,
-        "y": 1940,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -5768,6 +5909,44 @@
         ]
     },
     {
+        "id": "e39fd5c3615e9149",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Ruby Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_dimmer_ruby_lamp\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 1940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "18f78f69ed88f852",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Alex Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "a155ef5b.689b2",
         "type": "mqtt in",
         "z": "3434d199.8ed28e",
@@ -6048,6 +6227,9 @@
         "func": "if(!msg.payload) return;\n\nif(msg.payload.startsWith(\"{\")) {\n    msg.payload = JSON.parse(msg.payload);    \n    msg.payload.data = {};\n}\n\nif(msg.payload.brightness && msg.payload.action == \"brightness_stop\") {\n    msg.payload.mqtt_action = \"change_brightness\";\n    msg.payload.data.brightness = msg.payload.brightness;\n}\n\nif(msg.payload.action == \"off\" || msg.payload.action == \"on\" || msg.payload.action == \"toggle\") {\n    msg.payload.mqtt_action = msg.payload.action;\n}\n\nswitch(msg.topic) {\n    case \"zigbee2mqtt/Tradfri Button 1\":\n        msg.payload.data.entity_id = \"light.shelly_dimmer_ruby_lamp\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 2\":\n        msg.payload.data.entity_id = \"light.tradfri_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Button 3\":\n        msg.payload.data.entity_id = \"light.lifx_bulb_1\";\n        break;\n    case \"zigbee2mqtt/Tradfri Volume Knob 1\":\n        msg.payload.data.entity_id = \"light.lifx_strip_1\";\n        break;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 390,
         "y": 240,
         "wires": [
