@@ -1,5 +1,4 @@
 http:   
-
   routers:
     traefik-local-router:
       entryPoints:
@@ -8,7 +7,6 @@ http:
       service: intentional-empty-service
       middlewares:
         - traefik-local-redirect
-
     printer-local-router:
       entryPoints:
         - "http"
@@ -16,7 +14,6 @@ http:
       service: intentional-empty-service
       middlewares:
         - printer-local-redirect
-
     hass-router:
       entryPoints:
         - "http"
@@ -27,7 +24,6 @@ http:
         certresolver: letsencrypt
       middlewares:
         - secured-no-basic
-
     octopi-router:
         entryPoints:
             - "http"
@@ -50,6 +46,16 @@ http:
         middlewares:
             - extraheaders
 
+    zigbee2mqtt-router:
+        entryPoints:
+            - "http"
+            - "https"
+        rule: "Host(`zigbee2mqtt.{{env "DOMAINNAME"}}`)"
+        service: "zigbee2mqtt-service"
+        tls:
+            certresolver: letsencrypt
+        middlewares:
+            - secured
   services:
     intentional-empty-service:
       loadBalancer:
@@ -76,6 +82,15 @@ http:
             servers:
             - url: "https://192.168.1.40:8443/"
 
+    zigbee2mqtt-service:
+        loadBalancer:
+            passHostHeader: false
+            healthCheck:
+                scheme: https
+                port: 8080
+            servers:
+            - url: "https://192.168.1.22:8080/"
+
   middlewares:
     traefik-local-redirect: 
       redirectRegex:
@@ -92,10 +107,10 @@ http:
     https-redirect:
       redirectScheme:
         scheme: https
+        permanent: false
     secureheaders:
       headers:
         frameDeny: true
-        sslRedirect: true
         browserXssFilter: true
         contentTypeNosniff: true
         forceSTSHeader: true
@@ -105,6 +120,14 @@ http:
     extraheaders: 
         headers:
             referrerPolicy: "no-referrer"
+    web-socket-headers:
+      headers:
+        customRequestHeaders:
+          X-Forwarded-Proto: "http"
+          # proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          # proxy_set_header  $scheme;
+          # proxy_set_header Upgrade $http_upgrade;
+          # proxy_set_header Connection "Upgrade";
     secured:
       chain:
         middlewares:
@@ -115,4 +138,5 @@ http:
         chain:
             middlewares:
             - https-redirect
+            - web-socket-headers
             - secureheaders

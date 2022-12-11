@@ -149,7 +149,8 @@ services:
       - "443:443"
       - "8282:8080"
     environment:
-      - DUCKDNS_TOKEN=${DUCKDNS_TOKEN}
+      - CF_API_EMAIL=${CF_EMAIL}
+      - CF_DNS_API_TOKEN=${CF_API_TOKEN}
       - DOMAINNAME=${DOMAINNAME}
       - TRAEFIK_PROVIDERS_DOCKER_DEFAULTRULE="Host(`{{ trimPrefix `/` .Name }}.${DOMAINNAME}`)"
     labels:
@@ -218,13 +219,14 @@ services:
       - "traefik.http.services.adminer-service.loadbalancer.server.port=8080"
       - "traefik.http.services.adminer-service.loadbalancer.server.scheme=http"
       - "traefik.http.services.adminer-service.loadbalancer.passHostHeader=true"
-  rtl2hass:
-    container_name: rtl2hass
-    image: jochocki/rtl2hass
+  rtl433:
+    container_name: rtl433
+    image: hertzg/rtl_433:latest
     devices:
       - "/dev/bus/usb/003/007"
-    environment:
-      - MQTT_HOST=mqtt
+    command:
+      - '-Mtime:unix:usec:utc'
+      - '-Fmqtt://mqtt:1883,retain=1'
     depends_on:
       - mosquitto
       - homeassistant
@@ -267,6 +269,15 @@ services:
       - "traefik.http.services.nginx-service.loadbalancer.server.port=80"
       - "traefik.http.services.nginx-service.loadbalancer.server.scheme=http"
       - "traefik.http.services.nginx-service.loadbalancer.passHostHeader=true"
+  switchbot-mqtt:
+    image: fphammerle/switchbot-mqtt:latest
+    container_name: switchbot-mqtt
+    network_mode: host
+    userns_mode: host
+    environment:
+    - MQTT_HOST=192.168.1.40
+    - MQTT_PORT=1883
+    restart: unless-stopped
   vscode:
     container_name: vscode
     image: codercom/code-server

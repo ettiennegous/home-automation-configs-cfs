@@ -1,0 +1,268 @@
+switch:
+  - name: "Study Remote 1"
+    unique_id: study_remote_1
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "349147087"
+    payload_off: "349145024"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Study Remote 2"
+    unique_id: study_remote_2
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "349146056"
+    payload_off: "349144004"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Study Remote 3"
+    unique_id: study_remote_3
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "349146572"
+    payload_off: "349144514"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Study Remote 4"
+    unique_id: study_remote_4
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "349146830"
+    payload_off: "349144769"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Study Remote All"
+    unique_id: study_remote_all
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "349144259"
+    payload_off: "349145291"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Rumpus Remote A B"
+    unique_id: rumpus_remote_a_b
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "2599032"
+    payload_off: "2599028"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Rumpus Remote C D"
+    unique_id: rumpus_remote_c_d
+    state_topic: "home/OpenMQTTGateway/433toMQTT"
+    command_topic: "home/OpenMQTTGateway/commands/MQTTto433/PLSL_180/433_1"
+    value_template: "{{ value_json.value }}"
+    payload_on: "2599026"
+    payload_off: "2599025"
+    optimistic: false
+    retain: true
+    icon: mdi:remote
+  - name: "Shelly 2.5 Kids Bathroom Extractor"
+    unique_id: shelly_2_5_kids_bathroom_extractor
+    state_topic: "shellies/shellyswitch25-69020F/relay/0"
+    command_topic: "shellies/shellyswitch25-69020F/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+    icon: mdi:fan
+  - name: "Shelly 2.5 Master Bathroom Extractor"
+    unique_id: shelly_2_5_master_bathroom_extractor
+    state_topic: "shellies/shellyswitch25-6912B9/relay/1"
+    command_topic: "shellies/shellyswitch25-6912B9/relay/1/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+    icon: mdi:fan
+
+light:
+  - name: "Shelly 1 Study Light"
+    unique_id: shelly_1_study_light
+    state_topic: "shellies/shelly1-689DB5/relay/0"
+    command_topic: "shellies/shelly1-689DB5/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 2.5 Powder Room Basin Light"
+    unique_id: shelly_2_5_powder_room_basin_light
+    state_topic: "shellies/shellyswitch25-68E4F3/relay/0"
+    command_topic: "shellies/shellyswitch25-68E4F3/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 2.5 Stairs Light"
+    unique_id: shelly_2_5_stairs_light
+    state_topic: "shellies/shellyswitch25-68E4F3/relay/1"
+    command_topic: "shellies/shellyswitch25-68E4F3/relay/1/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 1 Alex Kitchen Light"
+    unique_id: shelly_1_alex_kitchen_light
+    state_topic: "shellies/shelly1-B9D681/relay/0"
+    command_topic: "shellies/shelly1-B9D681/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 2.5 Rumpus Main Light"
+    unique_id: shelly_2_5_rumpus_main_light
+    state_topic: "shellies/shellyswitch25-68688E/relay/0"
+    command_topic: "shellies/shellyswitch25-68688E/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 2.5 Rumpus Side Light"
+    unique_id: shelly_2_5_rumpus_side_light
+    state_topic: "shellies/shellyswitch25-68688E/relay/1"
+    command_topic: "shellies/shellyswitch25-68688E/relay/1/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 1 Guest Room Light"
+    unique_id: shelly_1_guest_room_light
+    state_topic: "shellies/shelly1-68C70A/relay/0"
+    command_topic: "shellies/shelly1-68C70A/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 2.5 Kids Bathroom Light"
+    unique_id: shelly_2_5_kids_bathroom_light
+    state_topic: "shellies/shellyswitch25-69020F/relay/1"
+    command_topic: "shellies/shellyswitch25-69020F/relay/1/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 2.5 Master Bathroom Light"
+    unique_id: shelly_2_5_master_bathroom_light
+    state_topic: "shellies/shellyswitch25-6912B9/relay/0"
+    command_topic: "shellies/shellyswitch25-6912B9/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 1 Master Toilet Light"
+    unique_id: shelly_1_master_toilet_light
+    state_topic: "shellies/shelly1-68B50C/relay/0"
+    command_topic: "shellies/shelly1-68B50C/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 1 Kitchen Light"
+    unique_id: shelly_1_kitchen_light
+    state_topic: "shellies/shelly1-98F4ABF32A31/relay/0"
+    command_topic: "shellies/shelly1-98F4ABF32A31/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly 1 Laundry"
+    unique_id: shelly_1_laundry
+    state_topic: "shellies/shelly1-98F4ABF28AC7/relay/0"
+    command_topic: "shellies/shelly1-98F4ABF28AC7/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
+  - name: "Shelly Dimmer Dressing Room"
+    unique_id: shelly_dimmer_dressing_room
+    schema: template
+    state_topic: "shellies/shellydimmer-CFF878/light/0/status"
+    state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
+    command_topic: "shellies/shellydimmer-CFF878/light/0/set"
+    command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
+    command_off_template: '{"turn": "off"}'
+    brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
+  - name: "Shelly Dimmer Ruby Lamp" 
+    unique_id: shelly_dimmer_ruby_lamp
+    schema: template
+    state_topic: "shellies/shellydimmer-D0AA89/light/0/status"
+    state_template: '{% if value_json.ison %} on {% else %} off {% endif %}'
+    command_topic: "shellies/shellydimmer-D0AA89/light/0/set"
+    command_on_template: '{"turn": "on"{% if brightness is defined %}, "brightness": {{(brightness | float * 0.3882 + 1) | round(0)}}{% endif %}}'
+    command_off_template: '{"turn": "off"}'
+    brightness_template: '{{ (value_json.brightness | float * 2.55) | round(0) }}'
+
+binary_sensor:
+    - name: ESP32_1_Motion
+      unique_id: esp32_1_motion
+      state_topic: "ESP32-1/Motion"
+      payload_on: "true"
+      off_delay: 2
+      device_class: motion
+    - name: Sonoff_PIR_1
+      unique_id: sonoff_pir_1
+      state_topic: "rtl_433/+/devices/Generic-Remote/61324/tristate"
+      payload_on: "1X11X010011X"
+      off_delay: 7
+      value_template: "{{ value }}"
+      device_class: motion
+    - name: Sonoff_PIR_2
+      unique_id: sonoff_pir_2
+      state_topic: "rtl_433/+/devices/Generic-Remote/61575/tristate"
+      payload_on: "1100X0Z1X11X"
+      off_delay: 7
+      value_template: "{{ value }}"
+      device_class: motion
+
+sensor:
+  - name: Hygrometer 1 Humidity
+    unique_id: hygrometer_1_humidity
+    device:
+      manufacturer: Ecowitt
+      model: WH51
+      identifiers: 01123e
+    state_topic: "rtl_433/+/devices/Fineoffset-WH51/01123e/moisture"
+    unit_of_measurement: "%"
+    value_template: "{{ value }}"
+  - name: Hygrometer 1 Battery
+    unique_id: hygrometer_1_battery
+    device:
+      manufacturer: Ecowitt
+      model: WH51
+      identifiers: 01123e
+    state_topic: "rtl_433/+/devices/Fineoffset-WH51/01123e/battery_mV"
+    unit_of_measurement: "mV"
+    value_template: "{{ value }}"
+
+cover:
+  - name: switchbot_curtains
+    unique_id: family_room_curtains
+    command_topic: homeassistant/cover/switchbot-curtain/C5:84:25:4F:14:CA/set
+    state_topic: homeassistant/cover/switchbot-curtain/C5:84:25:4F:14:CA/state
+

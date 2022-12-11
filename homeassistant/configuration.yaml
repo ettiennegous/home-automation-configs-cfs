@@ -1,21 +1,6 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
-  name: Home
-  # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
-  # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
-  # metric for Metric, imperial for Imperial
-  unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: !secret timezone
-  # Customization file
   customize: !include customize.yaml
   packages: !include_dir_named packages
-  
-# Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
 
 api:
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
@@ -38,15 +23,16 @@ tts:
 light: !include config/light.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
+mqtt: !include config/mqtt.yaml
+
 sensor: !include config/sensor.yaml
-switch: !include config/switch.yaml
 binary_sensor: !include config/binary_sensor.yaml
 input_boolean: !include config/boolean.yaml
 media_player: !include config/media_player.yaml
 camera: !include config/camera.yaml
 google_assistant: !include config/google_assistant.yaml
 shopping_list:
-
+timer:
 # influxdb:
 #   host: !secret influxdb_host
 
@@ -58,10 +44,6 @@ lifx:
     - broadcast: 192.168.20.73
     - broadcast: 192.168.20.74
     - broadcast: 192.168.20.75
-
-spotify:
-  client_id: !secret spotify_client_id
-  client_secret: !secret spotify_client_secret
 
 spotcast:
   sp_dc: !secret spotcast_dc
@@ -77,13 +59,13 @@ frontend:
   
 recorder:
   db_url: !secret database_connectionstring
-  
 
 logger:
   default: warn
   logs:
     homeassistant.components.mqtt.binary_sensor: critical
     homeassistant.components.unitedenergy: debug
+    custom_components.bonaire_myclimate: debug
 
 rainbird:
   - host: 192.168.20.155

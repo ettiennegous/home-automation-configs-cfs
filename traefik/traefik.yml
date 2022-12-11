@@ -14,7 +14,7 @@ entryPoints:
   http:
     address: :80
   https:
-    address: :443  
+    address: :443
   # API and dashboard configuration
 api:
   insecure: true
@@ -27,10 +27,10 @@ certificatesresolvers:
     acme:
       storage: /etc/traefik/acme/acme.json
       dnsChallenge:
-        provider: "duckdns"
+        provider: "cloudflare"
         delayBeforeCheck: 0
-log:
-  level: WARN
+# log:
+#   level: INFO
 # accessLog: 
 #   format: json
 #   filters:    

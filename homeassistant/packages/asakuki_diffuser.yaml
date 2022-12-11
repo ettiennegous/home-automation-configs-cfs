@@ -1,25 +1,3 @@
-fan:
-    - platform: mqtt
-      name: "Diffuser"
-      availability_topic: "tele/asakuki-diffuser/LWT"
-      payload_available: "Online"
-      payload_not_available: "Offline"
-      state_topic: "tele/asakuki-diffuser/STATE"
-      state_value_template: "{{ value_json.POWER1 }}"
-      command_topic: "cmnd/asakuki-diffuser/POWER1"
-      payload_on: "ON"
-      payload_off: "OFF"
-      percentage_state_topic: "tele/asakuki-diffuser/STATE"
-      percentage_value_template: "{{ value_json.POWER3 }}"
-      percentage_command_topic: "cmnd/asakuki-diffuser/POWER3"
-      speed_range_min: 1
-      speed_range_max: 5
-      oscillation_state_topic: "stat/asakuki-diffuser/EFFECT"
-      oscillation_command_topic: "cmnd/asakuki-diffuser/EVENT"
-      oscillation_value_template: "{{ value }}"
-      payload_oscillation_on: "rgb_cycle"
-      payload_oscillation_off: "color"
-      qos: 1
 light:
     - platform: mqtt
       name: "Diffuser Lamp"

@@ -37,9 +37,17 @@
     {
         "id": "e594dd4a.60761",
         "type": "tab",
-        "label": "RF Remotes",
+        "label": "Remotes",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "9a1b490a16d77e03",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "3434d199.8ed28e",
@@ -75,6 +83,14 @@
         "label": "Parking Lot",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "59f065f5cc116569",
+        "type": "tab",
+        "label": "HVAC",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "5a39eab2.9f6814",
@@ -533,7 +549,7 @@
         "service": "turn_on",
         "data": "{\"entity_id\":\"light.lifx_pantry\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 780,
@@ -965,6 +981,9 @@
         "func": "var d = new Date();\nvar hour = d.getHours();\nif(!msg.data) \n    msg.data = {};\n\nif(hour >= 21 || hour <= 7) {\n    msg.brightness = 30;\n}\nelse {\n    msg.brightness = 100;\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 1030,
         "y": 1080,
         "wires": [
@@ -1361,7 +1380,6 @@
         "id": "169d704e.b0793",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
-        "d": true,
         "name": "Xmas Tree On",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
@@ -1383,7 +1401,6 @@
         "id": "8209399b.724c48",
         "type": "wled2",
         "z": "27f4a783.3a8dc8",
-        "d": true,
         "address": "192.168.20.84",
         "brightness": "255",
         "delay": 0,
@@ -1407,7 +1424,6 @@
         "id": "62e04525.92d89c",
         "type": "function",
         "z": "27f4a783.3a8dc8",
-        "d": true,
         "name": "Xmas Tree Random Effect",
         "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
         "outputs": 1,
@@ -1473,15 +1489,15 @@
         "z": "27f4a783.3a8dc8",
         "name": "Kitchen TV Screen On",
         "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
+        "service_domain": "media_player",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "data": "{\"entity_id\":\"media_player.samsung_the_frame_32\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1040,
-        "y": 2540,
+        "y": 2560,
         "wires": [
             []
         ]
@@ -1507,101 +1523,6 @@
         "y": 2500,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "59767a2b.468824",
-        "type": "api-current-state",
-        "z": "27f4a783.3a8dc8",
-        "name": "Kitchen LED Strip On",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "light.wled",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 1180,
-        "y": 2460,
-        "wires": [
-            [
-                "3356022e.3cf77e"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "f453f1a7.31a0c",
-        "type": "wled2",
-        "z": "27f4a783.3a8dc8",
-        "address": "192.168.20.80",
-        "brightness": "255",
-        "delay": "20",
-        "color1": "#ffffff",
-        "color2": "#ffffff",
-        "color3": "#ffffff",
-        "effect": "44",
-        "effectIntensity": 128,
-        "effectSpeed": 128,
-        "name": "LED Strip On",
-        "palette": "2",
-        "preset": 0,
-        "state": "on",
-        "x": 1790,
-        "y": 2460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "946dae34.cee7a",
-        "type": "function",
-        "z": "27f4a783.3a8dc8",
-        "name": "Random Effect",
-        "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1580,
-        "y": 2460,
-        "wires": [
-            [
-                "f453f1a7.31a0c"
-            ]
-        ]
-    },
-    {
-        "id": "3356022e.3cf77e",
-        "type": "wled2",
-        "z": "27f4a783.3a8dc8",
-        "address": "192.168.20.80",
-        "brightness": "255",
-        "delay": "20",
-        "color1": "#ffffff",
-        "color2": "#ffffff",
-        "color3": "#ffffff",
-        "effect": "0",
-        "effectIntensity": 128,
-        "effectSpeed": 128,
-        "name": "LED Strip Off",
-        "palette": "2",
-        "preset": 0,
-        "state": "off",
-        "x": 1370,
-        "y": 2460,
-        "wires": [
-            [
-                "946dae34.cee7a"
-            ]
         ]
     },
     {
@@ -1950,9 +1871,9 @@
         "z": "27f4a783.3a8dc8",
         "name": "Kitchen TV Screen Off",
         "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
+        "service_domain": "media_player",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "data": "{\"entity_id\":\"media_player.samsung_the_frame_32\"}",
         "mergecontext": "",
         "output_location": "payload",
         "output_location_type": "none",
@@ -2136,16 +2057,6 @@
         "info": "",
         "x": 470,
         "y": 2260,
-        "wires": []
-    },
-    {
-        "id": "da273ee9a758ed7f",
-        "type": "comment",
-        "z": "27f4a783.3a8dc8",
-        "name": "Revisit Later",
-        "info": "Todo only add effects that do not involve colour",
-        "x": 1310,
-        "y": 2440,
         "wires": []
     },
     {
@@ -3669,56 +3580,6 @@
         ]
     },
     {
-        "id": "6a9142b5.2aa82c",
-        "type": "poll-state",
-        "z": "191e949e.9f212b",
-        "name": "No movement for x seconds",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "updateinterval": "360",
-        "updateIntervalUnits": "seconds",
-        "outputinitially": false,
-        "outputonchanged": false,
-        "entity_id": "binary_sensor.multisensor_kitchen_motion",
-        "state_type": "str",
-        "halt_if": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "outputs": 2,
-        "x": 280,
-        "y": 40,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "ce936d28.b97d7",
-        "type": "api-current-state",
-        "z": "191e949e.9f212b",
-        "name": "Sun Below Horizon",
-        "server": "5a39eab2.9f6814",
-        "version": 1,
-        "outputs": 2,
-        "halt_if": "below_horizon",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "override_topic": false,
-        "entity_id": "sun.sun",
-        "state_type": "str",
-        "state_location": "payload",
-        "override_payload": "msg",
-        "entity_location": "data",
-        "override_data": "msg",
-        "blockInputOverrides": false,
-        "x": 570,
-        "y": 40,
-        "wires": [
-            [],
-            []
-        ]
-    },
-    {
         "id": "17d42f68.94d161",
         "type": "server-state-changed",
         "z": "191e949e.9f212b",
@@ -4165,9 +4026,11 @@
         "qos": "2",
         "datatype": "json",
         "broker": "32add66e.5cfcaa",
+        "nl": false,
+        "rap": false,
         "inputs": 0,
-        "x": 210,
-        "y": 2700,
+        "x": 150,
+        "y": 1380,
         "wires": [
             [
                 "dac700f1.84a69",
@@ -4199,8 +4062,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2820,
+        "x": 380,
+        "y": 1500,
         "wires": [
             []
         ]
@@ -4222,8 +4085,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2780,
+        "x": 380,
+        "y": 1460,
         "wires": [
             []
         ]
@@ -4245,8 +4108,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2900,
+        "x": 380,
+        "y": 1580,
         "wires": [
             []
         ]
@@ -4268,8 +4131,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2860,
+        "x": 380,
+        "y": 1540,
         "wires": [
             []
         ]
@@ -4291,8 +4154,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2740,
+        "x": 380,
+        "y": 1420,
         "wires": [
             []
         ]
@@ -4314,8 +4177,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2700,
+        "x": 380,
+        "y": 1380,
         "wires": [
             []
         ]
@@ -4337,255 +4200,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 440,
-        "y": 2660,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9198f0a3.5ee2c",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": " Front Door Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.front_door_light_3\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 470,
-        "y": 1760,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "822602a.5c051",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Foyer Standing Lamp Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.dimmer_foyer_light_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 510,
-        "y": 1800,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7693dfac.811d3",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Alex Kitchen Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_alex_kitchen_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 480,
-        "y": 1840,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3ec87a06.4ff786",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Pantry Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_pantry\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 1880,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4109e42.497951c",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Laundry Lights Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 470,
-        "y": 1920,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1fdc477.487ceb9",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Guest Room Table Lamp Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1400,
-        "y": 2460,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cb73e99d.71eec8",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Study Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_study_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 2480,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "cc63de0e.0ec94",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Family Room Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 480,
-        "y": 1960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "6974e2dd.6038fc",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Stairs Closet Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_stairs_closet\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 480,
-        "y": 2000,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "85886241.b88fa",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Downstairs Toilet Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 490,
-        "y": 2040,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8f3410c8.0297f",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Powder Room Basin Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_powder_room_basin_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 510,
-        "y": 2080,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9210a131.c79cf",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Stairs Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_stairs_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 2120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "790ccf3f.8bb74",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Lounge Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_zw111_nano_dimmer_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 2160,
+        "x": 380,
+        "y": 1340,
         "wires": [
             []
         ]
@@ -4606,8 +4222,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 160,
-        "y": 620,
+        "x": 180,
+        "y": 720,
         "wires": [
             [
                 "dac60e5f.a75de"
@@ -4631,8 +4247,8 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 170,
-        "y": 760,
+        "x": 190,
+        "y": 860,
         "wires": [
             [
                 "7f9a2e57.51d76"
@@ -4656,32 +4272,13 @@
         "halt_if_compare": "is",
         "outputs": 2,
         "output_only_on_state_change": true,
-        "x": 140,
-        "y": 700,
+        "x": 160,
+        "y": 800,
         "wires": [
             [
                 "f4a95c2f.07974",
                 "924ef799.d4d6e8"
             ],
-            []
-        ]
-    },
-    {
-        "id": "d2900a52.2d3b58",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Downstairs Lights off routine off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"input_boolean.off_downstairs_lights\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 510,
-        "y": 2240,
-        "wires": [
             []
         ]
     },
@@ -4698,27 +4295,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 590,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9c3fa3b4.31473",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Kitchen Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_kitchen_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 2200,
+        "x": 610,
+        "y": 800,
         "wires": [
             []
         ]
@@ -4740,8 +4318,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 460,
-        "y": 2580,
+        "x": 400,
+        "y": 1260,
         "wires": [
             []
         ]
@@ -4763,8 +4341,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 460,
-        "y": 2620,
+        "x": 400,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -4776,8 +4354,8 @@
         "name": "IOS Action Fired",
         "server": "5a39eab2.9f6814",
         "event_type": "ios.action_fired",
-        "x": 540,
-        "y": 1620,
+        "x": 140,
+        "y": 1120,
         "wires": [
             [
                 "2f17f9d2.58f5c6"
@@ -4811,8 +4389,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 770,
-        "y": 1620,
+        "x": 370,
+        "y": 1120,
         "wires": [
             [
                 "74007b3e.bf1d44"
@@ -4830,13 +4408,15 @@
         "type": "mqtt in",
         "z": "e594dd4a.60761",
         "name": "RTL2MQTT",
-        "topic": "rtl_433/events",
+        "topic": "rtl_433/+/events",
         "qos": "2",
         "datatype": "json",
         "broker": "32add66e.5cfcaa",
+        "nl": false,
+        "rap": false,
         "inputs": 0,
         "x": 150,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "3e0c75cc.9b404a"
@@ -4861,7 +4441,7 @@
         "repair": false,
         "outputs": 1,
         "x": 699,
-        "y": 170,
+        "y": 250,
         "wires": [
             []
         ]
@@ -4884,7 +4464,7 @@
         "repair": false,
         "outputs": 1,
         "x": 700,
-        "y": 240,
+        "y": 320,
         "wires": [
             []
         ]
@@ -4907,7 +4487,7 @@
         "repair": false,
         "outputs": 1,
         "x": 700,
-        "y": 290,
+        "y": 370,
         "wires": [
             []
         ]
@@ -4930,7 +4510,7 @@
         "repair": false,
         "outputs": 1,
         "x": 720,
-        "y": 40,
+        "y": 120,
         "wires": [
             [
                 "43551a9f.1a2844"
@@ -4955,7 +4535,7 @@
         "repair": false,
         "outputs": 1,
         "x": 680,
-        "y": 360,
+        "y": 440,
         "wires": [
             [
                 "40cfba2e.341dc4"
@@ -4980,7 +4560,7 @@
         "repair": false,
         "outputs": 1,
         "x": 680,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "3e4aef50.938c1"
@@ -5005,7 +4585,7 @@
         "repair": false,
         "outputs": 1,
         "x": 680,
-        "y": 480,
+        "y": 560,
         "wires": [
             [
                 "c64ca96.3c9ac58"
@@ -5030,47 +4610,10 @@
         "repair": false,
         "outputs": 1,
         "x": 680,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "fe206ad0.541208"
-            ]
-        ]
-    },
-    {
-        "id": "ca472daa.b6f5b",
-        "type": "mqtt in",
-        "z": "e594dd4a.60761",
-        "name": "Sub MQTT Turn Off Downstairs",
-        "topic": "nodered-custom/lights/turn-off-downstairs",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "inputs": 0,
-        "x": 150,
-        "y": 2060,
-        "wires": [
-            [
-                "9198f0a3.5ee2c",
-                "9c3fa3b4.31473",
-                "d2900a52.2d3b58",
-                "790ccf3f.8bb74",
-                "9210a131.c79cf",
-                "8f3410c8.0297f",
-                "85886241.b88fa",
-                "6974e2dd.6038fc",
-                "cc63de0e.0ec94",
-                "cb73e99d.71eec8",
-                "4109e42.497951c",
-                "3ec87a06.4ff786",
-                "7693dfac.811d3",
-                "822602a.5c051",
-                "9cae572f.8da578",
-                "67575eed.382c",
-                "8ae27abd.d21ba8",
-                "9f16dfe0.31a98",
-                "d89a20ba.53d76",
-                "660803de.1305ec"
             ]
         ]
     },
@@ -5083,309 +4626,9 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 610,
-        "y": 760,
+        "x": 630,
+        "y": 860,
         "wires": []
-    },
-    {
-        "id": "71dd1393.ea52dc",
-        "type": "mqtt in",
-        "z": "e594dd4a.60761",
-        "name": "Sub MQTT Turn Off Upstairs",
-        "topic": "nodered-custom/lights/turn-off-upstairs",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "inputs": 0,
-        "x": 960,
-        "y": 2180,
-        "wires": [
-            [
-                "d371bfec.d293a",
-                "a61375ba.3a7088",
-                "a5296da0.f2116",
-                "1e39803a.e8f9a",
-                "67d201ba.1d915",
-                "3d518e8a.371632",
-                "66aa4e78.ed2db",
-                "69ca3e64.f9dca",
-                "46a06294.3989dc",
-                "e852558e.87eb58",
-                "ff9936a2.d714b8",
-                "c886bbbe.d31fd8",
-                "32edec0c.b20764",
-                "3b7bd263.8f4d5e",
-                "1fdc477.487ceb9",
-                "e39fd5c3615e9149",
-                "18f78f69ed88f852"
-            ]
-        ]
-    },
-    {
-        "id": "d371bfec.d293a",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Alex Room Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 1820,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a61375ba.3a7088",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Ruby Room Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 1900,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a5296da0.f2116",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Guest Room Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_guest_room_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 1980,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1e39803a.e8f9a",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Master Room Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_zw111_nano_dimmer_level_2\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 2020,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "67d201ba.1d915",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Rumpus Main Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_rumpus_main_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 2060,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3d518e8a.371632",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Rumpus Side Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_rumpus_side_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 2100,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "66aa4e78.ed2db",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Rumpus Standing Lamp Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_rumpus_standing\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1420,
-        "y": 2140,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "69ca3e64.f9dca",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Kids Bathroom Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_kids_bathroom_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1390,
-        "y": 2180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "46a06294.3989dc",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Kids Toilet Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1370,
-        "y": 2220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e852558e.87eb58",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Master Toilet Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_master_toilet_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1380,
-        "y": 2300,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ff9936a2.d714b8",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Master Bathroom Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_2_5_master_bathroom_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1400,
-        "y": 2340,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c886bbbe.d31fd8",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Master Dressing Room Lights Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_dimmer_dressing_room\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1420,
-        "y": 2380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "32edec0c.b20764",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Upstairs Lights off routine off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "input_boolean",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"input_boolean.off_upstairs_lights\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1400,
-        "y": 2420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7c61dfc.52a8c2",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Alex Night Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 2010,
-        "y": 2180,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "dac60e5f.a75de",
@@ -5396,8 +4639,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 610,
-        "y": 615,
+        "x": 630,
+        "y": 715,
         "wires": []
     },
     {
@@ -5418,7 +4661,7 @@
         "to": "",
         "reg": false,
         "x": 350,
-        "y": 200,
+        "y": 280,
         "wires": [
             [
                 "b5bedeff.1ff03",
@@ -5451,7 +4694,7 @@
         "repair": false,
         "outputs": 1,
         "x": 720,
-        "y": 80,
+        "y": 160,
         "wires": [
             [
                 "e5052fba.a2705"
@@ -5472,7 +4715,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1150,
-        "y": 80,
+        "y": 160,
         "wires": [
             []
         ]
@@ -5484,7 +4727,7 @@
         "time": "1000",
         "name": "",
         "x": 900,
-        "y": 80,
+        "y": 160,
         "wires": [
             [
                 "67140cff.069504"
@@ -5504,7 +4747,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 140,
-        "y": 900,
+        "y": 980,
         "wires": [
             [
                 "801bdce2.f1044"
@@ -5525,7 +4768,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 410,
-        "y": 900,
+        "y": 980,
         "wires": [
             []
         ]
@@ -5537,10 +4780,10 @@
         "time": "1000",
         "name": "",
         "x": 900,
-        "y": 40,
+        "y": 120,
         "wires": [
             [
-                "d2023620.5170c8"
+                "78115e193fbaa00b"
             ]
         ]
     },
@@ -5557,8 +4800,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1460,
-        "y": 20,
+        "x": 1860,
+        "y": 100,
         "wires": [
             []
         ]
@@ -5576,8 +4819,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1717,
-        "y": 60,
+        "x": 2117,
+        "y": 140,
         "wires": [
             []
         ]
@@ -5601,8 +4844,8 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 1100,
-        "y": 40,
+        "x": 1620,
+        "y": 120,
         "wires": [
             [
                 "b3001fe9.49254"
@@ -5620,29 +4863,11 @@
         "func": "let playlistsArray = [\n    {\n        uri : \"spotify:playlist:37i9dQZF1E4EFyuVOygvQ7\", \n        desc : \"Air Radio\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E39OdKMfKM663\", \n        desc : \"Tame Impala, Two Door Cinema, Gang of Youths\",\n    },\n    {\n        uri : \"spotify:playlist:37i9dQZF1E35sNS8MhSVoM\", \n        desc : \"Nightmares on Wax, Zero 7 etc\",\n    },\n    \n]\n\nvar randomPlaylist = playlistsArray[Math.floor(Math.random()*playlistsArray.length)];\nmsg.randomPlaylist = randomPlaylist;\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 1470,
-        "y": 60,
+        "x": 1870,
+        "y": 140,
         "wires": [
             [
                 "220a198d.f6db36"
-            ]
-        ]
-    },
-    {
-        "id": "525089c2.aa08f8",
-        "type": "mqtt in",
-        "z": "e594dd4a.60761",
-        "name": "Sub MQTT Turn Off Upstairs Extra",
-        "topic": "nodered-custom/lights/turn-off-upstairs-extra",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "inputs": 0,
-        "x": 1740,
-        "y": 2180,
-        "wires": [
-            [
-                "7c61dfc.52a8c2"
             ]
         ]
     },
@@ -5655,8 +4880,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 590,
-        "y": 660,
+        "x": 610,
+        "y": 760,
         "wires": []
     },
     {
@@ -5668,213 +4893,9 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1140,
-        "y": 1580,
+        "x": 740,
+        "y": 1080,
         "wires": []
-    },
-    {
-        "id": "9cae572f.8da578",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Study Lamp Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 2280,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3b7bd263.8f4d5e",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Alex Lamp Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1360,
-        "y": 2260,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "67575eed.382c",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Garden Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.garden_lights\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 450,
-        "y": 2320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8ae27abd.d21ba8",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "WLED2 Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.wled_2\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 450,
-        "y": 2360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9f16dfe0.31a98",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Kitchen Screen Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "switch",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 470,
-        "y": 2400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d89a20ba.53d76",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Kitchen Benchtop",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.wled\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 470,
-        "y": 1720,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4d7c83ce.1db30c",
-        "type": "mqtt in",
-        "z": "e594dd4a.60761",
-        "name": "Sub MQTT Turn Off Upstairs All",
-        "topic": "nodered-custom/lights/turn-off-upstairs-all",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "inputs": 0,
-        "x": 930,
-        "y": 2680,
-        "wires": [
-            [
-                "d797339b.f8a93",
-                "6ec9fba.f027804"
-            ]
-        ]
-    },
-    {
-        "id": "d797339b.f8a93",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off Upstairs",
-        "topic": "nodered-custom/lights/turn-off-upstairs",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 1240,
-        "y": 2660,
-        "wires": []
-    },
-    {
-        "id": "6ec9fba.f027804",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off Upstairs Extra",
-        "topic": "nodered-custom/lights/turn-off-upstairs-extra",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 1260,
-        "y": 2705,
-        "wires": []
-    },
-    {
-        "id": "b703f70d.9c01e8",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off Downstairs",
-        "topic": "nodered-custom/lights/turn-off-downstairs",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 1250,
-        "y": 2600,
-        "wires": []
-    },
-    {
-        "id": "3cf6e7fc.090e68",
-        "type": "mqtt out",
-        "z": "e594dd4a.60761",
-        "name": "Pub MQTT Turn Off Upstairs ALL",
-        "topic": "nodered-custom/lights/turn-off-upstairs-all",
-        "qos": "",
-        "retain": "",
-        "broker": "32add66e.5cfcaa",
-        "x": 1260,
-        "y": 2560,
-        "wires": []
-    },
-    {
-        "id": "29b10945.5f0776",
-        "type": "mqtt in",
-        "z": "e594dd4a.60761",
-        "name": "Sub MQTT Turn Off All",
-        "topic": "nodered-custom/lights/turn-off-all",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "inputs": 0,
-        "x": 960,
-        "y": 2580,
-        "wires": [
-            [
-                "3cf6e7fc.090e68",
-                "b703f70d.9c01e8"
-            ]
-        ]
     },
     {
         "id": "cc7b53ee.56ba8",
@@ -5885,8 +4906,8 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1130,
-        "y": 1620,
+        "x": 730,
+        "y": 1120,
         "wires": []
     },
     {
@@ -5898,28 +4919,9 @@
         "qos": "",
         "retain": "",
         "broker": "32add66e.5cfcaa",
-        "x": 1100,
-        "y": 1660,
+        "x": 700,
+        "y": 1160,
         "wires": []
-    },
-    {
-        "id": "660803de.1305ec",
-        "type": "api-call-service",
-        "z": "e594dd4a.60761",
-        "name": "Study Bias Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 460,
-        "y": 2440,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "c64ca96.3c9ac58",
@@ -5930,7 +4932,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 920,
-        "y": 480,
+        "y": 560,
         "wires": [
             [
                 "b231c980.6cd8e8"
@@ -5946,7 +4948,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 930,
-        "y": 540,
+        "y": 620,
         "wires": [
             [
                 "151bd4e7.7612db"
@@ -5967,7 +4969,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1130,
-        "y": 360,
+        "y": 440,
         "wires": [
             []
         ]
@@ -5986,7 +4988,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1120,
-        "y": 420,
+        "y": 500,
         "wires": [
             []
         ]
@@ -6000,7 +5002,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 920,
-        "y": 420,
+        "y": 500,
         "wires": [
             [
                 "5648d108.0d1b"
@@ -6021,7 +5023,7 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1140,
-        "y": 540,
+        "y": 620,
         "wires": [
             []
         ]
@@ -6040,7 +5042,831 @@
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1150,
-        "y": 480,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a604c73c7df351b",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Close Curtain",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "cover",
+        "service": "close_cover",
+        "data": "{\"entity_id\":\"cover.switchbot_curtains\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1420,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78115e193fbaa00b",
+        "type": "api-current-state",
+        "z": "e594dd4a.60761",
+        "name": "Curtain Current State Opening",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "opening",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "cover.switchbot_curtains",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1130,
+        "y": 120,
+        "wires": [
+            [
+                "6a604c73c7df351b"
+            ],
+            [
+                "87d3c46fbdecac94"
+            ]
+        ]
+    },
+    {
+        "id": "87d3c46fbdecac94",
+        "type": "api-call-service",
+        "z": "e594dd4a.60761",
+        "name": "Open Curtain",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "cover",
+        "service": "open_cover",
+        "data": "{\"entity_id\":\"cover.switchbot_curtains\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1410,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9198f0a3.5ee2c",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": " Front Door Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.front_door_light_3\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "822602a.5c051",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Foyer Standing Lamp Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.dimmer_foyer_light_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7693dfac.811d3",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Alex Kitchen Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_alex_kitchen_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 560,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ec87a06.4ff786",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Pantry Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_pantry\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4109e42.497951c",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Laundry Lights Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb73e99d.71eec8",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Study Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_study_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cc63de0e.0ec94",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Family Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 560,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6974e2dd.6038fc",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Stairs Closet Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_stairs_closet\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 560,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "85886241.b88fa",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Downstairs Toilet Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 570,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8f3410c8.0297f",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Powder Room Basin Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_powder_room_basin_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9210a131.c79cf",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Stairs Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_stairs_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "790ccf3f.8bb74",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Lounge Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_zw111_nano_dimmer_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2900a52.2d3b58",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Downstairs Lights off routine off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"input_boolean.off_downstairs_lights\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c3fa3b4.31473",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Kitchen Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_kitchen_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca472daa.b6f5b",
+        "type": "mqtt in",
+        "z": "9a1b490a16d77e03",
+        "name": "Sub MQTT Turn Off Downstairs",
+        "topic": "nodered-custom/lights/turn-off-downstairs",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "inputs": 0,
+        "x": 230,
+        "y": 440,
+        "wires": [
+            [
+                "9198f0a3.5ee2c",
+                "9c3fa3b4.31473",
+                "d2900a52.2d3b58",
+                "790ccf3f.8bb74",
+                "9210a131.c79cf",
+                "8f3410c8.0297f",
+                "85886241.b88fa",
+                "6974e2dd.6038fc",
+                "cc63de0e.0ec94",
+                "cb73e99d.71eec8",
+                "4109e42.497951c",
+                "3ec87a06.4ff786",
+                "7693dfac.811d3",
+                "822602a.5c051",
+                "9cae572f.8da578",
+                "67575eed.382c",
+                "8ae27abd.d21ba8",
+                "9f16dfe0.31a98",
+                "d89a20ba.53d76",
+                "660803de.1305ec",
+                "a3a9f13847164f1b"
+            ]
+        ]
+    },
+    {
+        "id": "9cae572f.8da578",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Study Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67575eed.382c",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Garden Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.garden_lights\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 530,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8ae27abd.d21ba8",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "WLED2 Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.wled_2\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 530,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f16dfe0.31a98",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Kitchen Screen Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d89a20ba.53d76",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Kitchen Benchtop",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.wled\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "660803de.1305ec",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Study Bias Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3a9f13847164f1b",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "XMAS Tree Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.xmas_tree\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 540,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1fdc477.487ceb9",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Guest Room Table Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.tradfri_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1380,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71dd1393.ea52dc",
+        "type": "mqtt in",
+        "z": "9a1b490a16d77e03",
+        "name": "Sub MQTT Turn Off Upstairs",
+        "topic": "nodered-custom/lights/turn-off-upstairs",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "inputs": 0,
+        "x": 940,
+        "y": 460,
+        "wires": [
+            [
+                "d371bfec.d293a",
+                "a61375ba.3a7088",
+                "a5296da0.f2116",
+                "1e39803a.e8f9a",
+                "67d201ba.1d915",
+                "3d518e8a.371632",
+                "66aa4e78.ed2db",
+                "69ca3e64.f9dca",
+                "46a06294.3989dc",
+                "e852558e.87eb58",
+                "ff9936a2.d714b8",
+                "c886bbbe.d31fd8",
+                "32edec0c.b20764",
+                "3b7bd263.8f4d5e",
+                "1fdc477.487ceb9",
+                "e39fd5c3615e9149",
+                "18f78f69ed88f852"
+            ]
+        ]
+    },
+    {
+        "id": "d371bfec.d293a",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Alex Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a61375ba.3a7088",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Ruby Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a5296da0.f2116",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Guest Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_guest_room_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e39803a.e8f9a",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Master Room Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_zw111_nano_dimmer_level_2\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67d201ba.1d915",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Rumpus Main Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_rumpus_main_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d518e8a.371632",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Rumpus Side Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_rumpus_side_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "66aa4e78.ed2db",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Rumpus Standing Lamp Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_rumpus_standing\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1400,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69ca3e64.f9dca",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Kids Bathroom Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_kids_bathroom_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1370,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46a06294.3989dc",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Kids Toilet Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1350,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e852558e.87eb58",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Master Toilet Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_1_master_toilet_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1360,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff9936a2.d714b8",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Master Bathroom Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_2_5_master_bathroom_light\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1380,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c886bbbe.d31fd8",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Master Dressing Room Lights Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.shelly_dimmer_dressing_room\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1400,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "32edec0c.b20764",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Upstairs Lights off routine off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"input_boolean.off_upstairs_lights\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1380,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b7bd263.8f4d5e",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Alex Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.lifx_bulb_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1340,
+        "y": 540,
         "wires": [
             []
         ]
@@ -6048,7 +5874,7 @@
     {
         "id": "e39fd5c3615e9149",
         "type": "api-call-service",
-        "z": "e594dd4a.60761",
+        "z": "9a1b490a16d77e03",
         "name": "Ruby Lamp Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
@@ -6058,8 +5884,8 @@
         "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1360,
-        "y": 1940,
+        "x": 1340,
+        "y": 220,
         "wires": [
             []
         ]
@@ -6067,7 +5893,7 @@
     {
         "id": "18f78f69ed88f852",
         "type": "api-call-service",
-        "z": "e594dd4a.60761",
+        "z": "9a1b490a16d77e03",
         "name": "Alex Lamp Off",
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
@@ -6077,10 +5903,137 @@
         "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1360,
-        "y": 1860,
+        "x": 1340,
+        "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "7c61dfc.52a8c2",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Alex Night Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.tp_link_1\"}",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 550,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "525089c2.aa08f8",
+        "type": "mqtt in",
+        "z": "9a1b490a16d77e03",
+        "name": "Sub MQTT Turn Off Upstairs Extra",
+        "topic": "nodered-custom/lights/turn-off-upstairs-extra",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "inputs": 0,
+        "x": 280,
+        "y": 960,
+        "wires": [
+            [
+                "7c61dfc.52a8c2"
+            ]
+        ]
+    },
+    {
+        "id": "4d7c83ce.1db30c",
+        "type": "mqtt in",
+        "z": "9a1b490a16d77e03",
+        "name": "Sub MQTT Turn Off Upstairs All",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "inputs": 0,
+        "x": 1010,
+        "y": 960,
+        "wires": [
+            [
+                "d797339b.f8a93",
+                "6ec9fba.f027804"
+            ]
+        ]
+    },
+    {
+        "id": "d797339b.f8a93",
+        "type": "mqtt out",
+        "z": "9a1b490a16d77e03",
+        "name": "Pub MQTT Turn Off Upstairs",
+        "topic": "nodered-custom/lights/turn-off-upstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1320,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "6ec9fba.f027804",
+        "type": "mqtt out",
+        "z": "9a1b490a16d77e03",
+        "name": "Pub MQTT Turn Off Upstairs Extra",
+        "topic": "nodered-custom/lights/turn-off-upstairs-extra",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1340,
+        "y": 985,
+        "wires": []
+    },
+    {
+        "id": "b703f70d.9c01e8",
+        "type": "mqtt out",
+        "z": "9a1b490a16d77e03",
+        "name": "Pub MQTT Turn Off Downstairs",
+        "topic": "nodered-custom/lights/turn-off-downstairs",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1330,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "3cf6e7fc.090e68",
+        "type": "mqtt out",
+        "z": "9a1b490a16d77e03",
+        "name": "Pub MQTT Turn Off Upstairs ALL",
+        "topic": "nodered-custom/lights/turn-off-upstairs-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 1340,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "29b10945.5f0776",
+        "type": "mqtt in",
+        "z": "9a1b490a16d77e03",
+        "name": "Sub MQTT Turn Off All",
+        "topic": "nodered-custom/lights/turn-off-all",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "32add66e.5cfcaa",
+        "inputs": 0,
+        "x": 1040,
+        "y": 860,
+        "wires": [
+            [
+                "3cf6e7fc.090e68",
+                "b703f70d.9c01e8"
+            ]
         ]
     },
     {
@@ -6092,6 +6045,8 @@
         "qos": "2",
         "datatype": "utf8",
         "broker": "32add66e.5cfcaa",
+        "nl": false,
+        "rap": false,
         "inputs": 0,
         "x": 170,
         "y": 240,
@@ -7008,6 +6963,9 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 7000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 400,
         "y": 400,
         "wires": [
@@ -7068,7 +7026,7 @@
         "service": "turn_off",
         "data": "{\"entity_id\":\"light.lifx_strip_1\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 640,
@@ -7108,6 +7066,9 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 30000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 880,
         "y": 400,
         "wires": [
@@ -7166,6 +7127,9 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 420000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 400,
         "y": 460,
         "wires": [
@@ -7193,7 +7157,9 @@
             [
                 "fb2454a3.a9a9f8",
                 "ab093810.0a8fd8",
-                "27aa3de3.f57a62"
+                "27aa3de3.f57a62",
+                "a46313fef0b88b45",
+                "ce7481af82af6634"
             ]
         ]
     },
@@ -7724,6 +7690,15 @@
         "type": "inject",
         "z": "823d3fb7.65d29",
         "name": "Bin Reminder Every Wed",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "50 18 * * 3",
         "once": false,
@@ -8462,6 +8437,151 @@
         ]
     },
     {
+        "id": "6ca4335ce06cb14a",
+        "type": "comment",
+        "z": "823d3fb7.65d29",
+        "name": "Pretend someone is home routine",
+        "info": "",
+        "x": 230,
+        "y": 2440,
+        "wires": []
+    },
+    {
+        "id": "f2cba79f1cbff6a2",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Sun goes down",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "sun.sun",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "below_horizon",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 180,
+        "y": 2520,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6480377afcecc524",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Alex Kitchen Light On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.shelly_1_alex_kitchen_light\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 460,
+        "y": 2480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8e475e9484ca775",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Laundry Lights On",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{\"entity_id\":\"light.shelly_1_laundry\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 450,
+        "y": 2520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "11728ec8c150bdc0",
+        "type": "inject",
+        "z": "823d3fb7.65d29",
+        "name": "Auto lights off pretend bedtime",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "55 21 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 2600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f73587bc9c385e5",
+        "type": "mqtt out",
+        "z": "823d3fb7.65d29",
+        "name": "Pub MQTT Turn Off All",
+        "topic": "nodered-custom/lights/turn-off-all",
+        "qos": "",
+        "retain": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 520,
+        "y": 2600,
+        "wires": []
+    },
+    {
+        "id": "a46313fef0b88b45",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "HVAC US Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"input_boolean.hvac_upstairs\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 940,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ce7481af82af6634",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "HVAC DS OFF",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"input_boolean.hvac_downstairs\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 940,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "6f04e404.0c9aec",
         "type": "server-state-changed",
         "z": "ff5661ef.cd5bf",
@@ -8546,7 +8666,7 @@
         "service": "discord_notifications",
         "data": "{\"message\":\"Alarm triggered {{source}}\",\"target\":[\"624934822812319774\"]}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1550,
@@ -9173,6 +9293,8 @@
         "tostatus": false,
         "complete": "true",
         "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
         "x": 1110,
         "y": 180,
         "wires": []
@@ -9219,7 +9341,7 @@
         "service": "discord_notifications",
         "data": "{\"message\":\"Camera motion detected {{_msgid}} - {{action_details.monitor_id}}\",\"data\":{\"images\":[\"{{{action_details.hass_filename}}}\"]},\"target\":[\"{{action_details.target}}\"]}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 910,
@@ -9637,15 +9759,621 @@
         "type": "mqtt in",
         "z": "e3459f93.04f31",
         "name": "",
-        "topic": "rtl_433/events",
+        "topic": "rtl_433/+/events",
         "qos": "2",
         "datatype": "auto",
         "broker": "32add66e.5cfcaa",
+        "nl": false,
+        "rap": false,
         "inputs": 0,
-        "x": 210,
+        "x": 220,
         "y": 140,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "59767a2b.468824",
+        "type": "api-current-state",
+        "z": "e3459f93.04f31",
+        "name": "Kitchen LED Strip On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.wled",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 240,
+        "y": 840,
+        "wires": [
+            [
+                "3356022e.3cf77e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3356022e.3cf77e",
+        "type": "wled2",
+        "z": "e3459f93.04f31",
+        "address": "192.168.20.80",
+        "brightness": "255",
+        "delay": "20",
+        "color1": "#ffffff",
+        "color2": "#ffffff",
+        "color3": "#ffffff",
+        "effect": "0",
+        "effectIntensity": 128,
+        "effectSpeed": 128,
+        "name": "LED Strip Off",
+        "palette": "2",
+        "preset": 0,
+        "state": "off",
+        "x": 430,
+        "y": 840,
+        "wires": [
+            [
+                "946dae34.cee7a"
+            ]
+        ]
+    },
+    {
+        "id": "946dae34.cee7a",
+        "type": "function",
+        "z": "e3459f93.04f31",
+        "name": "Random Effect",
+        "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 840,
+        "wires": [
+            [
+                "f453f1a7.31a0c"
+            ]
+        ]
+    },
+    {
+        "id": "f453f1a7.31a0c",
+        "type": "wled2",
+        "z": "e3459f93.04f31",
+        "address": "192.168.20.80",
+        "brightness": "255",
+        "delay": "20",
+        "color1": "#ffffff",
+        "color2": "#ffffff",
+        "color3": "#ffffff",
+        "effect": "44",
+        "effectIntensity": 128,
+        "effectSpeed": 128,
+        "name": "LED Strip On",
+        "palette": "2",
+        "preset": 0,
+        "state": "on",
+        "x": 850,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da273ee9a758ed7f",
+        "type": "comment",
+        "z": "e3459f93.04f31",
+        "name": "Revisit Later",
+        "info": "Todo only add effects that do not involve colour",
+        "x": 850,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "828124cb47571dc8",
+        "type": "api-call-service",
+        "z": "e3459f93.04f31",
+        "name": "Kitchen TV Plug Screen Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"switch.tp_link_4\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 260,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c49b62d3e95d26d",
+        "type": "server-state-changed",
+        "z": "59f065f5cc116569",
+        "name": "Upstairs Temp Change",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "sensor.multisensor_kitchen_temp_filtered",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
+        ]
+    },
+    {
+        "id": "90f751dd6f8e9b70",
+        "type": "server-state-changed",
+        "z": "59f065f5cc116569",
+        "name": "Downstairs Temp Change",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "sensor.multisensor_dining_temp_filtered",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
+        ]
+    },
+    {
+        "id": "050e8d85446ae780",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "HVAC Downstairs On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.hvac_downstairs",
+        "state_type": "str",
+        "state_location": "ds_switch_payload",
+        "override_payload": "msg",
+        "entity_location": "ds_switch_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "b4a6cedcf26a4b72"
+            ]
+        ]
+    },
+    {
+        "id": "b4a6cedcf26a4b72",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "HVAC Upstairs On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_boolean.hvac_upstairs",
+        "state_type": "str",
+        "state_location": "us_switch_payload",
+        "override_payload": "msg",
+        "entity_location": "us_switch_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 890,
+        "y": 320,
+        "wires": [
+            [
+                "369ca51b8f5b36e7"
+            ]
+        ]
+    },
+    {
+        "id": "369ca51b8f5b36e7",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "HVAC Downstairs Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_number.downstairs_temp",
+        "state_type": "str",
+        "state_location": "ds_targettemp_payload",
+        "override_payload": "msg",
+        "entity_location": "ds_targettemp_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1130,
+        "y": 320,
+        "wires": [
+            [
+                "0c47d3286df7dae3"
+            ]
+        ]
+    },
+    {
+        "id": "0c47d3286df7dae3",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "HVAC Upstairs Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_number.upstairs_temp",
+        "state_type": "str",
+        "state_location": "us_targettemp_payload",
+        "override_payload": "msg",
+        "entity_location": "us_targettemp_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 660,
+        "y": 400,
+        "wires": [
+            [
+                "ebd02f48c9852c26"
+            ]
+        ]
+    },
+    {
+        "id": "84b39f6fadc04a48",
+        "type": "switch",
+        "z": "59f065f5cc116569",
+        "name": "",
+        "property": "serviceData",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 460,
+        "wires": [
+            [
+                "0fba0ceb99d6fbbf"
+            ]
+        ]
+    },
+    {
+        "id": "db34cfe012c16dd7",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "Upstairs Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.multisensor_kitchen_temp_filtered",
+        "state_type": "str",
+        "state_location": "us_temp_payload",
+        "override_payload": "msg",
+        "entity_location": "us_temp_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 1060,
+        "y": 260,
+        "wires": [
+            [
+                "050e8d85446ae780"
+            ]
+        ]
+    },
+    {
+        "id": "24cdcf9c50a1a341",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "Downstairs Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "sensor.multisensor_dining_temp_filtered",
+        "state_type": "str",
+        "state_location": "ds_temp_payload",
+        "override_payload": "msg",
+        "entity_location": "ds_temp_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 830,
+        "y": 260,
+        "wires": [
+            [
+                "db34cfe012c16dd7"
+            ]
+        ]
+    },
+    {
+        "id": "ebd02f48c9852c26",
+        "type": "function",
+        "z": "59f065f5cc116569",
+        "name": "",
+        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n        if (debugThis)\n            node.warn(msg.serviceData.data.raw_command)\n\n    }\n\n}\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\n\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n\n    }\n}\n\n\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 400,
+        "wires": [
+            [
+                "84b39f6fadc04a48"
+            ]
+        ]
+    },
+    {
+        "id": "b325f3d33598ac6b",
+        "type": "inject",
+        "z": "59f065f5cc116569",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
+        ]
+    },
+    {
+        "id": "d00a3c9ec8fdc47d",
+        "type": "api-call-service",
+        "z": "59f065f5cc116569",
+        "name": "Call Bonair Service",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "bonaire_myclimate",
+        "service": "send_raw_command",
+        "data": "",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 530,
+        "y": 520,
+        "wires": [
+            [
+                "f459fbac9ae0674b"
+            ]
+        ]
+    },
+    {
+        "id": "f459fbac9ae0674b",
+        "type": "debug",
+        "z": "59f065f5cc116569",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "0fba0ceb99d6fbbf",
+        "type": "rbe",
+        "z": "59f065f5cc116569",
+        "name": "Send on change",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": false,
+        "property": "serviceData.data.raw_command",
+        "topi": "topic",
+        "x": 820,
+        "y": 460,
+        "wires": [
+            [
+                "315b9656fb216cf3",
+                "d00a3c9ec8fdc47d"
+            ]
+        ]
+    },
+    {
+        "id": "315b9656fb216cf3",
+        "type": "debug",
+        "z": "59f065f5cc116569",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "aa230da2253dc016",
+        "type": "api-current-state",
+        "z": "59f065f5cc116569",
+        "name": "HVAC Mode",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "input_select.hvac_mode",
+        "state_type": "str",
+        "state_location": "hvac_mode_payload",
+        "override_payload": "msg",
+        "entity_location": "hvac_mode_data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 630,
+        "y": 260,
+        "wires": [
+            [
+                "24cdcf9c50a1a341"
+            ]
+        ]
+    },
+    {
+        "id": "637f040a0b351946",
+        "type": "server-state-changed",
+        "z": "59f065f5cc116569",
+        "name": "DS Target Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "input_number.downstairs_temp",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 180,
+        "y": 380,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
+        ]
+    },
+    {
+        "id": "5d4b960cbdf37041",
+        "type": "server-state-changed",
+        "z": "59f065f5cc116569",
+        "name": "US Target Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "input_number.upstairs_temp",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 180,
+        "y": 440,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
+        ]
+    },
+    {
+        "id": "f0e6d780120b9ccc",
+        "type": "server-state-changed",
+        "z": "59f065f5cc116569",
+        "name": "US On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "input_boolean.hvac_upstairs",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
+        ]
+    },
+    {
+        "id": "e635c6a65fc76a9b",
+        "type": "server-state-changed",
+        "z": "59f065f5cc116569",
+        "name": "DS On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "input_boolean.hvac_downstairs",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 560,
+        "wires": [
+            [
+                "aa230da2253dc016"
+            ]
         ]
     }
 ]
