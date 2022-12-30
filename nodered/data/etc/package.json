@@ -5,7 +5,7 @@
     "private": true,
     "dependencies": {
         "node-red-contrib-debounce": "0.0.2",
-        "node-red-contrib-home-assistant-websocket": "~0.12.2",
+        "node-red-contrib-home-assistant-websocket": "~0.48.0",
         "node-red-contrib-stoptimer3": "~0.1.2",
         "node-red-contrib-wled2": "~2.4.4"
     }
