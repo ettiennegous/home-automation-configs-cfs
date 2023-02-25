@@ -81,8 +81,8 @@ switch:
     icon: mdi:fan
   - name: "Shelly 2.5 Master Bathroom Extractor"
     unique_id: shelly_2_5_master_bathroom_extractor
-    state_topic: "shellies/shellyswitch25-6912B9/relay/1"
-    command_topic: "shellies/shellyswitch25-6912B9/relay/1/command"
+    state_topic: "shellies/shellyswitch25-C8C9A3759F08/relay/1"
+    command_topic: "shellies/shellyswitch25-C8C9A3759F08/relay/1/command"
     qos: 2
     payload_on: "on"
     payload_off: "off"
@@ -165,8 +165,8 @@ light:
     optimistic: false
   - name: "Shelly 2.5 Master Bathroom Light"
     unique_id: shelly_2_5_master_bathroom_light
-    state_topic: "shellies/shellyswitch25-6912B9/relay/0"
-    command_topic: "shellies/shellyswitch25-6912B9/relay/0/command"
+    state_topic: "shellies/shellyswitch25-C8C9A3759F08/relay/0"
+    command_topic: "shellies/shellyswitch25-C8C9A3759F08/relay/0/command"
     qos: 2
     payload_on: "on"
     payload_off: "off"
