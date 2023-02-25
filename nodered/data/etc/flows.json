@@ -967,8 +967,8 @@
         "wires": [
             [
                 "8d145814.0a7528",
-                "246c2d33.fcdda2",
-                "d3d1a423.e17d28"
+                "d3d1a423.e17d28",
+                "3df7c826.175758"
             ],
             []
         ]
@@ -1167,11 +1167,11 @@
         "z": "27f4a783.3a8dc8",
         "name": "Asakuki Diffuser On",
         "server": "5a39eab2.9f6814",
-        "service_domain": "fan",
+        "service_domain": "switch",
         "service": "turn_on",
-        "data": "{\"entity_id\":\"fan.diffuser\"}",
+        "data": "{\"entity_id\":\"switch.diffuser_fan\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1210,
@@ -1192,7 +1192,7 @@
         "halt_if_type": "str",
         "halt_if_compare": "is",
         "override_topic": false,
-        "entity_id": "fan.diffuser",
+        "entity_id": "switch.diffuser_fan",
         "state_type": "str",
         "state_location": "payload",
         "override_payload": "msg",
@@ -1227,12 +1227,10 @@
         "entity_location": "data",
         "override_data": "msg",
         "blockInputOverrides": false,
-        "x": 770,
-        "y": 960,
+        "x": 630,
+        "y": 940,
         "wires": [
-            [
-                "3df7c826.175758"
-            ],
+            [],
             []
         ]
     },
@@ -3717,11 +3715,11 @@
         "z": "191e949e.9f212b",
         "name": "Asakuki Diffuser Off",
         "server": "5a39eab2.9f6814",
-        "service_domain": "fan",
+        "service_domain": "switch",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"fan.diffuser\"}",
+        "data": "{\"entity_id\":\"switch.diffuser_fan\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 970,
@@ -7212,7 +7210,7 @@
         "service": "google_translate_say",
         "data": "{\"entity_id\":\"media_player.living_area\",\"message\":\"Its bedtime for the babies, lets go to bed\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 440,
@@ -7298,7 +7296,7 @@
         "service": "google_translate_say",
         "data": "{\"entity_id\":\"{{target}}\",\"message\":\"{{announce}}\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1000,
@@ -9208,12 +9206,12 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "media_player",
         "service": "play_media",
-        "data": "{\"entity_id\":\"media_player.study_speaker\",\"media_content_id\":\"https://www.myinstants.com/media/sounds/short-beep.mp3\",\"media_content_type\":\"music\"}",
+        "data": "{\"entity_id\":\"media_player.living_area\",\"media_content_id\":\"https://www.myinstants.com/media/sounds/short-beep.mp3\",\"media_content_type\":\"music\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 990,
+        "x": 1080,
         "y": 1100,
         "wires": [
             []
@@ -9235,7 +9233,7 @@
         "y": 1040,
         "wires": [
             [
-                "d810bfb6.99ca1"
+                "095844bcc33e77d7"
             ]
         ]
     },
@@ -9256,6 +9254,34 @@
         "outputs": 2,
         "output_only_on_state_change": true,
         "x": 520,
+        "y": 1100,
+        "wires": [
+            [
+                "095844bcc33e77d7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "095844bcc33e77d7",
+        "type": "api-current-state",
+        "z": "ff5661ef.cd5bf",
+        "name": "Kitchen Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "light.shelly_1_kitchen_light",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 850,
         "y": 1100,
         "wires": [
             [
