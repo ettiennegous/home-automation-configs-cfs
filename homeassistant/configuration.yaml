@@ -29,6 +29,7 @@ sensor: !include config/sensor.yaml
 binary_sensor: !include config/binary_sensor.yaml
 input_boolean: !include config/boolean.yaml
 media_player: !include config/media_player.yaml
+media_source:
 camera: !include config/camera.yaml
 google_assistant: !include config/google_assistant.yaml
 shopping_list:
