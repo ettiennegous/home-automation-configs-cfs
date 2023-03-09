@@ -1,34 +1,85 @@
-light:
-    - platform: mqtt
-      name: "Diffuser Lamp"
-      command_topic: "cmnd/asakuki-diffuser/EVENT"
-      state_topic: "tele/asakuki-diffuser/STATE"
-      state_value_template: "{% if value_json.POWER2 == 'ON' %}{% if value_json.POWER5 == 'ON' %}ON{% else %}OFF{% endif %}{% else %}OFF{% endif %}"
-      payload_on: "ON"
-      payload_off: "OFF"
-      brightness_command_topic: "cmnd/asakuki-diffuser/Dimmer"
-      brightness_state_topic: "tele/asakuki-diffuser/RESULT"
-      brightness_scale: 100
-      # brightness_value_template: "{{ value_json.Dimmer }}"
-      brightness_value_template: "{% if value_json.TuyaReceived is defined and value_json['TuyaReceived'].DpId == 108 %}{{ value_json['TuyaReceived'].Type3Data[12:14]|int(base=16) }}{% endif %}"
-      availability_topic: "tele/asakuki-diffuser/LWT"
+mqtt: 
+  fan:
+    - command_topic: "cmnd/diffuser/POWER1"
+      name: "Diffuser"
+      unique_id: "diffuser"
+      state_topic: "tele/diffuser/STATE"
+      state_value_template: "{% if value_json.POWER1 is defined %}{{ value_json.POWER1 }}{% endif%}"
+      preset_modes:
+      -  "high"
+      -  "low"
+      preset_mode_state_topic: "stat/diffuser/fanmode"
+      preset_mode_command_topic: "cmnd/diffuser/tuyaenum1"
+      preset_mode_command_template: '{{ 1 if value == "high" else 0 }}'
+      availability_topic: "tele/diffuser/LWT"
       payload_available: "Online"
       payload_not_available: "Offline"
-      qos: 1
-      retain: false
-      rgb_command_topic: "cmnd/asakuki-diffuser/tuyasend3"
-      rgb_command_template: "{% set brightness = state_attr('light.diffuser_lamp','brightness') | int %}{{ '108,%02x%02x%02x646464' | format(red, green, blue)}}{{ '%02x' | format(brightness) }}"
-      rgb_value_template: "{% if value_json.TuyaReceived is defined and value_json['TuyaReceived'].DpId == 108 %}{{ (value_json['TuyaReceived'].Type3Data[0:2]|int(base=16),value_json['TuyaReceived'].Type3Data[2:4]|int(base=16),value_json['TuyaReceived'].Type3Data[4:6]|int(base=16)) | join(',')}}{% endif %}"
-      rgb_state_topic: "tele/asakuki-diffuser/RESULT"
 
-binary_sensor:
-    - platform: mqtt
-      name: "Aromatherapy Water"
-      state_topic: "stat/asakuki-diffuser/POWER4"
-      payload_on: "ON"
-      payload_off: "OFF"
-      availability_topic: "tele/asakuki-diffuser/LWT"
+  binary_sensor:
+    - name: "Error diffuser"
+      unique_id: "error_diffuser"
+      state_topic: "stat/diffuser/error"
+      value_template: "{{ 'ON' if value != '0X00' else 'OFF' }}"
+      device_class: problem
+      availability_topic: "tele/diffuser/LWT"
+      payload_available: "Online"
+      payload_not_available: "Offline"    
+
+  light:
+    - command_topic: "cmnd/diffuser/POWER2GW"
+      name: "Diffuser light"
+      unique_id: "luz_diffuser"
+      availability_topic: "tele/diffuser/LWT"
       payload_available: "Online"
       payload_not_available: "Offline"
-      qos: 1
-      device_class: problem
+      state_topic: "tele/diffuser/STATE"
+      state_value_template: "{% if value_json.POWER2 is defined %}{{ value_json.POWER2 }}{% endif %}" 
+      payload_on: "ON"
+      payload_off: "OFF"
+      rgb_command_topic: "cmnd/diffuser/tuyasend3"
+      rgb_command_template: "{% set brightness = state_attr('light.luz_diffuser','brightness') | int %}{{ '108,%02x%02x%02x646464' | format(red, green, blue)}}{{ '%02x' | format(brightness) }}"
+      rgb_value_template: "{% if value_json.POWER2 is defined and value_json.POWER2 == 'ON' %}{{value_json.Color.split(',')[0:3]|join(',')}}{% endif %}"
+      rgb_state_topic: "tele/diffuser/STATE"
+      brightness_command_topic: "cmnd/diffuser/Dimmer"
+      brightness_state_topic: "tele/diffuser/STATE"
+      brightness_scale: 100
+      brightness_value_template: "{% if value_json.POWER2 is defined and value_json.POWER2 == 'ON' %}{{value_json.Dimmer}}{% endif %}"
+      effect_list:
+      - "Cycle"
+      - "Fixed"
+      effect_command_topic: "cmnd/diffuser/tuyaenum2GW"
+      effect_state_topic : "tele/diffuser/STATE"
+      effect_value_template : "{% if value_json.TuyaEnum2 is defined and value_json.TuyaEnum2 == 0 %}{{'Ciclo'}}{% elif value_json.TuyaEnum2 is defined and value_json.TuyaEnum2 is defined and value_json.TuyaEnum2 == 1 %}{{'No'}}{% endif %}"
+
+automation:
+  - alias: "Diffuser forward MQTT1"
+    id: diffuser_forward_mqtt1
+    trigger:
+      - platform: mqtt
+        topic: 'cmnd/diffuser/POWER2GW'
+    condition:
+      condition: template
+      value_template: "{{ trigger.payload | lower != states('light.luz_diffuser') }}"
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: 'cmnd/diffuser/POWER2'
+          payload: "{{ trigger.payload }}"
+
+  - alias: "Diffuser forward MQTT2"
+    id: diffuser_forward_mqtt2
+    trigger:
+      - platform: mqtt
+        topic: 'cmnd/diffuser/tuyaenum2GW'
+    action:
+      - service: mqtt.publish
+        data_template:
+          topic: 'cmnd/diffuser/tuyaenum2'
+          payload_template: >
+            {% if 'Ciclo' in trigger.payload -%}
+              {{ 0 }}
+            {%- elif 'Fijo' in trigger.payload -%}
+              {{ 1 }}
+            {%- else -%}
+              {{ 2 }}
+            {%- endif %}

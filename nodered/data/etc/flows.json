@@ -5585,7 +5585,6 @@
             [
                 "d371bfec.d293a",
                 "a61375ba.3a7088",
-                "a5296da0.f2116",
                 "1e39803a.e8f9a",
                 "67d201ba.1d915",
                 "3d518e8a.371632",
@@ -5596,10 +5595,10 @@
                 "ff9936a2.d714b8",
                 "c886bbbe.d31fd8",
                 "32edec0c.b20764",
-                "3b7bd263.8f4d5e",
                 "1fdc477.487ceb9",
                 "e39fd5c3615e9149",
-                "18f78f69ed88f852"
+                "18f78f69ed88f852",
+                "fad172eb5157bd4b"
             ]
         ]
     },
@@ -5611,9 +5610,9 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\"}",
+        "data": "{\"entity_id\":\"light.alex_ceiling_fan\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1360,
@@ -5630,32 +5629,13 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\"}",
+        "data": "{\"entity_id\":\"light.ruby_ceiling_fan\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1360,
         "y": 180,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "a5296da0.f2116",
-        "type": "api-call-service",
-        "z": "9a1b490a16d77e03",
-        "name": "Guest Room Light Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.shelly_1_guest_room_light\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1360,
-        "y": 260,
         "wires": [
             []
         ]
@@ -5670,7 +5650,7 @@
         "service": "turn_off",
         "data": "{\"entity_id\":\"light.aeon_labs_zw111_nano_dimmer_level_2\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 1360,
@@ -5825,8 +5805,8 @@
         "output_location": "",
         "output_location_type": "none",
         "mustacheAltTags": false,
-        "x": 1400,
-        "y": 660,
+        "x": 1740,
+        "y": 280,
         "wires": [
             []
         ]
@@ -5846,25 +5826,6 @@
         "mustacheAltTags": false,
         "x": 1380,
         "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3b7bd263.8f4d5e",
-        "type": "api-call-service",
-        "z": "9a1b490a16d77e03",
-        "name": "Alex Lamp Off",
-        "server": "5a39eab2.9f6814",
-        "service_domain": "light",
-        "service": "turn_off",
-        "data": "{\"entity_id\":\"light.lifx_bulb_1\"}",
-        "mergecontext": "",
-        "output_location": "",
-        "output_location_type": "none",
-        "mustacheAltTags": false,
-        "x": 1340,
-        "y": 540,
         "wires": [
             []
         ]
@@ -6032,6 +5993,25 @@
                 "3cf6e7fc.090e68",
                 "b703f70d.9c01e8"
             ]
+        ]
+    },
+    {
+        "id": "fad172eb5157bd4b",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Guest Ceiling Light Off",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{\"entity_id\":\"light.guest_ceiling_fan\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 1620,
+        "y": 240,
+        "wires": [
+            []
         ]
     },
     {
@@ -8164,9 +8144,9 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level\"}",
+        "data": "{\"entity_id\":\"light.alex_ceiling_fan\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 480,
@@ -8183,9 +8163,9 @@
         "server": "5a39eab2.9f6814",
         "service_domain": "light",
         "service": "turn_off",
-        "data": "{\"entity_id\":\"light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_2\"}",
+        "data": "{\"entity_id\":\"light.ruby_ceiling_fan\"}",
         "mergecontext": "",
-        "output_location": "",
+        "output_location": "payload",
         "output_location_type": "none",
         "mustacheAltTags": false,
         "x": 480,
@@ -8575,6 +8555,154 @@
         "mustacheAltTags": false,
         "x": 940,
         "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb4a143eea1796d6",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Ruby Room Switch Toggle",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.ruby_room_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 2920,
+        "wires": [
+            [
+                "9360ba4f2edfe9e7"
+            ],
+            [
+                "9360ba4f2edfe9e7"
+            ]
+        ]
+    },
+    {
+        "id": "89acb7eee365371d",
+        "type": "comment",
+        "z": "823d3fb7.65d29",
+        "name": "Prevent Smart Fans from turning off",
+        "info": "",
+        "x": 240,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "46ccfce593f06e4e",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Guest Room Switch Toggle",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.guest_room_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "0",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 3060,
+        "wires": [
+            [
+                "120bca29046fab7a"
+            ],
+            [
+                "120bca29046fab7a"
+            ]
+        ]
+    },
+    {
+        "id": "9360ba4f2edfe9e7",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Toggle Ruby Fan Light",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.ruby_ceiling_fan\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 500,
+        "y": 2920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "120bca29046fab7a",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Toggle Guest Fan Light",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.guest_ceiling_fan\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 490,
+        "y": 3060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0b6f165f9845898b",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "Alex Room Switch Toggle",
+        "server": "5a39eab2.9f6814",
+        "version": 1,
+        "entityidfilter": "binary_sensor.alex_room_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "x": 210,
+        "y": 3000,
+        "wires": [
+            [
+                "2a647380b12d9da6"
+            ],
+            [
+                "2a647380b12d9da6"
+            ]
+        ]
+    },
+    {
+        "id": "2a647380b12d9da6",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Toggle Alex Fan Light",
+        "server": "5a39eab2.9f6814",
+        "service_domain": "light",
+        "service": "toggle",
+        "data": "{\"entity_id\":\"light.alex_ceiling_fan\"}",
+        "mergecontext": "",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 500,
+        "y": 3000,
         "wires": [
             []
         ]

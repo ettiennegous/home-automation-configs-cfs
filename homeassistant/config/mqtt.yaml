@@ -89,6 +89,36 @@ switch:
     retain: false
     optimistic: false
     icon: mdi:fan
+  - name: "Alex Room Power"
+    unique_id: alex_room_power
+    state_topic: shellies/shellyplus1-7c87ce63cd48/status/switch:0
+    value_template: "{{ value_json.output }}"
+    state_on: true
+    state_off: false
+    command_topic: shellies/shellyplus1-7c87ce63cd48/rpc
+    payload_on: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+    payload_off: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+    qos: 1
+    retain: false
+  - name: "Ruby Room Power"
+    unique_id: ruby_room_power
+    state_topic: shellies/shellyplus1-441793a8ba48/status/switch:0
+    value_template: "{{ value_json.output }}"
+    state_on: true
+    state_off: false
+    command_topic: shellies/shellyplus1-441793a8ba48/rpc
+    payload_on: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+    payload_off: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+    retain: false
+  - name: "Guest Room Power"
+    unique_id: guest_room_power
+    state_topic: "shellies/shelly1-68C70A/relay/0"
+    command_topic: "shellies/shelly1-68C70A/relay/0/command"
+    qos: 2
+    payload_on: "on"
+    payload_off: "off"
+    retain: false
+    optimistic: false
 
 light:
   - name: "Shelly 1 Study Light"
@@ -129,8 +159,8 @@ light:
     optimistic: false
   - name: "Shelly 2.5 Rumpus Main Light"
     unique_id: shelly_2_5_rumpus_main_light
-    state_topic: "shellies/shellyswitch25-68688E/relay/0"
-    command_topic: "shellies/shellyswitch25-68688E/relay/0/command"
+    state_topic: "shellies/shellyswitch25-C8C9A37A648E/relay/0"
+    command_topic: "shellies/shellyswitch25-C8C9A37A648E/relay/0/command"
     qos: 2
     payload_on: "on"
     payload_off: "off"
@@ -138,17 +168,8 @@ light:
     optimistic: false
   - name: "Shelly 2.5 Rumpus Side Light"
     unique_id: shelly_2_5_rumpus_side_light
-    state_topic: "shellies/shellyswitch25-68688E/relay/1"
-    command_topic: "shellies/shellyswitch25-68688E/relay/1/command"
-    qos: 2
-    payload_on: "on"
-    payload_off: "off"
-    retain: false
-    optimistic: false
-  - name: "Shelly 1 Guest Room Light"
-    unique_id: shelly_1_guest_room_light
-    state_topic: "shellies/shelly1-68C70A/relay/0"
-    command_topic: "shellies/shelly1-68C70A/relay/0/command"
+    state_topic: "shellies/shellyswitch25-C8C9A37A648E/relay/1"
+    command_topic: "shellies/shellyswitch25-C8C9A37A648E/relay/1/command"
     qos: 2
     payload_on: "on"
     payload_off: "off"
@@ -239,6 +260,36 @@ binary_sensor:
       off_delay: 7
       value_template: "{{ value }}"
       device_class: motion
+    - name: "Guest Room Switch"
+      unique_id: guest_room_switch
+      payload_on: "1"
+      payload_off: "0"
+      state_topic: "shellies/shelly1-68C70A/input/0"
+    - name: "Ruby Room Switch"
+      state_topic: "shellies/shellyplus1-7c87ce63cd48/events/rpc"
+      value_template: >- 
+        {% if ('input:0') and ('long_push') in value %}   
+          {{'ON'}}
+        {% elif ('input:0') and ('single_push') in value %}   
+          {{'ON'}}
+        {% elif ('input:0') and ('btn_up') in value %}   
+          {{'OFF'}}
+        {% else %}
+          {{ states('binary_sensor.ruby_room_switch') }}
+        {% endif %}
+    - name: "Alex Room Switch"
+      state_topic: "shellies/shellyplus1-441793a8ba48/events/rpc"
+      value_template: >- 
+        {% if ('input:0') and ('long_push') in value %}   
+          {{'ON'}}
+        {% elif ('input:0') and ('single_push') in value %}   
+          {{'ON'}}
+        {% elif ('input:0') and ('btn_up') in value %}   
+          {{'OFF'}}
+        {% else %}
+          {{ states('binary_sensor.ruby_room_switch') }}
+        {% endif %}
+
 
 sensor:
   - name: Hygrometer 1 Humidity
