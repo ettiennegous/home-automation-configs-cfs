@@ -475,152 +475,46 @@
     },
     "node-red-contrib-home-assistant-websocket": {
         "name": "node-red-contrib-home-assistant-websocket",
-        "version": "0.12.2",
+        "version": "0.48.1",
         "local": true,
         "user": true,
         "nodes": {
-            "server": {
-                "name": "server",
+            "all": {
+                "name": "all",
                 "types": [
-                    "server"
+                    "ha_entity_filter",
+                    "ha-api",
+                    "ha-binary-sensor",
+                    "ha-button",
+                    "api-call-service",
+                    "server",
+                    "api-current-state",
+                    "ha-device",
+                    "ha-device-config",
+                    "ha-entity",
+                    "ha-entity-config",
+                    "server-events",
+                    "server-state-changed",
+                    "ha-fire-event",
+                    "ha-get-entities",
+                    "api-get-history",
+                    "poll-state",
+                    "api-render-template",
+                    "ha-sensor",
+                    "ha-switch",
+                    "ha-tag",
+                    "ha-time",
+                    "trigger-state",
+                    "ha-update-config",
+                    "ha-wait-until",
+                    "ha-webhook",
+                    "ha-zone"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
                 "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/config-server/config-server.js"
-            },
-            "server-events": {
-                "name": "server-events",
-                "types": [
-                    "server-events"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/events-all/events-all.js"
-            },
-            "server-state-changed": {
-                "name": "server-state-changed",
-                "types": [
-                    "server-state-changed"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/events-state-changed/events-state-changed.js"
-            },
-            "trigger-state": {
-                "name": "trigger-state",
-                "types": [
-                    "trigger-state"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/trigger-state/trigger-state.js"
-            },
-            "poll-state": {
-                "name": "poll-state",
-                "types": [
-                    "poll-state"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/poll-state/poll-state.js"
-            },
-            "api-call-service": {
-                "name": "api-call-service",
-                "types": [
-                    "api-call-service"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/call-service/call-service.js"
-            },
-            "ha-fire-event": {
-                "name": "ha-fire-event",
-                "types": [
-                    "ha-fire-event"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/fire-event/fire-event.js"
-            },
-            "api-current-state": {
-                "name": "api-current-state",
-                "types": [
-                    "api-current-state"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/current-state/current-state.js"
-            },
-            "ha-get-entities": {
-                "name": "ha-get-entities",
-                "types": [
-                    "ha-get-entities"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/get-entities/get-entities.js"
-            },
-            "api-get-history": {
-                "name": "api-get-history",
-                "types": [
-                    "api-get-history"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/get-history/get-history.js"
-            },
-            "api-render-template": {
-                "name": "api-render-template",
-                "types": [
-                    "api-render-template"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/render-template/render-template.js"
-            },
-            "ha-wait-until": {
-                "name": "ha-wait-until",
-                "types": [
-                    "ha-wait-until"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/wait-until/wait-until.js"
-            },
-            "ha-api": {
-                "name": "ha-api",
-                "types": [
-                    "ha-api"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "node-red-contrib-home-assistant-websocket",
-                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/nodes/api/api.js"
+                "file": "/data/node_modules/node-red-contrib-home-assistant-websocket/dist/index.js"
             }
         }
     }
