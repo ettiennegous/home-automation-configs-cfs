@@ -324,6 +324,23 @@ services:
   #     - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
   #     - ${USERDIR}/docker/shinobi/videos:/opt/shinobi/videos
   
+  shinobi: 
+    image: registry.gitlab.com/shinobi-systems/shinobi:dev
+    container_name: shinobi
+    restart: always
+    hostname: shinobi
+    ports:
+      - "8082:8080/tcp"
+    environment:
+      - APP_BRANCH=dev
+    volumes:
+      - /dev/shm/Shinobi/streams:/dev/shm/streams
+      - ${USERDIR}/docker/shinobi/config:/config
+      - ${USERDIR}/docker/shinobi/customautoload:/customAutoLoad
+      - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
+      - ${USERDIR}/docker/shinobi/videos:/opt/Shinobi/videos
+      - ${USERDIR}/docker/shinobi/plugins:/opt/Shinobi/plugins
+      - /etc/localtime:/etc/localtime
   # Moved away to a seperated hosted stack on a RPi 
   # zigbee2mqtt:
   #   container_name: zigbee2mqtt
