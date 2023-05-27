@@ -342,6 +342,7 @@ services:
       - "5000:5000"
       - "1935:1935" # RTMP feeds
     environment:
+      FRIGATE_RTSP_USER: {CAMERA_USERNAME}
       FRIGATE_RTSP_PASSWORD: ${CAMERA_PASSWORD}
       LIBVA_DRIVER_NAME: i965
   zigbee2mqtt:

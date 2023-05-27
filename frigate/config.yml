@@ -1,0 +1,151 @@
+mqtt:
+  host: 192.168.1.40
+  topic_prefix: frigate
+  client_id: frigate
+detectors:
+  coral:
+    type: edgetpu
+    device: usb
+record:
+  enabled: true
+  retain:
+    days: 3
+    mode: all
+  events:
+    retain:
+      default: 14
+      mode: motion
+      objects:
+        person: 15
+snapshots: 
+  enabled: True
+  clean_copy: True
+  retain:
+    default: 10
+    objects:
+      person: 15
+objects:
+  track:
+    - person
+    - bicycle
+    - car
+    - motorcycle
+    - bus
+    - boat
+    - bird
+    - cat
+    - dog
+    - horse
+    - bear
+cameras:
+  hikvision:
+    ffmpeg:
+      hwaccel_args: -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -hwaccel_output_format yuv420p
+      inputs:
+        - path: rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.20.4:554/
+          roles:
+            - rtmp
+        - path: rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.20.4:554/Streaming/channels/102
+          roles:
+            - detect
+            - record
+    motion:
+      mask: 
+        - 442,0,640,66,608,114,313,0
+    zones:
+      grass:
+        coordinates: 578,213,511,324,281,155,412,40,616,120
+        objects: 
+          - person
+          - bicycle
+          - car
+          - motorcycle
+          - bus
+          - boat
+          - bird
+          - cat
+          - dog
+          - horse
+          - bear
+      driveway:
+        coordinates: 299,168,505,311,468,360,360,360,275,279,242,164,227,37,312,0,423,44
+        objects: 
+          - person
+          - bicycle
+          - car
+          - motorcycle
+          - bus
+          - boat
+          - bird
+          - cat
+          - dog
+          - horse
+          - bear
+    detect:
+      enabled: True
+      width: 640
+      height: 360 
+      fps: 5
+  reolink:
+    ffmpeg:
+      hwaccel_args: -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -hwaccel_output_format yuv420p
+      input_args:
+        - -avoid_negative_ts
+        - make_zero
+        - -fflags
+        - +genpts+discardcorrupt
+        - -flags
+        - low_delay
+        - -strict
+        - experimental
+        - -analyzeduration
+        - 1000M
+        - -probesize
+        - 1000M
+        - -rw_timeout
+        - "5000000"
+      inputs:
+        - path: http://192.168.20.5/flv?port=1935&app=bcs&stream=channel0_main.bcs&user={FRIGATE_RTSP_USER}&password={FRIGATE_RTSP_PASSWORD}
+          roles:
+            - rtmp
+        - path: http://192.168.20.5/flv?port=1935&app=bcs&stream=channel0_ext.bcs&user={FRIGATE_RTSP_USER}&password={FRIGATE_RTSP_PASSWORD}
+          roles:
+            - detect
+            - record
+    motion:
+      mask: 
+        - 558,184,232,21,233,0,233,0,896,0,896,403
+    zones:
+      grass:
+        coordinates: 896,672,199,672,79,496,232,404,92,232,335,70,896,410
+        objects: 
+          - person
+          - bicycle
+          - car
+          - motorcycle
+          - bus
+          - boat
+          - bird
+          - cat
+          - dog
+          - horse
+          - bear
+      driveway:
+        coordinates: 230,0,0,111,39,261,136,473,234,401,99,241,337,79
+        objects: 
+          - person
+          - bicycle
+          - car
+          - motorcycle
+          - bus
+          - boat
+          - bird
+          - cat
+          - dog
+          - horse
+          - bear
+    detect:
+      enabled: True
+      width: 896
+      height: 672
+      fps: 5
