@@ -2,21 +2,118 @@ homeassistant: true
 permit_join: false
 mqtt:
   base_topic: zigbee2mqtt
-  server: 'mqtt://192.168.1.40'
+  server: mqtt://192.168.1.40
 serial:
-  port: /dev/ttyACM0
+  port: /dev/ttyUSB0
 devices:
-  '0x680ae2fffe373be9':
-    friendly_name: Tradfri PIR 1
   '0xec1bbdfffe6fb3fa':
     friendly_name: Tradfri PIR 2
+    description: Stairs landing
+    occupancy_timeout: 120
+    illuminance_below_threshold_check: false
+  '0x286d9700010a2e81':
+    friendly_name: ST Contact Sensor 1
+    description: Front door
+  '0x286d9700010a1b57':
+    friendly_name: ST Contact Sensor 2
+    description: Kitchen sliding door
+  '0x286d9700010a1b72':
+    friendly_name: ST Contact Sensor 3
+    description: Laundry
+  '0x000b3cfffef83b9d':
+    friendly_name: Tuya Remote 2
+    description: Stairs Landing
   '0xec1bbdfffebaf388':
     friendly_name: Tradfri Button 1
+    legacy: false
+    simulated_brightness:
+      delta: 10
+      interval: 100
+    description: Ruby
   '0x588e81fffe2cd4d9':
     friendly_name: Tradfri Button 2
+    legacy: false
+    simulated_brightness:
+      delta: 10
+      interval: 100
+    description: Spare room
   '0x842e14fffe154730':
     friendly_name: Tradfri Button 3
+    legacy: false
+    simulated_brightness:
+      delta: 10
+      interval: 100
+    description: Alex
+  '0xd0cf5efffe6d3a3b':
+    friendly_name: Tradfri Repeater 1
+    description: Spare room
   '0xec1bbdfffea0e6e2':
-    friendly_name: Tradfri Volume 1
-  '0x842e14fffe8e3238':
-    friendly_name: Tradfri Bulb 1
+    friendly_name: Tradfri Volume Knob 1
+    legacy: false
+    simulated_brightness:
+      delta: 20
+      interval: 150
+    description: Study
+  '0x680ae2fffe373be9':
+    friendly_name: ' Tradfri PIR 1'
+    occupancy_timeout: 120
+    illuminance_below_threshold_check: false
+    description: Living room
+  '0x001788010d093c86':
+    friendly_name: Hue Bulb 1
+    description: Alex Room Lamp
+  '0x001788010d05fa2c':
+    friendly_name: Hue Bulb 2
+    description: Spare Room Lamp
+frontend:
+  port: 8080
+experimental:
+  new_api: true
+groups:
+  '1':
+    friendly_name: switches
+  '901':
+    friendly_name: Bulb-1
+advanced:
+  last_seen: ISO_8601_local
+  elapsed: true
+  log_level: info
+  log_rotation: true
+  log_syslog:
+    app_name: Zigbee2MQTT
+    eol: /n
+    host: localhost
+    localhost: localhost
+    path: /dev/log
+    pid: process.pid
+    port: 123
+    protocol: tcp4
+    type: '5424'
+  pan_id: 6754
+  ext_pan_id:
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+    - 221
+  channel: 11
+  network_key:
+    - 1
+    - 3
+    - 5
+    - 7
+    - 9
+    - 11
+    - 13
+    - 15
+    - 0
+    - 2
+    - 4
+    - 6
+    - 8
+    - 10
+    - 12
+    - 13
