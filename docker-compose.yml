@@ -308,32 +308,42 @@ services:
         - ${USERDIR}/docker/plex/tvseries:/tv
         - ${USERDIR}/docker/plex/movies:/movies
       restart: unless-stopped
-  # Will re-introducted when cameras are wired 
-  # shinobi: 
-  #   image: shinobisystems/shinobi:latest-ubuntu
-  #   container_name: shinobi
-  #   restart: always
-  #   hostname: shinobi
-  #   ports:
-  #     - "8082:8080/tcp"
-  #   environment:
-  #     - APP_BRANCH=dev
-  #   volumes:
-  #     - ${USERDIR}/docker/shinobi/streams:/dev/shm/streams
-  #     - ${USERDIR}/docker/shinobi/config:/config
-  #     - ${USERDIR}/docker/shinobi/customautoload:/customAutoLoad
-  #     - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
-  #     - ${USERDIR}/docker/shinobi/videos:/opt/shinobi/videos
-  
-  shinobi: 
-    image: registry.gitlab.com/shinobi-systems/shinobi:dev
-    container_name: shinobi
-    restart: always
-    hostname: shinobi
+  frigate:
+    container_name: frigate
+    privileged: true # this may not be necessary for all setups
+    restart: unless-stopped
+    image: ghcr.io/blakeblackshear/frigate:0.12.0-beta8
+    shm_size: "160mb" # update for your cameras based on calculation above (width * height * 1.5 * 9 + 270480)/1048576
+    devices:
+      - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware
+      - /dev/bus/usb:/dev/bus/usb # passes the USB Coral, needs to be modified for other versions
+    networks:
+      - default
+      - traefik_proxy
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${USERDIR}/docker/frigate/config.yml:/config/config.yml:ro
+      - /media/sd-card/frigate:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.http.routers.nvr-router.rule=Host(`nvr.${DOMAINNAME}`)"
+      - "traefik.http.routers.nvr-router.tls=true"
+      - "traefik.http.routers.nvr-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.nvr-router.middlewares=secured@file"
+      - "traefik.http.services.nvr-service.loadbalancer.server.port=5000"
+      - "traefik.http.services.nvr-service.loadbalancer.server.scheme=http"
+      - "traefik.http.services.nvr-service.loadbalancer.passHostHeader=true"
     ports:
-      - "8082:8080/tcp"
+      - "5000:5000"
+      - "1935:1935" # RTMP feeds
     environment:
-      - APP_BRANCH=dev
+      FRIGATE_RTSP_PASSWORD: ${CAMERA_PASSWORD}
+      LIBVA_DRIVER_NAME: i965
     volumes:
       - /dev/shm/Shinobi/streams:/dev/shm/streams
       - ${USERDIR}/docker/shinobi/config:/config
