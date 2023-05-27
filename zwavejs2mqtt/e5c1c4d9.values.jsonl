@@ -6,8 +6,8 @@
 {"k":"{\"nodeId\":6,\"commandClass\":134,\"endpoint\":0,\"property\":\"protocolVersion\"}","v":"3.28"}
 {"k":"{\"nodeId\":6,\"commandClass\":134,\"endpoint\":0,\"property\":\"firmwareVersions\"}","v":["1.18"]}
 {"k":"{\"nodeId\":6,\"commandClass\":134,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
-{"k":"{\"nodeId\":6,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100,"ts":1685192912120}
-{"k":"{\"nodeId\":6,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false,"ts":1685192912121}
+{"k":"{\"nodeId\":6,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100,"ts":1685193632183}
+{"k":"{\"nodeId\":6,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false,"ts":1685193632184}
 {"k":"{\"nodeId\":6,\"commandClass\":128,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
 {"k":"{\"nodeId\":6,\"commandClass\":132,\"endpoint\":0,\"property\":\"wakeUpInterval\"}","v":0}
 {"k":"{\"nodeId\":6,\"commandClass\":132,\"endpoint\":0,\"property\":\"controllerNodeId\"}","v":1}
@@ -22,11 +22,11 @@
 {"k":"{\"nodeId\":6,\"commandClass\":48,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedSensorTypes\"}","v":[1,3,5]}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedScales\",\"propertyKey\":1}","v":[0,1]}
-{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":17.2,"ts":1685192912211}
+{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":17.3,"ts":1685193632276}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedScales\",\"propertyKey\":3}","v":[1]}
-{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":2,"ts":1685192912150}
+{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":0,"ts":1685193632215}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"supportedScales\",\"propertyKey\":5}","v":[0]}
-{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23,"ts":1685192912180}
+{"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23,"ts":1685193632246}
 {"k":"{\"nodeId\":6,\"commandClass\":49,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
 {"k":"{\"nodeId\":6,\"commandClass\":112,\"endpoint\":0,\"property\":\"isParamInformationFromConfig\"}","v":true}
 {"k":"{\"nodeId\":6,\"commandClass\":112,\"endpoint\":0,\"property\":2}","v":1}
@@ -75,7 +75,7 @@
 {"k":"{\"nodeId\":34,\"commandClass\":134,\"endpoint\":0,\"property\":\"libraryType\"}","v":3,"ts":1685192592258}
 {"k":"{\"nodeId\":34,\"commandClass\":134,\"endpoint\":0,\"property\":\"protocolVersion\"}","v":"4.54","ts":1685192592259}
 {"k":"{\"nodeId\":34,\"commandClass\":134,\"endpoint\":0,\"property\":\"firmwareVersions\"}","v":["2.3","1.2"],"ts":1685192592261}
-{"k":"{\"nodeId\":29,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":5.264,"ts":1685193184056}
+{"k":"{\"nodeId\":29,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":5.264,"ts":1685193784111}
 {"k":"{\"nodeId\":29,\"commandClass\":50,\"endpoint\":0,\"property\":\"previousValue\",\"propertyKey\":65537}","v":2.113}
 {"k":"{\"nodeId\":29,\"commandClass\":50,\"endpoint\":0,\"property\":\"deltaTime\",\"propertyKey\":65537}","v":475}
 {"k":"{\"nodeId\":28,\"commandClass\":134,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
@@ -97,7 +97,7 @@
 {"k":"{\"nodeId\":32,\"commandClass\":133,\"endpoint\":0,\"property\":\"maxNodes\",\"propertyKey\":1}","v":5}
 {"k":"{\"nodeId\":32,\"commandClass\":133,\"endpoint\":0,\"property\":\"nodeIds\",\"propertyKey\":1}","v":[1]}
 {"k":"{\"nodeId\":6,\"commandClass\":112,\"endpoint\":0,\"property\":5}","v":2}
-{"k":"{\"nodeId\":32,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":7.948,"ts":1685193164649}
+{"k":"{\"nodeId\":32,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":7.948,"ts":1685193764686}
 {"k":"{\"nodeId\":32,\"commandClass\":50,\"endpoint\":0,\"property\":\"previousValue\",\"propertyKey\":65537}","v":0.226}
 {"k":"{\"nodeId\":32,\"commandClass\":50,\"endpoint\":0,\"property\":\"deltaTime\",\"propertyKey\":65537}","v":430}
 {"k":"{\"nodeId\":29,\"commandClass\":133,\"endpoint\":0,\"property\":\"maxNodes\",\"propertyKey\":2}","v":5}
@@ -154,7 +154,7 @@
 {"k":"{\"nodeId\":34,\"commandClass\":94,\"endpoint\":0,\"property\":\"userIcon\"}","v":1536}
 {"k":"{\"nodeId\":34,\"commandClass\":94,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
 {"k":"{\"nodeId\":6,\"commandClass\":112,\"endpoint\":0,\"property\":111}","v":720}
-{"k":"{\"nodeId\":28,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":0.858,"ts":1685193127333}
+{"k":"{\"nodeId\":28,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":65537}","v":0.858,"ts":1685193727383}
 {"k":"{\"nodeId\":28,\"commandClass\":50,\"endpoint\":0,\"property\":\"previousValue\",\"propertyKey\":65537}","v":0.728}
 {"k":"{\"nodeId\":28,\"commandClass\":50,\"endpoint\":0,\"property\":\"deltaTime\",\"propertyKey\":65537}","v":101}
 {"k":"{\"nodeId\":29,\"commandClass\":50,\"endpoint\":0,\"property\":\"value\",\"propertyKey\":66049}","v":0,"ts":1685170630945}
@@ -644,12 +644,12 @@
 {"k":"{\"nodeId\":3,\"commandClass\":134,\"endpoint\":0,\"property\":\"protocolVersion\"}","v":"3.28"}
 {"k":"{\"nodeId\":3,\"commandClass\":134,\"endpoint\":0,\"property\":\"firmwareVersions\"}","v":["1.18"]}
 {"k":"{\"nodeId\":3,\"commandClass\":134,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
-{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100,"ts":1685193489055}
-{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false,"ts":1685193489058}
+{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100,"ts":1685194269118}
+{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false,"ts":1685194269121}
 {"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"interviewComplete\"}","v":true}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":8,"ts":1685193489087}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23,"ts":1685193489113}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":19.7,"ts":1685193489144}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":7,"ts":1685194269149}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23,"ts":1685194269178}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":19.7,"ts":1685194269207}
 {"k":"{\"nodeId\":3,\"commandClass\":132,\"endpoint\":0,\"property\":\"wakeUpInterval\"}","v":0}
 {"k":"{\"nodeId\":3,\"commandClass\":132,\"endpoint\":0,\"property\":\"controllerNodeId\"}","v":1}
 {"k":"{\"nodeId\":3,\"commandClass\":133,\"endpoint\":0,\"property\":\"groupCount\"}","v":1}
@@ -1078,8 +1078,8 @@
 {"k":"{\"nodeId\":1,\"commandClass\":134,\"endpoint\":0,\"property\":\"zWaveProtocolVersion\"}","v":"3.95.0","ts":1685191355487}
 {"k":"{\"nodeId\":19,\"commandClass\":113,\"endpoint\":0,\"property\":\"Access Control\",\"propertyKey\":\"Door state (simple)\"}","v":23,"ts":1685168775455}
 {"k":"{\"nodeId\":39,\"commandClass\":113,\"endpoint\":0,\"property\":\"Access Control\",\"propertyKey\":\"Door state (simple)\"}","v":23,"ts":1685189666920}
-{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100,"ts":1685193519060}
-{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false,"ts":1685193519064}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":7,"ts":1685193519087}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23,"ts":1685193519116}
-{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":19.7,"ts":1685193519146}
+{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"level\"}","v":100,"ts":1685194299120}
+{"k":"{\"nodeId\":3,\"commandClass\":128,\"endpoint\":0,\"property\":\"isLow\"}","v":false,"ts":1685194299123}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":6,"ts":1685194299151}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":23,"ts":1685194299179}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":19.7,"ts":1685194299211}

@@ -581,3 +581,6 @@
 {"k":"{\"nodeId\":6,\"commandClass\":32,\"endpoint\":0,\"property\":\"currentValue\"}","v":{"type":"number","readable":true,"writeable":false,"min":0,"max":99,"label":"Current value"}}
 {"k":"{\"nodeId\":6,\"commandClass\":32,\"endpoint\":0,\"property\":\"targetValue\"}","v":{"type":"number","readable":true,"writeable":true,"min":0,"max":255,"label":"Target value","forceCreation":true}}
 {"k":"{\"nodeId\":6,\"commandClass\":32,\"endpoint\":0,\"property\":\"duration\"}","v":{"type":"duration","readable":true,"writeable":false,"label":"Remaining duration","minVersion":2}}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Illuminance\"}","v":{"type":"number","readable":true,"writeable":false,"label":"Illuminance","unit":"Lux","ccSpecific":{"sensorType":3,"scale":1}}}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Humidity\"}","v":{"type":"number","readable":true,"writeable":false,"label":"Humidity","unit":"%","ccSpecific":{"sensorType":5,"scale":0}}}
+{"k":"{\"nodeId\":3,\"commandClass\":49,\"endpoint\":0,\"property\":\"Air temperature\"}","v":{"type":"number","readable":true,"writeable":false,"label":"Air temperature","unit":"°C","ccSpecific":{"sensorType":1,"scale":0}}}
