@@ -223,7 +223,7 @@ services:
     container_name: rtl433
     image: hertzg/rtl_433:latest
     devices:
-      - "/dev/bus/usb/003/007"
+      - "/dev/bus/usb/001/009"
     command:
       - '-Mtime:unix:usec:utc'
       - '-Fmqtt://mqtt:1883,retain=1'
