@@ -16,7 +16,7 @@
 {"k":"node.2.isRouting","v":true}
 {"k":"node.2.supportedDataRates","v":[40000]}
 {"k":"node.2.protocolVersion","v":2}
-{"k":"node.2.nodeType","v":"Routing End Node"}
+{"k":"node.2.nodeType","v":"End Node"}
 {"k":"node.2.supportsSecurity","v":false}
 {"k":"node.2.supportsBeaming","v":true}
 {"k":"node.2.securityClasses.S0_Legacy","v":false}
@@ -37,7 +37,7 @@
 {"k":"node.3.isRouting","v":true}
 {"k":"node.3.supportedDataRates","v":[40000]}
 {"k":"node.3.protocolVersion","v":2}
-{"k":"node.3.nodeType","v":"Routing End Node"}
+{"k":"node.3.nodeType","v":"End Node"}
 {"k":"node.3.supportsSecurity","v":false}
 {"k":"node.3.supportsBeaming","v":true}
 {"k":"node.3.securityClasses.S0_Legacy","v":false}
@@ -75,7 +75,7 @@
 {"k":"node.7.isRouting","v":true}
 {"k":"node.7.supportedDataRates","v":[40000]}
 {"k":"node.7.protocolVersion","v":2}
-{"k":"node.7.nodeType","v":"Routing End Node"}
+{"k":"node.7.nodeType","v":"End Node"}
 {"k":"node.7.supportsSecurity","v":false}
 {"k":"node.7.supportsBeaming","v":true}
 {"k":"node.7.securityClasses.S0_Legacy","v":false}
@@ -103,7 +103,7 @@
 {"k":"node.19.isRouting","v":true}
 {"k":"node.19.supportedDataRates","v":[40000,100000]}
 {"k":"node.19.protocolVersion","v":3}
-{"k":"node.19.nodeType","v":"Routing End Node"}
+{"k":"node.19.nodeType","v":"End Node"}
 {"k":"node.19.supportsSecurity","v":false}
 {"k":"node.19.supportsBeaming","v":true}
 {"k":"node.19.securityClasses.S0_Legacy","v":true}
@@ -158,44 +158,6 @@
 {"k":"node.23.endpoint.0.commandClass.0x85","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
 {"k":"node.23.endpoint.0.commandClass.0x86","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
 {"k":"node.23.endpoint.0.commandClass.0x9c","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.26.interviewStage","v":"Complete"}
-{"k":"node.26.deviceClass","v":{"basic":4,"generic":17,"specific":4}}
-{"k":"node.26.isListening","v":true}
-{"k":"node.26.isFrequentListening","v":false}
-{"k":"node.26.isRouting","v":true}
-{"k":"node.26.supportedDataRates","v":[40000]}
-{"k":"node.26.protocolVersion","v":3}
-{"k":"node.26.securityClasses.S0_Legacy","v":false}
-{"k":"node.26.endpoint.0.commandClass.0x26","v":{"isSupported":true,"isControlled":false,"secure":false,"version":2}}
-{"k":"node.26.endpoint.0.commandClass.0x27","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.26.endpoint.0.commandClass.0x2b","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.26.endpoint.0.commandClass.0x2c","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.26.endpoint.0.commandClass.0x32","v":{"isSupported":true,"isControlled":false,"secure":false,"version":3}}
-{"k":"node.26.endpoint.0.commandClass.0x70","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.26.endpoint.0.commandClass.0x72","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.26.endpoint.0.commandClass.0x82","v":{"isSupported":false,"isControlled":true,"secure":false,"version":0}}
-{"k":"node.26.endpoint.0.commandClass.0x85","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.26.endpoint.0.commandClass.0x86","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.26.hasSUCReturnRoute","v":true}
-{"k":"node.27.interviewStage","v":"Complete"}
-{"k":"node.27.deviceClass","v":{"basic":4,"generic":17,"specific":4}}
-{"k":"node.27.isListening","v":true}
-{"k":"node.27.isFrequentListening","v":false}
-{"k":"node.27.isRouting","v":true}
-{"k":"node.27.supportedDataRates","v":[40000]}
-{"k":"node.27.protocolVersion","v":3}
-{"k":"node.27.securityClasses.S0_Legacy","v":false}
-{"k":"node.27.endpoint.0.commandClass.0x26","v":{"isSupported":true,"isControlled":false,"secure":false,"version":2}}
-{"k":"node.27.endpoint.0.commandClass.0x27","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.27.endpoint.0.commandClass.0x2b","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.27.endpoint.0.commandClass.0x2c","v":{"isSupported":true,"isControlled":false,"secure":false,"version":0}}
-{"k":"node.27.endpoint.0.commandClass.0x32","v":{"isSupported":true,"isControlled":false,"secure":false,"version":3}}
-{"k":"node.27.endpoint.0.commandClass.0x70","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.27.endpoint.0.commandClass.0x72","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.27.endpoint.0.commandClass.0x82","v":{"isSupported":false,"isControlled":true,"secure":false,"version":0}}
-{"k":"node.27.endpoint.0.commandClass.0x85","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.27.endpoint.0.commandClass.0x86","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.27.hasSUCReturnRoute","v":true}
 {"k":"node.28.interviewStage","v":"Complete"}
 {"k":"node.28.deviceClass","v":{"basic":4,"generic":17,"specific":4}}
 {"k":"node.28.isListening","v":true}
@@ -378,7 +340,7 @@
 {"k":"node.40.isRouting","v":true}
 {"k":"node.40.supportedDataRates","v":[40000]}
 {"k":"node.40.protocolVersion","v":3}
-{"k":"node.40.nodeType","v":"Routing End Node"}
+{"k":"node.40.nodeType","v":"End Node"}
 {"k":"node.40.supportsSecurity","v":false}
 {"k":"node.40.supportsBeaming","v":true}
 {"k":"node.40.securityClasses.S0_Legacy","v":false}
@@ -399,7 +361,7 @@
 {"k":"node.43.isRouting","v":true}
 {"k":"node.43.supportedDataRates","v":[40000,100000]}
 {"k":"node.43.protocolVersion","v":3}
-{"k":"node.43.nodeType","v":"Routing End Node"}
+{"k":"node.43.nodeType","v":"End Node"}
 {"k":"node.43.supportsSecurity","v":false}
 {"k":"node.43.supportsBeaming","v":true}
 {"k":"node.43.securityClasses.S2_AccessControl","v":false}
@@ -430,7 +392,7 @@
 {"k":"node.44.isRouting","v":true}
 {"k":"node.44.supportedDataRates","v":[40000,100000]}
 {"k":"node.44.protocolVersion","v":3}
-{"k":"node.44.nodeType","v":"Routing End Node"}
+{"k":"node.44.nodeType","v":"End Node"}
 {"k":"node.44.supportsSecurity","v":false}
 {"k":"node.44.supportsBeaming","v":true}
 {"k":"node.44.securityClasses.S2_AccessControl","v":false}
@@ -454,3 +416,4 @@
 {"k":"node.44.endpoint.0.commandClass.0x85","v":{"isSupported":true,"isControlled":false,"secure":false,"version":2}}
 {"k":"node.44.endpoint.0.commandClass.0x86","v":{"isSupported":true,"isControlled":false,"secure":false,"version":2}}
 {"k":"node.44.hasSUCReturnRoute","v":true}
+{"k":"controller.supportsSoftReset","v":false}
