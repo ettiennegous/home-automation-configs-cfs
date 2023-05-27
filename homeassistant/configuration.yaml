@@ -7,7 +7,7 @@ api:
 http:
   use_x_forwarded_for: true
   trusted_proxies:
-    - 172.18.0.0/24
+    - 172.20.0.0/24
     - 127.0.0.1
     - ::1
 
@@ -24,7 +24,13 @@ light: !include config/light.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 mqtt: !include config/mqtt.yaml
-
+counter:
+input_datetime:
+input_select:
+input_number:
+schedule:
+input_text:
+my:
 sensor: !include config/sensor.yaml
 binary_sensor: !include config/binary_sensor.yaml
 input_boolean: !include config/boolean.yaml
@@ -37,23 +43,23 @@ timer:
 # influxdb:
 #   host: !secret influxdb_host
 
-lifx:
-  light:
-    - broadcast: 192.168.20.70
-    - broadcast: 192.168.20.71
-    - broadcast: 192.168.20.72
-    - broadcast: 192.168.20.73
-    - broadcast: 192.168.20.74
-    - broadcast: 192.168.20.75
+# lifx:
+#   light:
+#     - broadcast: 192.168.20.70
+#     - broadcast: 192.168.20.71
+#     - broadcast: 192.168.20.72
+#     - broadcast: 192.168.20.73
+#     - broadcast: 192.168.20.74
+#     - broadcast: 192.168.20.75
 
 spotcast:
   sp_dc: !secret spotcast_dc
   sp_key: !secret spotcast_key
 
-notify:
-  - platform: discord
-    name: discord notifications
-    token: !secret discord_bot_token
+# notify:
+#   - platform: discord
+#     name: discord notifications
+#     token: !secret discord_bot_token
 
 frontend:
   themes: !include themes.yaml
@@ -65,36 +71,7 @@ logger:
   default: warn
   logs:
     homeassistant.components.mqtt.binary_sensor: critical
-    homeassistant.components.unitedenergy: debug
-    custom_components.bonaire_myclimate: debug
-
-rainbird:
-  - host: 192.168.20.155
-    password: !secret rainbird_password
-    trigger_time:
-      minutes: 6
-    zones:
-      1:
-        friendly_name: Lawn Back North
-        trigger_time:
-          minutes: 10
-      2:
-        friendly_name: Lawn Back South
-        trigger_time:
-          minutes: 10
-      3:
-        friendly_name: Lawn Back Centre
-        trigger_time:
-          minutes: 10
-      4:
-        friendly_name: Veggie Patch
-        trigger_time:
-          minutes: 6
-      5:
-        friendly_name: Lawn Front
-        trigger_time:
-          minutes: 15
-      6:
-        friendly_name: Drip Front Back Side
-        trigger_time:
-          minutes: 30
+    # homeassistant.components.unitedenergy: debug
+    # custom_components.bonaire_myclimate: debug
+    custom_components.localtuya: debug
+    custom_components.localtuya.pytuya: debug
