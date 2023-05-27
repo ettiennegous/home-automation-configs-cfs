@@ -57,3 +57,6 @@ homeassistant/home-assistant.log.*
 nodered/data/etc/.config.runtime.json
 nodered/data/etc/.npm/anonymous-cli-metrics.json
 nodered/data/etc/.npm/_cacache/**
+nodered/data/etc/node-red-contrib-home-assistant-websocket.json
+**/plex/tvseries/**
+**/docker/mariadb/**
