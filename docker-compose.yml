@@ -230,6 +230,7 @@ services:
     depends_on:
       - mosquitto
       - homeassistant
+    entrypoint: ["/bin/sh", "-c" , "sleep 10 && /usr/local/bin/rtl_433"]
   zwavejs2mqtt:
     container_name: zwavejs2mqtt
     image: zwavejs/zwavejs2mqtt
