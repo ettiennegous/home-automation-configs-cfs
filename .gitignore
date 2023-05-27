@@ -59,4 +59,4 @@ nodered/data/etc/.npm/anonymous-cli-metrics.json
 nodered/data/etc/.npm/_cacache/**
 nodered/data/etc/node-red-contrib-home-assistant-websocket.json
 **/plex/tvseries/**
-**/docker/mariadb/**
+**/mariadb/**
