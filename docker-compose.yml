@@ -344,29 +344,20 @@ services:
     environment:
       FRIGATE_RTSP_PASSWORD: ${CAMERA_PASSWORD}
       LIBVA_DRIVER_NAME: i965
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt
     volumes:
-      - /dev/shm/Shinobi/streams:/dev/shm/streams
-      - ${USERDIR}/docker/shinobi/config:/config
-      - ${USERDIR}/docker/shinobi/customautoload:/customAutoLoad
-      - ${USERDIR}/docker/shinobi/database:/var/lib/mysql
-      - ${USERDIR}/docker/shinobi/videos:/opt/Shinobi/videos
-      - ${USERDIR}/docker/shinobi/plugins:/opt/Shinobi/plugins
-      - /etc/localtime:/etc/localtime
-  # Moved away to a seperated hosted stack on a RPi 
-  # zigbee2mqtt:
-  #   container_name: zigbee2mqtt
-  #   image: koenkk/zigbee2mqtt
-  #   restart: always
-  #   volumes:
-  #     - ${USERDIR}/docker/zigbee2mqtt/data:/app/data
-  #     - ${USERDIR}/docker/zigbee2mqtt/run/udev:/run/udev:ro
-  #   devices:
-  #     - "/dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0019384464-if00:/dev/ttyACM0"
-  #   restart: always
-  #   privileged: true
-  #   environment:
-  #     - TZ=${TZ}
-
+       - ${USERDIR}/docker/zigbee2mqtt/data:/app/data
+       - ${USERDIR}/docker/zigbee2mqtt/run/udev:/run/udev:ro
+    devices:
+       - "/dev/serial/by-id/usb-ITead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_6ed8f84eb429ec118d48bf9c40c9ce8d-if00-port0:/dev/ttyACM0"
+    restart: always
+    privileged: true
+    environment:
+      - TZ=${TZ}
+    ports:
+      - "8585:8080"
   #sonarqube:
   #  container_name: sonarqube
   #  image: sonarqube:8.4.1-community
