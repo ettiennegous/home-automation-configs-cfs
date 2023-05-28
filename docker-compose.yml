@@ -224,13 +224,11 @@ services:
     image: hertzg/rtl_433:latest
     devices:
       - "/dev/bus/usb/001/009"
-    command:
-      - '-Mtime:unix:usec:utc'
-      - '-Fmqtt://mqtt:1883,retain=1'
     depends_on:
       - mosquitto
       - homeassistant
-    entrypoint: ["/bin/sh", "-c" , "sleep 10 && /usr/local/bin/rtl_433"]
+    entrypoint: ["/bin/sh", "-c" , "sleep 10 && /usr/local/bin/rtl_433 -Mtime:unix:usec:utc -Fmqtt://mqtt:1883,retain=1"]
+    restart: always
   zwavejs2mqtt:
     container_name: zwavejs2mqtt
     image: zwavejs/zwavejs2mqtt
@@ -342,7 +340,7 @@ services:
       - "5000:5000"
       - "1935:1935" # RTMP feeds
     environment:
-      FRIGATE_RTSP_USER: {CAMERA_USERNAME}
+      FRIGATE_RTSP_USER: ${CAMERA_USERNAME}
       FRIGATE_RTSP_PASSWORD: ${CAMERA_PASSWORD}
       LIBVA_DRIVER_NAME: i965
   zigbee2mqtt:
