@@ -271,10 +271,9 @@ services:
   switchbot-mqtt:
     image: fphammerle/switchbot-mqtt:latest
     container_name: switchbot-mqtt
-    network_mode: host
     userns_mode: host
     environment:
-    - MQTT_HOST=192.168.1.40
+    - MQTT_HOST=mqtt
     - MQTT_PORT=1883
     restart: unless-stopped
   vscode:
