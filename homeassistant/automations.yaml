@@ -1,68 +1,5 @@
-- id: '1559733993770'
-  alias: bool_on_tracker_ettienne_home
-  trigger:
-  - entity_id: device_tracker.galaxy_s10_2
-    platform: state
-    to: home
-  condition: []
-  action:
-  - data:
-      entity_id: input_boolean.ettienne_home
-    service: input_boolean.turn_on
-- id: '1646706406846'
-  alias: Tag Test is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
-  condition: []
-  action:
-  - type: toggle
-    device_id: 092281fea4f767f33e3cccd9257d3c2d
-    entity_id: light.lifx_strip_1
-    domain: light
-  mode: single
-- id: '1646706696851'
-  alias: Tag Turn off all the things is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
-  condition: []
-  action:
-  - type: toggle
-    device_id: 092281fea4f767f33e3cccd9257d3c2d
-    entity_id: light.lifx_strip_1
-    domain: light
-  mode: single
-- id: '1646706759433'
-  alias: Tag Turn off all the things is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 092281fea4f767f33e3cccd9257d3c2d
-    entity_id: light.lifx_strip_1
-    domain: light
-  mode: single
-- id: '1646706882792'
-  alias: Tag Turn off all the things is scanned
-  description: ''
-  trigger:
-  - platform: tag
-    tag_id: de64cce7-4d62-4b44-96a7-7deeb99781ab
-  condition: []
-  action:
-  - type: turn_off
-    device_id: 092281fea4f767f33e3cccd9257d3c2d
-    entity_id: light.lifx_strip_1
-    domain: light
-  mode: single
 - id: '1646706949846'
-  alias: New Automation 1
+  alias: RFID Bias Light Toggle
   description: ''
   trigger:
   - platform: tag
@@ -73,4 +10,101 @@
     device_id: 092281fea4f767f33e3cccd9257d3c2d
     entity_id: light.lifx_strip_1
     domain: light
+  mode: single
+- id: '1687006860395'
+  alias: Clean DS North
+  description: 'Krumbl cleans north side of the house '
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.clean_ds_north
+    from:
+  condition: []
+  action:
+  - service: vacuum.send_command
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 16
+        - 17
+        - 24
+      - repeat: 1
+    target:
+      device_id: 3c2620acede2943d14d5f576c460abca
+  mode: single
+- id: '1687006911737'
+  alias: Diffuser forward MQTT2
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: cmnd/diffuser/tuyaenum2GW
+  condition: []
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: cmnd/diffuser/tuyaenum2
+      payload_template: "{% if 'Ciclo' in trigger.payload -%}\n  {{ 0 }}\n{%- elif
+        'Fijo' in trigger.payload -%}\n  {{ 1 }}\n{%- else -%}\n  {{ 2 }}\n{%- endif
+        %}\n"
+  mode: single
+- id: '1687006965789'
+  alias: Diffuser forward MQTT2
+  description: ''
+  trigger:
+  - platform: mqtt
+    topic: cmnd/diffuser/tuyaenum2GW
+  condition: []
+  action:
+  - service: mqtt.publish
+    data_template:
+      topic: cmnd/diffuser/tuyaenum2
+      payload_template: "{% if 'Ciclo' in trigger.payload -%}\n  {{ 0 }}\n{%- elif
+        'Fijo' in trigger.payload -%}\n  {{ 1 }}\n{%- else -%}\n  {{ 2 }}\n{%- endif
+        %}\n"
+  mode: single
+- id: '1687008134241'
+  alias: Clean DS South
+  description: 'Krumbl cleans south side of the house '
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.clean_ds_south
+    from:
+  condition: []
+  action:
+  - service: vacuum.send_command
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 19
+        - 20
+        - 21
+        - 22
+        - 25
+        - 26
+      - repeat: 1
+    target:
+      device_id: 3c2620acede2943d14d5f576c460abca
+  mode: single
+- id: '1687008239282'
+  alias: Clean Family Room
+  description: Krumbl cleans the fluffy carpet
+  trigger:
+  - platform: state
+    entity_id:
+    - input_button.clean_family
+    from:
+  condition: []
+  action:
+  - service: vacuum.send_command
+    data:
+      command: app_segment_clean
+      params:
+      - segments:
+        - 23
+      - repeat: 1
+    target:
+      device_id: 3c2620acede2943d14d5f576c460abca
   mode: single

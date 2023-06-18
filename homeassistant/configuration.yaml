@@ -24,10 +24,12 @@ light: !include config/light.yaml
 group: !include groups.yaml
 script: !include scripts.yaml
 mqtt: !include config/mqtt.yaml
+automation: !include automations.yaml
 counter:
 input_datetime:
 input_select:
 input_number:
+input_button:
 schedule:
 input_text:
 my:
