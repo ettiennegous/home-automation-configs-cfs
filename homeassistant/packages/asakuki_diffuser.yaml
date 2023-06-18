@@ -51,35 +51,35 @@ mqtt:
       effect_state_topic : "tele/diffuser/STATE"
       effect_value_template : "{% if value_json.TuyaEnum2 is defined and value_json.TuyaEnum2 == 0 %}{{'Ciclo'}}{% elif value_json.TuyaEnum2 is defined and value_json.TuyaEnum2 is defined and value_json.TuyaEnum2 == 1 %}{{'No'}}{% endif %}"
 
-automation:
-  - alias: "Diffuser forward MQTT1"
-    id: diffuser_forward_mqtt1
-    trigger:
-      - platform: mqtt
-        topic: 'cmnd/diffuser/POWER2GW'
-    condition:
-      condition: template
-      value_template: "{{ trigger.payload | lower != states('light.luz_diffuser') }}"
-    action:
-      - service: mqtt.publish
-        data_template:
-          topic: 'cmnd/diffuser/POWER2'
-          payload: "{{ trigger.payload }}"
+# automation:
+#   - alias: "Diffuser forward MQTT1"
+#     id: diffuser_forward_mqtt1
+#     trigger:
+#       - platform: mqtt
+#         topic: 'cmnd/diffuser/POWER2GW'
+#     condition:
+#       condition: template
+#       value_template: "{{ trigger.payload | lower != states('light.luz_diffuser') }}"
+#     action:
+#       - service: mqtt.publish
+#         data_template:
+#           topic: 'cmnd/diffuser/POWER2'
+#           payload: "{{ trigger.payload }}"
 
-  - alias: "Diffuser forward MQTT2"
-    id: diffuser_forward_mqtt2
-    trigger:
-      - platform: mqtt
-        topic: 'cmnd/diffuser/tuyaenum2GW'
-    action:
-      - service: mqtt.publish
-        data_template:
-          topic: 'cmnd/diffuser/tuyaenum2'
-          payload_template: >
-            {% if 'Ciclo' in trigger.payload -%}
-              {{ 0 }}
-            {%- elif 'Fijo' in trigger.payload -%}
-              {{ 1 }}
-            {%- else -%}
-              {{ 2 }}
-            {%- endif %}
+#   - alias: "Diffuser forward MQTT2"
+#     id: diffuser_forward_mqtt2
+#     trigger:
+#       - platform: mqtt
+#         topic: 'cmnd/diffuser/tuyaenum2GW'
+#     action:
+#       - service: mqtt.publish
+#         data_template:
+#           topic: 'cmnd/diffuser/tuyaenum2'
+#           payload_template: >
+#             {% if 'Ciclo' in trigger.payload -%}
+#               {{ 0 }}
+#             {%- elif 'Fijo' in trigger.payload -%}
+#               {{ 1 }}
+#             {%- else -%}
+#               {{ 2 }}
+#             {%- endif %}

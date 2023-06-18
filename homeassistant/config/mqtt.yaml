@@ -7,6 +7,7 @@ switch:
     payload_on: "349147087"
     payload_off: "349145024"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Study Remote 2"
     unique_id: study_remote_2
@@ -16,6 +17,7 @@ switch:
     payload_on: "349146056"
     payload_off: "349144004"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Study Remote 3"
     unique_id: study_remote_3
@@ -25,6 +27,7 @@ switch:
     payload_on: "349146572"
     payload_off: "349144514"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Study Remote 4"
     unique_id: study_remote_4
@@ -34,6 +37,7 @@ switch:
     payload_on: "349146830"
     payload_off: "349144769"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Study Remote All"
     unique_id: study_remote_all
@@ -43,6 +47,7 @@ switch:
     payload_on: "349144259"
     payload_off: "349145291"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Rumpus Remote A B"
     unique_id: rumpus_remote_a_b
@@ -52,6 +57,7 @@ switch:
     payload_on: "2599032"
     payload_off: "2599028"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Rumpus Remote C D"
     unique_id: rumpus_remote_c_d
@@ -61,6 +67,7 @@ switch:
     payload_on: "2599026"
     payload_off: "2599025"
     optimistic: false
+    retain: false
     icon: mdi:remote
   - name: "Shelly 2.5 Kids Bathroom Extractor"
     unique_id: shelly_2_5_kids_bathroom_extractor
@@ -69,6 +76,7 @@ switch:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
     icon: mdi:fan
   - name: "Shelly 2.5 Master Bathroom Extractor"
@@ -78,35 +86,41 @@ switch:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
     icon: mdi:fan
   - name: "Alex Room Power"
     unique_id: alex_room_power
-    state_topic: shellies/shellyplus1-7c87ce63cd48/status/switch:0
-    value_template: "{{ value_json.output }}"
-    state_on: true
-    state_off: false
-    command_topic: shellies/shellyplus1-7c87ce63cd48/rpc
-    payload_on: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":true}}'
-    payload_off: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":false}}'
-    qos: 0
-  - name: "Ruby Room Power"
-    unique_id: ruby_room_power
-    state_topic: shellies/shellyplus1-441793a8ba48/status/switch:0
-    value_template: "{{ value_json.output }}"
+    state_topic: shellies/shellyplus1-441793a8ba48/rpc
+    value_template: "{{ value_json['params']['on'] }}"
     state_on: true
     state_off: false
     command_topic: shellies/shellyplus1-441793a8ba48/rpc
     payload_on: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":true}}'
     payload_off: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+    qos: 1
+    retain: true
+  - name: "Ruby Room Power"
+    unique_id: ruby_room_power
+    state_topic: shellies/shellyplus1-7c87ce63cd48/rpc
+    value_template: "{{ value_json['params']['on'] }}"
+    state_on: true
+    state_off: false
+    command_topic: shellies/shellyplus1-7c87ce63cd48/rpc
+    payload_on: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":true}}'
+    payload_off: '{"id":1, "src": "homeassistant", "method": "Switch.Set", "params":{"id":0,"on":false}}'
+    qos: 1
+    retain: true
   - name: "Guest Room Power"
     unique_id: guest_room_power
     state_topic: "shellies/shelly1-68C70A/relay/0"
     command_topic: "shellies/shelly1-68C70A/relay/0/command"
-    qos: 0
+    qos: 1
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
+
 light:
   - name: "Shelly 1 Study Light"
     unique_id: shelly_1_study_light
@@ -115,6 +129,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 2.5 Powder Room Basin Light"
     unique_id: shelly_2_5_powder_room_basin_light
@@ -123,6 +138,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 2.5 Stairs Light"
     unique_id: shelly_2_5_stairs_light
@@ -131,6 +147,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 1 Alex Kitchen Light"
     unique_id: shelly_1_alex_kitchen_light
@@ -139,6 +156,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 2.5 Rumpus Main Light"
     unique_id: shelly_2_5_rumpus_main_light
@@ -147,6 +165,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 2.5 Rumpus Side Light"
     unique_id: shelly_2_5_rumpus_side_light
@@ -155,6 +174,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 2.5 Kids Bathroom Light"
     unique_id: shelly_2_5_kids_bathroom_light
@@ -163,6 +183,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 2.5 Master Bathroom Light"
     unique_id: shelly_2_5_master_bathroom_light
@@ -171,6 +192,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 1 Master Toilet Light"
     unique_id: shelly_1_master_toilet_light
@@ -179,6 +201,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 1 Kitchen Light"
     unique_id: shelly_1_kitchen_light
@@ -187,6 +210,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly 1 Laundry"
     unique_id: shelly_1_laundry
@@ -195,6 +219,7 @@ light:
     qos: 0
     payload_on: "on"
     payload_off: "off"
+    retain: false
     optimistic: false
   - name: "Shelly Dimmer Dressing Room"
     unique_id: shelly_dimmer_dressing_room
@@ -253,6 +278,7 @@ binary_sensor:
         {% else %}
           {{ states('binary_sensor.ruby_room_switch') }}
         {% endif %}
+
     - name: "Alex Room Switch"
       state_topic: "shellies/shellyplus1-441793a8ba48/events/rpc"
       value_template: >- 
