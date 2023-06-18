@@ -184,6 +184,7 @@
         "name": "Ettienne Home",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "input_boolean",
         "service": "turn_on",
         "areaId": [],
@@ -192,6 +193,7 @@
             "input_boolean.ettienne_home"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -211,6 +213,7 @@
         "name": "Ettienne Away",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "input_boolean",
         "service": "turn_off",
         "areaId": [],
@@ -219,6 +222,7 @@
             "input_boolean.ettienne_home"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -288,6 +292,7 @@
         "name": "Kelly Home",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "input_boolean",
         "service": "turn_on",
         "areaId": [],
@@ -296,6 +301,7 @@
             "input_boolean.kelly_home"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -315,6 +321,7 @@
         "name": "Kelly Away",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "input_boolean",
         "service": "turn_off",
         "areaId": [],
@@ -323,6 +330,7 @@
             "input_boolean.kelly_home"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -342,7 +350,18 @@
         "name": "Ettienne Home Person",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "person.ettienne",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "person.ettienne_2",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
@@ -354,6 +373,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -392,6 +416,17 @@
         "name": "Kelly Home Person",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "person.kelly",
         "entityidfiltertype": "exact",
         "outputinitially": false,
@@ -404,6 +439,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -486,7 +526,7 @@
         "halt_if": "home",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "person.ettienne",
+        "entity_id": "person.ettienne_2",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -670,7 +710,7 @@
         "halt_if": "home",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "entity_id": "person.ettienne",
+        "entity_id": "person.ettienne_2",
         "state_type": "str",
         "blockInputOverrides": false,
         "outputProperties": [
@@ -4375,8 +4415,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.tp_link_1",
-            "switch.tp_link_1"
+            "switch.tp_link_4"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -4552,7 +4591,8 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.tp_link_1_led"
+            "switch.tp_link_4",
+            "switch.tp_link_4"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -7485,7 +7525,8 @@
                 "9f16dfe0.31a98",
                 "d89a20ba.53d76",
                 "660803de.1305ec",
-                "a3a9f13847164f1b"
+                "a3a9f13847164f1b",
+                "b40f8a3ad8389236"
             ]
         ]
     },
@@ -7735,7 +7776,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 1360,
-        "y": 100,
+        "y": 60,
         "wires": [
             []
         ]
@@ -7762,7 +7803,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 1360,
-        "y": 180,
+        "y": 140,
         "wires": [
             []
         ]
@@ -7855,14 +7896,17 @@
         "name": "Rumpus Standing Lamp Light Off",
         "server": "5a39eab2.9f6814",
         "version": 5,
-        "domain": "light",
+        "debugenabled": false,
+        "domain": "switch",
         "service": "turn_off",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "light.lifx_rumpus_standing"
+            "switch.tp_link_4",
+            "switch.tp_link_4"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -8004,8 +8048,8 @@
         "queue": "none",
         "output_location": "",
         "output_location_type": "none",
-        "x": 1740,
-        "y": 280,
+        "x": 1400,
+        "y": 260,
         "wires": [
             []
         ]
@@ -8059,7 +8103,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 1340,
-        "y": 220,
+        "y": 180,
         "wires": [
             []
         ]
@@ -8089,54 +8133,9 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 1340,
-        "y": 140,
+        "y": 100,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "7c61dfc.52a8c2",
-        "type": "api-call-service",
-        "z": "9a1b490a16d77e03",
-        "name": "Alex Night Light Off",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "domain": "light",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.tp_link_1"
-        ],
-        "data": "",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 550,
-        "y": 960,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "525089c2.aa08f8",
-        "type": "mqtt in",
-        "z": "9a1b490a16d77e03",
-        "name": "Sub MQTT Turn Off Upstairs Extra",
-        "topic": "nodered-custom/lights/turn-off-upstairs-extra",
-        "qos": "1",
-        "datatype": "auto",
-        "broker": "32add66e.5cfcaa",
-        "inputs": 0,
-        "x": 280,
-        "y": 960,
-        "wires": [
-            [
-                "7c61dfc.52a8c2"
-            ]
         ]
     },
     {
@@ -8250,8 +8249,37 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 1620,
-        "y": 240,
+        "x": 1360,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b40f8a3ad8389236",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "TV Standing Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.dimmer_smart_energy_illum_light_level"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 560,
+        "y": 900,
         "wires": [
             []
         ]
@@ -11463,6 +11491,17 @@
         "name": "Ruby Room Switch Toggle",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "binary_sensor.ruby_room_switch",
         "entityidfiltertype": "exact",
         "outputinitially": false,
@@ -11475,6 +11514,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -11498,8 +11542,12 @@
         "x": 210,
         "y": 2920,
         "wires": [
-            [],
-            []
+            [
+                "21da7a299aa326fa"
+            ],
+            [
+                "21da7a299aa326fa"
+            ]
         ]
     },
     {
@@ -11579,8 +11627,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 500,
-        "y": 2920,
+        "x": 780,
+        "y": 2900,
         "wires": [
             []
         ]
@@ -11606,7 +11654,7 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 490,
+        "x": 530,
         "y": 3060,
         "wires": [
             []
@@ -11654,8 +11702,12 @@
         "x": 210,
         "y": 3000,
         "wires": [
-            [],
-            []
+            [
+                "9ad4e1b1d63b1371"
+            ],
+            [
+                "9ad4e1b1d63b1371"
+            ]
         ]
     },
     {
@@ -11679,8 +11731,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 500,
-        "y": 3000,
+        "x": 780,
+        "y": 2980,
         "wires": [
             []
         ]
@@ -11803,6 +11855,155 @@
         "output_location_type": "none",
         "x": 480,
         "y": 3180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ddbcc13a35b87c61",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Turn on Alex Room Power",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.alex_room_power",
+            "switch.alex_room_power"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 790,
+        "y": 3020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ad4e1b1d63b1371",
+        "type": "api-current-state",
+        "z": "823d3fb7.65d29",
+        "name": "Is Alex Room Power On",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.alex_room_power",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 510,
+        "y": 3000,
+        "wires": [
+            [
+                "2a647380b12d9da6"
+            ],
+            [
+                "ddbcc13a35b87c61"
+            ]
+        ]
+    },
+    {
+        "id": "21da7a299aa326fa",
+        "type": "api-current-state",
+        "z": "823d3fb7.65d29",
+        "name": "Is Ruby Room Power On",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.ruby_room_power",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 510,
+        "y": 2920,
+        "wires": [
+            [
+                "9360ba4f2edfe9e7"
+            ],
+            [
+                "b4cbe40bf6c1c4fa"
+            ]
+        ]
+    },
+    {
+        "id": "b4cbe40bf6c1c4fa",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Turn on Ruby Room Power",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.ruby_room_power"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 2940,
         "wires": [
             []
         ]
@@ -13916,7 +14117,7 @@
         "type": "function",
         "z": "59f065f5cc116569",
         "name": "",
-        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n        if (debugThis)\n            node.warn(msg.serviceData.data.raw_command)\n\n    }\n\n}\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\n\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n\n    }\n}\n\n\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\n\nreturn msg;",
+        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n        if (debugThis)\n            node.warn(msg.serviceData.data.raw_command)\n\n    } else {\n        serviceData.data.raw_command.system = \"off\";\n        serviceData.data.raw_command.zoneList = \"1,2\";\n    }\n\n}\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\n\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n\n    }\n}\n\n\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -13978,7 +14179,7 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 530,
+        "x": 690,
         "y": 520,
         "wires": [
             [
@@ -13999,7 +14200,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 790,
+        "x": 1010,
         "y": 520,
         "wires": []
     },
@@ -14181,6 +14382,17 @@
         "name": "US On",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "input_boolean.hvac_upstairs",
         "entityidfiltertype": "exact",
         "outputinitially": false,
@@ -14193,6 +14405,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
