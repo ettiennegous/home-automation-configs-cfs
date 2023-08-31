@@ -10,10 +10,6 @@ http:
     - 172.20.0.0/24
     - 127.0.0.1
     - ::1
-
-# Discover some devices automatically
-discovery:
-
 history:   
 
 # Text to speech

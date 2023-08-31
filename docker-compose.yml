@@ -63,7 +63,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
   unifi:
-    image: jacobalberty/unifi:stable-6
+    image: jacobalberty/unifi:latest
     container_name: unifi
     restart: always
     network_mode: host
@@ -223,7 +223,7 @@ services:
     container_name: rtl433
     image: hertzg/rtl_433:latest
     devices:
-      - "/dev/bus/usb/001/009"
+      - "/dev/bus/usb/001/012"
     depends_on:
       - mosquitto
       - homeassistant
@@ -231,7 +231,7 @@ services:
     restart: always
   zwavejs2mqtt:
     container_name: zwavejs2mqtt
-    image: zwavejs/zwavejs2mqtt
+    image: zwavejs/zwave-js-ui
     restart: always
     tty: true
     stop_signal: SIGINT

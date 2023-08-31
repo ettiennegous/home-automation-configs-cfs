@@ -629,6 +629,7 @@
         "name": "Home Not Occupied",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "input_boolean",
         "service": "turn_off",
         "areaId": [],
@@ -637,6 +638,7 @@
             "input_boolean.home_occupied"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -780,6 +782,88 @@
         ]
     },
     {
+        "id": "f1ec2025faf3ad18",
+        "type": "server-state-changed",
+        "z": "ea8953c8.9d979",
+        "name": "Home Un-Occupied for 5 min",
+        "server": "5a39eab2.9f6814",
+        "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.home_occupied",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "5",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 180,
+        "y": 740,
+        "wires": [
+            [
+                "d46d63f791fdef92"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "d46d63f791fdef92",
+        "type": "mqtt out",
+        "z": "ea8953c8.9d979",
+        "name": "Pub MQTT Leave Home",
+        "topic": "nodered-custom/routines/leave-home",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 490,
+        "y": 740,
+        "wires": []
+    },
+    {
         "id": "d6ad6114.eb34d",
         "type": "server-state-changed",
         "z": "27f4a783.3a8dc8",
@@ -890,6 +974,17 @@
         "name": "Garage Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
         "entityidfiltertype": "exact",
         "outputinitially": false,
@@ -902,6 +997,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -929,9 +1029,7 @@
                 "c136fd73.7bfcb",
                 "9c92a3d7.8e664"
             ],
-            [
-                "a65b05ba.dfa598"
-            ]
+            []
         ]
     },
     {
@@ -1151,6 +1249,9 @@
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 60000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 1060,
         "y": 820,
         "wires": [
@@ -2137,14 +2238,16 @@
         "name": "Kitchen TV Screen On",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "media_player",
         "service": "turn_on",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.samsung_the_frame_32"
+            "remote.samsung_the_frame_32"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -2661,14 +2764,16 @@
         "name": "Kitchen TV Screen Off",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "media_player",
         "service": "turn_off",
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "media_player.samsung_the_frame_32"
+            "remote.samsung_the_frame_32"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -7271,7 +7376,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 540,
-        "y": 860,
+        "y": 780,
         "wires": [
             []
         ]
@@ -7522,11 +7627,11 @@
                 "822602a.5c051",
                 "67575eed.382c",
                 "8ae27abd.d21ba8",
-                "9f16dfe0.31a98",
                 "d89a20ba.53d76",
                 "660803de.1305ec",
                 "a3a9f13847164f1b",
-                "b40f8a3ad8389236"
+                "b40f8a3ad8389236",
+                "29407d9c4a531491"
             ]
         ]
     },
@@ -7582,7 +7687,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 530,
-        "y": 700,
+        "y": 660,
         "wires": [
             []
         ]
@@ -7609,34 +7714,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 530,
-        "y": 740,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9f16dfe0.31a98",
-        "type": "api-call-service",
-        "z": "9a1b490a16d77e03",
-        "name": "Kitchen Screen Off",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.tp_link_4"
-        ],
-        "data": "",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 550,
-        "y": 780,
+        "y": 700,
         "wires": [
             []
         ]
@@ -7690,7 +7768,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 540,
-        "y": 820,
+        "y": 740,
         "wires": [
             []
         ]
@@ -7902,7 +7980,6 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.tp_link_4",
             "switch.tp_link_4"
         ],
         "data": "",
@@ -8061,6 +8138,7 @@
         "name": "Upstairs Lights off routine off",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "input_boolean",
         "service": "turn_off",
         "areaId": [],
@@ -8069,6 +8147,7 @@
             "input_boolean.off_upstairs_lights"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -8279,7 +8358,36 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 560,
-        "y": 900,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29407d9c4a531491",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Kitchen TV Screen Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "media_player",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "remote.samsung_the_frame_32"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "x": 560,
+        "y": 860,
         "wires": [
             []
         ]
@@ -10467,6 +10575,17 @@
         "name": "Lounge Dimmer Nano On",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
         "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level",
         "entityidfiltertype": "exact",
         "outputinitially": false,
@@ -10479,6 +10598,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -10522,7 +10646,6 @@
         "y": 1380,
         "wires": [
             [
-                "58c85c38.d30fe4",
                 "574b1f51.b8691"
             ]
         ]
@@ -10534,6 +10657,7 @@
         "name": "Sony TV Toggle",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "media_player",
         "service": "{{service}}",
         "areaId": [],
@@ -10542,6 +10666,7 @@
             "media_player.sony_bravia_tv"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -10735,6 +10860,9 @@
         "func": "msg.service = msg.payload == \"playing\" ? \"turn_on\" : \"turn_off\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
         "x": 440,
         "y": 1460,
         "wires": [
@@ -11163,6 +11291,11 @@
         "topic": "nodered-custom/routines/leave-home",
         "qos": "",
         "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
         "broker": "32add66e.5cfcaa",
         "x": 730,
         "y": 1620,
@@ -11194,6 +11327,11 @@
         "topic": "nodered-custom/lights/turn-off-all",
         "qos": "",
         "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
         "broker": "32add66e.5cfcaa",
         "x": 480,
         "y": 2260,
@@ -13720,33 +13858,6 @@
         "wires": []
     },
     {
-        "id": "828124cb47571dc8",
-        "type": "api-call-service",
-        "z": "e3459f93.04f31",
-        "name": "Kitchen TV Plug Screen Off",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.tp_link_4"
-        ],
-        "data": "",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "payload",
-        "output_location_type": "none",
-        "x": 260,
-        "y": 900,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "1c49b62d3e95d26d",
         "type": "server-state-changed",
         "z": "59f065f5cc116569",
@@ -14117,7 +14228,7 @@
         "type": "function",
         "z": "59f065f5cc116569",
         "name": "",
-        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n        if (debugThis)\n            node.warn(msg.serviceData.data.raw_command)\n\n    } else {\n        serviceData.data.raw_command.system = \"off\";\n        serviceData.data.raw_command.zoneList = \"1,2\";\n    }\n\n}\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\n\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n\n    }\n}\n\n\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\n\nreturn msg;",
+        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n    }\n    if (debugThis)\n        node.warn(msg.serviceData.data.raw_command)\n\n}\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\nfunction TurnOff() {\n    serviceData = {\n        data: {\n            raw_command: {\n                \"system\": \"on\",\n                \"type\": \"heat\",\n                \"mode\": \"thermo\"\n            }\n        }\n    };\n    serviceData.data.raw_command.system = \"off\";\n    serviceData.data.raw_command.zoneList = \"1,2\";\n    msg.serviceData = serviceData;\n    msg.payload = serviceData;\n}\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n\n    }\n} else {\n    TurnOff();\n}\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",

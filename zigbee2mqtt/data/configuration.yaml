@@ -65,6 +65,9 @@ devices:
   '0x001788010d05fa2c':
     friendly_name: Hue Bulb 2
     description: Spare Room Lamp
+    homeassistant:
+      name: hue_bulb_2
+    optimistic: true
 frontend:
   port: 8080
 experimental:
