@@ -292,7 +292,29 @@ binary_sensor:
           {{ states('binary_sensor.ruby_room_switch') }}
         {% endif %}
 
+    - name: "GS_WDS_07_Door_Sensor_01"
+      state_topic: "rtl_433/+/devices/Generic-Remote/24045/tristate"
+      payload_on: "ZZ1Z1X1Z00XX"
+      payload_off: "ZZ1Z1X1Z001X"
+      qos: 0
+      device_class: door
+      value_template: "{{ value }}"
 
+    - name: "GS_WDS_07_Door_Sensor_02"
+      state_topic: "rtl_433/+/devices/Generic-Remote/24018/tristate"
+      payload_on: "ZZ1Z1Z0X00XX"
+      payload_off: "ZZ1Z1Z0X001X"
+      qos: 0
+      device_class: door
+      value_template: "{{ value }}"
+
+    - name: "GS_WDS_07_Door_Sensor_03"
+      state_topic: "rtl_433/+/devices/Generic-Remote/21536/tristate"
+      payload_on: "ZZZ00X0000XX"
+      payload_off: "ZZZ00X00001X"
+      qos: 0
+      device_class: door
+      value_template: "{{ value }}"
 sensor:
   - name: Hygrometer 1 Humidity
     unique_id: hygrometer_1_humidity

@@ -11,15 +11,6 @@ devices:
     description: Stairs landing
     occupancy_timeout: 120
     illuminance_below_threshold_check: false
-  '0x286d9700010a2e81':
-    friendly_name: ST Contact Sensor 1
-    description: Front door
-  '0x286d9700010a1b57':
-    friendly_name: ST Contact Sensor 2
-    description: Kitchen sliding door
-  '0x286d9700010a1b72':
-    friendly_name: ST Contact Sensor 3
-    description: Laundry
   '0x000b3cfffef83b9d':
     friendly_name: Tuya Remote 2
     description: Stairs Landing
@@ -80,7 +71,7 @@ groups:
 advanced:
   last_seen: ISO_8601_local
   elapsed: true
-  log_level: info
+  log_level: warn
   log_rotation: true
   log_syslog:
     app_name: Zigbee2MQTT

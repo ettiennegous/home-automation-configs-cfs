@@ -13,10 +13,23 @@
                 "view-store-zoom": false
             },
             "tours": {
-                "welcome": "3.0.2"
+                "welcome": "3.1.0"
             }
         },
         "menu-menu-item-sidebar": true,
-        "menu-menu-item-palette": true
+        "menu-menu-item-palette": true,
+        "debug": {
+            "filter": "filterCurrent",
+            "filteredNodes": [
+                "67d51aa0.3ee464",
+                "a74396b1.ee6358",
+                "c3636f65.c6256",
+                "c3a829570b6bb3cd",
+                "d2e89fd1.06891",
+                "c6abf74.bc42008",
+                "f459fbac9ae0674b",
+                "315b9656fb216cf3"
+            ]
+        }
     }
 }

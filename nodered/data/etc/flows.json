@@ -133,19 +133,25 @@
         "z": "ea8953c8.9d979",
         "name": "Ettienne home",
         "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "person.ettienne",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "person.ettienne_2",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "home",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -241,19 +247,25 @@
         "z": "ea8953c8.9d979",
         "name": "Kelly home",
         "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "person.kelly",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "person.kelly",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "home",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -350,6 +362,35 @@
         "name": "Ettienne Home Person",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "outputs": 2,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -368,36 +409,7 @@
         "haltifstate": "home",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 2,
         "output_only_on_state_change": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
         "x": 140,
         "y": 400,
         "wires": [
@@ -416,26 +428,7 @@
         "name": "Kelly Home Person",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "person.kelly",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "home",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -464,6 +457,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "person.kelly",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 130,
         "y": 540,
         "wires": [
@@ -658,15 +670,7 @@
         "name": "House Guest Toggle",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.house_guests",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -690,6 +694,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.house_guests",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 130,
         "y": 620,
         "wires": [
@@ -788,26 +800,7 @@
         "name": "Home Un-Occupied for 5 min",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.home_occupied",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "5",
         "forType": "num",
         "forUnits": "minutes",
@@ -836,6 +829,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.home_occupied",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 740,
         "wires": [
@@ -870,15 +882,7 @@
         "name": "Pantry Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_pantry_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -902,6 +906,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_pantry_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 2100,
         "wires": [
@@ -974,26 +986,7 @@
         "name": "Garage Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -1022,6 +1015,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 150,
         "y": 740,
         "wires": [
@@ -1093,15 +1105,7 @@
         "name": "Garage Panel Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_garagepaneldoor_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -1125,6 +1129,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_garagepaneldoor_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 840,
         "wires": [
@@ -1144,15 +1156,7 @@
         "name": "Stairs Closet Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_stairs_closet_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -1176,6 +1180,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_stairs_closet_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 440,
         "wires": [
@@ -1466,15 +1478,7 @@
         "name": "Stairs Landing Tradfri Motion",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.tradfri_pir_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -1498,6 +1502,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.tradfri_pir_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 1030,
         "wires": [
@@ -1643,15 +1655,7 @@
         "name": "Kitchen Light is Turned On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.shelly_1_kitchen_light",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -1675,6 +1679,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "light.shelly_1_kitchen_light",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 150,
         "y": 540,
         "wires": [
@@ -1932,8 +1944,8 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1000,
-        "y": 2620,
+        "x": 1140,
+        "y": 2560,
         "wires": [
             [
                 "9740729.349569"
@@ -1962,8 +1974,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 1440,
-        "y": 2580,
+        "x": 1900,
+        "y": 2540,
         "wires": [
             []
         ]
@@ -1974,19 +1986,25 @@
         "z": "27f4a783.3a8dc8",
         "name": "Front Door Open",
         "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "binary_sensor.st_contact_sensor_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.gs_wds_07_door_sensor_01_4",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -2161,15 +2179,7 @@
         "name": "Pantry PIR",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.sonoff_pir_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -2193,6 +2203,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.sonoff_pir_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 120,
         "y": 2040,
         "wires": [
@@ -2225,8 +2243,8 @@
         "queue": "none",
         "output_location": "",
         "output_location_type": "none",
-        "x": 1450,
-        "y": 2640,
+        "x": 1590,
+        "y": 2580,
         "wires": [
             []
         ]
@@ -2244,7 +2262,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "remote.samsung_the_frame_32"
+            "media_player.samsung_the_frame_32"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -2254,8 +2272,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 1040,
-        "y": 2560,
+        "x": 1180,
+        "y": 2500,
         "wires": [
             []
         ]
@@ -2277,8 +2295,8 @@
         "palette": "2",
         "preset": 0,
         "state": "on",
-        "x": 1060,
-        "y": 2500,
+        "x": 1200,
+        "y": 2440,
         "wires": [
             []
         ]
@@ -2301,12 +2319,12 @@
         "for": 0,
         "forType": "num",
         "forUnits": "minutes",
-        "x": 1220,
-        "y": 2620,
+        "x": 1340,
+        "y": 2560,
         "wires": [
             [
                 "dd13f82c.0d7b88",
-                "60c3600d.1f3f"
+                "869aec2d2b3a5ac1"
             ],
             []
         ]
@@ -2491,15 +2509,7 @@
         "name": "Pantry Light On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.lifx_pantry",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -2523,6 +2533,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "light.lifx_pantry",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 140,
         "y": 2000,
         "wires": [
@@ -2605,8 +2623,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 780,
-        "y": 2600,
+        "x": 1440,
+        "y": 2640,
         "wires": [
             []
         ]
@@ -2618,15 +2636,7 @@
         "name": "Tradfri Dining Motion PIR",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.tradfri_pir_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -2650,6 +2660,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.tradfri_pir_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 2440,
         "wires": [
@@ -2676,8 +2694,8 @@
         "palette": "1",
         "preset": 0,
         "state": "off",
-        "x": 770,
-        "y": 2680,
+        "x": 1150,
+        "y": 2720,
         "wires": [
             []
         ]
@@ -2703,8 +2721,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 790,
-        "y": 2720,
+        "x": 1170,
+        "y": 2760,
         "wires": [
             []
         ]
@@ -2716,15 +2734,7 @@
         "name": "Aeotec Dining Motion PIR",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.multisensor_dining_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -2748,6 +2758,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.multisensor_dining_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 2400,
         "wires": [
@@ -2770,7 +2788,7 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "remote.samsung_the_frame_32"
+            "media_player.samsung_the_frame_32"
         ],
         "data": "",
         "dataType": "jsonata",
@@ -2780,8 +2798,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 800,
-        "y": 2640,
+        "x": 1180,
+        "y": 2680,
         "wires": [
             []
         ]
@@ -2793,18 +2811,15 @@
         "name": "Living Lights On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -2825,8 +2840,27 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 140,
-        "y": 2360,
+        "y": 2340,
         "wires": [
             [
                 "53cd8e2f5eb0b187"
@@ -2843,6 +2877,7 @@
         "name": "Start Living Light Timer",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "timer",
         "service": "start",
         "areaId": [],
@@ -2851,6 +2886,7 @@
             "timer.living_light_timer"
         ],
         "data": "{\"duration\":\"00:20:00\"}",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -2898,6 +2934,7 @@
         "server": "5a39eab2.9f6814",
         "version": 2,
         "eventType": "",
+        "eventData": "",
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -2917,6 +2954,17 @@
                 "propertyType": "msg",
                 "value": "$outputData(\"eventData\").event_type",
                 "valueType": "jsonata"
+            }
+        ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
             }
         ],
         "x": 130,
@@ -3004,10 +3052,10 @@
             [],
             [],
             [
-                "75f28deffcdcce91",
                 "ece843a63b435f41",
                 "1e95e04c1030b69c",
-                "084ac3dba0f0e4b5"
+                "084ac3dba0f0e4b5",
+                "042352a0a1018cf3"
             ],
             []
         ]
@@ -3263,18 +3311,7 @@
         "server": "5a39eab2.9f6814",
         "version": 2,
         "eventType": "",
-        "exposeToHomeAssistant": false,
         "eventData": "",
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -3294,6 +3331,17 @@
                 "propertyType": "msg",
                 "value": "$outputData(\"eventData\").event_type",
                 "valueType": "jsonata"
+            }
+        ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
             }
         ],
         "x": 140,
@@ -3443,15 +3491,7 @@
         "name": "Laundry Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_laundry_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -3475,6 +3515,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_laundry_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 160,
         "y": 100,
         "wires": [
@@ -3547,15 +3595,7 @@
         "name": "Laundry Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_laundry_cupboard_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -3579,6 +3619,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_laundry_cupboard_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 161,
         "y": 40,
         "wires": [
@@ -3696,6 +3744,35 @@
         "name": "Frigate Occupancy Driveway",
         "server": "5a39eab2.9f6814",
         "version": 4,
+        "outputs": 2,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -3714,8 +3791,24 @@
         "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 2,
         "output_only_on_state_change": true,
+        "x": 240,
+        "y": 1720,
+        "wires": [
+            [
+                "d203c87419a1f49c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8133eaf71b2d3068",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Frigate Occupancy Grass",
+        "server": "5a39eab2.9f6814",
+        "version": 4,
+        "outputs": 2,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -3744,22 +3837,6 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 240,
-        "y": 1720,
-        "wires": [
-            [
-                "d203c87419a1f49c"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "8133eaf71b2d3068",
-        "type": "server-state-changed",
-        "z": "27f4a783.3a8dc8",
-        "name": "Frigate Occupancy Grass",
-        "server": "5a39eab2.9f6814",
-        "version": 4,
         "exposeToHomeAssistant": false,
         "haConfig": [
             {
@@ -3778,8 +3855,24 @@
         "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 2,
         "output_only_on_state_change": true,
+        "x": 250,
+        "y": 1680,
+        "wires": [
+            [
+                "d203c87419a1f49c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2a8cdcd1895a1e4b",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Aeotec Dining Motion PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 4,
+        "outputs": 2,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -3808,31 +3901,42 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 250,
-        "y": 1680,
-        "wires": [
-            [
-                "d203c87419a1f49c"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "5fe29861.692358",
-        "type": "server-state-changed",
-        "z": "a76c0410.5bd8c8",
-        "name": "Master Bedroom Lights On",
-        "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level_2",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.multisensor_dining_motion",
         "entityidfiltertype": "exact",
         "outputinitially": false,
         "state_type": "str",
         "haltifstate": "on",
         "halt_if_type": "str",
         "halt_if_compare": "is",
-        "outputs": 2,
         "output_only_on_state_change": true,
+        "x": 230,
+        "y": 2900,
+        "wires": [
+            [
+                "a134fc860fb08f93"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "92dbdd733b5a1716",
+        "type": "server-state-changed",
+        "z": "27f4a783.3a8dc8",
+        "name": "Tradfri Dining Motion PIR",
+        "server": "5a39eab2.9f6814",
+        "version": 4,
+        "outputs": 2,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -3856,6 +3960,241 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.tradfri_pir_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
+        "x": 230,
+        "y": 2940,
+        "wires": [
+            [
+                "a134fc860fb08f93"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f4fd660e6f214f59",
+        "type": "trigger",
+        "z": "27f4a783.3a8dc8",
+        "name": "15 Minutes",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 870,
+        "y": 2920,
+        "wires": [
+            [
+                "5e5ac69e90e40471"
+            ]
+        ]
+    },
+    {
+        "id": "5e5ac69e90e40471",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Standing Lamp Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_1"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1090,
+        "y": 2920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67c6b25cdf178ca1",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Standing Lamp On",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_1"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 650,
+        "y": 2920,
+        "wires": [
+            [
+                "f4fd660e6f214f59"
+            ]
+        ]
+    },
+    {
+        "id": "a134fc860fb08f93",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Dark",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.is_dark",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 460,
+        "y": 2920,
+        "wires": [
+            [
+                "67c6b25cdf178ca1"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "869aec2d2b3a5ac1",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Motion Activated Living Lights",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.motion_activated_living_lights",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1630,
+        "y": 2540,
+        "wires": [
+            [
+                "60c3600d.1f3f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "042352a0a1018cf3",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Motion Activated Living Lights",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.motion_activated_living_lights",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1210,
+        "y": 2640,
+        "wires": [
+            [
+                "75f28deffcdcce91"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5fe29861.692358",
+        "type": "server-state-changed",
+        "z": "a76c0410.5bd8c8",
+        "name": "Master Bedroom Lights On",
+        "server": "5a39eab2.9f6814",
+        "version": 4,
+        "outputs": 2,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 150,
         "y": 80,
         "wires": [
@@ -3957,26 +4296,7 @@
         "name": "Multisensor Movement Detected",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -4005,6 +4325,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 360,
         "wires": [
@@ -4581,26 +4920,7 @@
         "name": "Multisensor Movement Detected",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -4629,6 +4949,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 500,
         "wires": [
@@ -4720,26 +5059,7 @@
         "name": "Rumpus Multisensor Motion Detected",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -4768,6 +5088,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 230,
         "y": 140,
         "wires": [
@@ -4834,15 +5173,7 @@
         "name": "Master Bathroom Extractor Fan On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "switch.shelly_2_5_master_bathroom_extractor",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -4866,6 +5197,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "switch.shelly_2_5_master_bathroom_extractor",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 220,
         "y": 242,
         "wires": [
@@ -4932,15 +5271,7 @@
         "name": "Kids Bathroom Extractor Fan On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "switch.shelly_2_5_kids_bathroom_extractor",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -4964,6 +5295,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "switch.shelly_2_5_kids_bathroom_extractor",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 210,
         "y": 302,
         "wires": [
@@ -5030,15 +5369,7 @@
         "name": "Upstairs Toilet Light On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -5062,6 +5393,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_3",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 389,
         "wires": [
@@ -5191,15 +5530,7 @@
         "name": "Coffee Machine Goes On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "switch.tp_link_strip1_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -5223,6 +5554,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "switch.tp_link_strip1_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 270,
         "y": 140,
         "wires": [
@@ -5319,15 +5658,7 @@
         "name": "Laundry Light On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.shelly_1_laundry",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -5351,6 +5682,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "light.shelly_1_laundry",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 240,
         "y": 320,
         "wires": [
@@ -5419,15 +5758,7 @@
         "name": "Stairs Landing Motion Detected PIR",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.tradfri_pir_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -5451,6 +5782,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.tradfri_pir_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 300,
         "y": 660,
         "wires": [
@@ -5572,15 +5911,7 @@
         "name": "Downstairs Toilet Light On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -5604,6 +5935,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "switch.aeon_labs_dsc18103_micro_smart_switch_2nd_edition_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 270,
         "y": 400,
         "wires": [
@@ -5672,18 +6011,15 @@
         "name": "Garage Flood Light On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.garage_flood_light",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -5704,6 +6040,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "light.garage_flood_light",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 260,
         "y": 480,
         "wires": [
@@ -5726,9 +6081,11 @@
         "op2type": "str",
         "duration": "1",
         "extend": false,
+        "overrideDelay": false,
         "units": "hr",
         "reset": "off",
         "bytopic": "all",
+        "topic": "topic",
         "outputs": 1,
         "x": 690,
         "y": 480,
@@ -5822,15 +6179,7 @@
         "name": "Garage Lifx Light On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.lifx_garage",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -5854,6 +6203,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "light.lifx_garage",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 250,
         "y": 540,
         "wires": [
@@ -6115,15 +6472,7 @@
         "name": "Turn off upstairs lights",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.off_upstairs_lights",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -6147,6 +6496,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.off_upstairs_lights",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 720,
         "wires": [
@@ -6163,15 +6520,7 @@
         "name": "Turn off downstairs lights",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.off_downstairs_lights",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -6195,6 +6544,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.off_downstairs_lights",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 190,
         "y": 860,
         "wires": [
@@ -6211,15 +6568,7 @@
         "name": "Turn off all lights",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.off_all_lights",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -6243,6 +6592,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.off_all_lights",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 160,
         "y": 800,
         "wires": [
@@ -7631,7 +7988,8 @@
                 "660803de.1305ec",
                 "a3a9f13847164f1b",
                 "b40f8a3ad8389236",
-                "29407d9c4a531491"
+                "29407d9c4a531491",
+                "2b126dfd9437d65a"
             ]
         ]
     },
@@ -8388,6 +8746,35 @@
         "output_location_type": "none",
         "x": 560,
         "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b126dfd9437d65a",
+        "type": "api-call-service",
+        "z": "9a1b490a16d77e03",
+        "name": "Standing Lamp Sitting Area Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_1"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "x": 590,
+        "y": 900,
         "wires": [
             []
         ]
@@ -9420,15 +9807,7 @@
         "name": "Bedtime Routine On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.bedtime_routine",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -9452,6 +9831,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.bedtime_routine",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 150,
         "y": 320,
         "wires": [
@@ -9807,15 +10194,7 @@
         "name": "Lounge Music Routine On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.lounge_music",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -9839,6 +10218,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.lounge_music",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 1040,
         "wires": [
@@ -9872,15 +10259,7 @@
         "name": "Downstairs Speaker Group Playing",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "media_player.downstairs",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "playing",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -9904,6 +10283,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "media_player.downstairs",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "playing",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 200,
         "y": 880,
         "wires": [
@@ -10127,15 +10514,7 @@
         "name": "AMP TV Source On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "switch.amp_tv",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -10159,6 +10538,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "switch.amp_tv",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 150,
         "y": 600,
         "wires": [
@@ -10231,15 +10618,7 @@
         "name": "AMP Music Source On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "switch.amp_music",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -10263,6 +10642,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "switch.amp_music",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 160,
         "y": 680,
         "wires": [
@@ -10335,15 +10722,7 @@
         "name": "Kitchen Light Turn On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "light.shelly_1_kitchen_light",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -10367,6 +10746,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "light.shelly_1_kitchen_light",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 160,
         "y": 1200,
         "wires": [
@@ -10482,15 +10869,7 @@
         "name": "Lounge TV Time Routine On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.lounge_tv_time",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -10514,6 +10893,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.lounge_tv_time",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 1300,
         "wires": [
@@ -10575,26 +10962,7 @@
         "name": "Lounge Dimmer Nano On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -10623,6 +10991,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "light.aeon_labs_zw111_nano_dimmer_level",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 170,
         "y": 1380,
         "wires": [
@@ -10809,15 +11196,7 @@
         "name": "Sony TV On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "media_player.sony_bravia_tv",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -10841,6 +11220,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "media_player.sony_bravia_tv",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 130,
         "y": 1460,
         "wires": [
@@ -11439,15 +11826,7 @@
         "name": "Sun goes down",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "sun.sun",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "below_horizon",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -11471,6 +11850,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "sun.sun",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "below_horizon",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 2520,
         "wires": [
@@ -11629,26 +12016,7 @@
         "name": "Ruby Room Switch Toggle",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "binary_sensor.ruby_room_switch",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -11677,6 +12045,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.ruby_room_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 210,
         "y": 2920,
         "wires": [
@@ -11705,18 +12092,15 @@
         "name": "Guest Room Switch Toggle",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.guest_room_switch",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "0",
-        "halt_if_type": "num",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -11737,11 +12121,34 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.guest_room_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "0",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 210,
-        "y": 3060,
+        "y": 3100,
         "wires": [
-            [],
-            []
+            [
+                "76b42955e8773d76"
+            ],
+            [
+                "76b42955e8773d76"
+            ]
         ]
     },
     {
@@ -11792,8 +12199,8 @@
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 530,
-        "y": 3060,
+        "x": 790,
+        "y": 3080,
         "wires": [
             []
         ]
@@ -11805,18 +12212,15 @@
         "name": "Alex Room Switch Toggle",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.alex_room_switch",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "off",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -11837,6 +12241,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.alex_room_switch",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 210,
         "y": 3000,
         "wires": [
@@ -11855,6 +12278,7 @@
         "name": "Toggle Alex Fan Light",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "toggle",
         "areaId": [],
@@ -11863,6 +12287,7 @@
             "light.alex_ceiling_fan"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -11897,7 +12322,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 480,
-        "y": 3140,
+        "y": 3180,
         "wires": [
             []
         ]
@@ -11909,26 +12334,7 @@
         "name": "Coffee Machine Power Toggle",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "switch.tp_link_strip1_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -11957,8 +12363,27 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "switch.tp_link_strip1_1",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 220,
-        "y": 3160,
+        "y": 3200,
         "wires": [
             [
                 "9cef9df.b752f6"
@@ -11992,7 +12417,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 480,
-        "y": 3180,
+        "y": 3220,
         "wires": [
             []
         ]
@@ -12010,7 +12435,6 @@
         "areaId": [],
         "deviceId": [],
         "entityId": [
-            "switch.alex_room_power",
             "switch.alex_room_power"
         ],
         "data": "",
@@ -12147,24 +12571,104 @@
         ]
     },
     {
+        "id": "76b42955e8773d76",
+        "type": "api-current-state",
+        "z": "823d3fb7.65d29",
+        "name": "Is Guest Room Power On",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.guest_room_power",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 510,
+        "y": 3100,
+        "wires": [
+            [
+                "120bca29046fab7a"
+            ],
+            [
+                "a2492c52effa42ec"
+            ]
+        ]
+    },
+    {
+        "id": "a2492c52effa42ec",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Turn on Guest Room Power",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.guest_room_power"
+        ],
+        "data": "",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 3120,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "6f04e404.0c9aec",
         "type": "server-state-changed",
         "z": "ff5661ef.cd5bf",
         "name": "Front Door Open",
         "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "binary_sensor.st_contact_sensor_1",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.gs_wds_07_door_sensor_01_4",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -12200,19 +12704,25 @@
         "z": "ff5661ef.cd5bf",
         "name": "Laundry Sliding Door Open",
         "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "binary_sensor.st_contact_sensor_3",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.gs_wds_07_door_sensor_03_4",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -12248,19 +12758,25 @@
         "z": "ff5661ef.cd5bf",
         "name": "Kitchen Sliding Door Open",
         "server": "5a39eab2.9f6814",
-        "version": 4,
-        "entityidfilter": "binary_sensor.st_contact_sensor_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
+        "version": 5,
         "outputs": 2,
-        "output_only_on_state_change": true,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.gs_wds_07_door_sensor_02_4",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -12297,22 +12813,26 @@
         "name": "Ettienne Push Notification",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "notify",
-        "service": "discord_notifications",
+        "service": "mobile_app_pixel_6",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
-        "data": "{\"message\":\"Alarm triggered {{source}}\",\"target\":[\"624934822812319774\"]}",
+        "data": "{\t   \"message\":\"{{source}}\",\t   \"title\":\"Alarm triggered\"\t}",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
         "output_location": "payload",
         "output_location_type": "none",
-        "x": 1550,
+        "x": 1670,
         "y": 540,
         "wires": [
-            []
+            [
+                "c3a829570b6bb3cd"
+            ]
         ]
     },
     {
@@ -12322,15 +12842,7 @@
         "name": "Picture Frame Movement Detected",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.multisensor_dining_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12354,6 +12866,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.multisensor_dining_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 540,
         "y": 420,
         "wires": [
@@ -12370,15 +12890,7 @@
         "name": "Laundry Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_laundry_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12402,6 +12914,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_laundry_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 510,
         "y": 480,
         "wires": [
@@ -12418,15 +12938,7 @@
         "name": "Pantry Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_pantry_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12450,6 +12962,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_pantry_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 510,
         "y": 540,
         "wires": [
@@ -12466,15 +12986,7 @@
         "name": "Garage Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12498,6 +13010,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_garage_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 510,
         "y": 600,
         "wires": [
@@ -12514,15 +13034,7 @@
         "name": "Garage Panel Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_garagepaneldoor_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12546,6 +13058,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_garagepaneldoor_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 530,
         "y": 660,
         "wires": [
@@ -12562,15 +13082,7 @@
         "name": "Stairs Closet Door Open/Close",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.door_window_sensor_stairs_closet_open",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12594,6 +13106,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.door_window_sensor_stairs_closet_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 530,
         "y": 720,
         "wires": [
@@ -12610,15 +13130,7 @@
         "name": "Stairs Landing Motion Detected Sonoff PIR",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.tradfri_pir_2",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12642,6 +13154,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.tradfri_pir_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 560,
         "y": 900,
         "wires": [
@@ -12658,15 +13178,7 @@
         "name": "Rumpus Motion Detected Z-Wave",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -12690,6 +13202,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.multisensor_kitchen_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 530,
         "y": 840,
         "wires": [
@@ -13090,15 +13610,7 @@
         "name": "Driveway Sensor Movement",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "binary_sensor.driveway_sensor_motion",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
         "outputs": 2,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -13122,6 +13634,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "binary_sensor.driveway_sensor_motion",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "output_only_on_state_change": true,
         "x": 520,
         "y": 1100,
         "wires": [
@@ -13170,6 +13690,80 @@
             ],
             []
         ]
+    },
+    {
+        "id": "2cc4491ffb272286",
+        "type": "change",
+        "z": "ff5661ef.cd5bf",
+        "name": "stairs landing motion",
+        "rules": [
+            {
+                "t": "set",
+                "p": "source",
+                "pt": "msg",
+                "to": "test alarm",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1360,
+        "y": 660,
+        "wires": [
+            [
+                "7fbaf3fb.fa0dbc",
+                "c3a829570b6bb3cd"
+            ]
+        ]
+    },
+    {
+        "id": "28e096cfc6ddcab3",
+        "type": "inject",
+        "z": "ff5661ef.cd5bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1200,
+        "y": 800,
+        "wires": [
+            [
+                "2cc4491ffb272286"
+            ]
+        ]
+    },
+    {
+        "id": "c3a829570b6bb3cd",
+        "type": "debug",
+        "z": "ff5661ef.cd5bf",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1620,
+        "y": 640,
+        "wires": []
     },
     {
         "id": "4a46042a.b04d2c",
@@ -13245,12 +13839,14 @@
         "name": "Ettienne Push Notification",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "notify",
         "service": "discord_notifications",
         "areaId": [],
         "deviceId": [],
         "entityId": [],
         "data": "{\"message\":\"Camera motion detected {{_msgid}} - {{action_details.monitor_id}}\",\"data\":{\"images\":[\"{{{action_details.hass_filename}}}\"]},\"target\":[\"{{action_details.target}}\"]}",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -13864,25 +14460,7 @@
         "name": "Upstairs Temp Change",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
         "outputs": 1,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -13911,6 +14489,24 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "output_only_on_state_change": true,
         "x": 200,
         "y": 260,
         "wires": [
@@ -13926,15 +14522,7 @@
         "name": "Downstairs Temp Change",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "sensor.multisensor_dining_temp_filtered",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
         "outputs": 1,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -13958,6 +14546,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "sensor.multisensor_dining_temp_filtered",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "output_only_on_state_change": true,
         "x": 210,
         "y": 320,
         "wires": [
@@ -14399,15 +14995,7 @@
         "name": "DS Target Temp",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_number.downstairs_temp",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
         "outputs": 1,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -14431,6 +15019,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_number.downstairs_temp",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 380,
         "wires": [
@@ -14446,15 +15042,7 @@
         "name": "US Target Temp",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_number.upstairs_temp",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
         "outputs": 1,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -14478,6 +15066,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_number.upstairs_temp",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "output_only_on_state_change": true,
         "x": 180,
         "y": 440,
         "wires": [
@@ -14493,26 +15089,7 @@
         "name": "US On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "exposeToHomeAssistant": false,
-        "haConfig": [
-            {
-                "property": "name",
-                "value": ""
-            },
-            {
-                "property": "icon",
-                "value": ""
-            }
-        ],
-        "entityidfilter": "input_boolean.hvac_upstairs",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
         "outputs": 1,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -14541,6 +15118,25 @@
                 "valueType": "triggerId"
             }
         ],
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.hvac_upstairs",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "output_only_on_state_change": true,
         "x": 210,
         "y": 500,
         "wires": [
@@ -14556,15 +15152,7 @@
         "name": "DS On",
         "server": "5a39eab2.9f6814",
         "version": 4,
-        "entityidfilter": "input_boolean.hvac_downstairs",
-        "entityidfiltertype": "exact",
-        "outputinitially": false,
-        "state_type": "str",
-        "haltifstate": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
         "outputs": 1,
-        "output_only_on_state_change": true,
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
@@ -14588,6 +15176,14 @@
                 "valueType": "triggerId"
             }
         ],
+        "entityidfilter": "input_boolean.hvac_downstairs",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "output_only_on_state_change": true,
         "x": 210,
         "y": 560,
         "wires": [

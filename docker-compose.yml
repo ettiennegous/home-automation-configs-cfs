@@ -223,11 +223,12 @@ services:
     container_name: rtl433
     image: hertzg/rtl_433:latest
     devices:
-      - "/dev/bus/usb/001/012"
+      - "/dev/rtlsdr"
     depends_on:
       - mosquitto
       - homeassistant
     entrypoint: ["/bin/sh", "-c" , "sleep 10 && /usr/local/bin/rtl_433 -Mtime:unix:usec:utc -Fmqtt://mqtt:1883,retain=1"]
+    privileged: true
     restart: always
   zwavejs2mqtt:
     container_name: zwavejs2mqtt
@@ -272,8 +273,9 @@ services:
     image: fphammerle/switchbot-mqtt:latest
     container_name: switchbot-mqtt
     userns_mode: host
+    network_mode: host
     environment:
-    - MQTT_HOST=mqtt
+    - MQTT_HOST=192.168.1.40
     - MQTT_PORT=1883
     restart: unless-stopped
   vscode:
@@ -294,7 +296,9 @@ services:
   plex:
       image: lscr.io/linuxserver/plex
       container_name: plex
-      network_mode: host
+      #network_mode: host
+      ports:
+        - "32400:32400"
       environment:
         - PUID=${PUID}
         - PGID=${PGID}
@@ -305,11 +309,21 @@ services:
         - ${USERDIR}/docker/plex/tvseries:/tv
         - ${USERDIR}/docker/plex/movies:/movies
       restart: unless-stopped
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik_proxy"
+        - "traefik.http.routers.plex-router.rule=Host(`plex-origin.${DOMAINNAME}`)"
+        - "traefik.http.routers.plex-router.tls=true"
+        - "traefik.http.routers.plex-router.tls.certresolver=letsencrypt"
+        - "traefik.http.routers.plex-router.middlewares=secured@file"
+        - "traefik.http.services.plex-service.loadbalancer.server.port=32400"
+        - "traefik.http.services.plex-service.loadbalancer.server.scheme=http"
+        - "traefik.http.services.plex-service.loadbalancer.passHostHeader=true"
   frigate:
     container_name: frigate
     privileged: true # this may not be necessary for all setups
     restart: unless-stopped
-    image: ghcr.io/blakeblackshear/frigate:0.12.0-beta8
+    image: ghcr.io/blakeblackshear/frigate:stable
     shm_size: "160mb" # update for your cameras based on calculation above (width * height * 1.5 * 9 + 270480)/1048576
     devices:
       - /dev/dri/renderD128 # for intel hwaccel, needs to be updated for your hardware

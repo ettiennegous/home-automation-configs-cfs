@@ -128,13 +128,13 @@ sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_type_2:
   hidden: true
 sensor.aeon_labs_dsb29_door_window_sensor_2nd_edition_alarm_level_2:
   hidden: true
-binary_sensor.st_contact_sensor_1:
+binary_sensor.gs_wds_07_door_sensor_01_4:
   friendly_name: Door
   external_door: true
-binary_sensor.st_contact_sensor_2:
+binary_sensor.gs_wds_07_door_sensor_02_4:
   friendly_name: Kitchen Sliding Door
   external_door: true
-binary_sensor.st_contact_sensor_3:
+binary_sensor.gs_wds_07_door_sensor_03_4:
   friendly_name: Laundry Sliding Door
   external_door: true
 binary_sensor.sonoff_pir_1:
