@@ -1,12 +1,3 @@
-- platform: systemmonitor
-  resources: 
-    - type: memory_use_percent
-    - type: disk_use_percent
-      arg: /home
-    - type: load_1m
-    - type: load_5m
-    - type: load_15m
-
 - platform: filter
   name: "multisensor_dining_temp_filtered"
   entity_id: sensor.multisensor_dining_temp
@@ -119,6 +110,38 @@
       friendly_name: External Doors Open
       value_template: "{{ (states.binary_sensor|selectattr('state','equalto','on')|selectattr('attributes.external_door', 'eq', true)|list|length) + (states.sensor|selectattr('state','equalto','255')|selectattr('attributes.external_door', 'eq', true)|list|length)}}"
 
+- platform: template
+  sensors:
+    excess_solar:
+      friendly_name: "Excess Solar Capacity"
+      unit_of_measurement: "kWh"
+      value_template: "{{ states('sensor.envoy_122327056674_current_power_production') | float - states('sensor.envoy_122327056674_current_power_consumption') | float }}"
+
+- platform: template
+  sensors:
+    ev_charging_cost:
+      friendly_name: "EV Charging Cost"
+      unit_of_measurement: "$"
+      value_template: >-
+        {% set battery_capacity_kwh = 60.5 %}
+        {% set current_price_per_kwh = states('jenkins_str_electricity_general_price') | float %}
+        {% set excess_solar_kwh = states('sensor.excess_solar') | float %}
+        {% set current_battery_percentage = states('sensor.chalky_battery') | float / 100 %}
+
+        {% set charging_needed_kwh = battery_capacity_kwh - (battery_capacity_kwh * current_battery_percentage) %}
+        {% set charging_needed_kwh_grid = charging_needed_kwh - excess_solar_kwh if charging_needed_kwh - excess_solar_kwh > 0 else 0 %}
+        {% set charging_needed_kwh_solar = charging_needed_kwh - charging_needed_kwh_grid %}
+
+        {% set charging_cost_grid = charging_needed_kwh_grid * current_price_per_kwh %}
+        {% set charging_cost_solar = charging_needed_kwh_solar * current_price_per_kwh * 0.5 %}
+
+        {% set total_charging_cost = charging_cost_grid + charging_cost_solar %}
+
+        {% if charging_needed_kwh > 0 %}
+          {{ total_charging_cost }}
+        {% else %}
+          0
+        {% endif %}
 # Moisture grades display on the flower pot icon:
 # Humidity range: 4%~0%： Display 0 grid moisture
 # Humidity range: 14%~5%：Display 1 grid moisture

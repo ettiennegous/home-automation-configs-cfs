@@ -8,11 +8,11 @@
       prob_given_true: 0.5
       prob_given_false: 0
       below: 100
-    - platform: numeric_state
-      entity_id: sensor.multisensor_kitchen_light
-      prob_given_true: 0.6
-      prob_given_false: 0
-      below: 50
+  # - platform: numeric_state
+  #   entity_id: sensor.multisensor_kitchen_light
+  #   prob_given_true: 0.6
+  #   prob_given_false: 0.4
+  #   below: 50
     - platform: state
       entity_id: sun.sun
       prob_given_true: 1

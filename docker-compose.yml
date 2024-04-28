@@ -201,7 +201,7 @@ services:
       - ${USERDIR}/docker/mariadb:/var/lib/mysql
   adminer:
     image: adminer
-    container_name: adminer    
+    container_name: adminer
     restart: always
     hostname: adminer
     networks:
@@ -249,7 +249,7 @@ services:
       - MQTT_HOST=mqtt
   ettgram:
     image: nginx
-    container_name: ettgram    
+    container_name: ettgram
     restart: always
     hostname: ettgram
     networks:
@@ -257,7 +257,7 @@ services:
       - traefik_proxy
     ports:
       - 8484:80
-    volumes: 
+    volumes:
       - ${USERDIR}/docker/nginx:/usr/share/nginx/html
     labels:
       - "traefik.enable=true"
@@ -332,6 +332,7 @@ services:
       - default
       - traefik_proxy
     volumes:
+      - ${USERDIR}/docker/frigate/config:/config
       - /etc/localtime:/etc/localtime:ro
       - ${USERDIR}/docker/frigate/config.yml:/config/config.yml:ro
       - /media/sd-card/frigate:/media/frigate
@@ -370,12 +371,40 @@ services:
       - TZ=${TZ}
     ports:
       - "8585:8080"
+  teslahttpproxy:
+    container_name: teslaproxy
+    image: iainbullock/tesla_http_proxy
+    ports:
+      - "4430:443"
+      - "8099:8099"
+    volumes:
+       - ${USERDIR}/docker/teslaproxy:/data
+       - ${USERDIR}/docker/homeassistant/www/certs:/share/nginx
+    networks:
+      - default
+      - traefik_proxy
+    environment:
+      - TZ=${TZ}
+      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_SECRET=${CLIENT_SECRET}
+      - "DOMAIN=tesla1.${DOMAINNAME}"
+      - PROXY_HOST=teslaproxy.local
+      - "REGION=North America, Asia-Pacific"
   #sonarqube:
   #  container_name: sonarqube
   #  image: sonarqube:8.4.1-community
   #  restart: "no"
   #  ports:
   #    - 9002:9000
+
+  # parkingbooker:
+  #     image: park-booker
+  #     container_name: parkingbooker
+  #     volumes:
+  #       - ${USERDIR}/ubi-booker/test-results:/app/test-results:rw
+  #       - ${USERDIR}/ubi-booker/allure-results:/app/allure-results:rw
+  #       - ${USERDIR}/ubi-booker/html-report:/app/html-report:rw
+  #       - ${USERDIR}/ubi-booker/logs:/app/logs:rw
 networks:
   traefik_proxy:
     external:

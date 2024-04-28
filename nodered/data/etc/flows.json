@@ -1153,7 +1153,7 @@
             }
         ],
         "x": 170,
-        "y": 440,
+        "y": 220,
         "wires": [
             [
                 "34c203d3.d5c28c"
@@ -1185,7 +1185,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 770,
-        "y": 480,
+        "y": 260,
         "wires": [
             []
         ]
@@ -1212,7 +1212,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 770,
-        "y": 420,
+        "y": 200,
         "wires": [
             []
         ]
@@ -1654,7 +1654,7 @@
             }
         ],
         "x": 150,
-        "y": 540,
+        "y": 320,
         "wires": [
             [
                 "70554dd5.f44484"
@@ -1686,7 +1686,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 780,
-        "y": 520,
+        "y": 300,
         "wires": [
             []
         ]
@@ -1713,7 +1713,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 780,
-        "y": 580,
+        "y": 360,
         "wires": [
             []
         ]
@@ -2062,7 +2062,7 @@
         "output_location": "",
         "output_location_type": "none",
         "x": 800,
-        "y": 1780,
+        "y": 1800,
         "wires": [
             []
         ]
@@ -2331,7 +2331,8 @@
         "server": "5a39eab2.9f6814",
         "version": 3,
         "exposeAsEntityConfig": "",
-        "eventType": "",
+        "eventType": "state_changed",
+        "eventData": "{\"entity_id\":\"timer.pantry_light_timer\"}",
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -2357,90 +2358,8 @@
         "y": 2160,
         "wires": [
             [
-                "b9aba507af5ae72c"
+                "b3a7dc46346adc51"
             ]
-        ]
-    },
-    {
-        "id": "b9aba507af5ae72c",
-        "type": "switch",
-        "z": "27f4a783.3a8dc8",
-        "name": "Filter Entity",
-        "property": "payload.entity_id",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "timer.pantry_light_timer",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 310,
-        "y": 2160,
-        "wires": [
-            [
-                "9f44afbc72db8e86"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "9f44afbc72db8e86",
-        "type": "switch",
-        "z": "27f4a783.3a8dc8",
-        "name": "Switch Timer Event",
-        "property": "event_type",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "timer.started",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.restarted",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.paused",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.finished",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.cancelled",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 5,
-        "x": 530,
-        "y": 2160,
-        "wires": [
-            [
-                "1f2d5974.8e5757"
-            ],
-            [],
-            [],
-            [
-                "bce86ceb.13782"
-            ],
-            []
         ]
     },
     {
@@ -2895,8 +2814,8 @@
         "server": "5a39eab2.9f6814",
         "version": 3,
         "exposeAsEntityConfig": "",
-        "eventType": "",
-        "eventData": "",
+        "eventType": "state_changed",
+        "eventData": "{\"entity_id\":\"timer.living_light_timer\"}",
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -2922,93 +2841,8 @@
         "y": 2520,
         "wires": [
             [
-                "bb454e1ad8f2af0d"
+                "edc3f2b308e45886"
             ]
-        ]
-    },
-    {
-        "id": "bb454e1ad8f2af0d",
-        "type": "switch",
-        "z": "27f4a783.3a8dc8",
-        "name": "Filter Entity",
-        "property": "payload.entity_id",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "timer.living_light_timer",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 310,
-        "y": 2520,
-        "wires": [
-            [
-                "e0188544567a42fe"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e0188544567a42fe",
-        "type": "switch",
-        "z": "27f4a783.3a8dc8",
-        "name": "Switch Timer Event",
-        "property": "event_type",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "timer.started",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.restarted",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.paused",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.finished",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.cancelled",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 5,
-        "x": 530,
-        "y": 2520,
-        "wires": [
-            [
-                "454b7bc3d4eae4d8"
-            ],
-            [],
-            [],
-            [
-                "ece843a63b435f41",
-                "1e95e04c1030b69c",
-                "084ac3dba0f0e4b5",
-                "042352a0a1018cf3"
-            ],
-            []
         ]
     },
     {
@@ -3043,7 +2877,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 230,
-        "y": 3120,
+        "y": 3420,
         "wires": [
             []
         ]
@@ -3070,7 +2904,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 230,
-        "y": 3180,
+        "y": 3480,
         "wires": [
             []
         ]
@@ -3097,7 +2931,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 230,
-        "y": 3240,
+        "y": 3540,
         "wires": [
             []
         ]
@@ -3124,7 +2958,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 240,
-        "y": 3300,
+        "y": 3600,
         "wires": [
             []
         ]
@@ -3180,7 +3014,7 @@
         "output_location": "payload",
         "output_location_type": "none",
         "x": 800,
-        "y": 1840,
+        "y": 1860,
         "wires": [
             []
         ]
@@ -3262,8 +3096,8 @@
         "server": "5a39eab2.9f6814",
         "version": 3,
         "exposeAsEntityConfig": "",
-        "eventType": "",
-        "eventData": "",
+        "eventType": "state_changed",
+        "eventData": "{\"entity_id\":\"timer.frontdoor_light_timer\"}",
         "waitForRunning": true,
         "outputProperties": [
             {
@@ -3286,93 +3120,11 @@
             }
         ],
         "x": 140,
-        "y": 1820,
+        "y": 1840,
         "wires": [
             [
-                "e88c07d2a5cc6113"
+                "e2b61819f99dd150"
             ]
-        ]
-    },
-    {
-        "id": "e88c07d2a5cc6113",
-        "type": "switch",
-        "z": "27f4a783.3a8dc8",
-        "name": "Filter Entity",
-        "property": "payload.entity_id",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "timer.frontdoor_light_timer",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 310,
-        "y": 1820,
-        "wires": [
-            [
-                "589954e5701de000"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "589954e5701de000",
-        "type": "switch",
-        "z": "27f4a783.3a8dc8",
-        "name": "Switch Timer Event",
-        "property": "event_type",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "timer.started",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.restarted",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.paused",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.finished",
-                "vt": "str"
-            },
-            {
-                "t": "eq",
-                "v": "timer.cancelled",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 5,
-        "x": 530,
-        "y": 1820,
-        "wires": [
-            [
-                "c314f95a.10d298"
-            ],
-            [],
-            [],
-            [
-                "a05e3ebe11775fb0"
-            ],
-            []
         ]
     },
     {
@@ -3834,10 +3586,10 @@
             }
         ],
         "x": 230,
-        "y": 2900,
+        "y": 2840,
         "wires": [
             [
-                "a134fc860fb08f93"
+                "ad38f839bbe4c629"
             ],
             []
         ]
@@ -3883,135 +3635,10 @@
             }
         ],
         "x": 230,
-        "y": 2940,
+        "y": 2880,
         "wires": [
             [
-                "a134fc860fb08f93"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "f4fd660e6f214f59",
-        "type": "trigger",
-        "z": "27f4a783.3a8dc8",
-        "name": "15 Minutes",
-        "op1": "",
-        "op2": "off",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "5",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "min",
-        "reset": "off",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 870,
-        "y": 2920,
-        "wires": [
-            [
-                "5e5ac69e90e40471"
-            ]
-        ]
-    },
-    {
-        "id": "5e5ac69e90e40471",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Standing Lamp Off",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_off",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.tp_link_1"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 1090,
-        "y": 2920,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "67c6b25cdf178ca1",
-        "type": "api-call-service",
-        "z": "27f4a783.3a8dc8",
-        "name": "Standing Lamp On",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "switch.tp_link_1"
-        ],
-        "data": "",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 650,
-        "y": 2920,
-        "wires": [
-            [
-                "f4fd660e6f214f59"
-            ]
-        ]
-    },
-    {
-        "id": "a134fc860fb08f93",
-        "type": "api-current-state",
-        "z": "27f4a783.3a8dc8",
-        "name": "Is Dark",
-        "server": "5a39eab2.9f6814",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.is_dark",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 460,
-        "y": 2920,
-        "wires": [
-            [
-                "67c6b25cdf178ca1"
+                "ad38f839bbe4c629"
             ],
             []
         ]
@@ -4066,6 +3693,459 @@
         "wires": [
             [
                 "75f28deffcdcce91"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ad38f839bbe4c629",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Standing Lamp Light is Off",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "switch.tp_link_1",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 600,
+        "y": 2860,
+        "wires": [
+            [
+                "6946e6e00433b098"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6946e6e00433b098",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Lamp Timer NOT Paused",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "paused",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "timer.living_lamp_timer",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 910,
+        "y": 2860,
+        "wires": [
+            [
+                "7f4b1cd110880387"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7f4b1cd110880387",
+        "type": "api-current-state",
+        "z": "27f4a783.3a8dc8",
+        "name": "Is Dark",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.is_dark",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1160,
+        "y": 2860,
+        "wires": [
+            [
+                "27b7360a9626aebf"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "27b7360a9626aebf",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Start Living Lamp Light Timer",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "timer",
+        "service": "start",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "timer.living_lamp_timer"
+        ],
+        "data": "{\"duration\":\"00:10:00\"}",
+        "dataType": "jsonata",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "x": 1380,
+        "y": 2860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0adcef60cb2ba8ec",
+        "type": "server-events",
+        "z": "27f4a783.3a8dc8",
+        "name": "Living Lamp Timer",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "exposeAsEntityConfig": "",
+        "eventType": "state_changed",
+        "eventData": "{\"entity_id\":\"timer.living_lamp_timer\"}",
+        "waitForRunning": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            },
+            {
+                "property": "event_type",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 210,
+        "y": 2980,
+        "wires": [
+            [
+                "3ae5ed841771e2c0"
+            ]
+        ]
+    },
+    {
+        "id": "3ae5ed841771e2c0",
+        "type": "switch",
+        "z": "27f4a783.3a8dc8",
+        "name": "Switch Timer Event",
+        "property": "payload.event.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "active",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "restarted",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "paused",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "idle",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cancelled",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 590,
+        "y": 2980,
+        "wires": [
+            [
+                "c2a0adb34cfbd473"
+            ],
+            [],
+            [],
+            [
+                "58e12873f6727c35"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c2a0adb34cfbd473",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Light On",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_1"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 820,
+        "y": 2960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "58e12873f6727c35",
+        "type": "api-call-service",
+        "z": "27f4a783.3a8dc8",
+        "name": "Light Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_1"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "payload",
+        "output_location_type": "none",
+        "x": 820,
+        "y": 3000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edc3f2b308e45886",
+        "type": "switch",
+        "z": "27f4a783.3a8dc8",
+        "name": "Switch Timer Event",
+        "property": "payload.event.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "active",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "restarted",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "paused",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "idle",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cancelled",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 430,
+        "y": 2520,
+        "wires": [
+            [
+                "454b7bc3d4eae4d8"
+            ],
+            [],
+            [],
+            [
+                "042352a0a1018cf3",
+                "ece843a63b435f41",
+                "1e95e04c1030b69c",
+                "084ac3dba0f0e4b5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b3a7dc46346adc51",
+        "type": "switch",
+        "z": "27f4a783.3a8dc8",
+        "name": "Switch Timer Event",
+        "property": "payload.event.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "active",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "restarted",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "paused",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "idle",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cancelled",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 450,
+        "y": 2160,
+        "wires": [
+            [
+                "1f2d5974.8e5757"
+            ],
+            [],
+            [],
+            [
+                "bce86ceb.13782"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e2b61819f99dd150",
+        "type": "switch",
+        "z": "27f4a783.3a8dc8",
+        "name": "Switch Timer Event",
+        "property": "payload.event.new_state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "active",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "restarted",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "paused",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "idle",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "cancelled",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 450,
+        "y": 1840,
+        "wires": [
+            [
+                "c314f95a.10d298"
+            ],
+            [],
+            [],
+            [
+                "a05e3ebe11775fb0"
             ],
             []
         ]
@@ -4129,6 +4209,7 @@
         "name": "Master Dressing Room Lights Off",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "turn_off",
         "areaId": [],
@@ -4136,7 +4217,8 @@
         "entityId": [
             "light.shelly_dimmer_dressing_room"
         ],
-        "data": "",
+        "data": "{}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -4766,8 +4848,8 @@
         "entityId": [
             "switch.tp_link_4"
         ],
-        "data": "",
-        "dataType": "jsonata",
+        "data": "{}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -4869,6 +4951,33 @@
             [
                 "627fd0a21b5f8e02"
             ],
+            []
+        ]
+    },
+    {
+        "id": "80db79e16f086b47",
+        "type": "api-call-service",
+        "z": "a76c0410.5bd8c8",
+        "name": "",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [
+            "7a64ad814d794514b79ea6794f052806"
+        ],
+        "entityId": [],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 720,
+        "y": 620,
+        "wires": [
             []
         ]
     },
@@ -5147,7 +5256,9 @@
         "x": 870,
         "y": 242,
         "wires": [
-            []
+            [
+                "eeaca92138ef67b7"
+            ]
         ]
     },
     {
@@ -5246,7 +5357,9 @@
         "x": 870,
         "y": 302,
         "wires": [
-            []
+            [
+                "425b2757a777d3f8"
+            ]
         ]
     },
     {
@@ -5396,18 +5509,130 @@
         "id": "9bc6106a.d6826",
         "type": "stoptimer3",
         "z": "d1ff6abb.b25cf8",
-        "duration": "30",
+        "duration": "10",
         "durationType": "num",
         "units": "Minute",
         "payloadtype": "num",
         "payloadval": "0",
-        "name": "30 Minute Stop Timer",
+        "name": "10 Minute Stop Timer",
         "x": 580,
         "y": 140,
         "wires": [
             [
                 "f7046b1d.dc9608"
             ],
+            []
+        ]
+    },
+    {
+        "id": "eeaca92138ef67b7",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Extractor Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly_2_5_master_bathroom_extractor"
+        ],
+        "data": "",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1050,
+        "y": 240,
+        "wires": [
+            [
+                "397cac25909df99d"
+            ]
+        ]
+    },
+    {
+        "id": "397cac25909df99d",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Extractor Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly_2_5_master_bathroom_extractor"
+        ],
+        "data": "",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1230,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "425b2757a777d3f8",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Extractor Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly_2_5_kids_bathroom_extractor"
+        ],
+        "data": "",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1050,
+        "y": 300,
+        "wires": [
+            [
+                "7a6ebec0e99a03e4"
+            ]
+        ]
+    },
+    {
+        "id": "7a6ebec0e99a03e4",
+        "type": "api-call-service",
+        "z": "d1ff6abb.b25cf8",
+        "name": "Extractor Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.shelly_2_5_kids_bathroom_extractor"
+        ],
+        "data": "",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1230,
+        "y": 300,
+        "wires": [
             []
         ]
     },
@@ -8876,6 +9101,7 @@
         "name": "Study Lamp Adjust Brightness",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "turn_on",
         "areaId": [],
@@ -8884,6 +9110,7 @@
             "Ettienne"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -9294,6 +9521,8 @@
         "qos": "2",
         "datatype": "json",
         "broker": "32add66e.5cfcaa",
+        "nl": false,
+        "rap": false,
         "inputs": 0,
         "x": 180,
         "y": 620,
@@ -9391,6 +9620,7 @@
         "name": "Study Bias Toggle",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "toggle",
         "areaId": [],
@@ -9399,6 +9629,7 @@
             "light.lifx_strip_1"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -12164,6 +12395,7 @@
         "name": "Turn on Grinder",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "switch",
         "service": "turn_on",
         "areaId": [],
@@ -12171,7 +12403,8 @@
         "entityId": [
             "switch.tp_link_strip1_2"
         ],
-        "data": "",
+        "data": " {}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -12181,7 +12414,9 @@
         "x": 480,
         "y": 3180,
         "wires": [
-            []
+            [
+                "70c57b42c3828272"
+            ]
         ]
     },
     {
@@ -12266,7 +12501,9 @@
         "x": 480,
         "y": 3220,
         "wires": [
-            []
+            [
+                "627c987cb78e68b1"
+            ]
         ]
     },
     {
@@ -12487,6 +12724,178 @@
         "queue": "none",
         "x": 800,
         "y": 3120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "70c57b42c3828272",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Turn on Light",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_strip1_3"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 690,
+        "y": 3180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "627c987cb78e68b1",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Turn off Light",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "switch",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "switch.tp_link_strip1_3"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 690,
+        "y": 3220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "00fb3a946855d28d",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "PC is powered on",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.aeotec_plug_3_electric_consumption_w",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "50",
+        "ifStateType": "num",
+        "ifStateOperator": "gt",
+        "outputOnlyOnStateChange": true,
+        "for": "6",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 1070,
+        "y": 1620,
+        "wires": [
+            [
+                "59cf823bacb91d2f"
+            ],
+            [
+                "81b9826402038749"
+            ]
+        ]
+    },
+    {
+        "id": "59cf823bacb91d2f",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Study Bias On",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_on",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lifx_strip_1"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1320,
+        "y": 1580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81b9826402038749",
+        "type": "api-call-service",
+        "z": "823d3fb7.65d29",
+        "name": "Study Bias Off",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "debugenabled": false,
+        "domain": "light",
+        "service": "turn_off",
+        "areaId": [],
+        "deviceId": [],
+        "entityId": [
+            "light.lifx_strip_1"
+        ],
+        "data": "{}",
+        "dataType": "json",
+        "mergeContext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "output_location": "",
+        "output_location_type": "none",
+        "x": 1320,
+        "y": 1660,
         "wires": [
             []
         ]
@@ -14671,8 +15080,9 @@
         "type": "function",
         "z": "59f065f5cc116569",
         "name": "",
-        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n    }\n    if (debugThis)\n        node.warn(msg.serviceData.data.raw_command)\n\n}\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\nfunction TurnOff() {\n    serviceData = {\n        data: {\n            raw_command: {\n                \"system\": \"on\",\n                \"type\": \"heat\",\n                \"mode\": \"thermo\"\n            }\n        }\n    };\n    serviceData.data.raw_command.system = \"off\";\n    serviceData.data.raw_command.zoneList = \"1,2\";\n    msg.serviceData = serviceData;\n    msg.payload = serviceData;\n}\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n\n    }\n} else {\n    TurnOff();\n}\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\nreturn msg;",
+        "func": "let usHeatingOn = false;\nlet dsHeatingOn = false;\nlet usCoolingOn = false;\nlet dsCoolingOn = false;\nlet cooling = false;\nlet heating = false;\nlet serviceData = {}\nlet debugThis = false;\nlet isOn = false;\nmsg.callService = false;\nlet mode = msg.hvac_mode_payload;\n\n\nfunction HeatOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) > parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) <= parseFloat(msg.ds_temp_payload)) {\n        dsHeatingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) > parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usHeatingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\":\"on\",\n                    \"type\":\"heat\", \n                    \"mode\":\"thermo\"\n                }\n            }\n        };\n\n        if (dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsHeatingOn && usHeatingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsHeatingOn && !usHeatingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n    }\n    if (debugThis)\n        node.warn(msg.serviceData.data.raw_command)\n\n}\n\nfunction CoolOperation() {\n    if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)) {\n        dsCoolingOn = true;\n    } else if (msg.ds_switch_payload === \"on\" && parseFloat(msg.ds_targettemp_payload) >= parseFloat(msg.ds_temp_payload)) {\n        dsCoolingOn = false;\n    }\n\n    if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) < parseFloat(msg.us_temp_payload)) {\n        usCoolingOn = true;\n    } else if (msg.us_switch_payload === \"on\" && parseFloat(msg.us_targettemp_payload) <= parseFloat(msg.us_temp_payload)) {\n        usCoolingOn = false;\n    }\n\n    if (IsOn()) {\n        serviceData = {\n            data: {\n                raw_command: {\n                    \"system\": \"on\",\n                    \"type\": \"cool\",\n                    \"mode\": \"thermo\"\n                }\n            }\n        };\n\n        if (dsCoolingOn && usCoolingOn) {\n            serviceData.data.raw_command.zoneList = \"1,2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload > msg.us_targettemp_payload ? msg.ds_targettemp_payload : msg.us_targettemp_payload);\n        } else if (dsCoolingOn && !usCoolingOn) {\n            serviceData.data.raw_command.zoneList = \"2\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.ds_targettemp_payload);\n        } else if (!dsCoolingOn && usCoolingOn) {\n            serviceData.data.raw_command.zoneList = \"1\";\n            serviceData.data.raw_command.setPoint = Math.trunc(msg.us_targettemp_payload);\n        } else if (!dsCoolingOn && !usCoolingOn) {\n            serviceData.data.raw_command.system = \"off\";\n            serviceData.data.raw_command.zoneList = \"1,2\";\n        }\n        msg.serviceData = serviceData;\n        msg.payload = serviceData;\n    }\n    if (debugThis)\n        node.warn(msg.serviceData.data.raw_command)\n\n}\n\n\nfunction IsOn() {\n    return (msg.ds_switch_payload === \"on\" || msg.us_switch_payload === \"on\");\n}\n\nfunction TurnOff() {\n    serviceData = {\n        data: {\n            raw_command: {\n                \"system\": \"on\",\n                \"type\": \"heat\",\n                \"mode\": \"thermo\"\n            }\n        }\n    };\n    serviceData.data.raw_command.system = \"off\";\n    serviceData.data.raw_command.zoneList = \"1,2\";\n    msg.serviceData = serviceData;\n    msg.payload = serviceData;\n}\n\nif (IsOn()) {\n    if (mode === \"Heat\") {\n        HeatOperation();\n    }\n    else if (mode === \"Cool\") {\n        CoolOperation();\n    }\n} else {\n    TurnOff();\n}\n\nif(debugThis) {\n    node.warn(`HVAC Mode ${msg.hvac_mode_payload}`)\n    node.warn(`Downstairs On ${msg.ds_switch_payload === \"on\"}`)\n    node.warn(`Downstairs Target Temp ${parseFloat(msg.ds_targettemp_payload)}`)\n    node.warn(`Is DS target smaller than current ${parseFloat(msg.ds_targettemp_payload) < parseFloat(msg.ds_temp_payload)}`)\n}\n\n//service: bonaire_myclimate.send_raw_command\n//data:\n//  raw_command:\n//    system: 'on'\n//    zoneList: '1'\n//    setPoint: '22'\n\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
