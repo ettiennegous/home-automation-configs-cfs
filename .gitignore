@@ -61,3 +61,6 @@ nodered/data/etc/node-red-contrib-home-assistant-websocket.json
 **/plex/tvseries/**
 **/mariadb/**
 plex/movies/**
+zwavejs2mqtt/e5c1c4d9.values.jsonl
+zwavejs2mqtt/e5c1c4d9.metadata.jsonl
+zwavejs2mqtt/e5c1c4d9.jsonl
