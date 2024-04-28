@@ -56,6 +56,25 @@ http:
             certresolver: letsencrypt
         middlewares:
             - secured
+
+    teslacert-router:
+        entryPoints:
+            - "https"
+        rule: "Host(`tesla1.{{env "DOMAINNAME"}}`) && Path(`/.well-known/appspecific/{anything:.*}`)"
+        service: "teslacert-service"
+        tls:
+            certresolver: letsencrypt
+        middlewares:
+            - tesla-cert-rewrite 
+
+    teslaflask-router:
+        entryPoints:
+            - "https"
+        rule: "Host(`tesla1.{{env "DOMAINNAME"}}`)"
+        service: "teslaflask-service"
+        tls:
+            certresolver: letsencrypt
+
   services:
     intentional-empty-service:
       loadBalancer:
@@ -90,6 +109,24 @@ http:
                 port: 8080
             servers:
             - url: "https://192.168.1.22:8080/"
+
+    teslacert-service:
+        loadBalancer:
+            passHostHeader: false
+            healthCheck:
+                scheme: http
+                port: 8123
+            servers:
+            - url: "http://192.168.1.40:8123/"
+
+    teslaflask-service:
+        loadBalancer:
+            passHostHeader: false
+            healthCheck:
+                scheme: http
+                port: 8099
+            servers:
+            - url: "http://192.168.1.40:8099/"
 
   middlewares:
     traefik-local-redirect: 
@@ -128,6 +165,10 @@ http:
           # proxy_set_header  $scheme;
           # proxy_set_header Upgrade $http_upgrade;
           # proxy_set_header Connection "Upgrade";
+    tesla-cert-rewrite: 
+      replacePathRegex:
+        regex: "^/.well-known/appspecific/(.*)"
+        replacement: "/local/certs/$1"
     secured:
       chain:
         middlewares:

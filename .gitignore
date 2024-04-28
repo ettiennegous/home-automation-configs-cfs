@@ -64,3 +64,9 @@ plex/movies/**
 zwavejs2mqtt/e5c1c4d9.values.jsonl
 zwavejs2mqtt/e5c1c4d9.metadata.jsonl
 zwavejs2mqtt/e5c1c4d9.jsonl
+homeassistant/www/certs/com.tesla.3p.public-key.pem
+teslaproxy/access_token
+teslaproxy/cert.pem
+teslaproxy/config.sh
+teslaproxy/key.pem
+teslaproxy/refresh_token
