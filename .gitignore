@@ -70,3 +70,6 @@ teslaproxy/cert.pem
 teslaproxy/config.sh
 teslaproxy/key.pem
 teslaproxy/refresh_token
+plex/config/Library/Application Support/*
+plex/media/movies/*
+plex/media/tvseries/*

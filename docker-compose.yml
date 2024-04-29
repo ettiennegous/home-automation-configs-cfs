@@ -305,20 +305,45 @@ services:
         - VERSION=docker
         - PLEX_CLAIM= #optional
       volumes:
-        - ${USERDIR}/docker/plex/library:/config
+        - ${USERDIR}/docker/plex/config:/config
+        - ${USERDIR}/docker/plex/media:/media
         - ${USERDIR}/docker/plex/tvseries:/tv
         - ${USERDIR}/docker/plex/movies:/movies
+        - ${USERDIR}/docker/plex/transcode:/transcode
+        - ${USERDIR}/docker-media/complete:/media/downloaded
       restart: unless-stopped
       labels:
         - "traefik.enable=true"
         - "traefik.docker.network=traefik_proxy"
-        - "traefik.http.routers.plex-router.rule=Host(`plex-origin.${DOMAINNAME}`)"
+        - "traefik.http.routers.plex-router.rule=Host(`plex.${DOMAINNAME}`)"
         - "traefik.http.routers.plex-router.tls=true"
         - "traefik.http.routers.plex-router.tls.certresolver=letsencrypt"
-        - "traefik.http.routers.plex-router.middlewares=secured@file"
+        - "traefik.http.routers.plex-router.middlewares=secured-no-basic@file"
         - "traefik.http.services.plex-service.loadbalancer.server.port=32400"
         - "traefik.http.services.plex-service.loadbalancer.server.scheme=http"
         - "traefik.http.services.plex-service.loadbalancer.passHostHeader=true"
+  overseerr:
+      image: sctx/overseerr:latest
+      container_name: overseerr
+      environment:
+        - LOG_LEVEL=debug
+        - TZ=${TZ}
+        - PORT=5055 #optional
+      ports:
+        - 5055:5055
+      volumes:
+        - ${USERDIR}/docker-media/config/overseerr:/app/config
+      restart: unless-stopped
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik_proxy"
+        - "traefik.http.routers.overseerr-router.rule=Host(`requests.${DOMAINNAME}`)"
+        - "traefik.http.routers.overseerr-router.tls=true"
+        - "traefik.http.routers.overseerr-router.tls.certresolver=letsencrypt"
+        - "traefik.http.routers.overseerr-router.middlewares=secured@file"
+        - "traefik.http.services.overseerr-service.loadbalancer.server.port=5055"
+        - "traefik.http.services.overseerr-service.loadbalancer.server.scheme=http"
+        - "traefik.http.services.overseerr-service.loadbalancer.passHostHeader=true"
   frigate:
     container_name: frigate
     privileged: true # this may not be necessary for all setups
