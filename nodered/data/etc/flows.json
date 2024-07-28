@@ -1224,6 +1224,7 @@
         "name": "Delay for 60 seconds",
         "func": "setTimeout(function(){\n    node.status({fill:\"red\", shape:\"ring\", text:\" \"});\n    msg['payload'] = 'finished';\n    node.send(msg);\n}, 60000);\nnode.status({fill:\"blue\", shape:\"ring\", text:' '});",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -1617,6 +1618,7 @@
         "id": "8fa5fd26.d785",
         "type": "server-state-changed",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "name": "Kitchen Light is Turned On",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -1633,6 +1635,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -1668,9 +1675,11 @@
         "id": "70554dd5.f44484",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "name": "Alex Kitchen Light On",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "turn_on",
         "areaId": [],
@@ -1679,6 +1688,7 @@
             "light.shelly_1_alex_kitchen_light"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -1695,9 +1705,11 @@
         "id": "f59a7c8b.56424",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "name": "Alex Kitchen Light Off",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "turn_off",
         "areaId": [],
@@ -1706,6 +1718,7 @@
             "light.shelly_1_alex_kitchen_light"
         ],
         "data": "",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -2071,6 +2084,7 @@
         "id": "169d704e.b0793",
         "type": "api-call-service",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "name": "Xmas Tree On",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -2100,6 +2114,7 @@
         "id": "8209399b.724c48",
         "type": "wled2",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "address": "192.168.20.84",
         "brightness": "255",
         "delay": 0,
@@ -2123,9 +2138,11 @@
         "id": "62e04525.92d89c",
         "type": "function",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "name": "Xmas Tree Random Effect",
         "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -2249,6 +2266,7 @@
         "id": "f8ee8ebc.20b36",
         "type": "wled2",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "address": "192.168.20.80",
         "brightness": "255",
         "delay": "20",
@@ -2570,6 +2588,7 @@
         "id": "1e95e04c1030b69c",
         "type": "wled2",
         "z": "27f4a783.3a8dc8",
+        "d": true,
         "address": "192.168.20.80",
         "brightness": "255",
         "delay": 0,
@@ -4286,554 +4305,6 @@
         ]
     },
     {
-        "id": "87b2ac6d.4c31a",
-        "type": "server-state-changed",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Multisensor Movement Detected",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "outputs": 2,
-        "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.multisensor_kitchen_motion",
-        "entityIdType": "exact",
-        "outputInitially": false,
-        "stateType": "str",
-        "ifState": "on",
-        "ifStateType": "str",
-        "ifStateOperator": "is",
-        "outputOnlyOnStateChange": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "ignorePrevStateNull": false,
-        "ignorePrevStateUnknown": false,
-        "ignorePrevStateUnavailable": false,
-        "ignoreCurrentStateUnknown": false,
-        "ignoreCurrentStateUnavailable": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 170,
-        "y": 360,
-        "wires": [
-            [
-                "b92a1924.7c6d18"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "b92a1924.7c6d18",
-        "type": "function",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Check Time 6,7,8am, 5,6pm",
-        "func": "var d = new Date();\nvar hour = d.getHours();\nmsg.showweatherforecast = false;\nif([6, 7, 8, 16, 17].includes(hour)) {\n    msg.hour = hour\n    msg.showweatherforecast = true;\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 460,
-        "y": 360,
-        "wires": [
-            [
-                "3cfb1a05.8a6536"
-            ]
-        ]
-    },
-    {
-        "id": "3cfb1a05.8a6536",
-        "type": "switch",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Is Weather Forecast",
-        "property": "showweatherforecast",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 760,
-        "y": 360,
-        "wires": [
-            [
-                "391813eb.8f75ec"
-            ],
-            [
-                "33f643f5.9e421c"
-            ]
-        ]
-    },
-    {
-        "id": "f08728ea.bc4b28",
-        "type": "inject",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 900,
-        "y": 420,
-        "wires": [
-            [
-                "33f643f5.9e421c"
-            ]
-        ]
-    },
-    {
-        "id": "391813eb.8f75ec",
-        "type": "api-current-state",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Max Temp",
-        "server": "5a39eab2.9f6814",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.bom_forecast_temp_max_0",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "maxCelcius",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1130,
-        "y": 260,
-        "wires": [
-            [
-                "888beca9.76b15"
-            ]
-        ]
-    },
-    {
-        "id": "33f643f5.9e421c",
-        "type": "function",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Between 9pm and 7am",
-        "func": "var d = new Date();\nvar hour = d.getHours();\n\nif(hour >= 21 || hour <= 7) {\n    msg.brightness = 25\n}\nelse {\n    msg.brightness = 100\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1170,
-        "y": 420,
-        "wires": [
-            [
-                "a70c9f5c.1e87d"
-            ]
-        ]
-    },
-    {
-        "id": "a70c9f5c.1e87d",
-        "type": "api-current-state",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Is Dark",
-        "server": "5a39eab2.9f6814",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "on",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "binary_sensor.is_dark",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1420,
-        "y": 420,
-        "wires": [
-            [
-                "eebf587.6757aa8"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "6adc2dfc.e299d4",
-        "type": "function",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Extract Weather Data",
-        "func": "msg.cycles = 36\nmsg.period = 8\n\nif([6, 7, 8].includes(msg.hour)) {\n    msg.color_name = returnColourNameDayTime(msg.maxCelcius);\n}\nelse if([16, 17].includes(msg.hour)) {\n    msg.color_name = returnColourNameNightTime(msg.minCelcius)\n}\nelse {\n    msg.color_name = returnColourNameDayTime(msg.minCelcius)\n}\n\n\nmsg.mode = msg.rainPercent > 50 ? \"strobe\" : \"breathe\";\n\nfunction returnColourNameDayTime(tempCelcius) {\n    if(tempCelcius >= 25) return \"red\";\n    else if(tempCelcius < 25 && tempCelcius >= 19) return \"green\";\n    else if(tempCelcius < 18) return \"teal\"\n    else return \"gold\";\n}\n\nfunction returnColourNameNightTime(tempCelcius) {\n    if(tempCelcius >= 22) return \"red\";\n    else if(tempCelcius < 22 && tempCelcius >= 17) return \"green\";\n    else if(tempCelcius < 17) return \"teal\"\n    else return \"gold\";\n}\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1900,
-        "y": 260,
-        "wires": [
-            [
-                "298d569c.4bec9a",
-                "a74396b1.ee6358"
-            ]
-        ]
-    },
-    {
-        "id": "eebf587.6757aa8",
-        "type": "api-call-service",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Rumpus Light On",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.lifx_rumpus_standing"
-        ],
-        "data": "{\"brightness_pct\":\"{{brightness}}\",\"kelvin\":\"2500\"}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "payload",
-        "output_location_type": "none",
-        "x": 1650,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "298d569c.4bec9a",
-        "type": "api-call-service",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Rumpus Light Effect",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "light",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.lifx_rumpus_standing"
-        ],
-        "data": "{\"color_name\":\"{{color_name}}\",\"transition\":1}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 2120,
-        "y": 260,
-        "wires": [
-            [
-                "67d51aa0.3ee464"
-            ]
-        ]
-    },
-    {
-        "id": "888beca9.76b15",
-        "type": "api-current-state",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Min Temp",
-        "server": "5a39eab2.9f6814",
-        "version": 3,
-        "outputs": 2,
-        "halt_if": "unknown",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "sensor.bom_forecast_temp_min_0",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "minCelcius",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1320,
-        "y": 260,
-        "wires": [
-            [
-                "f004f152.4c7d6"
-            ],
-            [
-                "f3933c6e.eef0b"
-            ]
-        ]
-    },
-    {
-        "id": "f004f152.4c7d6",
-        "type": "api-current-state",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Rain %",
-        "server": "5a39eab2.9f6814",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is",
-        "entity_id": "sensor.bom_forecast_rain_chance_0",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "rainPercent",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1680,
-        "y": 260,
-        "wires": [
-            [
-                "6adc2dfc.e299d4"
-            ]
-        ]
-    },
-    {
-        "id": "67d51aa0.3ee464",
-        "type": "debug",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2330,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "4d01c8ab.f938c8",
-        "type": "inject",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 920,
-        "y": 260,
-        "wires": [
-            [
-                "391813eb.8f75ec"
-            ]
-        ]
-    },
-    {
-        "id": "a74396b1.ee6358",
-        "type": "debug",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2320,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "f3933c6e.eef0b",
-        "type": "api-current-state",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Min Temp",
-        "server": "5a39eab2.9f6814",
-        "version": 3,
-        "outputs": 1,
-        "halt_if": "",
-        "halt_if_type": "str",
-        "halt_if_compare": "is_not",
-        "entity_id": "sensor.bom_forecast_temp_min_1",
-        "state_type": "str",
-        "blockInputOverrides": false,
-        "outputProperties": [
-            {
-                "property": "minCelcius",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entity"
-            }
-        ],
-        "for": 0,
-        "forType": "num",
-        "forUnits": "minutes",
-        "x": 1500,
-        "y": 320,
-        "wires": [
-            [
-                "f004f152.4c7d6"
-            ]
-        ]
-    },
-    {
-        "id": "264b49d1.d9da06",
-        "type": "comment",
-        "z": "a76c0410.5bd8c8",
-        "name": "What is this?",
-        "info": "Sometimes BOM returns Unknown for Day_0 Min.\nThis will fallback to the next day's min",
-        "x": 1530,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "8ce676d0.811df8",
-        "type": "api-call-service",
-        "z": "a76c0410.5bd8c8",
-        "d": true,
-        "name": "Rumpus Light Effect (Temp)",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "lifx",
-        "service": "effect_pulse",
-        "areaId": [],
-        "deviceId": [],
-        "entityId": [
-            "light.lifx_rumpus_standing"
-        ],
-        "data": "{\"color_name\":\"{{color_name}}\",\"cycles\":\"{{cycles}}\",\"period\":\"{{period}}\",\"mode\":\"{{mode}}\"}",
-        "dataType": "jsonata",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "output_location": "",
-        "output_location_type": "none",
-        "x": 2140,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "12cb33aa11aaaa88",
         "type": "api-call-service",
         "z": "a76c0410.5bd8c8",
@@ -4854,7 +4325,7 @@
         "mustacheAltTags": false,
         "outputProperties": [],
         "queue": "none",
-        "x": 710,
+        "x": 1330,
         "y": 500,
         "wires": [
             []
@@ -4895,7 +4366,7 @@
         "y": 500,
         "wires": [
             [
-                "12cb33aa11aaaa88"
+                "51776346a91f3009"
             ],
             []
         ]
@@ -4909,7 +4380,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.multisensor_kitchen_motion",
+        "entityId": "binary_sensor.multisensor_rumpus_motion",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
@@ -4955,29 +4426,49 @@
         ]
     },
     {
-        "id": "80db79e16f086b47",
-        "type": "api-call-service",
+        "id": "51776346a91f3009",
+        "type": "function",
         "z": "a76c0410.5bd8c8",
-        "name": "",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "debugenabled": false,
-        "domain": "switch",
-        "service": "turn_on",
-        "areaId": [],
-        "deviceId": [
-            "7a64ad814d794514b79ea6794f052806"
-        ],
-        "entityId": [],
-        "data": "{}",
-        "dataType": "json",
-        "mergeContext": "",
-        "mustacheAltTags": false,
-        "outputProperties": [],
-        "queue": "none",
-        "x": 720,
-        "y": 620,
+        "name": "Between 7am and 11pm",
+        "func": "var d = new Date();\nvar hour = d.getHours();\nmsg.shouldTurnOn = false;\nif(hour > 6 && hour < 23) {\n    msg.shouldTurnOn = true;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 500,
         "wires": [
+            [
+                "a1f15bc4fe6465b2"
+            ]
+        ]
+    },
+    {
+        "id": "a1f15bc4fe6465b2",
+        "type": "switch",
+        "z": "a76c0410.5bd8c8",
+        "name": "ShouldTurnOn Msg Switch",
+        "property": "shouldTurnOn",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1020,
+        "y": 500,
+        "wires": [
+            [
+                "12cb33aa11aaaa88"
+            ],
             []
         ]
     },
@@ -5065,7 +4556,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.multisensor_kitchen_motion",
+        "entityId": "binary_sensor.multisensor_rumpus_motion",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
@@ -5886,6 +5377,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -5947,9 +5443,10 @@
         "id": "e3046060.989b7",
         "type": "api-call-service",
         "z": "191e949e.9f212b",
-        "name": "Front Door Light Off",
+        "name": "Standing Lamp Off",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "light",
         "service": "turn_off",
         "areaId": [],
@@ -5957,7 +5454,8 @@
         "entityId": [
             "light.dimmer_foyer_light_level"
         ],
-        "data": "",
+        "data": "{}",
+        "dataType": "json",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -10264,6 +9762,15 @@
         "type": "inject",
         "z": "823d3fb7.65d29",
         "name": "7PM Bedtime",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
         "repeat": "",
         "crontab": "00 19 * * *",
         "once": false,
@@ -10286,6 +9793,7 @@
         "name": "TTS Announce",
         "server": "5a39eab2.9f6814",
         "version": 5,
+        "debugenabled": false,
         "domain": "tts",
         "service": "google_translate_say",
         "areaId": [],
@@ -10293,7 +9801,8 @@
         "entityId": [
             "media_player.living_area"
         ],
-        "data": "{\"message\":\"Its bedtime for the babies, lets go to bed\"}",
+        "data": "{\"message\":\"Its bedtime for the young ladies, lets go to bed\"}",
+        "dataType": "jsonata",
         "mergeContext": "",
         "mustacheAltTags": false,
         "outputProperties": [],
@@ -11482,7 +10991,7 @@
             }
         ],
         "x": 190,
-        "y": 1680,
+        "y": 1640,
         "wires": [
             [
                 "9a5a396.b39e5c8"
@@ -12799,11 +12308,11 @@
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
-        "ifState": "50",
+        "ifState": "45",
         "ifStateType": "num",
         "ifStateOperator": "gt",
         "outputOnlyOnStateChange": true,
-        "for": "6",
+        "for": "1",
         "forType": "num",
         "forUnits": "seconds",
         "ignorePrevStateNull": true,
@@ -12831,15 +12340,13 @@
                 "valueType": "triggerId"
             }
         ],
-        "x": 1070,
-        "y": 1620,
+        "x": 1090,
+        "y": 1580,
         "wires": [
             [
                 "59cf823bacb91d2f"
             ],
-            [
-                "81b9826402038749"
-            ]
+            []
         ]
     },
     {
@@ -12897,6 +12404,60 @@
         "x": 1320,
         "y": 1660,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "39782e693d79b80f",
+        "type": "server-state-changed",
+        "z": "823d3fb7.65d29",
+        "name": "PC is powered on",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "sensor.aeotec_plug_3_electric_consumption_w",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "50",
+        "ifStateType": "num",
+        "ifStateOperator": "lt",
+        "outputOnlyOnStateChange": true,
+        "for": "30",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": true,
+        "ignorePrevStateUnknown": true,
+        "ignorePrevStateUnavailable": true,
+        "ignoreCurrentStateUnknown": true,
+        "ignoreCurrentStateUnavailable": true,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 1090,
+        "y": 1660,
+        "wires": [
+            [
+                "81b9826402038749"
+            ],
             []
         ]
     },
@@ -13443,7 +13004,7 @@
         "version": 5,
         "outputs": 2,
         "exposeAsEntityConfig": "",
-        "entityId": "binary_sensor.multisensor_kitchen_motion",
+        "entityId": "binary_sensor.multisensor_rumpus_motion",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
@@ -13454,6 +13015,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -14131,11 +13697,15 @@
         "name": "Request Camera JPG",
         "method": "GET",
         "ret": "bin",
-        "paytoqs": false,
+        "paytoqs": "ignore",
         "url": "{{{action_details.shinobi_url}}}",
         "tls": "",
+        "persist": false,
         "proxy": "",
+        "insecureHTTPParser": false,
         "authType": "",
+        "senderr": false,
+        "headers": [],
         "x": 900,
         "y": 180,
         "wires": [
@@ -14150,7 +13720,8 @@
         "type": "file",
         "z": "6e7a064f.40b368",
         "name": "Save JPG",
-        "filename": "",
+        "filename": "filename",
+        "filenameType": "msg",
         "appendNewline": true,
         "createDir": true,
         "overwriteFile": "true",
@@ -14288,6 +13859,7 @@
         "id": "3bfe5224.ebea1e",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Volume Up",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14315,6 +13887,7 @@
         "id": "5de612e6.72ed1c",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Volume Down",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14340,6 +13913,7 @@
         "id": "20c55a8e.998d46",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Skip Forward",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14367,6 +13941,7 @@
         "id": "f580e111.51aee",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Skip Backward",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14394,6 +13969,7 @@
         "id": "7086b34c.163ddc",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Play/Pause",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14421,6 +13997,7 @@
         "id": "ff87ee6a.cbec1",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Onkyo Volume Up",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14448,6 +14025,7 @@
         "id": "daf82d3e.5bcf9",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Onkyo Volume Up",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14475,6 +14053,7 @@
         "id": "5f013af5.9ed514",
         "type": "template",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "TV Power On Discrete",
         "field": "payload",
         "fieldType": "msg",
@@ -14492,6 +14071,7 @@
         "id": "e8cbf2da.7c84",
         "type": "template",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "TV Power Off Discrete",
         "field": "payload",
         "fieldType": "msg",
@@ -14509,6 +14089,7 @@
         "id": "37a79d01.a27642",
         "type": "template",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "AMP Power On Discrete",
         "field": "payload",
         "fieldType": "msg",
@@ -14526,6 +14107,7 @@
         "id": "9064c29e.81213",
         "type": "template",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Plug #2 on",
         "field": "payload",
         "fieldType": "msg",
@@ -14543,6 +14125,7 @@
         "id": "ce278ed3.fadd8",
         "type": "template",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Plug #2 off",
         "field": "payload",
         "fieldType": "msg",
@@ -14560,6 +14143,7 @@
         "id": "db7b450a.94d158",
         "type": "api-call-service",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "TTS Announce",
         "server": "5a39eab2.9f6814",
         "version": 5,
@@ -14587,6 +14171,7 @@
         "id": "ab19dd7c.df1e9",
         "type": "mqtt in",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "",
         "topic": "rtl_433/+/events",
         "qos": "2",
@@ -14605,6 +14190,7 @@
         "id": "59767a2b.468824",
         "type": "api-current-state",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Kitchen LED Strip On",
         "server": "5a39eab2.9f6814",
         "version": 3,
@@ -14645,6 +14231,7 @@
         "id": "3356022e.3cf77e",
         "type": "wled2",
         "z": "e3459f93.04f31",
+        "d": true,
         "address": "192.168.20.80",
         "brightness": "255",
         "delay": "20",
@@ -14670,9 +14257,11 @@
         "id": "946dae34.cee7a",
         "type": "function",
         "z": "e3459f93.04f31",
+        "d": true,
         "name": "Random Effect",
         "func": "let randomNumber = Math.floor(Math.random() * 111);\nmsg.payload = {\n    \"effect\": randomNumber\n}\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -14689,6 +14278,7 @@
         "id": "f453f1a7.31a0c",
         "type": "wled2",
         "z": "e3459f93.04f31",
+        "d": true,
         "address": "192.168.20.80",
         "brightness": "255",
         "delay": "20",
@@ -14719,6 +14309,943 @@
         "wires": []
     },
     {
+        "id": "e5ad0dab83f6edb3",
+        "type": "mqtt out",
+        "z": "e3459f93.04f31",
+        "name": "Show Kids Routine",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 2070,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "9ec39a6642f3beb8",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Bedtime",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"text\": \"Bedtime\",\n    \"icon\": \"18433\",\n    \"rainbow\": false,\n    \"duration\": 10,\n    \"wakeup\": true,\n    \"effect\": \"matrix\"\n}",
+        "output": "str",
+        "x": 1760,
+        "y": 1100,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "1b07c3b388ad82aa",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Breakfast",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"text\": \"Breakfast!\",\n    \"icon\": \"53103\",\n    \"rainbow\": false,\n    \"duration\": 10\n}",
+        "output": "str",
+        "x": 1760,
+        "y": 1060,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "9c0de151aaee82fa",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Get Ready",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"text\": \"Get Ready\",\n    \"icon\": \"6329\",\n    \"rainbow\": true,\n    \"duration\": 10\n}",
+        "output": "str",
+        "x": 1750,
+        "y": 1020,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "36ca7347d37c494e",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "TV",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n    \"text\": \"TV Time\",\n    \"icon\": \"{{icon}}\",\n    \"rainbow\": true,\n    \"duration\": 10, \n    \"overlay\": \"{{overlay}}\"\n}",
+        "output": "json",
+        "x": 1770,
+        "y": 980,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "0ea438df8b6b4afb",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/custom/kids-routine",
+        "output": "str",
+        "x": 1540,
+        "y": 980,
+        "wires": [
+            [
+                "36ca7347d37c494e"
+            ]
+        ]
+    },
+    {
+        "id": "a0de2b360bf8c046",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 1340,
+        "wires": [
+            [
+                "98f123e1b8584a4b"
+            ]
+        ]
+    },
+    {
+        "id": "8f6d267b93de8edb",
+        "type": "mqtt out",
+        "z": "e3459f93.04f31",
+        "name": "Update Settings",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "32add66e.5cfcaa",
+        "x": 800,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "98f123e1b8584a4b",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/settings",
+        "output": "str",
+        "x": 340,
+        "y": 1340,
+        "wires": [
+            [
+                "b46ac0bf93843bcb"
+            ]
+        ]
+    },
+    {
+        "id": "b46ac0bf93843bcb",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Config Settings",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"ABRI-comments\": \"Automatic brightness control\",\n    \"ABRI\": true, \n    \"ATRANS-comments\": \"Automatic switching to the next app.\",\n    \"ATRANS\": true, \n    \"TFORMAT-comments\": \"Time format for the TimeApp.\",\n    \"TFORMAT\": \"%l %M %p\", \n    \"TIM-comments\": \"Enable or disable the native time app (requires reboot).\", \n    \"TIM\": true, \n    \"DAT\": false, \n    \"HUM\": false, \n    \"TEMP\": false, \n    \"BAT\": false \n}",
+        "output": "json",
+        "x": 560,
+        "y": 1340,
+        "wires": [
+            [
+                "8f6d267b93de8edb"
+            ]
+        ]
+    },
+    {
+        "id": "d00f63fd3007f615",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Clear Custom App",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n\n}",
+        "output": "json",
+        "x": 1730,
+        "y": 1140,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "d4ea803ce4cf4895",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "7AM All Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 07 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 980,
+        "wires": [
+            [
+                "391813eb.8f75ec"
+            ]
+        ]
+    },
+    {
+        "id": "e4e76be66bd685f2",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/custom/kids-routine",
+        "output": "str",
+        "x": 1540,
+        "y": 1020,
+        "wires": [
+            [
+                "9c0de151aaee82fa"
+            ]
+        ]
+    },
+    {
+        "id": "c10c7cd3fac6529a",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "7:30AM Week Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 07 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1120,
+        "y": 1020,
+        "wires": [
+            [
+                "e4e76be66bd685f2"
+            ]
+        ]
+    },
+    {
+        "id": "1d10c6de4a0eb95b",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/custom/kids-routine",
+        "output": "str",
+        "x": 1540,
+        "y": 1060,
+        "wires": [
+            [
+                "1b07c3b388ad82aa"
+            ]
+        ]
+    },
+    {
+        "id": "8476b9a2f582a492",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "7:50AM Week Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "50 07 * * 1,2,3,4,5",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1120,
+        "y": 1060,
+        "wires": [
+            [
+                "1d10c6de4a0eb95b"
+            ]
+        ]
+    },
+    {
+        "id": "50c2049884b6bdcb",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "7:00PM All Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 19 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1130,
+        "y": 1100,
+        "wires": [
+            [
+                "75c671a16f1e6532"
+            ]
+        ]
+    },
+    {
+        "id": "75c671a16f1e6532",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/custom/kids-routine",
+        "output": "str",
+        "x": 1540,
+        "y": 1100,
+        "wires": [
+            [
+                "9ec39a6642f3beb8"
+            ]
+        ]
+    },
+    {
+        "id": "65bf5249677faa61",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "8:20AM All Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "20 08 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1110,
+        "y": 1140,
+        "wires": [
+            [
+                "2ee1726875d8ca34"
+            ]
+        ]
+    },
+    {
+        "id": "2ee1726875d8ca34",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/custom/kids-routine",
+        "output": "str",
+        "x": 1540,
+        "y": 1140,
+        "wires": [
+            [
+                "d00f63fd3007f615"
+            ]
+        ]
+    },
+    {
+        "id": "391813eb.8f75ec",
+        "type": "api-current-state",
+        "z": "e3459f93.04f31",
+        "name": "Max Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.bom_forecast_temp_max_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "maxCelcius",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1330,
+        "y": 840,
+        "wires": [
+            [
+                "888beca9.76b15"
+            ]
+        ]
+    },
+    {
+        "id": "6adc2dfc.e299d4",
+        "type": "function",
+        "z": "e3459f93.04f31",
+        "name": "Extract Weather Data",
+        "func": "if([6, 7, 8].includes(msg.hour)) {\n    msg.color_name = returnColourNameDayTime(msg.maxCelcius);\n}\nelse if([16, 17].includes(msg.hour)) {\n    msg.color_name = returnColourNameNightTime(msg.minCelcius)\n}\nelse {\n    msg.color_name = returnColourNameDayTime(msg.minCelcius)\n}\nmsg.icon = returnIconID(msg.color_name);\n// 72 - Rain\n\nmsg.overlay = msg.rainPercent > 50 ? \"storm\" : \"clear\";\n\nfunction returnColourNameDayTime(tempCelcius) {\n    if(tempCelcius >= 25) return \"red\";\n    else if(tempCelcius < 25 && tempCelcius >= 19) return \"green\";\n    else if(tempCelcius < 19) return \"teal\"\n    else return \"gold\";\n}\n\nfunction returnColourNameNightTime(tempCelcius) {\n    if(tempCelcius >= 22) return \"red\";\n    else if(tempCelcius < 22 && tempCelcius >= 17) return \"green\";\n    else if(tempCelcius < 17) return \"teal\"\n    else return \"gold\";\n}\n\nfunction returnIconID(colourName) {\n    var result = \"\";\n    switch (colourName) {\n    case \"teal\":\n        result = \"24568\"\n        break;\n    case \"green\":\n        result = \"8044\"\n        break;\n    case \"red\":\n        result = \"19651\"\n        break;\n    default:\n        result = \"8044\"\n    }\n    return result;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2100,
+        "y": 840,
+        "wires": [
+            [
+                "0ea438df8b6b4afb"
+            ]
+        ]
+    },
+    {
+        "id": "888beca9.76b15",
+        "type": "api-current-state",
+        "z": "e3459f93.04f31",
+        "name": "Min Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "unknown",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "sensor.bom_forecast_temp_min_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "minCelcius",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1520,
+        "y": 840,
+        "wires": [
+            [
+                "f004f152.4c7d6"
+            ],
+            [
+                "f3933c6e.eef0b"
+            ]
+        ]
+    },
+    {
+        "id": "f004f152.4c7d6",
+        "type": "api-current-state",
+        "z": "e3459f93.04f31",
+        "name": "Rain %",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "sensor.bom_forecast_rain_chance_0",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "rainPercent",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1880,
+        "y": 840,
+        "wires": [
+            [
+                "6adc2dfc.e299d4"
+            ]
+        ]
+    },
+    {
+        "id": "4d01c8ab.f938c8",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1120,
+        "y": 840,
+        "wires": [
+            [
+                "391813eb.8f75ec"
+            ]
+        ]
+    },
+    {
+        "id": "f3933c6e.eef0b",
+        "type": "api-current-state",
+        "z": "e3459f93.04f31",
+        "name": "Min Temp",
+        "server": "5a39eab2.9f6814",
+        "version": 3,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "entity_id": "sensor.bom_forecast_temp_min_1",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "minCelcius",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 1700,
+        "y": 900,
+        "wires": [
+            [
+                "f004f152.4c7d6"
+            ]
+        ]
+    },
+    {
+        "id": "264b49d1.d9da06",
+        "type": "comment",
+        "z": "e3459f93.04f31",
+        "name": "What is this?",
+        "info": "Sometimes BOM returns Unknown for Day_0 Min.\nThis will fallback to the next day's min",
+        "x": 1690,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "6bd78122eef2ab12",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/power",
+        "output": "str",
+        "x": 1540,
+        "y": 1360,
+        "wires": [
+            [
+                "0a589f19a75acd76"
+            ]
+        ]
+    },
+    {
+        "id": "df2df763670f9c05",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "9:00AM All Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 09 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1110,
+        "y": 1360,
+        "wires": [
+            [
+                "6bd78122eef2ab12"
+            ]
+        ]
+    },
+    {
+        "id": "0a589f19a75acd76",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Power Off Matrix",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"power\": false\n}",
+        "output": "json",
+        "x": 1730,
+        "y": 1360,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "4bac9e9866026e90",
+        "type": "server-state-changed",
+        "z": "e3459f93.04f31",
+        "name": "Multisensor Movement Detected",
+        "server": "5a39eab2.9f6814",
+        "version": 5,
+        "outputs": 2,
+        "exposeAsEntityConfig": "",
+        "entityId": "binary_sensor.multisensor_rumpus_motion",
+        "entityIdType": "exact",
+        "outputInitially": false,
+        "stateType": "str",
+        "ifState": "on",
+        "ifStateType": "str",
+        "ifStateOperator": "is",
+        "outputOnlyOnStateChange": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 1070,
+        "y": 1220,
+        "wires": [
+            [
+                "ee409dded8a1c073",
+                "0043c59de578309c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ee409dded8a1c073",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Set Topic",
+        "field": "topic",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "awtrix_46994c/power",
+        "output": "str",
+        "x": 1540,
+        "y": 1220,
+        "wires": [
+            [
+                "1d7a7d4fa411db01"
+            ]
+        ]
+    },
+    {
+        "id": "1d7a7d4fa411db01",
+        "type": "template",
+        "z": "e3459f93.04f31",
+        "name": "Power On Matrix",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "json",
+        "syntax": "mustache",
+        "template": "{\n    \"power\": true\n}",
+        "output": "json",
+        "x": 1730,
+        "y": 1220,
+        "wires": [
+            [
+                "e5ad0dab83f6edb3"
+            ]
+        ]
+    },
+    {
+        "id": "1f967780acf00805",
+        "type": "function",
+        "z": "e3459f93.04f31",
+        "name": "Should Auto Off 9am - 6pm, 8pm-6am",
+        "func": "var d = new Date();\nvar hour = d.getHours();\nmsg.shouldTurnOff = true;\nif(hour > 6 && hour < 9) {\n    msg.shouldTurnOff = false;\n}\nif(hour > 18 && hour < 20) {\n    msg.shouldTurnOff = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1790,
+        "y": 1260,
+        "wires": [
+            [
+                "802c3fe2363c0c95"
+            ]
+        ]
+    },
+    {
+        "id": "0043c59de578309c",
+        "type": "stoptimer3",
+        "z": "e3459f93.04f31",
+        "duration": "5",
+        "durationType": "num",
+        "units": "Minute",
+        "payloadtype": "num",
+        "payloadval": "0",
+        "name": "5 Minute Stop Timer",
+        "x": 1500,
+        "y": 1260,
+        "wires": [
+            [
+                "1f967780acf00805"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "802c3fe2363c0c95",
+        "type": "switch",
+        "z": "e3459f93.04f31",
+        "name": "Should Turn Off",
+        "property": "shouldTurnOff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2080,
+        "y": 1260,
+        "wires": [
+            [
+                "6bd78122eef2ab12"
+            ]
+        ]
+    },
+    {
+        "id": "3f351a614854cd93",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1140,
+        "y": 1260,
+        "wires": [
+            [
+                "ee409dded8a1c073",
+                "0043c59de578309c"
+            ]
+        ]
+    },
+    {
+        "id": "0fba50fd8bab6513",
+        "type": "inject",
+        "z": "e3459f93.04f31",
+        "name": "6AM All Days",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 06 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1120,
+        "y": 1180,
+        "wires": [
+            [
+                "ee409dded8a1c073"
+            ]
+        ]
+    },
+    {
         "id": "1c49b62d3e95d26d",
         "type": "server-state-changed",
         "z": "59f065f5cc116569",
@@ -14727,6 +15254,7 @@
         "version": 5,
         "outputs": 1,
         "exposeAsEntityConfig": "",
+        "entityId": "sensor.multisensor_kitchen_temp_filtered",
         "entityIdType": "exact",
         "outputInitially": false,
         "stateType": "str",
@@ -14790,6 +15318,11 @@
         "for": "0",
         "forType": "num",
         "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
         "outputProperties": [
             {
                 "property": "payload",
@@ -15116,7 +15649,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 400,
+        "x": 240,
         "y": 180,
         "wires": [
             [
@@ -15155,6 +15688,7 @@
         "id": "f459fbac9ae0674b",
         "type": "debug",
         "z": "59f065f5cc116569",
+        "d": true,
         "name": "",
         "active": true,
         "tosidebar": true,
@@ -15193,6 +15727,7 @@
         "id": "315b9656fb216cf3",
         "type": "debug",
         "z": "59f065f5cc116569",
+        "d": true,
         "name": "",
         "active": true,
         "tosidebar": true,

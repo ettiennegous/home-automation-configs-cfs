@@ -59,6 +59,9 @@ devices:
     homeassistant:
       name: hue_bulb_2
     optimistic: true
+  '0x842712fffeeddaea':
+    friendly_name: Oversidan Cupboard Light 1
+    description: Study Cupboard Light
 frontend:
   port: 8080
 experimental:
