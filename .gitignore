@@ -73,3 +73,17 @@ teslaproxy/refresh_token
 plex/config/Library/Application Support/*
 plex/media/movies/*
 plex/media/tvseries/*
+ettgram/images/*
+frigate/config/.jwt_secret
+zigbee2mqtt/data/configuration_backup_v*
+teslaproxy/nginx/com.tesla.3p.public-key.pem
+teslaproxy/data/key.pem
+teslaproxy/data/refresh_token
+teslaproxy/data/config.sh
+teslaproxy/data/cert.pem
+teslaproxy/data/access_token
+homeassistant/www/certs2/com.tesla.3p.public-key.pem
+homeassistant/hassauth/id_rsa.pub
+homeassistant/hassauth/id_rsa
+homeassistant/config/service_account.json.old
+homeassistant/_data/tesla_http_proxy/selfsigned.pem

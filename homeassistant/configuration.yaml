@@ -41,6 +41,10 @@ timer:
 # influxdb:
 #   host: !secret influxdb_host
 
+shell_command:
+   frame_tv_cec_on: !secret frame_tv_cec_on
+   frame_tv_cec_off: !secret frame_tv_cec_off
+
 spotcast:
   sp_dc: !secret spotcast_dc
   sp_key: !secret spotcast_key

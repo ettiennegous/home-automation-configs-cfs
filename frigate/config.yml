@@ -42,9 +42,9 @@ cameras:
     ffmpeg:
       hwaccel_args: -hwaccel vaapi -hwaccel_device /dev/dri/renderD128 -hwaccel_output_format yuv420p
       inputs:
-        - path: rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.20.4:554/
-          roles:
-            - rtmp
+        # - path: rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.20.4:554/
+        #   roles:
+        #     - audio
         - path: rtsp://{FRIGATE_RTSP_USER}:{FRIGATE_RTSP_PASSWORD}@192.168.20.4:554/Streaming/channels/102
           roles:
             - detect
@@ -105,9 +105,9 @@ cameras:
         - -rw_timeout
         - "5000000"
       inputs:
-        - path: http://192.168.20.5/flv?port=1935&app=bcs&stream=channel0_main.bcs&user={FRIGATE_RTSP_USER}&password={FRIGATE_RTSP_PASSWORD}
-          roles:
-            - rtmp
+        # - path: http://192.168.20.5/flv?port=1935&app=bcs&stream=channel0_main.bcs&user={FRIGATE_RTSP_USER}&password={FRIGATE_RTSP_PASSWORD}
+        #   roles:
+        #     - audio
         - path: http://192.168.20.5/flv?port=1935&app=bcs&stream=channel0_ext.bcs&user={FRIGATE_RTSP_USER}&password={FRIGATE_RTSP_PASSWORD}
           roles:
             - detect

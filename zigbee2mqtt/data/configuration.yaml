@@ -1,10 +1,11 @@
-homeassistant: true
-permit_join: false
+homeassistant:
+  enabled: true
 mqtt:
   base_topic: zigbee2mqtt
   server: mqtt://192.168.1.40
 serial:
   port: /dev/ttyUSB0
+  adapter: zstack
 devices:
   '0xec1bbdfffe6fb3fa':
     friendly_name: Tradfri PIR 2
@@ -62,10 +63,29 @@ devices:
   '0x842712fffeeddaea':
     friendly_name: Oversidan Cupboard Light 1
     description: Study Cupboard Light
+  '0xecf64cfffe5167cb':
+    friendly_name: Rodret Button 1
+    simulated_brightness:
+      delta: 20
+      interval: 200
+    description: Kelly
+  '0x8c6fb9fffe1c6c26':
+    friendly_name: Rodret Button 2
+    description: Ettienne
+    simulated_brightness:
+      delta: 20
+      interval: 200
+  '0x001788010dc81552':
+    friendly_name: Hue Bulb 3
+    description: Kelly
+  '0x001788010dc817bb':
+    friendly_name: Hue Bulb 4
+    description: Ettienne
+  '0xd44867fffed4c155':
+    friendly_name: Parasoll Sensor 1
 frontend:
+  enabled: true
   port: 8080
-experimental:
-  new_api: true
 groups:
   '1':
     friendly_name: switches
@@ -74,7 +94,7 @@ groups:
 advanced:
   last_seen: ISO_8601_local
   elapsed: true
-  log_level: warn
+  log_level: warning
   log_rotation: true
   log_syslog:
     app_name: Zigbee2MQTT
@@ -114,3 +134,4 @@ advanced:
     - 10
     - 12
     - 13
+version: 4

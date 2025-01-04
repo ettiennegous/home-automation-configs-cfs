@@ -1,0 +1,8 @@
+garmin:
+  name: Garmin
+  entities:
+    - input_boolean.bedtime_routine
+    - input_boolean.off_all_lights
+    - input_boolean.off_upstairs_lights
+    - input_boolean.off_downstairs_lights
+    - light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4

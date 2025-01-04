@@ -34,6 +34,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${USERDIR}/docker/shared:/shared
       - ${USERDIR}/docker/nodered/data/etc/camera-images:/config/www/camera-images
+      - ${USERDIR}/docker/teslaproxy/nginx/:/config/www/certs
     network_mode: host
     privileged: true
     environment:
@@ -258,7 +259,17 @@ services:
     ports:
       - 8484:80
     volumes:
-      - ${USERDIR}/docker/nginx:/usr/share/nginx/html
+      - ${USERDIR}/docker/ettgram:/usr/share/nginx/html
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_proxy"
+      - "traefik.http.routers.ettgram-router.rule=Host(`ett-the-gram.${DOMAINNAME}`)"
+      - "traefik.http.routers.ettgram-router.tls=true"
+      - "traefik.http.routers.ettgram-router.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ettgram-router.middlewares=secured-no-basic@file"
+      - "traefik.http.services.ettgram-service.loadbalancer.server.port=80"
+      - "traefik.http.services.ettgram-service.loadbalancer.server.scheme=http"
+      - "traefik.http.services.ettgram-service.loadbalancer.passHostHeader=true"
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik_proxy"
@@ -403,8 +414,9 @@ services:
       - "4430:443"
       - "8099:8099"
     volumes:
-       - ${USERDIR}/docker/teslaproxy:/data
-       - ${USERDIR}/docker/homeassistant/www/certs:/share/nginx
+       - ${USERDIR}/docker/teslaproxy/data:/data
+       - ${USERDIR}/docker/teslaproxy/nginx:/share/nginx
+       - ${USERDIR}/docker/homeassistant/_data/tesla_http_proxy:/share/home-assistant
     networks:
       - default
       - traefik_proxy
@@ -432,7 +444,6 @@ services:
   #       - ${USERDIR}/ubi-booker/logs:/app/logs:rw
 networks:
   traefik_proxy:
-    external:
-      name: traefik_proxy
+    external: true
   default:
     driver: bridge

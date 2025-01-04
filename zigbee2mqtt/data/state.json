@@ -1,16 +1,16 @@
 {
     "0xd0cf5efffe6d3a3b": {
-        "linkquality": 94,
+        "linkquality": 109,
         "update_available": false,
         "update": {
             "state": "idle",
             "installed_version": 587753009,
             "latest_version": 587753009
         },
-        "last_seen": "2024-07-28T14:51:08+10:00"
+        "last_seen": "2025-01-04T11:51:16+11:00"
     },
     "0xec1bbdfffe6fb3fa": {
-        "battery": 34,
+        "battery": 16,
         "update_available": false,
         "update": {
             "state": "idle",
@@ -21,14 +21,14 @@
         "illuminance_above_threshold": false,
         "requested_brightness_level": 254,
         "requested_brightness_percent": 100,
-        "last_seen": "2024-07-28T17:35:40+10:00",
-        "linkquality": 36
+        "last_seen": "2025-01-04T21:57:48+11:00",
+        "linkquality": 69
     },
     "0x000b3cfffef83b9d": {
-        "battery": 77,
-        "voltage": 2800,
-        "last_seen": "2024-07-28T17:21:15+10:00",
-        "linkquality": 138
+        "battery": 100,
+        "voltage": 3000,
+        "last_seen": "2025-01-04T15:02:07+11:00",
+        "linkquality": 120
     },
     "0xec1bbdfffea0e6e2": {
         "battery": 16,
@@ -39,8 +39,8 @@
             "latest_version": 604241925
         },
         "update_available": true,
-        "last_seen": "2024-07-27T18:38:43+10:00",
-        "linkquality": 47
+        "last_seen": "2025-01-04T21:57:26+11:00",
+        "linkquality": 32
     },
     "0x588e81fffe2cd4d9": {
         "battery": 74,
@@ -50,12 +50,12 @@
             "latest_version": 604241926
         },
         "update_available": true,
-        "brightness": 55,
-        "last_seen": "2024-07-28T14:47:53+10:00",
-        "linkquality": 94
+        "brightness": 255,
+        "last_seen": "2025-01-04T08:20:47+11:00",
+        "linkquality": 102
     },
     "0x842e14fffe154730": {
-        "battery": 74,
+        "battery": 87,
         "update": {
             "state": "available",
             "installed_version": 587699761,
@@ -63,8 +63,8 @@
         },
         "update_available": true,
         "brightness": 255,
-        "last_seen": "2024-07-28T16:29:07+10:00",
-        "linkquality": 72
+        "last_seen": "2025-01-04T12:37:43+11:00",
+        "linkquality": 87
     },
     "0xec1bbdfffebaf388": {
         "battery": 74,
@@ -74,9 +74,9 @@
             "latest_version": 604241926
         },
         "update_available": true,
-        "brightness": 255,
-        "last_seen": "2024-07-28T14:42:12+10:00",
-        "linkquality": 65
+        "brightness": 165,
+        "last_seen": "2025-01-04T10:28:59+11:00",
+        "linkquality": 58
     },
     "0x680ae2fffe373be9": {
         "battery": 11,
@@ -92,25 +92,25 @@
         "linkquality": 80
     },
     "0x001788010d093c86": {
-        "last_seen": "2024-07-28T17:21:53+10:00",
-        "linkquality": 61,
+        "last_seen": "2025-01-04T14:57:38+11:00",
+        "linkquality": 80,
         "state": "OFF",
-        "brightness": 203,
+        "brightness": 254,
         "update": {
             "state": "available",
             "installed_version": 16784388,
-            "latest_version": 16786434
+            "latest_version": 16786690
         },
         "update_available": true
     },
     "0x001788010d05fa2c": {
         "state": "OFF",
-        "last_seen": "2024-07-28T16:21:05+10:00",
-        "linkquality": 83,
+        "last_seen": "2025-01-04T14:37:58+11:00",
+        "linkquality": 61,
         "update": {
             "state": "available",
-            "installed_version": 16784388,
-            "latest_version": 16786434
+            "installed_version": 16786434,
+            "latest_version": 16786690
         },
         "update_available": true,
         "brightness": 254
@@ -119,12 +119,72 @@
         "state": "ON",
         "brightness": 254,
         "update": {
-            "state": "available",
-            "installed_version": 65538,
+            "state": "idle",
+            "installed_version": 16777220,
             "latest_version": 16777220
         },
+        "update_available": false,
+        "last_seen": "2025-01-04T21:58:34+11:00",
+        "linkquality": 51
+    },
+    "0xecf64cfffe5167cb": {
+        "battery": 90,
+        "brightness": 175,
+        "update": {
+            "state": "available",
+            "installed_version": 16777287,
+            "latest_version": 16777303
+        },
         "update_available": true,
-        "last_seen": "2024-07-27T09:59:02+10:00",
-        "linkquality": 36
+        "last_seen": "2025-01-04T21:58:16+11:00",
+        "linkquality": 83
+    },
+    "0x8c6fb9fffe1c6c26": {
+        "battery": 92,
+        "last_seen": "2025-01-04T21:58:16+11:00",
+        "linkquality": 69,
+        "brightness": 0,
+        "update": {
+            "state": "available",
+            "installed_version": 16777287,
+            "latest_version": 16777303
+        },
+        "update_available": true
+    },
+    "0x001788010dc81552": {
+        "state": "OFF",
+        "last_seen": "2025-01-04T21:58:16+11:00",
+        "linkquality": 40,
+        "update": {
+            "state": "available",
+            "installed_version": 16784388,
+            "latest_version": 16786690
+        },
+        "update_available": true,
+        "brightness": 254
+    },
+    "0x001788010dc817bb": {
+        "last_seen": "2025-01-04T21:58:16+11:00",
+        "linkquality": 87,
+        "state": "ON",
+        "update": {
+            "state": "available",
+            "installed_version": 16784388,
+            "latest_version": 16786690
+        },
+        "update_available": true,
+        "brightness": 15
+    },
+    "0xd44867fffed4c155": {
+        "contact": true,
+        "battery": 92,
+        "update": {
+            "state": "idle",
+            "installed_version": 16777241,
+            "latest_version": 16777241
+        },
+        "update_available": false,
+        "last_seen": "2025-01-04T21:55:20+11:00",
+        "linkquality": 87
     }
 }

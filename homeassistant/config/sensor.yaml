@@ -119,10 +119,34 @@
 
 - platform: template
   sensors:
+    electricity_price:
+      friendly_name: "Electricity Price"
+      unit_of_measurement: "$/kWh"
+      value_template: >
+        {% set peak_start = strptime('07:00:00', '%H:%M:%S').time() %}
+        {% set peak_end = strptime('19:00:00', '%H:%M:%S').time() %}
+        {% set current_time = now().time() %}
+        {% if peak_start <= current_time < peak_end %}
+          0.3503
+        {% else %}
+          0.2265
+        {% endif %}
+      icon_template: >
+        {% set peak_start = strptime('07:00:00', '%H:%M:%S').time() %}
+        {% set peak_end = strptime('19:00:00', '%H:%M:%S').time() %}
+        {% set current_time = now().time() %}
+        {% if peak_start <= current_time < peak_end %}
+          mdi:weather-sunny
+        {% else %}
+          mdi:weather-night
+        {% endif %}
+
+- platform: template
+  sensors:
     elec_price_per_hour:
       friendly_name: "Electricity Cost Per Hour"
       unit_of_measurement: "$/h"
-      value_template: "{{ (float(states('sensor.excess_solar'), 0) * float(states('sensor.jenkins_str_electricity_general_price'), 0) * -1) | round(2) }}"
+      value_template: "{{ (float(states('sensor.excess_solar'), 0) * float(states('sensor.electricity_price'), 0) * -1) | round(2) }}"
 
 
 

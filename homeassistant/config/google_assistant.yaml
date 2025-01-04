@@ -1,66 +1,93 @@
 project_id: !secret google_assistant_project_id
-expose_by_default: true
-exposed_domains:
-  - switch
-  - light
-  - input_boolean
-  - sensor
-service_account: !include service_account.json
 report_state: true
+expose_by_default: false
+# exposed_domains:
+#   - switch
+#   - light
+#   - input_boolean
+#   - sensor
+service_account: !include service_account.json
+
 entity_config:
-  switch.study_remote_1:
-    expose: false
-  switch.study_remote_2:
-    expose: false
-  switch.study_remote_3:
-    expose: false
-  switch.study_remote_4:
-    expose: false
-  switch.study_remote_all:
-    expose: false
-  switch.rumpus_remote_c_d:
-    expose: false
-  switch.rumpus_remote_a_b:
-    expose: false
-  input_boolean.low_batteries:
-    expose: false
-  input_boolean.bedtime_routine:
-    expose: false
-  switch.camera1:
-    expose: false
-  switch.tp_link_1:
-    expose: false
-  switch.tp_link_2:
-    expose: false
-  switch.tp_link_3:
-    expose: false
-  switch.tp_link_4:
-    expose: false
+  light.shelly_1_study_light:
+      name: Study Ceiling Light
+      aliases:
+          - Study Light
+      room: Study
+  light.lifx_strip_1:
+      name: Study Bias Light
+      aliases:
+         - Bias Light
+         - Screen Light
+      room: Study
+  light.shelly_1_kitchen_light:
+      name: Kitchen Light
+      aliases:
+         - Kitchen Light
+         - Kitchen Main Light
+      room: Kitchen
+  light.shelly_1_alex_kitchen_light:
+      name: Kitch Light South
+      aliases:
+         - Kitchen South Light
+      room: Kitchen
   switch.tp_link_strip1_1:
-    expose: false
-  switch.tp_link_strip1_2:
-    expose: false
-  switch.tp_link_strip1_3:
-    expose: false
-  input_boolean.ettienne_home:
-    expose: false
-  input_boolean.home_occupied:
-    expose: false
-  input_boolean.house_guests:
-    expose: false
-  input_boolean.kelly_home:
-    expose: false
-  switch.aeon_labs_zw111_nano_dimmer_switch:
-    expose: false
-  switch.aeon_labs_zw111_nano_dimmer_switch_2:
-    expose: false
-  light.lifx_stairs_closet:
-    expose: false
+      name: Cofee Machine
+      aliases:
+          - Coffee Machine
+          - Lelit
+      room: Kitchen
   light.lifx_pantry:
-    expose: false
-  light.lifx_garage:
-    expose: false
-  light.shelly_dimmer_dressing_room:
-    expose: false
+      name: Pantry Light
+      aliases:
+          - Pantry Light
+          - Pantry
+      room: Kitchen
+  light.aeon_labs_dsc19103_micro_smart_dimmer_2nd_edition_level_4:
+      name: Family Light
+      aliases:
+          - Family Light
+          - Living Room Light
+          - Adult Zone Light
+      room: Living Room
+  switch.tp_link_1:
+      name: Living Room Standing Lamp
+      aliases:
+          - Standing Lamp
+          - Living Room Lamp
+          - Family Room Lamp
+      room: Living Room
   light.shelly_1_laundry:
-    expose: false
+      name: Laundry Light
+      aliases:
+          - Laundry Light
+          - Laundry Switch
+      room: Laundry
+  light.front_door_light_3:
+      name: Front Door Light
+      aliases:
+          - Front Door
+          - Porch Light
+      room: Front Door
+  light.garden_lights:
+      name: Garden Lights
+      aliases:
+          - Garden Lights
+          - Backyard Lights
+          - Yard Lights
+      room: Back Yard
+  light.aeon_labs_zw111_nano_dimmer_level:
+      name: Lounge Lights
+      aliases:
+          - Lounge Lights
+          - TV Lights
+          - TV Room Lights
+      room: Lounge
+  light.dimmer_smart_energy_illum_light_level:
+      name: Lounge Lamp
+      aliases:
+          - TV Lamp
+          - TV Standing Lamp
+          - Lounge Lamp
+          - Lounge Standing Lamp
+      room: Lounge
