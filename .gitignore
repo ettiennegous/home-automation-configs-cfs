@@ -87,3 +87,5 @@ homeassistant/hassauth/id_rsa.pub
 homeassistant/hassauth/id_rsa
 homeassistant/config/service_account.json.old
 homeassistant/_data/tesla_http_proxy/selfsigned.pem
+nextpvr/config/media/shows/*
+nextpvr/config/*

@@ -4449,108 +4449,6 @@
         ]
     },
     {
-        "id": "74e177f.a451188",
-        "type": "server-state-changed",
-        "z": "191e949e.9f212b",
-        "name": "Coffee Machine Goes On",
-        "server": "5a39eab2.9f6814",
-        "version": 5,
-        "outputs": 2,
-        "exposeAsEntityConfig": "",
-        "entityId": "switch.tp_link_strip1_1",
-        "entityIdType": "exact",
-        "outputInitially": false,
-        "stateType": "str",
-        "ifState": "on",
-        "ifStateType": "str",
-        "ifStateOperator": "is",
-        "outputOnlyOnStateChange": true,
-        "for": "0",
-        "forType": "num",
-        "forUnits": "minutes",
-        "outputProperties": [
-            {
-                "property": "payload",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "entityState"
-            },
-            {
-                "property": "data",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "eventData"
-            },
-            {
-                "property": "topic",
-                "propertyType": "msg",
-                "value": "",
-                "valueType": "triggerId"
-            }
-        ],
-        "x": 270,
-        "y": 140,
-        "wires": [
-            [
-                "9dccf6.934c4308"
-            ],
-            [
-                "7d1a13b7.25754c"
-            ]
-        ]
-    },
-    {
-        "id": "7d1a13b7.25754c",
-        "type": "change",
-        "z": "191e949e.9f212b",
-        "name": "Reset",
-        "rules": [
-            {
-                "t": "set",
-                "p": "reset",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 510,
-        "y": 180,
-        "wires": [
-            [
-                "9dccf6.934c4308"
-            ]
-        ]
-    },
-    {
-        "id": "9dccf6.934c4308",
-        "type": "delay",
-        "z": "191e949e.9f212b",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "hours",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "outputs": 1,
-        "x": 700,
-        "y": 140,
-        "wires": [
-            [
-                "30460a9c.539026"
-            ]
-        ]
-    },
-    {
         "id": "30460a9c.539026",
         "type": "api-call-service",
         "z": "191e949e.9f212b",
@@ -4571,8 +4469,8 @@
         "queue": "none",
         "output_location": "",
         "output_location_type": "none",
-        "x": 970,
-        "y": 140,
+        "x": 630,
+        "y": 80,
         "wires": [
             []
         ]
@@ -5201,6 +5099,35 @@
         "y": 620,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "189223cd0d6be6f6",
+        "type": "inject",
+        "z": "191e949e.9f212b",
+        "name": "11:30AM",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 11 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "30460a9c.539026"
+            ]
         ]
     },
     {

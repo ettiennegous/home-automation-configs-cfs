@@ -11,12 +11,14 @@ record:
   retain:
     days: 3
     mode: all
-  events:
+  alerts:
     retain:
-      default: 14
+      days: 14
       mode: motion
-      objects:
-        person: 15
+  detections:
+    retain:
+      days: 14
+      mode: motion
 snapshots: 
   enabled: True
   clean_copy: True

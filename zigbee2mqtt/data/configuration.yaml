@@ -7,11 +7,6 @@ serial:
   port: /dev/ttyUSB0
   adapter: zstack
 devices:
-  '0xec1bbdfffe6fb3fa':
-    friendly_name: Tradfri PIR 2
-    description: Stairs landing
-    occupancy_timeout: 120
-    illuminance_below_threshold_check: false
   '0x000b3cfffef83b9d':
     friendly_name: Tuya Remote 2
     description: Stairs Landing
@@ -46,11 +41,6 @@ devices:
       delta: 20
       interval: 150
     description: Study
-  '0x680ae2fffe373be9':
-    friendly_name: ' Tradfri PIR 1'
-    occupancy_timeout: 120
-    illuminance_below_threshold_check: false
-    description: Living room
   '0x001788010d093c86':
     friendly_name: Hue Bulb 1
     description: Alex Room Lamp
@@ -83,6 +73,16 @@ devices:
     description: Ettienne
   '0xd44867fffed4c155':
     friendly_name: Parasoll Sensor 1
+  '0xec1bbdfffe6fb3fa':
+    friendly_name: Tradfri PIR 2
+    description: Stairs landing
+    occupancy_timeout: 120
+    illuminance_below_threshold_check: false
+  '0x680ae2fffe373be9':
+    friendly_name: Tradfri PIR 1
+    description: Living room
+    occupancy_timeout: 120
+    illuminance_below_threshold_check: false
 frontend:
   enabled: true
   port: 8080
